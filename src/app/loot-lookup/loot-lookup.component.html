@@ -1,0 +1,44 @@
+<p class="title">Loot Lookup</p>
+<div class="form mb-2" [formGroup]="form">
+  <ng-select
+    [items]="items$ | async"
+    bindLabel="name"
+    formControlName="selectedItem"
+    [trackByFn]="trackByFn"
+    [minTermLength]="2"
+    [loading]="loading"
+    typeToSearchText="Find Loot Rankings"
+    [typeahead]="input$"
+  >
+    <ng-template
+      ng-option-tmp
+      let-item="item"
+      let-index="index"
+      let-search="searchTerm"
+    >
+      {{ item.name }} - <small>{{ item.source }}</small>
+    </ng-template>
+  </ng-select>
+</div>
+<article class="media" *ngFor="let group of selectedItem$ | async">
+  <figure class="media-left has-text-centered" style="width: 5rem;">
+    <h1 class="is-1">{{ group.points }}</h1>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <p class="has-text-right">
+        {{ group.rankings[0].sheetName }} -
+        <small *ngIf="group.rankings[0].sheetName !== group.rankings[0].name"
+          >({{ group.rankings[0].name }}) - </small
+        >
+        <small>{{ group.rankings[0].source }}</small>
+        <br /><br />
+        <span class="tags">
+          <span class="tag is-info" *ngFor="let raider of group.rankings"
+            >{{ raider.raiderName }} &nbsp;</span
+          >
+        </span>
+      </p>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,13 @@
+<p class="title">Recent Loot</p>
+<article class="media" *ngFor="let loot of recentLoot$ | async">
+  <div class="media-content">
+    <div class="content">
+      <p class="has-text-right">
+        <strong>{{ loot.raiderName }}</strong> - 
+        <small>{{ loot.date | date }}</small>
+        <br />
+        {{ loot.name }} - <small>{{ loot.source }}</small>
+      </p>
+    </div>
+  </div>
+</article>

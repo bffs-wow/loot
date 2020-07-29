@@ -1,0 +1,59 @@
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      Synergy Loot
+    </a>
+
+    <a
+      role="button"
+      class="navbar-burger burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbarBasicExample"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <div class="navbar-item"></div>
+    </div>
+
+    <div class="navbar-end" [formGroup]="form">
+      <div class="navbar-item is-expanded">
+        <ng-select
+          formControlName="selectedRaider"
+          [items]="state.raiders$ | async"
+          bindLabel="name"
+          placeholder="Select your character"
+          style="min-width: 14rem;"
+        >
+          <ng-template ng-label-tmp let-item="item">
+            <img
+              height="15"
+              width="15"
+              [src]="'./assets/images/class-icons/tiny/' + item.class + '.gif'"
+            />
+            {{ item.name }}
+          </ng-template>
+          <ng-template
+            ng-option-tmp
+            let-item="item"
+            let-index="index"
+            let-search="searchTerm"
+          >
+            <img
+              height="15"
+              width="15"
+              [src]="'./assets/images/class-icons/tiny/' + item.class + '.gif'"
+            />
+            {{ item.name }}
+          </ng-template>
+        </ng-select>
+      </div>
+    </div>
+  </div>
+</nav>

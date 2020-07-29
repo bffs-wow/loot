@@ -1,0 +1,18 @@
+<ng-container *ngIf="state.selectedRaider$ | async as raider; else noRaider">
+  <p class="title">{{ raider.name }}'s Loot List</p>
+  <article class="media" *ngFor="let ranking of raider.rankings">
+    <figure class="media-left has-text-centered mx-0 my-0" style="width: 5rem;">
+      <h2 class="is-2">{{ ranking.ranking }}</h2>
+    </figure>
+    <div class="media-content">
+      <div class="content">
+        <p class="has-text-left">
+          <strong>{{ ranking.loot }}</strong>
+        </p>
+      </div>
+    </div>
+  </article>
+</ng-container>
+<ng-template #noRaider>
+  Select a Raider from the top-right header dropdown.
+</ng-template>
