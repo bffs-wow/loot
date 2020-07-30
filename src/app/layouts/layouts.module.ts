@@ -5,10 +5,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [HeaderComponent],
-  exports: [HeaderComponent],
+  declarations: [HeaderComponent, FooterComponent],
+  exports: [HeaderComponent, FooterComponent],
   imports: [
     CommonModule,
     RouterModule,

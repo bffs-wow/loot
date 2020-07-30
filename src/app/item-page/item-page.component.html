@@ -4,11 +4,12 @@
       <div class="container">
         <h1 class="title">
           <a
+            title="Open Wowhead"
             [href]="'https://classic.wowhead.com/item=' + item.id"
             target="_blank"
             [appWowheadTooltip]="item"
-            >{{ item.name }}</a
-          >
+            >{{ item.name }} <fa-icon [icon]="faExternalLinkAlt"></fa-icon
+          ></a>
         </h1>
         <h2 class="subtitle">{{ item.source }}</h2>
       </div>

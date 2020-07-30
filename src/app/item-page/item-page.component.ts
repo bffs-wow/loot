@@ -11,6 +11,7 @@ import {
 import { Loot, LootReceipt } from '../loot-list/models/loot.model';
 import { LootListFacadeService } from '../loot-list/loot-list.facade';
 import { StateService } from '../state/state.service';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-item-page',
@@ -22,6 +23,8 @@ export class ItemPageComponent implements OnInit, OnDestroy {
   item$: Observable<Loot>;
 
   recentRecipients$: Observable<LootReceipt[]>;
+
+  faExternalLinkAlt = faExternalLinkAlt;
 
   constructor(
     private route: ActivatedRoute,

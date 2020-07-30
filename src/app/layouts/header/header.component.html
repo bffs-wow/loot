@@ -19,7 +19,15 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <div class="navbar-item"></div>
+      <div class="navbar-item">
+        <a [href]="sheetUrl" target="_blank"
+          ><span class="icon">
+            <fa-icon [icon]="faFileExcel"></fa-icon> </span
+          ><span>
+            Google Sheet
+          </span></a
+        >
+      </div>
     </div>
 
     <div class="navbar-end" [formGroup]="form">
@@ -57,9 +65,8 @@
         <div *ngIf="this.state.selectedRaider$ | async as raider">
           <div class="tags has-addons">
             <span class="tag is-primary"
-              >Welcome,
-              <a [routerLink]="['/raider', raider.name]">
-                {{ raider.name }} </a
+              >Welcome,&nbsp;
+              <a [routerLink]="['/raider', raider.name]"> {{ raider.name }} </a
               >!</span
             >
             <a class="tag is-black is-delete" (click)="clearRaider()"></a>

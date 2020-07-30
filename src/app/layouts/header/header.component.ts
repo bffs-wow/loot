@@ -3,7 +3,7 @@ import { StateService } from 'src/app/state/state.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
-import { faSync } from '@fortawesome/free-solid-svg-icons';
+import { faSync, faFileExcel } from '@fortawesome/free-solid-svg-icons';
 import { LootListFacadeService } from 'src/app/loot-list/loot-list.facade';
 
 @Component({
@@ -13,8 +13,11 @@ import { LootListFacadeService } from 'src/app/loot-list/loot-list.facade';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject<boolean>();
+  sheetUrl =
+    'https://docs.google.com/spreadsheets/d/1NCqKjPnzavcaVH_uEqVcn0MXBlmknkpM4an9ADe81Zs/edit#gid=604423388';
   form: FormGroup;
   faSync = faSync;
+  faFileExcel = faFileExcel;
   autoUpdate = false;
   constructor(
     public state: StateService,
