@@ -1,0 +1,47 @@
+<div *ngIf="item$ | async as item">
+  <section class="hero is-small is-black">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          <a
+            [href]="'https://classic.wowhead.com/item=' + item.id"
+            target="_blank"
+            [appWowheadTooltip]="item"
+            >{{ item.name }}</a
+          >
+        </h1>
+        <h2 class="subtitle">{{ item.source }}</h2>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="columns">
+      <div class="column">
+        <div class="box">
+          <p class="title">Current Rankings</p>
+          <app-loot-lookup [item]="item" [noSearch]="true"></app-loot-lookup>
+        </div>
+      </div>
+      <div class="column">
+        <div class="box">
+          <p class="title">Recent Recipients</p>
+          <article class="media" *ngFor="let loot of recentRecipients$ | async">
+            <div class="media-content">
+              <div class="content">
+                <h4 class="is-size-4">
+                  <strong
+                    ><a [routerLink]="['/raider', loot.raiderName]"
+                      >{{ loot.raiderName }}
+                    </a></strong
+                  >
+                  -
+                  <small>{{ loot.date | date }}</small>
+                </h4>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

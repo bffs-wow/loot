@@ -1,0 +1,77 @@
+<div *ngIf="raider$ | async as raider">
+  <section class="hero is-small is-black">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          {{ raider.name }}
+        </h1>
+        <h2 class="subtitle">
+          <img
+            height="15"
+            width="15"
+            [src]="'./assets/images/class-icons/tiny/' + raider.class + '.gif'"
+          />{{ raider.class }}
+        </h2>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="columns">
+      <div class="column">
+        <div class="box">
+          <app-loot-list [raider]="raider" [noRouteLink]="true"></app-loot-list>
+        </div>
+      </div>
+      <div class="column">
+        <div class="box">
+          <p class="title">
+            All loot
+          </p>
+
+          <article class="media" *ngFor="let loot of raider.receivedLoot">
+            <div class="media-content">
+              <div class="content">
+                <h4 class="is-size-4">
+                  <strong
+                    ><a [routerLink]="['/item', loot.id]"
+                      >{{ loot.sheetName }}
+                    </a></strong
+                  >
+                  -
+                  <small>{{ loot.date | date }}</small>
+                </h4>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="column">
+        <div class="box">
+          <p class="title">
+            Attendance <small class="is-size-5 has-text-right">(Total: {{ raider.attendancePoints }})</small>
+          </p>
+
+          <article class="media" *ngFor="let attendance of raider.attendance">
+            <div class="media-content">
+              <div class="content">
+                <div class="tags has-addons">
+                  <span
+                    class="tag is-medium"
+                    [ngClass]="getTagColor(attendance.points)"
+                    ><span class="icon is-medium">
+                      <fa-icon [icon]="getIcon(attendance.points)"></fa-icon>
+                    </span>
+                    &nbsp; ({{ attendance.points }})</span
+                  >
+                  <span class="tag is-medium is-black">{{
+                    attendance.date | date
+                  }}</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

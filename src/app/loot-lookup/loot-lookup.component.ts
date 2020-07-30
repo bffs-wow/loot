@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { StateService } from '../state/state.service';
 import { Observable, Subject, concat, of } from 'rxjs';
@@ -9,11 +9,10 @@ import {
   tap,
   switchMap,
   catchError,
-  takeUntil,
-  withLatestFrom,
+  debounceTime,
+  startWith,
+  filter,
 } from 'rxjs/operators';
-import groupBy from 'lodash-es/groupBy';
-import { Dictionary } from 'lodash';
 import { LootListFacadeService } from '../loot-list/loot-list.facade';
 
 @Component({
@@ -23,6 +22,11 @@ import { LootListFacadeService } from '../loot-list/loot-list.facade';
 })
 export class LootLookupComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject<boolean>();
+
+  @Input() item: Loot = null;
+  @Input() disabled = false;
+  @Input() noSearch = false;
+
   form: FormGroup;
 
   items$: Observable<Loot[]>;
@@ -32,7 +36,11 @@ export class LootLookupComponent implements OnInit, OnDestroy {
   allItems$: Observable<Loot[]> = this.lootListFacade.allEligibleLoot$.pipe(
     map((loot) => {
       return loot.reduce((map, loot) => {
-        map.set(loot.name, { name: loot.name, source: loot.source, id: loot.id });
+        map.set(loot.name, {
+          name: loot.name,
+          source: loot.source,
+          id: loot.id,
+        });
         return map;
       }, new Map<string, Loot>());
     }),
@@ -49,13 +57,17 @@ export class LootLookupComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      selectedItem: null,
+      selectedItem: new FormControl({
+        value: this.item,
+        disabled: this.disabled,
+      }),
     });
     // Typeahead setup
     this.items$ = concat(
-      this.allItems$, // default items
+      of([]), // default items
       this.input$.pipe(
         distinctUntilChanged(),
+        debounceTime(250),
         tap(() => (this.loading = true)),
         switchMap((term) =>
           this.allItems$.pipe(
@@ -74,17 +86,9 @@ export class LootLookupComponent implements OnInit, OnDestroy {
     const selectedItem = this.form.get('selectedItem') as FormControl;
 
     this.selectedItem$ = selectedItem.valueChanges.pipe(
-      withLatestFrom(this.lootListFacade.allEligibleLoot$),
-      map(([item, allLoot]) => {
-        if (!item) {
-          return [];
-        }
-        return allLoot.filter((l) => l.name === item.name);
-      }),
-      map((rankings) => {
-        // build iterable / sortable groups by points
-        return this.lootListFacade.groupAndSort(rankings);
-      })
+      startWith(this.item),
+      filter((i) => !!i),
+      switchMap((item) => this.lootListFacade.getRankedLootGroups(item.name))
     );
   }
 

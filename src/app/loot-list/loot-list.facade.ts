@@ -4,25 +4,42 @@ import { Sheet } from './models/spreadsheet.model';
 import { Ranking } from './models/ranking.model';
 import { parsePoints } from './models/attendance.model';
 import { Raider, findClass, Class } from './models/raider.model';
-import { first, map, shareReplay, tap } from 'rxjs/operators';
+import {
+  first,
+  map,
+  tap,
+  switchMap,
+  debounceTime,
+  shareReplay,
+} from 'rxjs/operators';
 import zipObject from 'lodash-es/zipObject';
 import drop from 'lodash-es/drop';
-import { Observable, combineLatest } from 'rxjs';
+import {
+  Observable,
+  combineLatest,
+  ReplaySubject,
+  concat,
+  timer,
+  NEVER,
+} from 'rxjs';
 import { SheetData } from './models/sheet-data.model';
-import { Raid, EligibleLoot, LootGroup, Loot } from './models/loot.model';
+import { EligibleLoot, LootGroup, Loot } from './models/loot.model';
 import { StateService } from '../state/state.service';
 import groupBy from 'lodash-es/groupBy';
+import uniqBy from 'lodash-es/uniqBy';
 import * as itemData from '../data/items.json';
+import { CacheService } from '../cache/cache.service';
 
 @Injectable({ providedIn: 'root' })
 export class LootListFacadeService {
   itemData = (itemData as any).default;
-  sheet$ = this.lootListService.get<Sheet>('').pipe(first());
+  private loadData = new ReplaySubject(1);
+  private loadData$ = this.loadData.asObservable();
   /**
    * Convert tanking sheet into usable `Ranking` objects
    */
-  rankings$ = this.lootListService.getData('Rankings', 'A1:D3000').pipe(
-    first(),
+  rankings$ = this.loadData$.pipe(
+    switchMap(() => this.lootListService.getData('Rankings', 'A1:D3000')),
     map((data) => {
       const values = drop(data.values, 2);
       return (
@@ -30,7 +47,7 @@ export class LootListFacadeService {
           // Remove 'formula' col
           .map((v) => drop(v))
           // Map rows into objects
-          .map((v) => zipObject(['raider', 'loot', 'ranking'], v))
+          .map((v) => zipObject(['raider', 'itemName', 'ranking'], v))
           .map((o) => {
             return {
               ...o,
@@ -38,41 +55,43 @@ export class LootListFacadeService {
             } as Ranking;
           })
           // Remove empty items (where raider didn't list full 30 items)
-          .filter((o) => o.loot !== '')
+          .filter((o) => o.itemName !== '')
       );
     }),
-    shareReplay()
+    // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
+    shareReplay(1)
   );
 
-  attendance$: Observable<Partial<Raider>[]> = this.lootListService
-    .getData('Attendance', 'A1:AL80')
-    .pipe(
-      first(),
-      map((data) => {
-        const values = drop(data.values);
-        const headings = data.values[0] as [
-          'Raider',
-          'Attendance Points',
-          ...Array<string>
-        ];
+  attendance$: Observable<Partial<Raider>[]> = this.loadData$.pipe(
+    switchMap(() => this.lootListService.getData('Attendance', 'A1:AL80')),
+    map((data) => {
+      const values = drop(data.values);
+      const headings = data.values[0] as [
+        'Raider',
+        'Attendance Points',
+        ...Array<string>
+      ];
 
-        return values.map((v) => {
-          const obj = zipObject(headings, v);
-          // Raid dates are all the rest of the values without the first two columns
-          const raidDates = drop(headings, 2);
-          const raider: Partial<Raider> = {
-            name: obj.Raider,
-            attendancePoints: parseFloat(obj['Attendance Points']),
-            attendance: raidDates.map((d) => ({
-              date: new Date(d),
-              points: parsePoints(obj[d]),
-            })),
-          };
-          return raider;
-        });
-      }),
-      shareReplay()
-    );
+      return values.map((v) => {
+        const obj = zipObject(headings, v);
+        // Raid dates are all the rest of the values without the first two columns
+        const raidDates = drop(headings, 2);
+        const raider: Partial<Raider> = {
+          name: obj.Raider,
+          attendancePoints: parseFloat(obj['Attendance Points']),
+          attendance: raidDates.map((d) => ({
+            date: new Date(d),
+            points: parsePoints(obj[d]),
+          })).sort((a, b) => {
+            return +b.date - +a.date;
+          }),
+        };
+        return raider;
+      });
+    }),
+    // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
+    shareReplay(1)
+  );
 
   /**
    * Shared rxjs map operator function to process loot from each raid sheet.
@@ -86,7 +105,9 @@ export class LootListFacadeService {
         itemName = itemName.substring(0, itemName.length - 2);
       }
       const item = {
-        ...this.itemData.find((l) => l.name === itemName),
+        ...this.itemData.find(
+          (l) => l.name.toLowerCase() === itemName.toLowerCase()
+        ),
       } as Loot;
       if (!item) {
         console.error(`${itemName} not found!`);
@@ -126,27 +147,29 @@ export class LootListFacadeService {
     });
   };
 
-  onyLoot$: Observable<Partial<Raider>[]> = this.lootListService
-    .getData('Ony', 'A1:R60')
-    .pipe(
-      first(),
-      map((data) => this.lootMapper(data)),
-      shareReplay()
-    );
-  mcLoot$ = this.lootListService.getData('MC', 'A1:EE60').pipe(
-    first(),
+  onyLoot$ = this.loadData$.pipe(
+    switchMap(() => this.lootListService.getData('Ony', 'A1:R60')),
     map((data) => this.lootMapper(data)),
-    shareReplay()
+    // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
+    shareReplay(1)
   );
-  bwlLoot$ = this.lootListService.getData('BWL', 'A1:DV60').pipe(
-    first(),
+  mcLoot$ = this.loadData$.pipe(
+    switchMap(() => this.lootListService.getData('MC', 'A1:EE60')),
     map((data) => this.lootMapper(data)),
-    shareReplay()
+    // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
+    shareReplay(1)
   );
-  aq40Loot$ = this.lootListService.getData('AQ40', 'A1:DX60').pipe(
-    first(),
+  bwlLoot$ = this.loadData$.pipe(
+    switchMap(() => this.lootListService.getData('BWL', 'A1:DV60')),
     map((data) => this.lootMapper(data)),
-    shareReplay()
+    // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
+    shareReplay(1)
+  );
+  aq40Loot$ = this.loadData$.pipe(
+    switchMap(() => this.lootListService.getData('AQ40', 'A1:DX60')),
+    map((data) => this.lootMapper(data)),
+    // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
+    shareReplay(1)
   );
 
   /**
@@ -172,7 +195,7 @@ export class LootListFacadeService {
           class: Class.Unknown,
           attendance: rAtt.attendance,
           attendancePoints: rAtt.attendancePoints,
-          rankings: rRankings,
+          rankings: [],
           pendingLoot: [
             ...rBwl.pendingLoot,
             ...rMc.pendingLoot,
@@ -184,8 +207,17 @@ export class LootListFacadeService {
             ...rMc.receivedLoot,
             ...rOny.receivedLoot,
             ...rAq.receivedLoot,
-          ],
+          ].sort((a, b) => {
+            return +b.date - +a.date;
+          }),
         };
+        // Relate ranking with their loot item objects
+        raider.rankings = rRankings.map((r) => {
+          r.loot = [...raider.pendingLoot, ...raider.receivedLoot].find(
+            (l) => l.sheetName.toLowerCase() === r.itemName.toLowerCase()
+          );
+          return r;
+        });
 
         raider.class = findClass(raider);
         return raider;
@@ -208,10 +240,66 @@ export class LootListFacadeService {
     )
   );
 
+  allReceivedLoot$: Observable<EligibleLoot[]> = this.raiders$.pipe(
+    map((raiders) =>
+      raiders.reduce((loot, raider) => {
+        const raiderLoot = raider.receivedLoot.map((r) => ({
+          ...r,
+          raiderName: raider.name,
+        }));
+        return [...loot, ...raiderLoot];
+      }, [])
+    )
+  );
+
+  allLoot$: Observable<Loot[]> = this.raiders$.pipe(
+    map((raiders) =>
+      raiders.reduce((loot, raider) => {
+        const raiderLoot = [...raider.pendingLoot, ...raider.receivedLoot].map(
+          (l) => ({
+            ...l,
+          })
+        );
+        return [...loot, ...raiderLoot];
+      }, [])
+    ),
+    map((loot) => uniqBy(loot, 'id'))
+  );
+
   constructor(
     private state: StateService,
-    private lootListService: LootListService
-  ) {}
+    private lootListService: LootListService,
+    private cache: CacheService
+  ) {
+    // ensure initial load of data
+    this.loadData.next();
+    this.raiders$.pipe(first()).subscribe();
+
+    // Handle Auto Reload
+    this.state.autoUpdate$
+      .pipe(
+        switchMap((autoUpdate) => (autoUpdate ? timer(0, 60000) : NEVER)),
+        tap(() => this.reloadData())
+      )
+      .subscribe();
+  }
+
+  getRankedLootGroups(itemName: string): Observable<LootGroup[]> {
+    return this.allEligibleLoot$.pipe(
+      map((allLoot) => {
+        if (!itemName) {
+          return [];
+        }
+        return allLoot.filter(
+          (l) => l.name.toLowerCase() === itemName.toLowerCase()
+        );
+      }),
+      map((rankings) => {
+        // build iterable / sortable groups by points
+        return this.groupAndSort(rankings);
+      })
+    );
+  }
 
   /**
    * Takes all eligible loot across all raiders who want an item.
@@ -237,5 +325,11 @@ export class LootListFacadeService {
     }, []);
     // Finally, sort all of the groups with the highest oints on top
     return rankedGroups.sort((a, b) => b.points - a.points);
+  }
+
+  reloadData() {
+    return this.cache.clear().then(() => {
+      this.loadData.next();
+    });
   }
 }

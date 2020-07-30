@@ -5,7 +5,6 @@ import { SheetData } from './models/sheet-data.model';
 import { CacheService } from '../cache/cache.service';
 import { of, from } from 'rxjs';
 import { switchMap, map } from 'rxjs/operators';
-import setHours from 'date-fns/setHours';
 
 @Injectable({
   providedIn: 'root'

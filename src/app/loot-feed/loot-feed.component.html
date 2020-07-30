@@ -2,11 +2,19 @@
 <article class="media" *ngFor="let loot of recentLoot$ | async">
   <div class="media-content">
     <div class="content">
-      <p class="has-text-right">
-        <strong>{{ loot.raiderName }}</strong> - 
+      <p class="has-text-right is-size-5">
+        <strong
+          ><a [routerLink]="['/raider', loot.raiderName]"
+            >{{ loot.raiderName }}
+          </a></strong
+        >
+        -
         <small>{{ loot.date | date }}</small>
         <br />
-        {{ loot.name }} - <small>{{ loot.source }}</small>
+        <a [appWowheadTooltip]="loot" [routerLink]="['/item', loot.id]">{{
+          loot.name
+        }}</a>
+        - <small>{{ loot.source }}</small>
       </p>
     </div>
   </div>

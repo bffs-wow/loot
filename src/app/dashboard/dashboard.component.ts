@@ -7,8 +7,7 @@ import { StateService } from "../state/state.service";
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  raiders$ = this.state.raiders$;
-  constructor(private state: StateService) { }
+  constructor(public state: StateService) { }
 
   ngOnInit(): void {
   }

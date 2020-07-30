@@ -1,14 +1,22 @@
-<section class="section" *ngIf="raiders$ | async as raiders">
+<section class="section" *ngIf="state.raiders$ | async as raiders">
   <div class="tile is-ancestor">
     <div class="tile is-vertical is-8">
       <div class="tile">
         <div class="tile is-parent is-vertical">
           <article class="tile is-child box is-dark">
-            <app-loot-list></app-loot-list>
+            <ng-container
+              *ngIf="state.selectedRaider$ | async as raider; else noRaider"
+            >
+              <app-loot-list [raider]="raider"></app-loot-list>
+            </ng-container>
+            <ng-template #noRaider>
+              Select a Raider from the top-right header dropdown.
+            </ng-template>
           </article>
         </div>
         <div class="tile is-parent">
           <article class="tile is-child box is-dark">
+            <p class="title">Loot Lookup</p>
             <app-loot-lookup></app-loot-lookup>
           </article>
         </div>

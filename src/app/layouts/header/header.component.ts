@@ -3,7 +3,8 @@ import { StateService } from 'src/app/state/state.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faSync } from '@fortawesome/free-solid-svg-icons';
+import { LootListFacadeService } from 'src/app/loot-list/loot-list.facade';
 
 @Component({
   selector: 'app-header',
@@ -13,8 +14,13 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 export class HeaderComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject<boolean>();
   form: FormGroup;
-  faSpinner = faSpinner;
-  constructor(public state: StateService, public fb: FormBuilder) {}
+  faSync = faSync;
+  autoUpdate = false;
+  constructor(
+    public state: StateService,
+    private lootListFacade: LootListFacadeService,
+    private fb: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -44,5 +50,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.destroyed$.next();
   }
 
-  raiderSelected() {}
+  reloadData() {
+    this.lootListFacade.reloadData();
+  }
+
+  autoUpdateToggled() {
+    this.state.setState({ autoUpdate: this.autoUpdate });
+  }
+
+  clearRaider() {
+    const raiderControl = this.form.get('selectedRaider') as FormControl;
+    raiderControl.setValue(null);
+  }
 }

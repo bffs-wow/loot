@@ -1,6 +1,6 @@
 <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item">
+    <a class="navbar-item" [routerLink]="['/home']">
       Synergy Loot
     </a>
 
@@ -26,6 +26,7 @@
       <div class="navbar-item is-expanded">
         <ng-select
           formControlName="selectedRaider"
+          *ngIf="!(this.state.selectedRaider$ | async)"
           [items]="state.raiders$ | async"
           bindLabel="name"
           placeholder="Select your character"
@@ -53,6 +54,35 @@
             {{ item.name }}
           </ng-template>
         </ng-select>
+        <div *ngIf="this.state.selectedRaider$ | async as raider">
+          <div class="tags has-addons">
+            <span class="tag is-primary"
+              >Welcome,
+              <a [routerLink]="['/raider', raider.name]">
+                {{ raider.name }} </a
+              >!</span
+            >
+            <a class="tag is-black is-delete" (click)="clearRaider()"></a>
+          </div>
+        </div>
+      </div>
+      <div class="navbar-item">
+        <a class="button" (click)="reloadData()">
+          <span class="icon">
+            <fa-icon [icon]="faSync" [spin]="autoUpdate"></fa-icon>
+          </span>
+        </a>
+      </div>
+      <div class="navbar-item">
+        <label class="checkbox">
+          <input
+            type="checkbox"
+            [ngModelOptions]="{ standalone: true }"
+            [(ngModel)]="autoUpdate"
+            (ngModelChange)="autoUpdateToggled()"
+          />
+          Auto Update (60 seconds)
+        </label>
       </div>
     </div>
   </div>

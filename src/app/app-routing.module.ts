@@ -1,16 +1,27 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ItemPageComponent } from './item-page/item-page.component';
+import { RaiderPageComponent } from './raider-page/raider-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
-  path: 'home',
-  component: DashboardComponent
-}];
+    path: 'home',
+    component: DashboardComponent,
+  },
+  {
+    path: 'item/:id',
+    component: ItemPageComponent
+  },
+  {
+    path: 'raider/:name',
+    component: RaiderPageComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

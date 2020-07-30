@@ -35,7 +35,7 @@ export function findClass(raider: Raider) {
 export interface Raider {
   name: string;
   class: Class;
-  attendancePoints: Number;
+  attendancePoints: number;
   attendance: Attendance[];
   rankings: Ranking[];
   receivedLoot: LootReceipt[];

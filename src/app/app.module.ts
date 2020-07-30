@@ -12,6 +12,9 @@ import { LootFeedComponent } from './loot-feed/loot-feed.component';
 import { LootLookupComponent } from './loot-lookup/loot-lookup.component';
 import { LootListComponent } from './loot-list/loot-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { WowheadTooltipDirective } from './wowhead-tooltips/wowhead-tooltip.directive';
+import { ItemPageComponent } from './item-page/item-page.component';
+import { RaiderPageComponent } from './raider-page/raider-page.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     LootFeedComponent,
     LootLookupComponent,
     LootListComponent,
+    WowheadTooltipDirective,
+    ItemPageComponent,
+    RaiderPageComponent,
   ],
   imports: [
     BrowserModule,

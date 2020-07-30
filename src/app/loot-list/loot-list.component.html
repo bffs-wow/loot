@@ -1,18 +1,58 @@
-<ng-container *ngIf="state.selectedRaider$ | async as raider; else noRaider">
-  <p class="title">{{ raider.name }}'s Loot List</p>
-  <article class="media" *ngFor="let ranking of raider.rankings">
-    <figure class="media-left has-text-centered mx-0 my-0" style="width: 5rem;">
-      <h2 class="is-2">{{ ranking.ranking }}</h2>
-    </figure>
-    <div class="media-content">
-      <div class="content">
-        <p class="has-text-left">
-          <strong>{{ ranking.loot }}</strong>
-        </p>
+<p class="title">
+  <a *ngIf="!noRouteLink" [routerLink]="['/raider', raider.name]">
+    {{ raider.name }}'s
+  </a>
+  <ng-container *ngIf="noRouteLink"> {{ raider.name }}'s </ng-container> Loot
+  List
+</p>
+<article class="media" *ngFor="let ranking of raider.rankings">
+  <figure class="media-left has-text-centered mx-0 my-0" style="width: 5rem;">
+    <h2 class="is-2 mb-0">{{ ranking.ranking }}</h2>
+    <small class="is-size-6">
+      <abbr title="Effective Points (ranking + attendance)">{{
+        ranking.ranking + raider.attendancePoints
+      }}</abbr>
+    </small>
+  </figure>
+  <div class="media-content">
+    <nav class="level">
+      <!-- Left side -->
+      <div class="level-left">
+        <div class="level-item">
+          <div class="content">
+            <p class="has-text-left">
+              <strong *ngIf="ranking.loot; else missingLoot"
+                ><a
+                  [appWowheadTooltip]="ranking.loot"
+                  [routerLink]="['/item', ranking.loot.id]"
+                  >{{ ranking.itemName }}</a
+                ></strong
+              >
+              <ng-template #missingLoot>
+                <p class="is-size-4 has-text-danger">
+                  SHEET ISSUE: "{{ ranking.itemName }}"
+                </p>
+              </ng-template>
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </article>
-</ng-container>
-<ng-template #noRaider>
-  Select a Raider from the top-right header dropdown.
-</ng-template>
+      <div class="level-right">
+        <div
+          class="level-item"
+          *ngIf="receivedLoot(ranking.loot) as receivedLoot"
+        >
+          <div class="tags has-addons">
+            <span class="tag is-medium is-primary"
+              ><span class="icon is-large">
+                <fa-icon [icon]="faCheck"></fa-icon> </span
+            ></span>
+            <span class="tag is-medium is-black"
+              >Looted {{ receivedLoot.date | date }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</article>

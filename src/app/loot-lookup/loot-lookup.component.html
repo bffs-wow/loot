@@ -1,5 +1,4 @@
-<p class="title">Loot Lookup</p>
-<div class="form mb-2" [formGroup]="form">
+<div class="form mb-2" [formGroup]="form" *ngIf="!noSearch">
   <ng-select
     [items]="items$ | async"
     bindLabel="name"
@@ -7,6 +6,7 @@
     [trackByFn]="trackByFn"
     [minTermLength]="2"
     [loading]="loading"
+    placeholder="Lookup Rankings for an Item"
     typeToSearchText="Find Loot Rankings"
     [typeahead]="input$"
   >
@@ -26,16 +26,21 @@
   </figure>
   <div class="media-content">
     <div class="content">
-      <p class="has-text-right">
-        {{ group.rankings[0].sheetName }} -
+      <p class="has-text-right is-size-5">
+        <a [appWowheadTooltip]="group.rankings[0]" [routerLink]="['/item', group.rankings[0].id]">{{
+          group.rankings[0].sheetName
+        }}</a>
+        -
         <small *ngIf="group.rankings[0].sheetName !== group.rankings[0].name"
-          >({{ group.rankings[0].name }}) - </small
-        >
+          >({{ group.rankings[0].name }}) -
+        </small>
         <small>{{ group.rankings[0].source }}</small>
         <br /><br />
         <span class="tags">
-          <span class="tag is-info" *ngFor="let raider of group.rankings"
-            >{{ raider.raiderName }} &nbsp;</span
+          <span class="tag is-black" *ngFor="let raider of group.rankings"
+            ><a  [routerLink]="['/raider', raider.raiderName]">
+              {{ raider.raiderName }}
+            </a> &nbsp;</span
           >
         </span>
       </p>
