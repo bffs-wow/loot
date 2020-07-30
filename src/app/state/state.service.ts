@@ -4,6 +4,7 @@ import { Raider } from '../loot-list/models/raider.model';
 import { map, distinctUntilChanged } from 'rxjs/operators';
 import { CacheService } from '../cache/cache.service';
 import pick from 'lodash-es/pick';
+import add from 'date-fns/add';
 
 export interface AppState {
   selectedRaider: Raider;
@@ -44,7 +45,7 @@ export class StateService {
   }
 
   cacheState() {
-    this.cache.set(`APP_STATE`, pick(this.rawState, ['selectedRaider']));
+    this.cache.set(`APP_STATE`, pick(this.rawState, ['selectedRaider']), add(new Date(), { days: 10 }));
   }
 
   restoreCache() {

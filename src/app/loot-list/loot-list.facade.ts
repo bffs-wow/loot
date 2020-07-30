@@ -11,6 +11,7 @@ import {
   switchMap,
   debounceTime,
   shareReplay,
+  withLatestFrom,
 } from 'rxjs/operators';
 import zipObject from 'lodash-es/zipObject';
 import drop from 'lodash-es/drop';
@@ -21,6 +22,7 @@ import {
   concat,
   timer,
   NEVER,
+  zip,
 } from 'rxjs';
 import { SheetData } from './models/sheet-data.model';
 import { EligibleLoot, LootGroup, Loot } from './models/loot.model';
@@ -29,6 +31,7 @@ import groupBy from 'lodash-es/groupBy';
 import uniqBy from 'lodash-es/uniqBy';
 import * as itemData from '../data/items.json';
 import { CacheService } from '../cache/cache.service';
+import Swal from 'sweetalert2';
 
 @Injectable({ providedIn: 'root' })
 export class LootListFacadeService {
@@ -79,12 +82,14 @@ export class LootListFacadeService {
         const raider: Partial<Raider> = {
           name: obj.Raider,
           attendancePoints: parseFloat(obj['Attendance Points']),
-          attendance: raidDates.map((d) => ({
-            date: new Date(d),
-            points: parsePoints(obj[d]),
-          })).sort((a, b) => {
-            return +b.date - +a.date;
-          }),
+          attendance: raidDates
+            .map((d) => ({
+              date: new Date(d),
+              points: parsePoints(obj[d]),
+            }))
+            .sort((a, b) => {
+              return +b.date - +a.date;
+            }),
         };
         return raider;
       });
@@ -173,16 +178,16 @@ export class LootListFacadeService {
   );
 
   /**
-   * Join data across sheets to populate full `Raider` objects
+   * After we get data from every sheet, join it to populate full `Raider` objects.
    */
-  raiders$: Observable<Raider[]> = combineLatest([
+  raiders$: Observable<Raider[]> = zip(
     this.attendance$,
     this.rankings$,
     this.bwlLoot$,
     this.mcLoot$,
     this.onyLoot$,
-    this.aq40Loot$,
-  ]).pipe(
+    this.aq40Loot$
+  ).pipe(
     map(([attendance, rankings, bwl, mc, ony, aq]) => {
       return attendance.map((rAtt) => {
         const rRankings = rankings.filter((r) => r.raider === rAtt.name);
@@ -223,9 +228,25 @@ export class LootListFacadeService {
         return raider;
       });
     }),
-    tap((raiders) => {
+    withLatestFrom(this.lootListService.lastCallCached$),
+    tap(([raiders, wasCached]) => {
       this.state.setState({ raiders });
-    })
+      // Only notify upon fresh data retrieval
+      if (!wasCached) {
+        Swal.fire({
+          position: 'top-end',
+          toast: true,
+          icon: 'success',
+          title: 'Data Loaded from Google Sheet!',
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    }),
+    // Remove cache flag from result
+    map(([raiders]) => raiders),
+    // Store the result - only recalculate when new data arrives from the sheet
+    shareReplay(1)
   );
 
   allEligibleLoot$: Observable<EligibleLoot[]> = this.raiders$.pipe(
@@ -328,6 +349,14 @@ export class LootListFacadeService {
   }
 
   reloadData() {
+    Swal.fire({
+      position: 'top-end',
+      toast: true,
+      icon: 'info',
+      title: 'Reloading...',
+      showConfirmButton: false,
+      timer: 1500,
+    });
     return this.cache.clear().then(() => {
       this.loadData.next();
     });

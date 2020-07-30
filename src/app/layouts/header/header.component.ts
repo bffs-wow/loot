@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   autoUpdate = false;
   constructor(
     public state: StateService,
-    private lootListFacade: LootListFacadeService,
+    public lootListFacade: LootListFacadeService,
     private fb: FormBuilder
   ) {}
 

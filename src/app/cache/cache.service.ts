@@ -16,22 +16,18 @@ export class CacheService {
 
   get<T>(key: string): Promise<T | null> {
     const now = new Date();
-    return localForage
-      .getItem<CacheEntry<T>>(`${key}-${environment.cache_bust}`)
-      .then((v) => {
-        if (v === null) {
-          return null;
-        }
-        v.expires = new Date(v.expires);
-        // not expired: return the value
-        if (now < v.expires) {
-          return v.val;
-        }
-        // Expired: return null
-        return localForage
-          .removeItem(`${key}-${environment.cache_bust}`)
-          .then(() => null);
-      });
+    return localForage.getItem<CacheEntry<T>>(this.makeKey(key)).then((v) => {
+      if (v === null) {
+        return null;
+      }
+      v.expires = new Date(v.expires);
+      // not expired: return the value
+      if (now < v.expires) {
+        return v.val;
+      }
+      // Expired: return null
+      return localForage.removeItem(this.makeKey(key)).then(() => null);
+    });
   }
 
   set<T>(key: string, val: T, expires: Date = null) {
@@ -39,13 +35,23 @@ export class CacheService {
       const now = new Date();
       expires = add(now, { minutes: 15 });
     }
-    return localForage.setItem<CacheEntry<T>>(
-      `${key}-${environment.cache_bust}`,
-      { val, expires }
-    );
+    return localForage.setItem<CacheEntry<T>>(this.makeKey(key), {
+      val,
+      expires,
+    });
+  }
+
+  has(key: string) {
+    return localForage.keys().then((keys) => keys.includes(this.makeKey(key)));
   }
 
   clear() {
     return localForage.clear();
+  }
+  /**
+   * Suffix provided keys with cache busting setting
+   */
+  private makeKey(key) {
+    return `${key}-${environment.cache_bust}`;
   }
 }

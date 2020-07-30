@@ -15,6 +15,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WowheadTooltipDirective } from './wowhead-tooltips/wowhead-tooltip.directive';
 import { ItemPageComponent } from './item-page/item-page.component';
 import { RaiderPageComponent } from './raider-page/raider-page.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { RaiderPageComponent } from './raider-page/raider-page.component';
     ReactiveFormsModule,
     LayoutsModule,
     FontAwesomeModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
