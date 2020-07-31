@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   faSync = faSync;
   faFileExcel = faFileExcel;
   autoUpdate = false;
+  isActive = false;
   constructor(
     public state: StateService,
     public lootListFacade: LootListFacadeService,
