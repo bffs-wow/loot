@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Raider } from './models/raider.model';
-import { EligibleLoot, LootReceipt } from './models/loot.model';
+import {  LootReceipt } from './models/loot.model';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { Ranking } from './models/ranking.model';
 
 @Component({
   selector: 'app-loot-list',
@@ -16,9 +17,9 @@ export class LootListComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  receivedLoot(loot: EligibleLoot): LootReceipt {
-    if (this.raider && loot) {
-      return this.raider.receivedLoot.find((l) => l.id === loot.id);
+  receivedLoot(ranking: Ranking): LootReceipt {
+    if (this.raider && ranking) {
+      return this.raider.receivedLoot.find((l) => l.sheetName === ranking.itemName);
     }
     return null;
   }
