@@ -40,18 +40,36 @@
       <div class="level-right">
         <div
           class="level-item"
-          *ngIf="receivedLoot(ranking) as receivedLoot"
+          *ngIf="receivedLoot(ranking) as receivedLoot; else notReceived"
         >
-          <div class="tags has-addons">
-            <span class="tag is-medium is-primary"
+          <div class="tags has-addons" title="The raider looted this item already on the specified date.">
+            <span class="tag is-medium is-success"
               ><span class="icon is-large">
                 <fa-icon [icon]="faCheck"></fa-icon> </span
             ></span>
             <span class="tag is-medium is-black"
-              >Looted {{ receivedLoot.date | date }}</span
+              >{{ receivedLoot.date | date }}</span
             >
           </div>
         </div>
+        <ng-template #notReceived>
+          <div class="tags has-addons" *ngIf="competition[ranking.itemName]">
+            <span
+              class="tag is-medium"
+              [class.is-success]="competition[ranking.itemName].length === 0"
+              [class.is-primary]="competition[ranking.itemName].length <= 3"
+              ><span class="icon is-large">
+                <fa-icon [icon]="getCompetitionIcon(competition[ranking.itemName].length)"></fa-icon> </span
+            ></span>
+            <span class="tag is-medium is-black"
+              ><span *ngIf="competition[ranking.itemName].length === 0" title="This raider will receive the next drop of this item!"
+                >Up Next!</span
+              ><span *ngIf="competition[ranking.itemName].length > 0" title="How many people are ahead or tied with the raider on this item.">
+                Competition: {{ competition[ranking.itemName].length }}
+              </span></span
+            >
+          </div>
+        </ng-template>
       </div>
     </nav>
   </div>
