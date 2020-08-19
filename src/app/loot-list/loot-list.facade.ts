@@ -39,7 +39,7 @@ export class LootListFacadeService {
   private loadData = new ReplaySubject(1);
   private loadData$ = this.loadData.asObservable();
   /**
-   * Convert tanking sheet into usable `Ranking` objects
+   * Convert ranking sheet into usable `Ranking` objects
    */
   rankings$ = this.loadData$.pipe(
     switchMap(() => this.lootListService.getData('Rankings', 'A1:D3000')),

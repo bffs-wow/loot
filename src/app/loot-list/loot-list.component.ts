@@ -24,7 +24,9 @@ export class LootListComponent implements OnInit, OnChanges {
   ngOnChanges(changes) {
     if (changes.raider) {
       combineLatest(
-        this.raider.rankings.map((ranking) =>
+        this.raider.rankings
+        .filter(r => !!r.loot)
+        .map((ranking) =>
           this.getCompetition(ranking).pipe(
             map((group) => ({ group, ranking }))
           )

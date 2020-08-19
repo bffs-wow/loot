@@ -6,7 +6,7 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  backgrounds = [1, 2, 3, 4, 5];
+  backgrounds = [1, 2, 3, 4, 5, 6];
   constructor(private renderer: Renderer2) {}
 
   ngOnInit() {
