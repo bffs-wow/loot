@@ -228,9 +228,19 @@ export class LootListFacadeService {
         return raider;
       });
     }),
-    withLatestFrom(this.lootListService.lastCallCached$),
-    tap(([raiders, wasCached]) => {
+    withLatestFrom(
+      this.lootListService.lastCallCached$,
+      this.state.selectedRaider$
+    ),
+    tap(([raiders, wasCached, selectedRadier]) => {
       this.state.setState({ raiders });
+      // If there is a selected raider, ensure they are updated with the latest data from the sheet
+      if (selectedRadier) {
+        const updatedRaider = raiders.find(
+          (r) => r.name === selectedRadier.name
+        );
+        this.state.setState({ selectedRaider: updatedRaider });
+      }
       // Only notify upon fresh data retrieval
       if (!wasCached) {
         Swal.fire({
