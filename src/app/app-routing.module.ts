@@ -12,12 +12,17 @@ const routes: Routes = [
   },
   {
     path: 'item/:id',
-    component: ItemPageComponent
+    component: ItemPageComponent,
   },
   {
     path: 'raider/:name',
-    component: RaiderPageComponent
-  }
+    component: RaiderPageComponent,
+  },
+  {
+    path: 'statistics',
+    loadChildren: () =>
+      import('./statistics/statistics.module').then((m) => m.StatisticsModule),
+  },
 ];
 
 @NgModule({

@@ -4,7 +4,7 @@ import { StateService } from '../state/state.service';
 import { LootListFacadeService } from '../loot-list/loot-list.facade';
 import { Raider } from '../loot-list/models/raider.model';
 import { Observable, combineLatest } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import {
   Attendance,
   AttendancePoints,
@@ -16,6 +16,8 @@ import {
   faQuestion,
 } from '@fortawesome/free-solid-svg-icons';
 
+import { StatisticsService } from '../statistics/statistics.service';
+
 @Component({
   selector: 'app-raider-page',
   templateUrl: './raider-page.component.html',
@@ -24,9 +26,12 @@ import {
 export class RaiderPageComponent implements OnInit {
   raider$: Observable<Raider>;
 
+  listProgress = undefined;
+
   constructor(
     private route: ActivatedRoute,
     private state: StateService,
+    private statisticsService: StatisticsService,
     private lootListFacade: LootListFacadeService
   ) {}
 
@@ -35,7 +40,12 @@ export class RaiderPageComponent implements OnInit {
       this.route.params,
       this.lootListFacade.raiders$,
     ]).pipe(
-      map(([params, raiders]) => raiders.find((l) => l.name === params.name))
+      map(([params, raiders]) => raiders.find((l) => l.name === params.name)),
+      tap((raider) => {
+        this.listProgress = this.statisticsService.getRaiderListProgress(
+          raider
+        );
+      })
     );
   }
 

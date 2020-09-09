@@ -1,0 +1,70 @@
+<div class="columns is-multiline">
+  <div class="column is-12">
+    <nav class="level is-mobile">
+      <div class="level-item has-text-centered box">
+        <div>
+          <p class="heading">Raiders</p>
+          <p class="title">{{ raiderCount }}</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered box">
+        <div>
+          <p class="heading">Total Loot Received (All Time)</p>
+          <p class="title">{{ lootReceived }}</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered box">
+        <div>
+          <p class="heading">Total Rankings (This Phase)</p>
+          <p class="title">{{ totalRanked }}</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered box">
+        <div>
+          <p class="heading">Average Attendance Points</p>
+          <p class="title">{{ avgAttendance.toFixed(2) }}</p>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="column is-12">
+    <div class="box has-background-dark">
+      <div class="has-text-centered" *ngIf="totalProgress">
+        <progress
+          class="progress is-info mb-0"
+          max="100"
+          [value]="totalProgress.progress"
+        ></progress>
+        <span class="has-text-centered is-size-5 is-grey-light"
+          >Total Loot Progress (This Phase):
+          {{ totalProgress.rankingsReceived }} /
+          {{ totalProgress.rankings }}</span
+        >
+      </div>
+    </div>
+  </div>
+  <div class="column is-12">
+    <nav class="level is-mobile">
+      <div class="level-item box" *ngIf="mostPopularItems">
+        <div>
+          <p class="heading">Most Popular Items</p>
+          <ol>
+            <li *ngFor="let item of mostPopularItems">
+              {{ item.ranking.loot.name }} ({{ item.sum }})
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="level-item box" *ngIf="mostCommonItems">
+        <div>
+          <p class="heading">Most Commonly Looted Items</p>
+          <ol>
+            <li *ngFor="let item of mostCommonItems">
+              {{ item.item.name }} ({{ item.count }})
+            </li>
+          </ol>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>

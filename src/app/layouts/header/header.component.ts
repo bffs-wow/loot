@@ -3,7 +3,7 @@ import { StateService } from 'src/app/state/state.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
-import { faSync, faFileExcel } from '@fortawesome/free-solid-svg-icons';
+import { faSync, faFileExcel, faChartPie } from '@fortawesome/free-solid-svg-icons';
 import { LootListFacadeService } from 'src/app/loot-list/loot-list.facade';
 
 @Component({
@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   form: FormGroup;
   faSync = faSync;
   faFileExcel = faFileExcel;
+  faChartPie = faChartPie;
   autoUpdate = false;
   isActive = false;
   constructor(

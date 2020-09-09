@@ -11,6 +11,12 @@
             width="15"
             [src]="'./assets/images/class-icons/tiny/' + raider.class + '.gif'"
           />{{ raider.class }}
+          <br />
+          <div class="has-text-centered">
+            <progress class="progress mb-0" max="100" [value]="listProgress.progress"></progress>
+            <span class="has-text-centered is-size-5 is-grey-light">List Progress: {{listProgress.rankingsReceived}} / {{listProgress.rankings}}</span>
+          </div>
+          
         </h2>
       </div>
     </div>
