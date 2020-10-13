@@ -14,9 +14,12 @@ import {
   faExclamationTriangle,
   faTimes,
   faQuestion,
+  faChartLine,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { StatisticsService } from '../statistics/statistics.service';
+import { raiderToWowNameMap } from '../data/raider-to-wow-name';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-raider-page',
@@ -25,6 +28,7 @@ import { StatisticsService } from '../statistics/statistics.service';
 })
 export class RaiderPageComponent implements OnInit {
   raider$: Observable<Raider>;
+  faChartLine = faChartLine;
 
   listProgress = undefined;
 
@@ -80,5 +84,15 @@ export class RaiderPageComponent implements OnInit {
         return 'is-info';
       }
     }
+  }
+
+  makeLogsUrl(raider: Raider) {
+    let name = raider.name;
+    // check if char name is diff from sheet name
+    if (raiderToWowNameMap[name]) {
+      name = raiderToWowNameMap[name];
+    }
+
+    return `${environment.logsCharacterBaseUrl}${name}`;
   }
 }

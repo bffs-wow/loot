@@ -3,7 +3,14 @@
     <div class="hero-body">
       <div class="container">
         <h1 class="title">
-          {{ raider.name }}
+          <a
+            [href]="makeLogsUrl(raider)"
+            target="_blank"
+            title="Open Warcraft Logs"
+            ><span>
+              {{ raider.name }} </span
+            >&nbsp;<span class="icon"> <fa-icon [icon]="faChartLine"></fa-icon> </span
+          ></a>
         </h1>
         <h2 class="subtitle">
           <img
@@ -13,10 +20,16 @@
           />{{ raider.class }}
           <br />
           <div class="has-text-centered">
-            <progress class="progress mb-0" max="100" [value]="listProgress.progress"></progress>
-            <span class="has-text-centered is-size-5 is-grey-light">List Progress: {{listProgress.rankingsReceived}} / {{listProgress.rankings}}</span>
+            <progress
+              class="progress mb-0"
+              max="100"
+              [value]="listProgress.progress"
+            ></progress>
+            <span class="has-text-centered is-size-5 is-grey-light"
+              >List Progress: {{ listProgress.rankingsReceived }} /
+              {{ listProgress.rankings }}</span
+            >
           </div>
-          
         </h2>
       </div>
     </div>
@@ -30,9 +43,7 @@
       </div>
       <div class="column is-4">
         <div class="box">
-          <p class="title">
-            Loot History
-          </p>
+          <p class="title">Loot History</p>
 
           <article class="media" *ngFor="let loot of raider.receivedLoot">
             <div class="media-content">
@@ -54,7 +65,10 @@
       <div class="column is-3">
         <div class="box">
           <p class="title">
-            Attendance <small class="is-size-5 has-text-right">(Total: {{ raider.attendancePoints }})</small>
+            Attendance
+            <small class="is-size-5 has-text-right"
+              >(Total: {{ raider.attendancePoints }})</small
+            >
           </p>
 
           <article class="media" *ngFor="let attendance of raider.attendance">
