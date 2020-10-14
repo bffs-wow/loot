@@ -8,6 +8,7 @@ import {
   faFileExcel,
   faChartPie,
   faChartLine,
+  faUsers,
 } from '@fortawesome/free-solid-svg-icons';
 import { LootListFacadeService } from 'src/app/loot-list/loot-list.facade';
 import { environment } from 'src/environments/environment';
@@ -27,6 +28,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   faFileExcel = faFileExcel;
   faChartPie = faChartPie;
   faChartLine = faChartLine;
+  faUsers = faUsers;
   autoUpdate = false;
   isActive = false;
   constructor(

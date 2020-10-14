@@ -3,12 +3,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ItemPageComponent } from './item-page/item-page.component';
 import { RaiderPageComponent } from './raider-page/raider-page.component';
+import { RosterPageComponent } from './roster-page/roster-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',
     component: DashboardComponent,
+  },
+  {
+    path: 'roster',
+    component: RosterPageComponent
   },
   {
     path: 'item/:id',

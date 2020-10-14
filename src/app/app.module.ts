@@ -16,6 +16,7 @@ import { WowheadTooltipDirective } from './wowhead-tooltips/wowhead-tooltip.dire
 import { ItemPageComponent } from './item-page/item-page.component';
 import { RaiderPageComponent } from './raider-page/raider-page.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { RosterPageComponent } from './roster-page/roster-page.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     WowheadTooltipDirective,
     ItemPageComponent,
     RaiderPageComponent,
+    RosterPageComponent,
   ],
   imports: [
     BrowserModule,

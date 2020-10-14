@@ -1,0 +1,26 @@
+<div class="container box">
+  <div class="columns is-multiline">
+    <div class="column is-6" *ngFor="let class of allClasses">
+      <nav
+        class="panel is-primary"
+        *ngIf="makeClassObs(class) | async as raiders"
+      >
+        <p class="panel-heading">
+          <img
+            height="15"
+            width="15"
+            [src]="'./assets/images/class-icons/tiny/' + class + '.gif'"
+          />
+          &nbsp; {{ class }} <small>({{ raiders.length }})</small>
+        </p>
+        <a
+          class="panel-block"
+          *ngFor="let raider of raiders"
+          [routerLink]="['/raider', raider.name]"
+        >
+          {{ raider.name }}
+        </a>
+      </nav>
+    </div>
+  </div>
+</div>
