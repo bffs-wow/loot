@@ -14,6 +14,9 @@ import {
   filter,
 } from 'rxjs/operators';
 import { LootListFacadeService } from '../loot-list/loot-list.facade';
+import { LootAnnounceService } from '../loot-announce/loot-announce.service';
+import { faBullhorn } from '@fortawesome/free-solid-svg-icons';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-loot-lookup',
@@ -32,6 +35,8 @@ export class LootLookupComponent implements OnInit, OnDestroy {
   items$: Observable<Loot[]>;
   loading = false;
   input$ = new Subject<string>();
+
+  faBullhorn = faBullhorn
 
   allItems$: Observable<Loot[]> = this.lootListFacade.allEligibleLoot$.pipe(
     map((loot) => {
@@ -52,7 +57,8 @@ export class LootLookupComponent implements OnInit, OnDestroy {
   constructor(
     public state: StateService,
     private lootListFacade: LootListFacadeService,
-    public fb: FormBuilder
+    public fb: FormBuilder,
+    public lootAnnounceService: LootAnnounceService,
   ) {}
 
   ngOnInit(): void {
@@ -90,6 +96,12 @@ export class LootLookupComponent implements OnInit, OnDestroy {
       filter((i) => !!i),
       switchMap((item) => this.lootListFacade.getRankedLootGroups(item.name))
     );
+
+    
+  }
+
+  async copyToClipBoard(grp: LootGroup[]) {
+    await this.lootAnnounceService.copyLootAnnouncement(grp);
   }
 
   ngOnDestroy() {
