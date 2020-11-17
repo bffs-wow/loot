@@ -1,0 +1,1105 @@
+[
+  { "name": "Angelista's Grasp", "source": "Blackwing Lair", "id": "19388" },
+  {
+    "name": "Band of Dark Dominion",
+    "source": "Blackwing Lair",
+    "id": "19434"
+  },
+  {
+    "name": "Band of Forced Concentration",
+    "source": "Blackwing Lair",
+    "id": "19403"
+  },
+  {
+    "name": "Belt of Transcendence",
+    "source": "Blackwing Lair",
+    "id": "16925"
+  },
+  {
+    "name": "Bindings of Transcendence",
+    "source": "Blackwing Lair",
+    "id": "16926"
+  },
+  {
+    "name": "Robes of Transcendence",
+    "source": "Blackwing Lair",
+    "id": "16923"
+  },
+  { "name": "Black Ash Robe", "source": "Blackwing Lair", "id": "19399" },
+  {
+    "name": "Bracers of Arcane Accuracy",
+    "source": "Blackwing Lair",
+    "id": "19374"
+  },
+  { "name": "Claw of Chromaggus", "source": "Blackwing Lair", "id": "19347" },
+  {
+    "name": "Cloak of the Brood Lord",
+    "source": "Blackwing Lair",
+    "id": "19378"
+  },
+  { "name": "Ebony Flame Gloves", "source": "Blackwing Lair", "id": "19407" },
+  { "name": "Essence Gatherer", "source": "Blackwing Lair", "id": "19435" },
+  { "name": "Firemaw's Clutch", "source": "Blackwing Lair", "id": "19400" },
+  {
+    "name": "Gloves of Rapid Evolution",
+    "source": "Blackwing Lair",
+    "id": "19369"
+  },
+  { "name": "Head of Nefarian", "source": "Blackwing Lair", "id": "19002" },
+  { "name": "Lok'amir il Romathis", "source": "Blackwing Lair", "id": "19360" },
+  {
+    "name": "Mantle of the Blackwing Cabal",
+    "source": "Blackwing Lair",
+    "id": "19370"
+  },
+  {
+    "name": "Mish'undare, Circlet of the Mind Flayer",
+    "source": "Blackwing Lair",
+    "id": "19375"
+  },
+  { "name": "Neltharion's Tear", "source": "Blackwing Lair", "id": "19379" },
+  {
+    "name": "Pendant of the Fallen Dragon",
+    "source": "Blackwing Lair",
+    "id": "19371"
+  },
+  { "name": "Rejuvenating Gem", "source": "Blackwing Lair", "id": "19395" },
+  { "name": "Ring of Blackrock", "source": "Blackwing Lair", "id": "19397" },
+  {
+    "name": "Shadow Wing Focus Staff",
+    "source": "Blackwing Lair",
+    "id": "19355"
+  },
+  { "name": "Shimmering Geta", "source": "Blackwing Lair", "id": "19391" },
+  {
+    "name": "Shroud of Pure Thought",
+    "source": "Blackwing Lair",
+    "id": "19430"
+  },
+  {
+    "name": "Staff of the Shadow Flame",
+    "source": "Blackwing Lair",
+    "id": "19356"
+  },
+  { "name": "Band of Sulfuras", "source": "Molten Core", "id": "19138" },
+  { "name": "Cauterizing Band", "source": "Molten Core", "id": "19140" },
+  { "name": "Choker of Enlightenment", "source": "Molten Core", "id": "17109" },
+  { "name": "Choker of the Fire Lord", "source": "Molten Core", "id": "18814" },
+  { "name": "Magma Tempered Boots", "source": "Molten Core", "id": "18824" },
+  {
+    "name": "Essence of the Pure Flame",
+    "source": "Molten Core",
+    "id": "18815"
+  },
+  { "name": "Fire Runed Grimoire", "source": "Molten Core", "id": "19142" },
+  { "name": "Fireproof Cloak", "source": "Molten Core", "id": "18811" },
+  { "name": "Girdle of Prophecy", "source": "Molten Core", "id": "16817" },
+  { "name": "Gloves of Prophecy", "source": "Molten Core", "id": "16812" },
+  {
+    "name": "Leggings of Transcendence",
+    "source": "Molten Core",
+    "id": "16922"
+  },
+  { "name": "Manastorm Leggings", "source": "Molten Core", "id": "18872" },
+  { "name": "Ring of Spell Power", "source": "Molten Core", "id": "19147" },
+  { "name": "Robe of Volatile Power", "source": "Molten Core", "id": "19145" },
+  {
+    "name": "Sash of Whispered Secrets",
+    "source": "Molten Core",
+    "id": "18809"
+  },
+  { "name": "Seal of the Archmagus", "source": "Molten Core", "id": "17110" },
+  { "name": "Shard of the Flame", "source": "Molten Core", "id": "17082" },
+  {
+    "name": "Talisman of Ephemeral Power",
+    "source": "Molten Core",
+    "id": "18820"
+  },
+  { "name": "Vambraces of Prophecy", "source": "Molten Core", "id": "16819" },
+  {
+    "name": "Ancient Cornerstone Grimoire",
+    "source": "Onyxia's Lair",
+    "id": "17067"
+  },
+  { "name": "Sapphiron Drape", "source": "Onyxia's Lair", "id": "17078" },
+  { "name": "Shard of the Scale", "source": "Onyxia's Lair", "id": "17064" },
+  {
+    "name": "Amulet of Vek'nilash",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21608"
+  },
+  {
+    "name": "Angelista's Charm",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21690"
+  },
+  {
+    "name": "Boots of Epiphany",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21600"
+  },
+  {
+    "name": "Bracelets of Royal Redemption",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21604"
+  },
+  {
+    "name": "Burrower Bracers",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21611"
+  },
+  {
+    "name": "Cape of the Trinity",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21697"
+  },
+  {
+    "name": "Cloak of Clarity",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21583"
+  },
+  {
+    "name": "Cloak of the Devoured",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "22731"
+  },
+  {
+    "name": "Cloak of Untold Secrets",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21627"
+  },
+  {
+    "name": "Creeping Vine Helm",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21669"
+  },
+  {
+    "name": "Dark Storm Gauntlets",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21585"
+  },
+  {
+    "name": "Don Rigoberto's Lost Hat",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21615"
+  },
+  { "name": "Eye of C'Thun", "source": "Temple of Ahn'Qiraj", "id": "21221" },
+  {
+    "name": "Eyestalk Waist Cord",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "22730"
+  },
+  {
+    "name": "Fetish of the Sand Reaver",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21647"
+  },
+  {
+    "name": "Garb of Royal Ascension",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21838"
+  },
+  {
+    "name": "Gloves of the Messiah",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21619"
+  },
+  {
+    "name": "Grasp of the Old God",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21582"
+  },
+  {
+    "name": "Husk of the Old God",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "20933"
+  },
+  {
+    "name": "Imperial Qiraji Regalia",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21237"
+  },
+  {
+    "name": "Necklace of Purity",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21678"
+  },
+  {
+    "name": "Ouro's Intact Hide",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "20927"
+  },
+  {
+    "name": "Petrified Scarab",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21685"
+  },
+  {
+    "name": "Qiraji Bindings of Command",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "20928"
+  },
+  {
+    "name": "Recomposed Boots",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21648"
+  },
+  {
+    "name": "Regenerating Belt of Vek'nilash",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21609"
+  },
+  {
+    "name": "Ring of Swarming Thought",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21707"
+  },
+  {
+    "name": "Ring of the Devoured",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21681"
+  },
+  {
+    "name": "Ring of the Martyr",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21620"
+  },
+  {
+    "name": "Ritssyn's Ring of Chaos",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21836"
+  },
+  {
+    "name": "Robes of the Battleguard",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21671"
+  },
+  {
+    "name": "Robes of the Guardian Saint",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21663"
+  },
+  {
+    "name": "Robes of the Triumvirate",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21696"
+  },
+  {
+    "name": "Royal Scepter of Vek'lor",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21597"
+  },
+  { "name": "Sartura's Might", "source": "Temple of Ahn'Qiraj", "id": "21666" },
+  { "name": "Scarab Brooch", "source": "Temple of Ahn'Qiraj", "id": "21625" },
+  {
+    "name": "Scepter of the False Prophet",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21839"
+  },
+  {
+    "name": "Shard of the Fallen Star",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21891"
+  },
+  {
+    "name": "Sharpened Silithid Femur",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21622"
+  },
+  {
+    "name": "Staff of the Qiraji Prophets",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21128"
+  },
+  { "name": "Ternary Mantle", "source": "Temple of Ahn'Qiraj", "id": "21694" },
+  {
+    "name": "The Burrower's Shell",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "23558"
+  },
+  {
+    "name": "Ukko's Ring of Darkness",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21687"
+  },
+  {
+    "name": "Vanquished Tentacle of C'Thun",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21579"
+  },
+  {
+    "name": "Vek'nilash's Circlet",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "20926"
+  },
+  {
+    "name": "Wand of Qiraji Nobility",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21603"
+  },
+  {
+    "name": "Archimtiros' Ring of Reckoning",
+    "source": "Blackwing Lair",
+    "id": "19376"
+  },
+  {
+    "name": "Rune of Metamorphosis",
+    "source": "Blackwing Lair",
+    "id": "19340"
+  },
+  {
+    "name": "Ashkandi, Greatsword of the Brotherhood",
+    "source": "Blackwing Lair",
+    "id": "19364"
+  },
+  {
+    "name": "Boots of the Shadow Flame",
+    "source": "Blackwing Lair",
+    "id": "19381"
+  },
+  { "name": "Breastplate of Wrath", "source": "Blackwing Lair", "id": "16966" },
+  { "name": "Chromatic Boots", "source": "Blackwing Lair", "id": "19387" },
+  {
+    "name": "Chromatically Tempered Sword",
+    "source": "Blackwing Lair",
+    "id": "19352"
+  },
+  {
+    "name": "Circle of Applied Force",
+    "source": "Blackwing Lair",
+    "id": "19432"
+  },
+  {
+    "name": "Claw of the Black Drake",
+    "source": "Blackwing Lair",
+    "id": "19365"
+  },
+  {
+    "name": "Cloak of Draconic Might",
+    "source": "Blackwing Lair",
+    "id": "19436"
+  },
+  { "name": "Cloak of Firemaw", "source": "Blackwing Lair", "id": "19398" },
+  {
+    "name": "Crul'shorukh, Edge of Chaos",
+    "source": "Blackwing Lair",
+    "id": "19363"
+  },
+  { "name": "Doom's Edge", "source": "Blackwing Lair", "id": "19362" },
+  { "name": "Draconic Avenger", "source": "Blackwing Lair", "id": "19354" },
+  { "name": "Draconic Maul", "source": "Blackwing Lair", "id": "19358" },
+  {
+    "name": "Dragonbreath Hand Cannon",
+    "source": "Blackwing Lair",
+    "id": "19368"
+  },
+  { "name": "Dragonfang Blade", "source": "Blackwing Lair", "id": "19346" },
+  { "name": "Drake Fang Talisman", "source": "Blackwing Lair", "id": "19406" },
+  { "name": "Drake Talon Cleaver", "source": "Blackwing Lair", "id": "19353" },
+  {
+    "name": "Drake Talon Pauldrons",
+    "source": "Blackwing Lair",
+    "id": "19394"
+  },
+  {
+    "name": "Elementium Reinforced Bulwark",
+    "source": "Blackwing Lair",
+    "id": "19349"
+  },
+  {
+    "name": "Elementium Threaded Cloak",
+    "source": "Blackwing Lair",
+    "id": "19386"
+  },
+  { "name": "Emberweave Leggings", "source": "Blackwing Lair", "id": "19433" },
+  {
+    "name": "Girdle of the Fallen Crusader",
+    "source": "Blackwing Lair",
+    "id": "19392"
+  },
+  { "name": "Heartstriker", "source": "Blackwing Lair", "id": "19350" },
+  { "name": "Helm of Endless Rage", "source": "Blackwing Lair", "id": "19372" },
+  {
+    "name": "Interlaced Shadow Jerkin",
+    "source": "Blackwing Lair",
+    "id": "19439"
+  },
+  { "name": "Lifegiving Gem", "source": "Blackwing Lair", "id": "19341" },
+  {
+    "name": "Maladath, Runed Blade of the Black Flight",
+    "source": "Blackwing Lair",
+    "id": "19351"
+  },
+  {
+    "name": "Malfurion's Blessed Bulwark",
+    "source": "Blackwing Lair",
+    "id": "19405"
+  },
+  { "name": "Pauldrons of Wrath", "source": "Blackwing Lair", "id": "16961" },
+  {
+    "name": "Prestor's Talisman of Connivery",
+    "source": "Blackwing Lair",
+    "id": "19377"
+  },
+  { "name": "Sabatons of Wrath", "source": "Blackwing Lair", "id": "16965" },
+  { "name": "Spineshatter", "source": "Blackwing Lair", "id": "19335" },
+  {
+    "name": "Styleen's Impeding Scarab",
+    "source": "Blackwing Lair",
+    "id": "19431"
+  },
+  {
+    "name": "Taut Dragonhide Shoulderpads",
+    "source": "Blackwing Lair",
+    "id": "19389"
+  },
+  { "name": "The Untamed Blade", "source": "Blackwing Lair", "id": "19334" },
+  { "name": "Therazane's Link", "source": "Blackwing Lair", "id": "19380" },
+  {
+    "name": "Aged Core Leather Gloves",
+    "source": "Molten Core",
+    "id": "18823"
+  },
+  { "name": "Band of Accuria", "source": "Molten Core", "id": "17063" },
+  { "name": "Belt of Might", "source": "Molten Core", "id": "16864" },
+  { "name": "Blastershot Launcher", "source": "Molten Core", "id": "17072" },
+  { "name": "Bracers of Might", "source": "Molten Core", "id": "16861" },
+  { "name": "Brutality Blade", "source": "Molten Core", "id": "18832" },
+  {
+    "name": "Cloak of the Shrouded Mists",
+    "source": "Molten Core",
+    "id": "17102"
+  },
+  { "name": "Core Forged Greaves", "source": "Molten Core", "id": "18806" },
+  { "name": "Core Hound Tooth", "source": "Molten Core", "id": "18805" },
+  { "name": "Crown of Destruction", "source": "Molten Core", "id": "18817" },
+  { "name": "Earthshaker", "source": "Molten Core", "id": "17073" },
+  { "name": "Eskhandar's Right Claw", "source": "Molten Core", "id": "18203" },
+  { "name": "Eye of Sulfuras", "source": "Molten Core", "id": "17204" },
+  { "name": "Fireguard Shoulders", "source": "Molten Core", "id": "19139" },
+  { "name": "Flameguard Gauntlets", "source": "Molten Core", "id": "19143" },
+  { "name": "Flamewaker Legplates", "source": "Molten Core", "id": "18861" },
+  { "name": "Gutgore Ripper", "source": "Molten Core", "id": "17071" },
+  { "name": "Heavy Dark Iron Ring", "source": "Molten Core", "id": "18879" },
+  { "name": "Helm of Might", "source": "Molten Core", "id": "16866" },
+  { "name": "Legplates of Might", "source": "Molten Core", "id": "16867" },
+  { "name": "Legplates of Wrath", "source": "Molten Core", "id": "16962" },
+  {
+    "name": "Medallion of Steadfast Might",
+    "source": "Molten Core",
+    "id": "17065"
+  },
+  { "name": "Obsidian Edged Blade", "source": "Molten Core", "id": "18822" },
+  { "name": "Perdition's Blade", "source": "Molten Core", "id": "18816" },
+  { "name": "Quick Strike Ring", "source": "Molten Core", "id": "18821" },
+  { "name": "Sabatons of Might", "source": "Molten Core", "id": "16862" },
+  { "name": "Shadowstrike", "source": "Molten Core", "id": "17074" },
+  { "name": "Spinal Reaper", "source": "Molten Core", "id": "17104" },
+  {
+    "name": "Wristguards of Stability",
+    "source": "Molten Core",
+    "id": "19146"
+  },
+  {
+    "name": "Wristguards of True Flight",
+    "source": "Molten Core",
+    "id": "18812"
+  },
+  { "name": "Deathbringer", "source": "Onyxia's Lair", "id": "17068" },
+  { "name": "Eskhandar's Collar", "source": "Onyxia's Lair", "id": "18205" },
+  { "name": "Head of Onyxia", "source": "Onyxia's Lair", "id": "18422" },
+  { "name": "Helm of Wrath", "source": "Onyxia's Lair", "id": "16963" },
+  { "name": "Ring of Binding", "source": "Onyxia's Lair", "id": "18813" },
+  {
+    "name": "Vis'kag the Bloodletter",
+    "source": "Onyxia's Lair",
+    "id": "17075"
+  },
+  {
+    "name": "Amulet of Foul Warding",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21702"
+  },
+  {
+    "name": "Ancient Qiraji Ripper",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21650"
+  },
+  {
+    "name": "Angelista's Touch",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21695"
+  },
+  {
+    "name": "Anubisath Warhammer",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21837"
+  },
+  {
+    "name": "Badge of the Swarmguard",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21670"
+  },
+  {
+    "name": "Barb of the Sand Reaver",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21635"
+  },
+  { "name": "Barbed Choker", "source": "Temple of Ahn'Qiraj", "id": "21664" },
+  {
+    "name": "Barrage Shoulders",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21699"
+  },
+  {
+    "name": "Beetle Scaled Wristguards",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21708"
+  },
+  {
+    "name": "Belt of Never-ending Agony",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21586"
+  },
+  {
+    "name": "Belt of the Fallen Emperor",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21606"
+  },
+  {
+    "name": "Bile-Covered Gauntlets",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21682"
+  },
+  {
+    "name": "Boots of the Fallen Hero",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21688"
+  },
+  {
+    "name": "Boots of the Redeemed Prophecy",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21704"
+  },
+  {
+    "name": "Boots of the Unwavering Will",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21706"
+  },
+  {
+    "name": "Breastplate of Annihilation",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21814"
+  },
+  {
+    "name": "Carapace of the Old God",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "20929"
+  },
+  {
+    "name": "Cloak of Concentrated Hatred",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21701"
+  },
+  {
+    "name": "Cloak of the Golden Hive",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21621"
+  },
+  {
+    "name": "Dark Edge of Insanity",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21134"
+  },
+  { "name": "Death's Sting", "source": "Temple of Ahn'Qiraj", "id": "21126" },
+  {
+    "name": "Gauntlets of Annihilation",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21581"
+  },
+  {
+    "name": "Gauntlets of Steadfast Determination",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21674"
+  },
+  {
+    "name": "Gauntlets of the Righteous Champion",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21623"
+  },
+  {
+    "name": "Gloves of Enforcement",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21672"
+  },
+  {
+    "name": "Gloves of the Hidden Temple",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21605"
+  },
+  {
+    "name": "Guise of the Devourer",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21693"
+  },
+  {
+    "name": "Hive Defiler Wristguards",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21618"
+  },
+  {
+    "name": "Hive Tunneler's Boots",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21645"
+  },
+  {
+    "name": "Huhuran's Stinger",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21616"
+  },
+  {
+    "name": "Imperial Qiraji Armaments",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21232"
+  },
+  { "name": "Jom Gabbar", "source": "Temple of Ahn'Qiraj", "id": "23570" },
+  {
+    "name": "Kalimdor's Revenge",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21679"
+  },
+  {
+    "name": "Larvae of the Great Worm",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "23557"
+  },
+  {
+    "name": "Legplates of Blazing Light",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21667"
+  },
+  {
+    "name": "Mantle of the Desert Crusade",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21683"
+  },
+  {
+    "name": "Mantle of Wicked Revenge",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21665"
+  },
+  { "name": "Mark of C'Thun", "source": "Temple of Ahn'Qiraj", "id": "22732" },
+  {
+    "name": "Neretzek, The Blood Drinker",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21856"
+  },
+  {
+    "name": "Ooze-ridden Gauntlets",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21691"
+  },
+  {
+    "name": "Pauldrons of the Unrelenting",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21639"
+  },
+  {
+    "name": "Pendant of the Qiraji Guardian",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21700"
+  },
+  {
+    "name": "Qiraji Execution Bracers",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21602"
+  },
+  {
+    "name": "Ring of Emperor Vek'lor",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21601"
+  },
+  {
+    "name": "Ring of the Qiraji Fury",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21677"
+  },
+  {
+    "name": "Royal Qiraji Belt",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21598"
+  },
+  {
+    "name": "Scaled Sand Reaver Leggings",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21651"
+  },
+  {
+    "name": "Silithid Carapace Chestguard",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21652"
+  },
+  { "name": "Silithid Claw", "source": "Temple of Ahn'Qiraj", "id": "21673" },
+  {
+    "name": "Slime-coated Leggings",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21626"
+  },
+  {
+    "name": "Thick Qirajihide Belt",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21675"
+  },
+  { "name": "Triad Girdle", "source": "Temple of Ahn'Qiraj", "id": "21692" },
+  {
+    "name": "Vest of Swift Execution",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21680"
+  },
+  { "name": "Dragon's Touch", "source": "Blackwing Lair", "id": "19367" },
+  { "name": "Nemesis Spaulders", "source": "Blackwing Lair", "id": "16932" },
+  { "name": "Nemesis Gloves", "source": "Blackwing Lair", "id": "16928" },
+  { "name": "Nemesis Belt", "source": "Blackwing Lair", "id": "16933" },
+  { "name": "Nemesis Skullcap", "source": "Onyxia's Lair", "id": "16929" },
+  { "name": "The Black Book", "source": "Blackwing Lair", "id": "19337" },
+  { "name": "Azuresong Mageblade", "source": "Molten Core", "id": "17103" },
+  { "name": "Crimson Shocker", "source": "Molten Core", "id": "17077" },
+  { "name": "Felheart Belt", "source": "Molten Core", "id": "16806" },
+  { "name": "Felheart Horns", "source": "Molten Core", "id": "16808" },
+  {
+    "name": "Gloves of the Hypnotic Flame",
+    "source": "Molten Core",
+    "id": "18808"
+  },
+  { "name": "Mana Igniting Cord", "source": "Molten Core", "id": "19136" },
+  { "name": "Sorcerous Dagger", "source": "Molten Core", "id": "18878" },
+  { "name": "Staff of Dominance", "source": "Molten Core", "id": "18842" },
+  {
+    "name": "Leggings of the Festering Swarm",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21676"
+  },
+  {
+    "name": "Mantle of Phrenic Power",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21686"
+  },
+  {
+    "name": "Qiraji Bindings of Dominance",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "20932"
+  },
+  {
+    "name": "Skin of the Great Sandworm",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "20931"
+  },
+  { "name": "Nemesis Boots", "source": "Blackwing Lair", "id": "16927" },
+  { "name": "Nemesis Robes", "source": "Blackwing Lair", "id": "16931" },
+  { "name": "Nemesis Bracers", "source": "Blackwing Lair", "id": "16934" },
+  { "name": "Felheart Pants", "source": "Molten Core", "id": "16810" },
+  { "name": "Felheart Slippers", "source": "Molten Core", "id": "16803" },
+  { "name": "Nemesis Leggings", "source": "Molten Core", "id": "16930" },
+  { "name": "Bloodfang Chestpiece", "source": "Blackwing Lair", "id": "16905" },
+  { "name": "Bloodfang Spaulders", "source": "Blackwing Lair", "id": "16832" },
+  { "name": "Taut Dragonhide Belt", "source": "Blackwing Lair", "id": "19396" },
+  { "name": "Nightslayer Belt", "source": "Molten Core", "id": "16827" },
+  { "name": "Nightslayer Bracelets", "source": "Molten Core", "id": "16825" },
+  { "name": "Nightslayer Chestpiece", "source": "Molten Core", "id": "16820" },
+  { "name": "Nightslayer Pants", "source": "Molten Core", "id": "16822" },
+  {
+    "name": "Ring of the Godslayer",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21596"
+  },
+  {
+    "name": "Vek'lor's Diadem",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "20930"
+  },
+  { "name": "Bonereaver's Edge", "source": "Molten Core", "id": "17076" },
+  { "name": "Dragon's Blood Cape", "source": "Molten Core", "id": "17107" },
+  { "name": "Gauntlets of Might", "source": "Molten Core", "id": "16863" },
+  { "name": "Onslaught Girdle", "source": "Molten Core", "id": "19137" },
+  { "name": "Striker's Mark", "source": "Molten Core", "id": "17069" },
+  {
+    "name": "Black Brood Pauldrons",
+    "source": "Blackwing Lair",
+    "id": "19373"
+  },
+  {
+    "name": "Boots of Pure Thought",
+    "source": "Blackwing Lair",
+    "id": "19437"
+  },
+  { "name": "Empowered Leggings", "source": "Blackwing Lair", "id": "19385" },
+  { "name": "Herald of Woe", "source": "Blackwing Lair", "id": "19357" },
+  { "name": "Pure Elementium Band", "source": "Blackwing Lair", "id": "19382" },
+  { "name": "Earthfury Bracers", "source": "Molten Core", "id": "16840" },
+  { "name": "Finkle's Lava Dredger", "source": "Molten Core", "id": "18803" },
+  { "name": "Helm of the Lifegiver", "source": "Molten Core", "id": "18870" },
+  { "name": "Ancient Petrified Leaf", "source": "Molten Core", "id": "18703" },
+  {
+    "name": "Sabatons of the Flamewalker",
+    "source": "Molten Core",
+    "id": "19144"
+  },
+  { "name": "Wild Growth Spaulders", "source": "Molten Core", "id": "18810" },
+  { "name": "Helmet of Ten Storms", "source": "Onyxia's Lair", "id": "16947" },
+  { "name": "Belt of Ten Storms", "source": "Blackwing Lair", "id": "16944" },
+  {
+    "name": "Boots of the Fallen Prophet",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21705"
+  },
+  {
+    "name": "Gauntlets of Kalimdor",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21624"
+  },
+  { "name": "Gloves of Ebru", "source": "Temple of Ahn'Qiraj", "id": "21689" },
+  {
+    "name": "Grasp of the Fallen Emperor",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21607"
+  },
+  {
+    "name": "Hammer of Ji'zhi",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21703"
+  },
+  {
+    "name": "Leggings of Immersion",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21698"
+  },
+  {
+    "name": "Mantle of the Desert's Fury",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21684"
+  },
+  {
+    "name": "Scaled Leggings of Qiraji Fury",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21668"
+  },
+  { "name": "Totem of Life", "source": "Temple of Ahn'Qiraj", "id": "22396" },
+  {
+    "name": "Vek'lor's Gloves of Devastation",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21599"
+  },
+  {
+    "name": "Wasphide Gauntlets",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21617"
+  },
+  {
+    "name": "Wormscale Blocker",
+    "source": "Temple of Ahn'Qiraj",
+    "id": "21610"
+  },
+  { "name": "Aurastone Hammer", "source": "Molten Core", "id": "17105" },
+  { "name": "Cenarion Gloves", "source": "Molten Core", "id": "16831" },
+  { "name": "Cenarion Leggings", "source": "Molten Core", "id": "16835" },
+  { "name": "Cenarion Vestments", "source": "Molten Core", "id": "16833" },
+  { "name": "Cenarion Belt", "source": "Molten Core", "id": "16828" },
+  { "name": "Cenarion Bracers", "source": "Molten Core", "id": "16830" },
+  { "name": "Cenarion Boots", "source": "Molten Core", "id": "16829" },
+  { "name": "Cenarion Helm", "source": "Molten Core", "id": "16834" },
+  { "name": "Cenarion Spaulders", "source": "Molten Core", "id": "16836" },
+  { "name": "Salamander Scale Pants", "source": "Molten Core", "id": "18875" },
+  { "name": "Stormrage Legguards", "source": "Molten Core", "id": "16901" },
+  { "name": "Stormrage Cover", "source": "Onyxia's Lair", "id": "16900" },
+  { "name": "Stormrage Belt", "source": "Blackwing Lair", "id": "16903" },
+  { "name": "Stormrage Bracers", "source": "Blackwing Lair", "id": "16904" },
+  { "name": "Stormrage Boots", "source": "Blackwing Lair", "id": "16898" },
+  { "name": "Stormrage Handguards", "source": "Blackwing Lair", "id": "16899" },
+  { "name": "Stormrage Chestguard", "source": "Blackwing Lair", "id": "16897" },
+  { "name": "Stormrage Pauldrons", "source": "Blackwing Lair", "id": "16902" },
+  { "name": "Idol of Health", "source": "Temple of Ahn'Qiraj", "id": "22399" },
+  { "name": "Gauntlets of Wrath", "source": "Blackwing Lair", "id": "16964" },
+  { "name": "Breastplate of Might", "source": "Molten Core", "id": "16865" },
+  { "name": "Drillborer Disk", "source": "Molten Core", "id": "17066" },
+  {
+    "name": "Breastplate of Ten Storms",
+    "source": "Blackwing Lair",
+    "id": "16950"
+  },
+  {
+    "name": "Gauntlets of Ten Storms",
+    "source": "Blackwing Lair",
+    "id": "16948"
+  },
+  {
+    "name": "Greaves of Ten Storms",
+    "source": "Blackwing Lair",
+    "id": "16949"
+  },
+  {
+    "name": "Primalist's Linked Legguards",
+    "source": "Blackwing Lair",
+    "id": "19401"
+  },
+  {
+    "name": "Red Dragonscale Protector",
+    "source": "Blackwing Lair",
+    "id": "19348"
+  },
+  { "name": "Deep Earth Spaulders", "source": "Molten Core", "id": "18829" },
+  { "name": "Earthfury Belt", "source": "Molten Core", "id": "16838" },
+  { "name": "Earthfury Helmet", "source": "Molten Core", "id": "16842" },
+  { "name": "Earthfury Vestments", "source": "Molten Core", "id": "16841" },
+  { "name": "Malistar's Defender", "source": "Molten Core", "id": "17106" },
+  { "name": "Arcane Infused Gem", "source": "Blackwing Lair", "id": "19336" },
+  {
+    "name": "Ashjre'thul, Crossbow of Smiting",
+    "source": "Blackwing Lair",
+    "id": "19361"
+  },
+  { "name": "Dragonstalker's Belt", "source": "Blackwing Lair", "id": "16936" },
+  {
+    "name": "Dragonstalker's Bracers",
+    "source": "Blackwing Lair",
+    "id": "16935"
+  },
+  {
+    "name": "Dragonstalker's Greaves",
+    "source": "Blackwing Lair",
+    "id": "16941"
+  },
+  {
+    "name": "Dragonstalker's Legguards",
+    "source": "Molten Core",
+    "id": "16938"
+  },
+  {
+    "name": "Dragonstalker's Spaulders",
+    "source": "Blackwing Lair",
+    "id": "16937"
+  },
+  { "name": "Giantstalker's Belt", "source": "Molten Core", "id": "16851" },
+  { "name": "Giantstalker's Boots", "source": "Molten Core", "id": "16849" },
+  {
+    "name": "Giantstalker's Breastplate",
+    "source": "Molten Core",
+    "id": "16845"
+  },
+  { "name": "Giantstalker's Leggings", "source": "Molten Core", "id": "16847" },
+  { "name": "Mantle of Prophecy", "source": "Molten Core", "id": "16816" },
+  { "name": "Pants of Prophecy", "source": "Molten Core", "id": "16814" },
+  { "name": "Robes of Prophecy", "source": "Molten Core", "id": "16815" },
+  { "name": "Circlet of Prophecy", "source": "Molten Core", "id": "16813" },
+  { "name": "Boots of Prophecy", "source": "Molten Core", "id": "16811" },
+  { "name": "The Eye of Divinity", "source": "Molten Core", "id": "18646" },
+  { "name": "Bracelets of Wrath", "source": "Blackwing Lair", "id": "16959" },
+  { "name": "Bloodfang Bracers", "source": "Blackwing Lair", "id": "16911" },
+  { "name": "Nightslayer Gloves", "source": "Molten Core", "id": "16826" },
+  { "name": "Bloodfang Belt", "source": "Blackwing Lair", "id": "16910" },
+  { "name": "Bloodfang Boots", "source": "Blackwing Lair", "id": "16906" },
+  { "name": "Bloodfang Gloves", "source": "Blackwing Lair", "id": "16907" },
+  { "name": "Venomous Totem", "source": "Blackwing Lair", "id": "19342" },
+  { "name": "Bloodfang Pants", "source": "Molten Core", "id": "16909" },
+  { "name": "Nightslayer Boots", "source": "Molten Core", "id": "16824" },
+  { "name": "Nightslayer Cover", "source": "Molten Core", "id": "16821" },
+  {
+    "name": "Nightslayer Shoulder Pads",
+    "source": "Molten Core",
+    "id": "16823"
+  },
+  { "name": "Bloodfang Hood", "source": "Onyxia's Lair", "id": "16908" },
+  {
+    "name": "Aegis of Preservation",
+    "source": "Blackwing Lair",
+    "id": "19345"
+  },
+  { "name": "Halo of Transcendence", "source": "Onyxia's Lair", "id": "16921" },
+  {
+    "name": "Handguards of Transcendence",
+    "source": "Blackwing Lair",
+    "id": "16920"
+  },
+  {
+    "name": "Boots of Transcendence",
+    "source": "Blackwing Lair",
+    "id": "16919"
+  },
+  {
+    "name": "Pauldrons of Transcendence",
+    "source": "Blackwing Lair",
+    "id": "16924"
+  },
+  { "name": "Pauldrons of Might", "source": "Molten Core", "id": "16868" },
+  { "name": "Waistband of Wrath", "source": "Blackwing Lair", "id": "16960" },
+  { "name": "Mind Quickening Gem", "source": "Blackwing Lair", "id": "19339" },
+  { "name": "Netherwind Belt", "source": "Blackwing Lair", "id": "16818" },
+  { "name": "Netherwind Bindings", "source": "Blackwing Lair", "id": "16918" },
+  { "name": "Netherwind Boots", "source": "Blackwing Lair", "id": "16912" },
+  { "name": "Netherwind Gloves", "source": "Blackwing Lair", "id": "16913" },
+  { "name": "Netherwind Mantle", "source": "Blackwing Lair", "id": "16917" },
+  { "name": "Netherwind Robes", "source": "Blackwing Lair", "id": "16916" },
+  {
+    "name": "Ringo's Blizzard Boots",
+    "source": "Blackwing Lair",
+    "id": "19438"
+  },
+  { "name": "Arcanist Belt", "source": "Molten Core", "id": "16802" },
+  { "name": "Arcanist Bindings", "source": "Molten Core", "id": "16799" },
+  { "name": "Arcanist Boots", "source": "Molten Core", "id": "16800" },
+  { "name": "Arcanist Crown", "source": "Molten Core", "id": "16795" },
+  { "name": "Arcanist Gloves", "source": "Molten Core", "id": "16801" },
+  { "name": "Arcanist Leggings", "source": "Molten Core", "id": "16796" },
+  { "name": "Arcanist Mantle", "source": "Molten Core", "id": "16797" },
+  { "name": "Arcanist Robes", "source": "Molten Core", "id": "16798" },
+  { "name": "Netherwind Pants", "source": "Molten Core", "id": "16915" },
+  { "name": "Netherwind Crown", "source": "Onyxia's Lair", "id": "16914" },
+  {
+    "name": "Natural Alignment Crystal",
+    "source": "Blackwing Lair",
+    "id": "19344"
+  },
+  {
+    "name": "Taut Dragonhide Gloves",
+    "source": "Blackwing Lair",
+    "id": "19390"
+  },
+  { "name": "Giantstalker's Helmet", "source": "Molten Core", "id": "16846" },
+  {
+    "name": "Bracers of Ten Storms",
+    "source": "Blackwing Lair",
+    "id": "16943"
+  },
+  {
+    "name": "Epaulets of Ten Storms",
+    "source": "Blackwing Lair",
+    "id": "16945"
+  },
+  {
+    "name": "Primalist's Linked Waistguard",
+    "source": "Blackwing Lair",
+    "id": "19393"
+  },
+  { "name": "Earthfury Boots", "source": "Molten Core", "id": "16837" },
+  { "name": "Earthfury Epaulets", "source": "Molten Core", "id": "16844" },
+  { "name": "Earthfury Gauntlets", "source": "Molten Core", "id": "16839" },
+  { "name": "Earthfury Legguards", "source": "Molten Core", "id": "16843" },
+  { "name": "Legplates of Ten Storms", "source": "Molten Core", "id": "16946" },
+  { "name": "Felheart Shoulder Pads", "source": "Molten Core", "id": "16807" },
+  { "name": "Felheart Bracers", "source": "Molten Core", "id": "16804" },
+  { "name": "Felheart Gloves", "source": "Molten Core", "id": "16805" },
+  { "name": "Felheart Robes", "source": "Molten Core", "id": "16809" },
+  {
+    "name": "Dragonstalker's Breastplate",
+    "source": "Blackwing Lair",
+    "id": "16942"
+  },
+  {
+    "name": "Dragonstalker's Gauntlets",
+    "source": "Blackwing Lair",
+    "id": "16940"
+  },
+  { "name": "Giantstalker's Bracers", "source": "Molten Core", "id": "16850" },
+  { "name": "Giantstalker's Epaulets", "source": "Molten Core", "id": "16848" },
+  { "name": "Giantstalker's Gloves", "source": "Molten Core", "id": "16852" },
+  { "name": "Dragonstalker's Helm", "source": "Onyxia's Lair", "id": "16939" }
+]

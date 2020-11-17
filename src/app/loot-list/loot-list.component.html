@@ -24,7 +24,7 @@
               <strong *ngIf="ranking.loot; else missingLoot"
                 ><a
                   [appWowheadTooltip]="ranking.loot"
-                  [routerLink]="['/item', ranking.loot.id]"
+                  [routerLink]="['/item', ranking.loot.itemId]"
                   >{{ ranking.itemName }}</a
                 ></strong
               >

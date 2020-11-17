@@ -1,0 +1,83 @@
+<div *ngIf="zone$ | async as zone; else notFound">
+  <section class="hero is-small is-black">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          <a
+            title="Open Wowhead"
+            [href]="'https://classic.wowhead.com/zone=' + zone.zoneId"
+            target="_blank"
+            [appWowheadTooltip]="zone"
+            >{{ zone.name }} <fa-icon [icon]="faExternalLinkAlt"></fa-icon
+          ></a>
+        </h1>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="box" *ngIf="(zoneItemSources$ | async).length > 1">
+      <div class="tags" *ngIf="chosenSource$ | async as chosenSource">
+        <span
+          class="tag is-black is-medium"
+          *ngFor="let source of zoneItemSources$ | async"
+          (click)="sourceChosen(source)"
+          [class.is-primary]="chosenSource.name === source.name"
+        >
+          <a>{{ source.name || source.category }}</a>
+        </span>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <div class="box" *ngIf="chosenSource$ | async as chosenSource">
+          <p class="title">
+            <strong>{{ chosenSource.name }}</strong> Loot
+          </p>
+          <article
+            class="media"
+            *ngFor="let item of getSourceLoot(chosenSource) | async"
+          >
+            <div class="media-content">
+              <div class="content">
+                <a
+                  [appWowheadTooltip]="item"
+                  [routerLink]="['/item', item.itemId]"
+                  >{{ item.name }}</a
+                >&nbsp;&nbsp;
+                <div
+                  class="tags"
+                  *ngIf="getNextRecipient(item) | async as recipientGrp; else noRankings"
+                >
+                  <span
+                    class="tag is-black"
+                    *ngFor="let recipient of recipientGrp"
+                  >
+                    <a [routerLink]="['/raider', recipient.raiderName]">
+                      {{ recipient.raiderName }}
+                    </a>
+                    &nbsp;</span
+                  >
+                </div>
+                <ng-template #noRankings>
+                  <small>No Rankings.</small>
+                </ng-template>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="box">
+          <app-loot-feed
+            [zone]="zone.zoneId"
+            [source]="chosenSource$ | async"
+          ></app-loot-feed>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<ng-template #notFound>
+  <h1 class="title">Zone not found</h1>
+</ng-template>

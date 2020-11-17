@@ -41,6 +41,18 @@
           {{ totalProgress.rankings }}</span
         >
       </div>
+      <div class="has-text-centered" *ngIf="totalProgressTop10">
+        <progress
+          class="progress is-success mb-0"
+          max="100"
+          [value]="totalProgressTop10.progress"
+        ></progress>
+        <span class="has-text-centered is-size-5 is-grey-light"
+          >Top 10 Rankings Progress (This Phase):
+          {{ totalProgressTop10.rankingsReceived }} /
+          {{ totalProgressTop10.rankings }}</span
+        >
+      </div>
     </div>
   </div>
   <div class="column is-12">

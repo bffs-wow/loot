@@ -1,13 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, Observable, combineLatest } from 'rxjs';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
-import {
-  takeUntil,
-  filter,
-  switchMap,
-  map,
-  withLatestFrom,
-} from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
+import { switchMap, map } from 'rxjs/operators';
 import { Loot, LootGroup, LootReceipt } from '../loot-list/models/loot.model';
 import { LootListFacadeService } from '../loot-list/loot-list.facade';
 import { StateService } from '../state/state.service';
@@ -16,6 +10,7 @@ import {
   faExternalLinkAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import { LootAnnounceService } from '../loot-announce/loot-announce.service';
+import { ItemService } from '../wow-data/item.service';
 
 @Component({
   selector: 'app-item-page',
@@ -36,6 +31,7 @@ export class ItemPageComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private state: StateService,
+    private itemService: ItemService,
     private lootListFacade: LootListFacadeService,
     public lootAnnounceService: LootAnnounceService
   ) {}
@@ -43,9 +39,11 @@ export class ItemPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.item$ = combineLatest([
       this.route.params,
-      this.lootListFacade.allLoot$,
+      this.itemService.allItems$,
     ]).pipe(
-      map(([params, allLoot]) => allLoot.find((l) => l.id === params.id))
+      map(([params, allitems]) =>
+        allitems.find((l) => l.itemId === parseInt(params.id))
+      )
     );
 
     this.lootGroups$ = this.item$.pipe(
@@ -59,7 +57,7 @@ export class ItemPageComponent implements OnInit, OnDestroy {
       map(([item, raiders]) =>
         raiders.reduce((loot, raider) => {
           const raiderLoot = raider.receivedLoot
-            .filter((i) => i.id === item.id)
+            .filter((i) => i.itemId === item.itemId)
             .map((r) => ({
               ...r,
               raiderName: raider.name,

@@ -1,17 +1,23 @@
-<div *ngIf="item$ | async as item">
+<div *ngIf="item$ | async as item; else notFound">
   <section class="hero is-small is-black">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">
+        <h1 class="title mb-1">
           <a
             title="Open Wowhead"
-            [href]="'https://classic.wowhead.com/item=' + item.id"
+            [href]="'https://classic.wowhead.com/item=' + item.itemId"
             target="_blank"
             [appWowheadTooltip]="item"
             >{{ item.name }} <fa-icon [icon]="faExternalLinkAlt"></fa-icon
           ></a>
         </h1>
-        <h2 class="subtitle">{{ item.source }}</h2>
+        <h2 class="is-size-5">
+          <a
+            [routerLink]="['/zone', item.source.zone]"
+            [queryParams]="{ boss: item.source.name || item.source.category }"
+            >{{ item | zone }}
+          </a>
+        </h2>
       </div>
     </div>
   </section>
@@ -22,7 +28,11 @@
           <nav class="level">
             <div class="level-left"><p class="title">Current Rankings</p></div>
             <div class="level-right">
-              <div class="control announce-btn" *ngIf="lootGroups$ | async as grp" title="Copy Raid Warning Announcement">
+              <div
+                class="control announce-btn"
+                *ngIf="lootGroups$ | async as grp"
+                title="Copy Raid Warning Announcement"
+              >
                 <a class="button" (click)="copyToClipBoard(grp)">
                   <span class="icon">
                     <fa-icon [icon]="faBullhorn"></fa-icon>
@@ -31,8 +41,8 @@
               </div>
             </div>
           </nav>
-          
-          <app-loot-lookup [item]="item" [noSearch]="true"></app-loot-lookup>
+
+          <app-loot-lookup [item]="item" [noSearch]="true" [hideSource]="true"></app-loot-lookup>
         </div>
       </div>
       <div class="column">
@@ -58,3 +68,6 @@
     </div>
   </section>
 </div>
+<ng-template #notFound>
+  <h1 class="title">Item not found</h1>
+</ng-template>

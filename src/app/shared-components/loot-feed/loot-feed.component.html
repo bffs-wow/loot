@@ -1,0 +1,21 @@
+<p class="title">Recent Loot</p>
+<article class="media" *ngFor="let loot of recentLoot$ | async">
+  <div class="media-content">
+    <div class="content">
+      <p class="has-text-right is-size-5">
+        <strong
+          ><a [routerLink]="['/raider', loot.raiderName]"
+            >{{ loot.raiderName }}
+          </a></strong
+        >
+        -
+        <small>{{ loot.date | date }}</small>
+        <br />
+        <a [appWowheadTooltip]="loot" [routerLink]="['/item', loot.itemId]">{{
+          loot.name
+        }}</a>
+        - <small>{{ loot | zone }}</small>
+      </p>
+    </div>
+  </div>
+</article>

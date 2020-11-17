@@ -19,13 +19,15 @@ export class LootAnnounceService {
       return;
     }
     const item = loot[0].rankings[0];
-    const itemLink = `format("%s", select(2,GetItemInfo(${item.id}))).."`;
+    const itemLink = `format("%s", select(2,GetItemInfo(${item.itemId}))).."`;
     const groups = [];
     let grpIdx = 0;
+    let curLoot = loot[grpIdx]
     // Build up array until we have at least 5 raiders to report
-    while (this.getRankingLength(groups) < 5) {
-      groups.push(loot[grpIdx]);
+    while (this.getRankingLength(groups) < 5 && !!curLoot) {
+      groups.push(curLoot);
       grpIdx++;
+      curLoot = loot[grpIdx]
     }
 
     let top5Msg = groups.map((g) => this.makeMessage(g)).join(' | ');
