@@ -7,10 +7,12 @@ import { Raider } from '../loot-list/models/raider.model';
 export class StatisticsService {
   constructor() {}
 
-  getRaiderListProgress(raider: Raider) {
-    const numRanked = raider.rankings.length;
-    const rankingsReceived = raider.receivedLoot.filter((l) =>
-      raider.rankings.some((r) => r.loot?.sheetName.toLowerCase() === l.sheetName.toLowerCase())
+  getRaiderListProgress(raider: Raider, limit: number = null) {
+    const numRanked = limit ? limit : raider.rankings.length;
+    const rankingsReceived = raider.receivedLoot.slice(0, numRanked).filter((l) =>
+      raider.rankings.some(
+        (r) => r.loot?.sheetName.toLowerCase() === l.sheetName.toLowerCase()
+      )
     );
 
     return {

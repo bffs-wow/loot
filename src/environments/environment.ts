@@ -4,11 +4,12 @@
 
 export const environment = {
   production: false,
-  cache_bust: '2',
+  cache_bust: '4',
   sheetId: '1NCqKjPnzavcaVH_uEqVcn0MXBlmknkpM4an9ADe81Zs',
   apiKey: 'AIzaSyB3IfCPeyxe_qHKZYBfZvNtn2reVWDRVvU',
   logsGuildUrl: 'https://classic.warcraftlogs.com/guild/rankings/532692/latest/',
-  logsCharacterBaseUrl: 'https://classic.warcraftlogs.com/character/us/sulfuras/'
+  logsCharacterBaseUrl: 'https://classic.warcraftlogs.com/character/us/sulfuras/',
+  wclApiKey: '1767459f13aa17a7d1ad89c0c8b6ad6e'
 };
 
 /*

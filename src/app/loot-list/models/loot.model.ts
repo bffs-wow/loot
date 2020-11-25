@@ -1,19 +1,12 @@
-export enum Raid {
-  MC = 'Molten Core',
-  BWL = 'Blackwing Lair',
-  Ony = "Onyxia's Lair",
-  AQ40 = "Temple of Ahn'Qiraj",
-}
-export interface Loot {
-  // for wowhead tooltips
-  id: string;
-  name: string;
+import { Item } from 'src/app/wow-data/item.interface';
+
+
+export interface Loot extends Item {
   raiderName?: string;
   /**
    * Unique naming convention used in the sheet to allow ranking multiple items
    */
   sheetName?: string;
-  source: Raid;
 }
 
 /**

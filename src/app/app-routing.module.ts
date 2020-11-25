@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'roster',
-    component: RosterPageComponent
+    component: RosterPageComponent,
   },
   {
     path: 'item/:id',
@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'raider/:name',
     component: RaiderPageComponent,
+  },
+  {
+    path: 'zone',
+    loadChildren: () => import('./zone/zone.module').then((m) => m.ZoneModule),
   },
   {
     path: 'statistics',

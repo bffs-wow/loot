@@ -1,11 +1,16 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Raider } from './models/raider.model';
-import { LootReceipt, LootGroup, EligibleLoot } from './models/loot.model';
-import { faCheck, faStopwatch20, faMinus, faStopwatch, faCalendar, faCalendarCheck, faAward, faClock } from '@fortawesome/free-solid-svg-icons';
+import { LootReceipt, EligibleLoot } from './models/loot.model';
+import {
+  faCheck,
+  faMinus,
+  faAward,
+  faClock,
+} from '@fortawesome/free-solid-svg-icons';
 import { Ranking } from './models/ranking.model';
 import { LootListFacadeService } from './loot-list.facade';
-import { map, tap, take, first } from 'rxjs/operators';
-import { forkJoin, combineLatest } from 'rxjs';
+import { map, tap, first } from 'rxjs/operators';
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-loot-list',
@@ -25,12 +30,12 @@ export class LootListComponent implements OnInit, OnChanges {
     if (changes.raider) {
       combineLatest(
         this.raider.rankings
-        .filter(r => !!r.loot)
-        .map((ranking) =>
-          this.getCompetition(ranking).pipe(
-            map((group) => ({ group, ranking }))
+          .filter((r) => !!r.loot)
+          .map((ranking) =>
+            this.getCompetition(ranking).pipe(
+              map((group) => ({ group, ranking }))
+            )
           )
-        )
       )
         .pipe(
           first(),
@@ -61,20 +66,24 @@ export class LootListComponent implements OnInit, OnChanges {
         )
       ),
       map((groups) =>
-        groups.map((grp) => {
-          grp.rankings = grp.rankings.filter(
-            (r) => r.raiderName !== this.raider.name
-          );
-          return grp;
-        }).filter(grp => grp.rankings.length > 0).map(grp => grp.rankings).reduce((acc, cur) => {
-          return [...cur, ...acc]
-        }, [])
+        groups
+          .map((grp) => {
+            grp.rankings = grp.rankings.filter(
+              (r) => r.raiderName !== this.raider.name
+            );
+            return grp;
+          })
+          .filter((grp) => grp.rankings.length > 0)
+          .map((grp) => grp.rankings)
+          .reduce((acc, cur) => {
+            return [...cur, ...acc];
+          }, [])
       )
     );
   }
 
   getCompetitionIcon(place: number) {
-    if(place ===0) {
+    if (place === 0) {
       return faAward;
     } else if (place <= 3) {
       return faClock;

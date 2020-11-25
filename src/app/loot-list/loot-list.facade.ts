@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LootListService } from './loot-list.service';
-import { Sheet } from './models/spreadsheet.model';
+
 import { Ranking } from './models/ranking.model';
 import { parsePoints } from './models/attendance.model';
 import { Raider, findClass, Class } from './models/raider.model';
@@ -9,33 +9,22 @@ import {
   map,
   tap,
   switchMap,
-  debounceTime,
   shareReplay,
   withLatestFrom,
 } from 'rxjs/operators';
 import zipObject from 'lodash-es/zipObject';
 import drop from 'lodash-es/drop';
-import {
-  Observable,
-  combineLatest,
-  ReplaySubject,
-  concat,
-  timer,
-  NEVER,
-  zip,
-} from 'rxjs';
+import { Observable, ReplaySubject, timer, NEVER, zip } from 'rxjs';
 import { SheetData } from './models/sheet-data.model';
 import { EligibleLoot, LootGroup, Loot } from './models/loot.model';
 import { StateService } from '../state/state.service';
+import { ItemService } from '../wow-data/item.service';
 import groupBy from 'lodash-es/groupBy';
-import uniqBy from 'lodash-es/uniqBy';
-import * as itemData from '../data/items.json';
 import { CacheService } from '../cache/cache.service';
 import Swal from 'sweetalert2';
 
 @Injectable({ providedIn: 'root' })
 export class LootListFacadeService {
-  itemData = (itemData as any).default;
   private loadData = new ReplaySubject(1);
   private loadData$ = this.loadData.asObservable();
   /**
@@ -106,19 +95,22 @@ export class LootListFacadeService {
     // Items in this raid are the header values without the first 'raider' column
     const items = drop(headings).map((itemName) => {
       let sheetName = itemName;
+      // If the name ends with a number, it is an item that allows multiple listings
       if (/[1234]$/.test(itemName)) {
+        // get the actual item name
         itemName = itemName.substring(0, itemName.length - 2);
       }
-      const item = {
-        ...this.itemData.find(
-          (l) => l.name.toLowerCase() === itemName.toLowerCase()
-        ),
-      } as Loot;
+      let item = this.itemService.getByName(itemName) as Loot;
       if (!item) {
         console.error(`${itemName} not found!`);
         return null;
       }
-      item.sheetName = sheetName;
+      // Clone the item to avoid accidental mutation
+      item = {
+        ...item,
+        sheetName,
+      };
+
       return item;
     });
     // Values are all rows after the header row
@@ -176,6 +168,12 @@ export class LootListFacadeService {
     // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
     shareReplay(1)
   );
+  naxxLoot$ = this.loadData$.pipe(
+    switchMap(() => this.lootListService.getData('Naxx', 'A1:DU60')),
+    map((data) => this.lootMapper(data)),
+    // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
+    shareReplay(1)
+  );
 
   /**
    * After we get data from every sheet, join it to populate full `Raider` objects.
@@ -186,16 +184,43 @@ export class LootListFacadeService {
     this.bwlLoot$,
     this.mcLoot$,
     this.onyLoot$,
-    this.aq40Loot$
+    this.aq40Loot$,
+    this.naxxLoot$
   ).pipe(
-    map(([attendance, rankings, bwl, mc, ony, aq]) => {
+    map(([attendance, rankings, bwl, mc, ony, aq, naxx]) => {
       return attendance.map((rAtt) => {
         const rRankings = rankings.filter((r) => r.raider === rAtt.name);
-        const rBwl = bwl.find((r) => r.name === rAtt.name);
-        const rMc = mc.find((r) => r.name === rAtt.name);
-        const rOny = ony.find((r) => r.name === rAtt.name);
-        const rAq = aq.find((r) => r.name === rAtt.name);
-        const raider: Raider = {
+        if (!rRankings) {
+          throw new Error(
+            `SHEET ISSUE: Could not find rankings for: ${rAtt.name}`
+          );
+        }
+        let rBwl = bwl.find((r) => r.name === rAtt.name);
+        if (!rBwl) {
+          console.warn(`SHEET ISSUE: No BWL rankings for: ${rAtt.name}`);
+          rBwl = { pendingLoot: [], receivedLoot: [] };
+        }
+        let rMc = mc.find((r) => r.name === rAtt.name);
+        if (!rMc) {
+          console.warn(`SHEET ISSUE: No MC rankings for: ${rAtt.name}`);
+          rMc = { pendingLoot: [], receivedLoot: [] };
+        }
+        let rOny = ony.find((r) => r.name === rAtt.name);
+        if (!rOny) {
+          console.warn(`SHEET ISSUE: No Ony rankings for: ${rAtt.name}`);
+          rOny = { pendingLoot: [], receivedLoot: [] };
+        }
+        let rAq = aq.find((r) => r.name === rAtt.name);
+        if (!rAq) {
+          console.warn(`SHEET ISSUE: No AQ40 rankings for: ${rAtt.name}`);
+          rAq = { pendingLoot: [], receivedLoot: [] };
+        }
+        let rNaxx = naxx.find((r) => r.name === rAtt.name);
+        if (!rNaxx) {
+          console.warn(`SHEET ISSUE: No Naxx rankings for: ${rAtt.name}`);
+          rNaxx = { pendingLoot: [], receivedLoot: [] };
+        }
+        let raider: Raider = {
           name: rAtt.name,
           class: Class.Unknown,
           attendance: rAtt.attendance,
@@ -206,19 +231,22 @@ export class LootListFacadeService {
             ...rMc.pendingLoot,
             ...rOny.pendingLoot,
             ...rAq.pendingLoot,
+            ...rNaxx.pendingLoot,
           ],
           receivedLoot: [
             ...rBwl.receivedLoot,
             ...rMc.receivedLoot,
             ...rOny.receivedLoot,
             ...rAq.receivedLoot,
+            ...rNaxx.receivedLoot,
           ].sort((a, b) => {
             return +b.date - +a.date;
           }),
         };
+        const raiderLoot = [...raider.pendingLoot, ...raider.receivedLoot];
         // Relate ranking with their loot item objects
         raider.rankings = rRankings.map((r) => {
-          r.loot = [...raider.pendingLoot, ...raider.receivedLoot].find(
+          r.loot = raiderLoot.find(
             (l) => l.sheetName.toLowerCase() === r.itemName.toLowerCase()
           );
           return r;
@@ -283,22 +311,9 @@ export class LootListFacadeService {
     )
   );
 
-  allLoot$: Observable<Loot[]> = this.raiders$.pipe(
-    map((raiders) =>
-      raiders.reduce((loot, raider) => {
-        const raiderLoot = [...raider.pendingLoot, ...raider.receivedLoot].map(
-          (l) => ({
-            ...l,
-          })
-        );
-        return [...loot, ...raiderLoot];
-      }, [])
-    ),
-    map((loot) => uniqBy(loot, 'id'))
-  );
-
   constructor(
     private state: StateService,
+    private itemService: ItemService,
     private lootListService: LootListService,
     private cache: CacheService
   ) {
@@ -313,6 +328,13 @@ export class LootListFacadeService {
         tap(() => this.reloadData())
       )
       .subscribe();
+
+    // If we are loading the app between 6:00 and 12:00 PM +/- 1 hr ET (Raid Time)
+    const now = new Date();
+    if (now.getUTCHours() > 23 || now.getUTCHours() < 5) {
+      // Force a fresh data load
+      this.reloadData();
+    }
   }
 
   getRankedLootGroups(itemName: string): Observable<LootGroup[]> {

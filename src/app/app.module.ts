@@ -8,25 +8,21 @@ import { AppComponent } from './app.component';
 import { LayoutsModule } from './layouts/layouts.module';
 import { SheetInfoComponent } from './loot-list/sheet-info/sheet-info.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LootFeedComponent } from './loot-feed/loot-feed.component';
-import { LootLookupComponent } from './loot-lookup/loot-lookup.component';
+
 import { LootListComponent } from './loot-list/loot-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { WowheadTooltipDirective } from './wowhead-tooltips/wowhead-tooltip.directive';
 import { ItemPageComponent } from './item-page/item-page.component';
 import { RaiderPageComponent } from './raider-page/raider-page.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { RosterPageComponent } from './roster-page/roster-page.component';
+import { SharedComponentsModule } from './shared-components/shared-components.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     SheetInfoComponent,
     DashboardComponent,
-    LootFeedComponent,
-    LootLookupComponent,
     LootListComponent,
-    WowheadTooltipDirective,
     ItemPageComponent,
     RaiderPageComponent,
     RosterPageComponent,
@@ -40,7 +36,8 @@ import { RosterPageComponent } from './roster-page/roster-page.component';
     ReactiveFormsModule,
     LayoutsModule,
     FontAwesomeModule,
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    SharedComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

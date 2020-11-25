@@ -18,7 +18,16 @@
           *ngFor="let raider of raiders"
           [routerLink]="['/raider', raider.name]"
         >
-          {{ raider.name }}
+          <nav class="level">
+            <div class="level-left">
+              <div class="level-item">{{ raider.name }}</div>
+            </div>
+            <div class="level-right">
+              <div class="level-item">
+                <span class="tag">{{ raider.attendancePoints }}</span>
+              </div>
+            </div>
+          </nav>
         </a>
       </nav>
     </div>

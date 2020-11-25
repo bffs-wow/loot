@@ -21,6 +21,7 @@ export class StatisticsComponent implements OnInit, OnDestroy {
   avgAttendance = 0;
   totalReceivedThisPhase = 0;
   totalProgress = null;
+  totalProgressTop10 = null;
   mostPopularItems: { ranking: Ranking; sum: number }[] = null;
   mostCommonItems: { item: Loot; count: number }[] = null;
   constructor(
@@ -64,6 +65,23 @@ export class StatisticsComponent implements OnInit, OnDestroy {
               this.totalProgress.rankings) *
             100;
 
+          const top10Progress = raiders.map((r) =>
+            this.statisticsService.getRaiderListProgress(r, 10)
+          );
+          this.totalProgressTop10 = top10Progress.reduce(
+            (prev, cur) => {
+              prev.rankings = prev.rankings + cur.rankings;
+              prev.rankingsReceived =
+                prev.rankingsReceived + cur.rankingsReceived;
+              return prev;
+            },
+            { progress: 0, rankings: 0, rankingsReceived: 0 }
+          );
+          this.totalProgressTop10.progress =
+            (this.totalProgressTop10.rankingsReceived /
+              this.totalProgressTop10.rankings) *
+            100;
+
           /**
            * Most Popular
            */
@@ -71,7 +89,7 @@ export class StatisticsComponent implements OnInit, OnDestroy {
             return [...prev, ...cur.rankings];
           }, [] as Ranking[]);
 
-          const groupedRankings = groupBy(allRankings, 'loot.id');
+          const groupedRankings = groupBy(allRankings, 'loot.itemId');
           const rankingGroups = Object.keys(groupedRankings).filter(
             (g) => g != 'undefined'
           );
@@ -98,7 +116,7 @@ export class StatisticsComponent implements OnInit, OnDestroy {
           const allReceived = raiders.reduce((prev, cur) => {
             return [...prev, ...cur.receivedLoot];
           }, [] as LootReceipt[]);
-          const groupedReceipts = groupBy(allReceived, 'id');
+          const groupedReceipts = groupBy(allReceived, 'itemId');
           const receiptGroups = Object.keys(groupedReceipts).filter(
             (g) => g != 'undefined'
           );

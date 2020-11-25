@@ -25,7 +25,11 @@ export class RosterPageComponent implements OnInit {
 
   makeClassObs(cls: Class) {
     return this.stateService.raiders$.pipe(
-      map((raiders) => raiders.filter((r) => r.class === cls))
+      map((raiders) =>
+        raiders
+          .filter((r) => r.class === cls)
+          .sort((a, b) => b.attendancePoints - a.attendancePoints)
+      )
     );
   }
 }

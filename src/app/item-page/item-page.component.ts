@@ -1,17 +1,16 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, Observable, combineLatest } from 'rxjs';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
-import {
-  takeUntil,
-  filter,
-  switchMap,
-  map,
-  withLatestFrom,
-} from 'rxjs/operators';
-import { Loot, LootReceipt } from '../loot-list/models/loot.model';
+import { ActivatedRoute } from '@angular/router';
+import { switchMap, map } from 'rxjs/operators';
+import { Loot, LootGroup, LootReceipt } from '../loot-list/models/loot.model';
 import { LootListFacadeService } from '../loot-list/loot-list.facade';
 import { StateService } from '../state/state.service';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBullhorn,
+  faExternalLinkAlt,
+} from '@fortawesome/free-solid-svg-icons';
+import { LootAnnounceService } from '../loot-announce/loot-announce.service';
+import { ItemService } from '../wow-data/item.service';
 
 @Component({
   selector: 'app-item-page',
@@ -22,22 +21,33 @@ export class ItemPageComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject();
   item$: Observable<Loot>;
 
+  lootGroups$: Observable<LootGroup[]>;
+
   recentRecipients$: Observable<LootReceipt[]>;
 
   faExternalLinkAlt = faExternalLinkAlt;
+  faBullhorn = faBullhorn;
 
   constructor(
     private route: ActivatedRoute,
     private state: StateService,
-    private lootListFacade: LootListFacadeService
+    private itemService: ItemService,
+    private lootListFacade: LootListFacadeService,
+    public lootAnnounceService: LootAnnounceService
   ) {}
 
   ngOnInit(): void {
     this.item$ = combineLatest([
       this.route.params,
-      this.lootListFacade.allLoot$,
+      this.itemService.allItems$,
     ]).pipe(
-      map(([params, allLoot]) => allLoot.find((l) => l.id === params.id))
+      map(([params, allitems]) =>
+        allitems.find((l) => l.itemId === parseInt(params.id))
+      )
+    );
+
+    this.lootGroups$ = this.item$.pipe(
+      switchMap((item) => this.lootListFacade.getRankedLootGroups(item.name))
     );
 
     this.recentRecipients$ = combineLatest([
@@ -47,7 +57,7 @@ export class ItemPageComponent implements OnInit, OnDestroy {
       map(([item, raiders]) =>
         raiders.reduce((loot, raider) => {
           const raiderLoot = raider.receivedLoot
-            .filter((i) => i.id === item.id)
+            .filter((i) => i.itemId === item.itemId)
             .map((r) => ({
               ...r,
               raiderName: raider.name,
@@ -64,5 +74,9 @@ export class ItemPageComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy() {
     this.destroyed$.next();
+  }
+
+  async copyToClipBoard(grp: LootGroup[]) {
+    await this.lootAnnounceService.copyLootAnnouncement(grp);
   }
 }

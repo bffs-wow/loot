@@ -1,3 +1,16 @@
 .navbar-menu .navbar-item {
   color: #1abc9c;
+  .navbar-link {
+    color: #1abc9c;
+  }
+  .navbar-link:hover {
+    background-color: transparent;
+    color: #dbdee0;
+  }
+}
+
+.navbar-dropdown a.navbar-item:focus,
+.navbar-dropdown a.navbar-item:hover {
+  background-color: transparent;
+  color: #dbdee0;
 }
