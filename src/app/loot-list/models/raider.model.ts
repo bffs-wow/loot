@@ -29,7 +29,7 @@ const classItems = {
 export function findClass(raider: Raider) {
   const loot = [...raider.receivedLoot, ...raider.pendingLoot];
   const classLoot = loot.find((l) => !!classItems[l.name]);
-  return classItems[classLoot.name] || Class.Unknown;
+  return classLoot ? classItems[classLoot.name] : Class.Unknown;
 }
 
 export interface Raider {
