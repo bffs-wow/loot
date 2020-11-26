@@ -20,7 +20,7 @@ import { Source } from 'src/app/wow-data/item.interface';
   selector: 'app-loot-feed',
   templateUrl: './loot-feed.component.html',
   styleUrls: ['./loot-feed.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LootFeedComponent implements OnInit, OnChanges {
   @Input() zone: number = 0;
@@ -60,16 +60,21 @@ export class LootFeedComponent implements OnInit, OnChanges {
     ),
     map((loot: LootReceipt[]) =>
       loot.sort((a, b) => {
+        return +b.date - +a.date;
+      })
+    ),
+    map((ordered) => take(ordered, 25)),
+    map((top25) =>
+      top25.sort((a, b) => {
         // If the drop was on the same date, sort by boss ordering instead
         if (+b.date === +a.date) {
           const aSource = this.zoneService.getItemSource(a);
           const bSource = this.zoneService.getItemSource(b);
           return bSource.bossOrder - aSource.bossOrder;
         }
-        return +b.date - +a.date;
+        return 0;
       })
-    ),
-    map((ordered) => take(ordered, 25))
+    )
   );
 
   constructor(private state: StateService, private zoneService: ZoneService) {}
