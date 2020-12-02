@@ -4515,6 +4515,70 @@
     "uniqueName": "power-of-the-scourge"
   },
   {
+    "itemId": 23549,
+    "name": "Fortitude of the Scourge",
+    "icon": "spell_shadow_antishadow",
+    "class": "Quest",
+    "subclass": "Quest",
+    "sellPrice": 0,
+    "quality": "Epic",
+    "itemLevel": 60,
+    "requiredLevel": 60,
+    "slot": "Non-equippable",
+    "tooltip": [
+      { "label": "Fortitude of the Scourge", "format": "Epic" },
+      { "label": "Item Level 60", "format": "Misc" },
+      { "label": "Binds when picked up" },
+      { "label": "Requires Level 60" },
+      {
+        "label": "Use: Permanently adds to a shoulder slot item increased Stamina by 16 and also grants 100 armor.",
+        "format": "Uncommon"
+      },
+      { "label": "Dropped by: Sapphiron" }
+    ],
+    "itemLink": "|cffa335ee|Hitem:23549::::::::::0|h[Fortitude of the Scourge]|h|r",
+    "contentPhase": 6,
+    "source": {
+      "category": "Boss Drop",
+      "name": "Sapphiron",
+      "zone": 3456,
+      "dropChance": null
+    },
+    "uniqueName": "fortitude-of-the-scourge"
+  },
+  {
+    "itemId": 23547,
+    "name": "Resilience of the Scourge",
+    "icon": "spell_shadow_deadofnight",
+    "class": "Quest",
+    "subclass": "Quest",
+    "sellPrice": 0,
+    "quality": "Epic",
+    "itemLevel": 60,
+    "requiredLevel": 60,
+    "slot": "Non-equippable",
+    "tooltip": [
+      { "label": "Resilience of the Scourge", "format": "Epic" },
+      { "label": "Item Level 60", "format": "Misc" },
+      { "label": "Binds when picked up" },
+      { "label": "Requires Level 60" },
+      {
+        "label": "Use: Permanently adds to a shoulder slot item increased healing done by magical spells and effects up to 31 and also increases your mana regen by 5 mana per 5 sec.",
+        "format": "Uncommon"
+      },
+      { "label": "Dropped by: Sapphiron" }
+    ],
+    "itemLink": "|cffa335ee|Hitem:23547::::::::::0|h[Resilience of the Scourge]|h|r",
+    "contentPhase": 6,
+    "source": {
+      "category": "Boss Drop",
+      "name": "Sapphiron",
+      "zone": 3456,
+      "dropChance": null
+    },
+    "uniqueName": "resilience-of-the-scourge"
+  },
+  {
     "itemId": 22691,
     "name": "Corrupted Ashbringer",
     "icon": "inv_sword_2h_ashbringercorrupt",
