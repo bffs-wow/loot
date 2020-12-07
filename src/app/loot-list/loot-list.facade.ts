@@ -169,7 +169,7 @@ export class LootListFacadeService {
     shareReplay(1)
   );
   naxxLoot$ = this.loadData$.pipe(
-    switchMap(() => this.lootListService.getData('Naxx', 'A1:DU60')),
+    switchMap(() => this.lootListService.getData('Naxx', 'A1:EG60')),
     map((data) => this.lootMapper(data)),
     // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
     shareReplay(1)
@@ -197,27 +197,22 @@ export class LootListFacadeService {
         }
         let rBwl = bwl.find((r) => r.name === rAtt.name);
         if (!rBwl) {
-          console.warn(`SHEET ISSUE: No BWL rankings for: ${rAtt.name}`);
           rBwl = { pendingLoot: [], receivedLoot: [] };
         }
         let rMc = mc.find((r) => r.name === rAtt.name);
         if (!rMc) {
-          console.warn(`SHEET ISSUE: No MC rankings for: ${rAtt.name}`);
           rMc = { pendingLoot: [], receivedLoot: [] };
         }
         let rOny = ony.find((r) => r.name === rAtt.name);
         if (!rOny) {
-          console.warn(`SHEET ISSUE: No Ony rankings for: ${rAtt.name}`);
           rOny = { pendingLoot: [], receivedLoot: [] };
         }
         let rAq = aq.find((r) => r.name === rAtt.name);
         if (!rAq) {
-          console.warn(`SHEET ISSUE: No AQ40 rankings for: ${rAtt.name}`);
           rAq = { pendingLoot: [], receivedLoot: [] };
         }
         let rNaxx = naxx.find((r) => r.name === rAtt.name);
         if (!rNaxx) {
-          console.warn(`SHEET ISSUE: No Naxx rankings for: ${rAtt.name}`);
           rNaxx = { pendingLoot: [], receivedLoot: [] };
         }
         let raider: Raider = {
@@ -249,6 +244,11 @@ export class LootListFacadeService {
           r.loot = raiderLoot.find(
             (l) => l.sheetName.toLowerCase() === r.itemName.toLowerCase()
           );
+          if (!r.loot) {
+            console.warn(
+              `SHEET ISSUE: Couldn't find item for ranking "${r.itemName}" - ${raider.name}`
+            );
+          }
           return r;
         });
 

@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  cache_bust: '4',
-  sheetId: '1NCqKjPnzavcaVH_uEqVcn0MXBlmknkpM4an9ADe81Zs',
+  cache_bust: '5',
+  sheetId: '1VE9KY_Awsh6yYCVpW40fMxeAVkoMcgfUqjrrIdWRACQ',
   apiKey: 'AIzaSyB3IfCPeyxe_qHKZYBfZvNtn2reVWDRVvU',
   logsGuildUrl: 'https://classic.warcraftlogs.com/guild/rankings/532692/latest/',
   logsCharacterBaseUrl: 'https://classic.warcraftlogs.com/character/us/sulfuras/',

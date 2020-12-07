@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng deploy --base-href=/loot/"
+    "deploy": "ng deploy --base-href=/loot/",
+    "deploy-p6": "ng deploy --base-href=/p6/"
   },
   "private": true,
   "dependencies": {

@@ -2165,6 +2165,41 @@
     "uniqueName": "icebane-helmet"
   },
   {
+    "itemId": 23027,
+    "name": "Warmth of Forgiveness",
+    "icon": "inv_trinket_naxxramas01",
+    "class": "Armor",
+    "subclass": "Miscellaneous",
+    "sellPrice": 91160,
+    "quality": "Epic",
+    "itemLevel": 85,
+    "requiredLevel": 60,
+    "slot": "Trinket",
+    "tooltip": [
+      { "label": "Warmth of Forgiveness", "format": "Epic" },
+      { "label": "Item Level 85", "format": "Misc" },
+      { "label": "Binds when picked up" },
+      { "label": "Unique" },
+      { "label": "Trinket" },
+      { "label": "Requires Level 60" },
+      { "label": "Equip: Restores 10 mana per 5 sec.", "format": "Uncommon" },
+      {
+        "label": "Use: Restores 500 mana. (3 Min Cooldown)",
+        "format": "Uncommon"
+      },
+      { "label": "Sell Price:" }
+    ],
+    "itemLink": "|cffa335ee|Hitem:23027::::::::::0|h[Warmth of Forgiveness]|h|r",
+    "contentPhase": 6,
+    "source": {
+      "category": "Boss Drop",
+      "name": "The Four Horsemen",
+      "zone": 3456,
+      "dropChance": null
+    },
+    "uniqueName": "warmth-of-forgiveness"
+  },
+  {
     "itemId": 22960,
     "name": "Cloak of Suturing",
     "icon": "inv_misc_cape_naxxramas_02",
