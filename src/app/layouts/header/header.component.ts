@@ -20,8 +20,7 @@ import { environment } from 'src/environments/environment';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject<boolean>();
-  sheetUrl =
-    'https://docs.google.com/spreadsheets/d/1NCqKjPnzavcaVH_uEqVcn0MXBlmknkpM4an9ADe81Zs/edit#gid=604423388';
+  sheetUrl = `https://docs.google.com/spreadsheets/d/${environment.sheetId}/edit`;
   logsGuildUrl = environment.logsGuildUrl;
   form: FormGroup;
   faSync = faSync;

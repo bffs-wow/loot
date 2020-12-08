@@ -370,10 +370,12 @@ export class LootListFacadeService {
       const grouped = groupBy(grp, 'points');
       const points = Object.keys(grouped);
       // take each grouping of points, and make a `LootGroup` object from it
-      const rankedGroup: LootGroup[] = points.map((point) => ({
-        points: parseFloat(point),
-        rankings: grouped[point],
-      }));
+      const rankedGroup: LootGroup[] = points
+        .map((point) => ({
+          points: parseFloat(point),
+          rankings: grouped[point],
+        }))
+        .filter((g) => !isNaN(g.points));
       return [...lootGroups, ...rankedGroup];
     }, []);
     // Finally, sort all of the groups with the highest oints on top
