@@ -18,6 +18,7 @@ export class RosterPageComponent implements OnInit {
     Class.Mage,
     Class.Rogue,
     Class.Warlock,
+    Class.Paladin,
   ];
   constructor(private stateService: StateService) {}
 

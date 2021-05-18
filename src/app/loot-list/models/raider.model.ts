@@ -12,6 +12,7 @@ export enum Class {
   Druid = 'Druid',
   Hunter = 'Hunter',
   Mage = 'Mage',
+  Paladin = 'Paladin',
 }
 const classItems = {
   'Bindings of Transcendence': Class.Priest,
@@ -22,6 +23,7 @@ const classItems = {
   'Stormrage Belt': Class.Druid,
   "Dragonstalker's Belt": Class.Hunter,
   'Netherwind Belt': Class.Mage,
+  'Judgement Spaulders': Class.Paladin,
 };
 /**
  * Determine the class of the raider based on the loot they are eligible for.
