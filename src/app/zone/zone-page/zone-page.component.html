@@ -5,7 +5,7 @@
         <h1 class="title">
           <a
             title="Open Wowhead"
-            [href]="'https://classic.wowhead.com/zone=' + zone.zoneId"
+            [href]="'https://tbc.wowhead.com/zone=' + zone.zoneId"
             target="_blank"
             [appWowheadTooltip]="zone"
             >{{ zone.name }} <fa-icon [icon]="faExternalLinkAlt"></fa-icon
@@ -46,7 +46,10 @@
                 >&nbsp;&nbsp;
                 <div
                   class="tags"
-                  *ngIf="getNextRecipient(item) | async as recipientGrp; else noRankings"
+                  *ngIf="
+                    getNextRecipient(item) | async as recipientGrp;
+                    else noRankings
+                  "
                 >
                   <span
                     class="tag is-black"

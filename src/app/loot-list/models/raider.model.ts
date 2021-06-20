@@ -1,6 +1,6 @@
 import { Attendance } from './attendance.model';
 import { Ranking } from './ranking.model';
-import { LootReceipt, EligibleLoot, Loot } from './loot.model';
+import { LootReceipt, EligibleLoot } from './loot.model';
 
 export enum Class {
   Unknown = 'Unknown',
@@ -14,25 +14,6 @@ export enum Class {
   Mage = 'Mage',
   Paladin = 'Paladin',
 }
-const classItems = {
-  'Bindings of Transcendence': Class.Priest,
-  'Pauldrons of Wrath': Class.Warrior,
-  'Nemesis Spaulders': Class.Warlock,
-  'Bloodfang Chestpiece': Class.Rogue,
-  'Greaves of Ten Storms': Class.Shaman,
-  'Stormrage Belt': Class.Druid,
-  "Dragonstalker's Belt": Class.Hunter,
-  'Netherwind Belt': Class.Mage,
-  'Judgement Spaulders': Class.Paladin,
-};
-/**
- * Determine the class of the raider based on the loot they are eligible for.
- */
-export function findClass(raider: Raider) {
-  const loot = [...raider.receivedLoot, ...raider.pendingLoot];
-  const classLoot = loot.find((l) => !!classItems[l.name]);
-  return classLoot ? classItems[classLoot.name] : Class.Unknown;
-}
 
 export interface Raider {
   name: string;
@@ -42,4 +23,29 @@ export interface Raider {
   rankings: Ranking[];
   receivedLoot: LootReceipt[];
   pendingLoot: EligibleLoot[];
+}
+
+export function parseClass(val: string) {
+  switch (val) {
+    case Class.Druid:
+      return Class.Druid;
+    case Class.Hunter:
+      return Class.Hunter;
+    case Class.Mage:
+      return Class.Mage;
+    case Class.Paladin:
+      return Class.Paladin;
+    case Class.Priest:
+      return Class.Priest;
+    case Class.Rogue:
+      return Class.Rogue;
+    case Class.Shaman:
+      return Class.Shaman;
+    case Class.Warlock:
+      return Class.Warlock;
+    case Class.Warrior:
+      return Class.Warrior;
+    default:
+      return Class.Unknown;
+  }
 }

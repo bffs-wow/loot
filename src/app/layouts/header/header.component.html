@@ -31,20 +31,12 @@
         <a class="navbar-link"> Raids </a>
 
         <div class="navbar-dropdown">
-          <a class="navbar-item" [routerLink]="['/zone', 'naxxramas']">
-            Naxxramas
-          </a>
-          <a class="navbar-item" [routerLink]="['/zone', 'ahn-qiraj']">
-            Temple of Ahn'Qiraj
-          </a>
-          <a class="navbar-item" [routerLink]="['/zone', 'blackwing-lair']">
-            Blackwing Lair
-          </a>
-          <a class="navbar-item" [routerLink]="['/zone', 'onyxias-lair']">
-            Onyxia's Lair
-          </a>
-          <a class="navbar-item" [routerLink]="['/zone', 'molten-core']">
-            Molten Core
+          <a
+            class="navbar-item"
+            *ngFor="let zone of zoneService.zones"
+            [routerLink]="['/zone', zone.slug]"
+          >
+            {{ zone.name }}
           </a>
         </div>
       </div>

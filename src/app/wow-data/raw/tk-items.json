@@ -1,0 +1,3788 @@
+[
+    {
+        "itemId": 29905,
+        "name": "Kael's Vial Remnant",
+        "icon": "inv_potion_101",
+        "class": "Consumable",
+        "subclass": "Consumable",
+        "sellPrice": 0,
+        "quality": "Common",
+        "itemLevel": 0,
+        "requiredLevel": 0,
+        "slot": "Non-equippable",
+        "tooltip": [
+            {
+                "label": "Kael's Vial Remnant"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Quest Item"
+            },
+            {
+                "label": "Unique"
+            },
+            {
+                "label": "\"Contains a small amount of water from the Well of Eternity.\""
+            }
+        ],
+        "itemLink": "|cffffffff|Hitem:29905::::::::::0|h[Kael's Vial Remnant]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.338
+        },
+        "uniqueName": "kaels-vial-remnant"
+    },
+    {
+        "itemId": 29918,
+        "name": "Mindstorm Wristbands",
+        "icon": "inv_bracer_13",
+        "class": "Armor",
+        "subclass": "Cloth",
+        "sellPrice": 26216,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Wrist",
+        "tooltip": [
+            {
+                "label": "Mindstorm Wristbands"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Wrist"
+            },
+            {
+                "label": "Cloth",
+                "format": "alignRight"
+            },
+            {
+                "label": "94 Armor"
+            },
+            {
+                "label": "+13 Stamina"
+            },
+            {
+                "label": "+13 Intellect"
+            },
+            {
+                "label": "Durability 35 / 35"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Improves spell critical strike rating by 23.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases damage and healing done by magical spells and effects by up to 36.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Al'ar"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29918::::::::::0|h[Mindstorm Wristbands]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Al'ar",
+            "zone": 3845,
+            "dropChance": 0.312
+        },
+        "uniqueName": "mindstorm-wristbands"
+    },
+    {
+        "itemId": 29922,
+        "name": "Band of Al'ar",
+        "icon": "inv_jewelry_ring_61",
+        "class": "Armor",
+        "subclass": "Miscellaneous",
+        "sellPrice": 60256,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Finger",
+        "tooltip": [
+            {
+                "label": "Band of Al'ar"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Unique"
+            },
+            {
+                "label": "Finger"
+            },
+            {
+                "label": "+24 Stamina"
+            },
+            {
+                "label": "+23 Intellect"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases damage and healing done by magical spells and effects by up to 37.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Al'ar"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29922::::::::::0|h[Band of Al'ar]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Al'ar",
+            "zone": 3845,
+            "dropChance": 0.322
+        },
+        "uniqueName": "band-of-alar"
+    },
+    {
+        "itemId": 29920,
+        "name": "Phoenix-Ring of Rebirth",
+        "icon": "inv_jewelry_ring_51naxxramas",
+        "class": "Armor",
+        "subclass": "Miscellaneous",
+        "sellPrice": 60256,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Finger",
+        "tooltip": [
+            {
+                "label": "Phoenix-Ring of Rebirth"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Unique"
+            },
+            {
+                "label": "Finger"
+            },
+            {
+                "label": "+24 Intellect"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases healing done by up to 55 and damage done by up to 19 for all magical spells and effects.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Restores 10 mana per 5 sec.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Al'ar"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29920::::::::::0|h[Phoenix-Ring of Rebirth]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Al'ar",
+            "zone": 3845,
+            "dropChance": 0.304
+        },
+        "uniqueName": "phoenix-ring-of-rebirth"
+    },
+    {
+        "itemId": 29924,
+        "name": "Netherbane",
+        "icon": "inv_axe_62",
+        "class": "Weapon",
+        "subclass": "Axe",
+        "sellPrice": 139688,
+        "quality": "Epic",
+        "itemLevel": 134,
+        "requiredLevel": 70,
+        "slot": "One-Hand",
+        "tooltip": [
+            {
+                "label": "Netherbane"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 134",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "One-Hand"
+            },
+            {
+                "label": "Axe",
+                "format": "alignRight"
+            },
+            {
+                "label": "175 - 327 Damage"
+            },
+            {
+                "label": "Speed 2.60",
+                "format": "alignRight"
+            },
+            {
+                "label": "(96.54 damage per second)"
+            },
+            {
+                "label": "+25 Agility"
+            },
+            {
+                "label": "+21 Stamina"
+            },
+            {
+                "label": "Durability 105 / 105"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases attack power by 40.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Al'ar"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29924::::::::::0|h[Netherbane]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Al'ar",
+            "zone": 3845,
+            "dropChance": 0.335
+        },
+        "uniqueName": "netherbane"
+    },
+    {
+        "itemId": 29923,
+        "name": "Talisman of the Sun King",
+        "icon": "inv_offhand_blood_02",
+        "class": "Armor",
+        "subclass": "Miscellaneous",
+        "sellPrice": 203059,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Held In Off-hand",
+        "tooltip": [
+            {
+                "label": "Talisman of the Sun King"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Held In Off-hand"
+            },
+            {
+                "label": "+27 Stamina"
+            },
+            {
+                "label": "+24 Intellect"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases healing done by up to 59 and damage done by up to 20 for all magical spells and effects.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Restores 6 mana per 5 sec.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Al'ar"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29923::::::::::0|h[Talisman of the Sun King]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Al'ar",
+            "zone": 3845,
+            "dropChance": 0.329
+        },
+        "uniqueName": "talisman-of-the-sun-king"
+    },
+    {
+        "itemId": 29921,
+        "name": "Fire Crest Breastplate",
+        "icon": "inv_chest_plate03",
+        "class": "Armor",
+        "subclass": "Mail",
+        "sellPrice": 79504,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Chest",
+        "tooltip": [
+            {
+                "label": "Fire Crest Breastplate"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Chest"
+            },
+            {
+                "label": "Mail",
+                "format": "alignRight"
+            },
+            {
+                "label": "900 Armor"
+            },
+            {
+                "label": "+36 Stamina"
+            },
+            {
+                "label": "+34 Intellect"
+            },
+            {
+                "label": "Durability 140 / 140"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Improves spell critical strike rating by 34.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases healing done by up to 81 and damage done by up to 27 for all magical spells and effects.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Restores 10 mana per 5 sec.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Al'ar"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29921::::::::::0|h[Fire Crest Breastplate]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Al'ar",
+            "zone": 3845,
+            "dropChance": 0.312
+        },
+        "uniqueName": "fire-crest-breastplate"
+    },
+    {
+        "itemId": 29925,
+        "name": "Phoenix-Wing Cloak",
+        "icon": "inv_misc_cape_08",
+        "class": "Armor",
+        "subclass": "Cloth",
+        "sellPrice": 40322,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Back",
+        "tooltip": [
+            {
+                "label": "Phoenix-Wing Cloak"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Back"
+            },
+            {
+                "label": "108 Armor"
+            },
+            {
+                "label": "+37 Stamina"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases defense rating by 22.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases your dodge rating by 27.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Al'ar"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29925::::::::::0|h[Phoenix-Wing Cloak]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Al'ar",
+            "zone": 3845,
+            "dropChance": 0.312
+        },
+        "uniqueName": "phoenix-wing-cloak"
+    },
+    {
+        "itemId": 29949,
+        "name": "Arcanite Steam-Pistol",
+        "icon": "inv_weapon_rifle_18",
+        "class": "Weapon",
+        "subclass": "Gun",
+        "sellPrice": 99160,
+        "quality": "Epic",
+        "itemLevel": 134,
+        "requiredLevel": 70,
+        "slot": "Ranged",
+        "tooltip": [
+            {
+                "label": "Arcanite Steam-Pistol"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 134",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Ranged"
+            },
+            {
+                "label": "Gun",
+                "format": "alignRight"
+            },
+            {
+                "label": "177 - 329 Damage"
+            },
+            {
+                "label": "Speed 2.90",
+                "format": "alignRight"
+            },
+            {
+                "label": "(87.24 damage per second)"
+            },
+            {
+                "label": "+20 Agility"
+            },
+            {
+                "label": "Durability 90 / 90"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Improves hit rating by 19.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Al'ar"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29949::::::::::0|h[Arcanite Steam-Pistol]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Al'ar",
+            "zone": 3845,
+            "dropChance": 0.32
+        },
+        "uniqueName": "arcanite-steam-pistol"
+    },
+    {
+        "itemId": 29951,
+        "name": "Star-Strider Boots",
+        "icon": "inv_boots_chain_04",
+        "class": "Armor",
+        "subclass": "Mail",
+        "sellPrice": 57730,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Feet",
+        "tooltip": [
+            {
+                "label": "Star-Strider Boots"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Feet"
+            },
+            {
+                "label": "Mail",
+                "format": "alignRight"
+            },
+            {
+                "label": "619 Armor"
+            },
+            {
+                "label": "+33 Agility"
+            },
+            {
+                "label": "+13 Stamina"
+            },
+            {
+                "label": "+18 Intellect"
+            },
+            {
+                "label": "Blue Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Blue Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Socket Bonus: +6 Attack Power",
+                "format": "Poor"
+            },
+            {
+                "label": "Durability 70 / 70"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases attack power by 66.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Restores 4 mana per 5 sec.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: High Astromancer Solarian"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29951::::::::::0|h[Star-Strider Boots]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "High Astromancer Solarian",
+            "zone": 3845,
+            "dropChance": 0.267
+        },
+        "uniqueName": "star-strider-boots"
+    },
+    {
+        "itemId": 29950,
+        "name": "Greaves of the Bloodwarder",
+        "icon": "inv_pants_plate_05",
+        "class": "Armor",
+        "subclass": "Plate",
+        "sellPrice": 89069,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Legs",
+        "tooltip": [
+            {
+                "label": "Greaves of the Bloodwarder"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Legs"
+            },
+            {
+                "label": "Plate",
+                "format": "alignRight"
+            },
+            {
+                "label": "1406 Armor"
+            },
+            {
+                "label": "+49 Strength"
+            },
+            {
+                "label": "+46 Stamina"
+            },
+            {
+                "label": "Red Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Yellow Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Blue Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Socket Bonus: +4 Strength",
+                "format": "Poor"
+            },
+            {
+                "label": "Durability 120 / 120"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Improves critical strike rating by 31.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: High Astromancer Solarian"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29950::::::::::0|h[Greaves of the Bloodwarder]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "High Astromancer Solarian",
+            "zone": 3845,
+            "dropChance": 0.316
+        },
+        "uniqueName": "greaves-of-the-bloodwarder"
+    },
+    {
+        "itemId": 29965,
+        "name": "Girdle of the Righteous Path",
+        "icon": "inv_belt_22",
+        "class": "Armor",
+        "subclass": "Plate",
+        "sellPrice": 43947,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Waist",
+        "tooltip": [
+            {
+                "label": "Girdle of the Righteous Path"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Waist"
+            },
+            {
+                "label": "Plate",
+                "format": "alignRight"
+            },
+            {
+                "label": "904 Armor"
+            },
+            {
+                "label": "+27 Stamina"
+            },
+            {
+                "label": "+33 Intellect"
+            },
+            {
+                "label": "Durability 55 / 55"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Improves spell critical strike rating by 27.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases healing done by up to 77 and damage done by up to 26 for all magical spells and effects.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: High Astromancer Solarian"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29965::::::::::0|h[Girdle of the Righteous Path]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "High Astromancer Solarian",
+            "zone": 3845,
+            "dropChance": 0.289
+        },
+        "uniqueName": "girdle-of-the-righteous-path"
+    },
+    {
+        "itemId": 29947,
+        "name": "Gloves of the Searing Grip",
+        "icon": "inv_gauntlets_28",
+        "class": "Armor",
+        "subclass": "Leather",
+        "sellPrice": 31454,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Hands",
+        "tooltip": [
+            {
+                "label": "Gloves of the Searing Grip"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Hands"
+            },
+            {
+                "label": "Leather",
+                "format": "alignRight"
+            },
+            {
+                "label": "252 Armor"
+            },
+            {
+                "label": "+33 Agility"
+            },
+            {
+                "label": "+37 Stamina"
+            },
+            {
+                "label": "Durability 40 / 40"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases your expertise rating by 18.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases attack power by 66.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Al'ar"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29947::::::::::0|h[Gloves of the Searing Grip]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Al'ar",
+            "zone": 3845,
+            "dropChance": 0.316
+        },
+        "uniqueName": "gloves-of-the-searing-grip"
+    },
+    {
+        "itemId": 29962,
+        "name": "Heartrazor",
+        "icon": "inv_weapon_shortblade_46",
+        "class": "Weapon",
+        "subclass": "Dagger",
+        "sellPrice": 128733,
+        "quality": "Epic",
+        "itemLevel": 134,
+        "requiredLevel": 70,
+        "slot": "One-Hand",
+        "tooltip": [
+            {
+                "label": "Heartrazor"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 134",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Unique"
+            },
+            {
+                "label": "One-Hand"
+            },
+            {
+                "label": "Dagger",
+                "format": "alignRight"
+            },
+            {
+                "label": "121 - 226 Damage"
+            },
+            {
+                "label": "Speed 1.80",
+                "format": "alignRight"
+            },
+            {
+                "label": "(96.39 damage per second)"
+            },
+            {
+                "label": "+20 Agility"
+            },
+            {
+                "label": "+30 Stamina"
+            },
+            {
+                "label": "Durability 75 / 75"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Chance on hit: Increases attack power by 270 for 10 sec.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: High Astromancer Solarian"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29962::::::::::0|h[Heartrazor]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "High Astromancer Solarian",
+            "zone": 3845,
+            "dropChance": 0.277
+        },
+        "uniqueName": "heartrazor"
+    },
+    {
+        "itemId": 29948,
+        "name": "Claw of the Phoenix",
+        "icon": "inv_weapon_hand_12",
+        "class": "Weapon",
+        "subclass": "Fist Weapon",
+        "sellPrice": 131728,
+        "quality": "Epic",
+        "itemLevel": 134,
+        "requiredLevel": 70,
+        "slot": "Off Hand",
+        "tooltip": [
+            {
+                "label": "Claw of the Phoenix"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 134",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Off Hand"
+            },
+            {
+                "label": "Fist Weapon",
+                "format": "alignRight"
+            },
+            {
+                "label": "101 - 189 Damage"
+            },
+            {
+                "label": "Speed 1.50",
+                "format": "alignRight"
+            },
+            {
+                "label": "(96.67 damage per second)"
+            },
+            {
+                "label": "+21 Agility"
+            },
+            {
+                "label": "+30 Stamina"
+            },
+            {
+                "label": "Durability 75 / 75"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases attack power by 40.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Al'ar"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29948::::::::::0|h[Claw of the Phoenix]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Al'ar",
+            "zone": 3845,
+            "dropChance": 0.131
+        },
+        "uniqueName": "claw-of-the-phoenix"
+    },
+    {
+        "itemId": 29977,
+        "name": "Star-Soul Breeches",
+        "icon": "inv_pants_cloth_07",
+        "class": "Armor",
+        "subclass": "Cloth",
+        "sellPrice": 53592,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Legs",
+        "tooltip": [
+            {
+                "label": "Star-Soul Breeches"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Legs"
+            },
+            {
+                "label": "Cloth",
+                "format": "alignRight"
+            },
+            {
+                "label": "188 Armor"
+            },
+            {
+                "label": "+27 Stamina"
+            },
+            {
+                "label": "+27 Intellect"
+            },
+            {
+                "label": "+52 Spirit"
+            },
+            {
+                "label": "Durability 75 / 75"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases healing done by up to 101 and damage done by up to 34 for all magical spells and effects.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: High Astromancer Solarian"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29977::::::::::0|h[Star-Soul Breeches]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "High Astromancer Solarian",
+            "zone": 3845,
+            "dropChance": 0.231
+        },
+        "uniqueName": "star-soul-breeches"
+    },
+    {
+        "itemId": 29972,
+        "name": "Trousers of the Astromancer",
+        "icon": "inv_pants_cloth_05",
+        "class": "Armor",
+        "subclass": "Cloth",
+        "sellPrice": 51269,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Legs",
+        "tooltip": [
+            {
+                "label": "Trousers of the Astromancer"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Legs"
+            },
+            {
+                "label": "Cloth",
+                "format": "alignRight"
+            },
+            {
+                "label": "188 Armor"
+            },
+            {
+                "label": "+33 Stamina"
+            },
+            {
+                "label": "+36 Intellect"
+            },
+            {
+                "label": "+22 Spirit"
+            },
+            {
+                "label": "Blue Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Yellow Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Blue Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Socket Bonus: +5 Spell Damage and Healing",
+                "format": "Poor"
+            },
+            {
+                "label": "Durability 75 / 75"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases damage and healing done by magical spells and effects by up to 54.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: High Astromancer Solarian"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29972::::::::::0|h[Trousers of the Astromancer]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "High Astromancer Solarian",
+            "zone": 3845,
+            "dropChance": 0.232
+        },
+        "uniqueName": "trousers-of-the-astromancer"
+    },
+    {
+        "itemId": 29981,
+        "name": "Ethereum Life-Staff",
+        "icon": "inv_staff_52",
+        "class": "Weapon",
+        "subclass": "Staff",
+        "sellPrice": 160275,
+        "quality": "Epic",
+        "itemLevel": 134,
+        "requiredLevel": 70,
+        "slot": "Two-Hand",
+        "tooltip": [
+            {
+                "label": "Ethereum Life-Staff"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 134",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Two-Hand"
+            },
+            {
+                "label": "Staff",
+                "format": "alignRight"
+            },
+            {
+                "label": "144 - 306 Damage"
+            },
+            {
+                "label": "Speed 3.20",
+                "format": "alignRight"
+            },
+            {
+                "label": "(70.31 damage per second)"
+            },
+            {
+                "label": "+52 Stamina"
+            },
+            {
+                "label": "+44 Intellect"
+            },
+            {
+                "label": "+62 Spirit"
+            },
+            {
+                "label": "Durability 120 / 120"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases healing done by up to 415 and damage done by up to 138 for all magical spells and effects.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: High Astromancer Solarian"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29981::::::::::0|h[Ethereum Life-Staff]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "High Astromancer Solarian",
+            "zone": 3845,
+            "dropChance": 0.34
+        },
+        "uniqueName": "ethereum-life-staff"
+    },
+    {
+        "itemId": 29966,
+        "name": "Vambraces of Ending",
+        "icon": "inv_bracer_15",
+        "class": "Armor",
+        "subclass": "Leather",
+        "sellPrice": 31332,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Wrist",
+        "tooltip": [
+            {
+                "label": "Vambraces of Ending"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Wrist"
+            },
+            {
+                "label": "Leather",
+                "format": "alignRight"
+            },
+            {
+                "label": "177 Armor"
+            },
+            {
+                "label": "+24 Agility"
+            },
+            {
+                "label": "+24 Stamina"
+            },
+            {
+                "label": "Blue Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Socket Bonus: +4 Attack Power",
+                "format": "Poor"
+            },
+            {
+                "label": "Durability 40 / 40"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases attack power by 52.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: High Astromancer Solarian"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29966::::::::::0|h[Vambraces of Ending]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "High Astromancer Solarian",
+            "zone": 3845,
+            "dropChance": 0.308
+        },
+        "uniqueName": "vambraces-of-ending"
+    },
+    {
+        "itemId": 29983,
+        "name": "Fel-Steel Warhelm",
+        "icon": "inv_helmet_03",
+        "class": "Armor",
+        "subclass": "Plate",
+        "sellPrice": 64912,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Head",
+        "tooltip": [
+            {
+                "label": "Fel-Steel Warhelm"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Head"
+            },
+            {
+                "label": "Plate",
+                "format": "alignRight"
+            },
+            {
+                "label": "1306 Armor"
+            },
+            {
+                "label": "+46 Strength"
+            },
+            {
+                "label": "+46 Stamina"
+            },
+            {
+                "label": "Durability 100 / 100"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Improves hit rating by 30.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Improves critical strike rating by 44.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Void Reaver"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29983::::::::::0|h[Fel-Steel Warhelm]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Void Reaver",
+            "zone": 3845,
+            "dropChance": 0.034
+        },
+        "uniqueName": "fel-steel-warhelm"
+    },
+    {
+        "itemId": 29985,
+        "name": "Void Reaver Greaves",
+        "icon": "inv_pants_mail_15",
+        "class": "Armor",
+        "subclass": "Mail",
+        "sellPrice": 74902,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Legs",
+        "tooltip": [
+            {
+                "label": "Void Reaver Greaves"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Legs"
+            },
+            {
+                "label": "Mail",
+                "format": "alignRight"
+            },
+            {
+                "label": "787 Armor"
+            },
+            {
+                "label": "+37 Agility"
+            },
+            {
+                "label": "+33 Stamina"
+            },
+            {
+                "label": "+24 Intellect"
+            },
+            {
+                "label": "Red Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Yellow Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Blue Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Socket Bonus: +4 Agility",
+                "format": "Poor"
+            },
+            {
+                "label": "Durability 105 / 105"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases attack power by 88.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Void Reaver"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29985::::::::::0|h[Void Reaver Greaves]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Void Reaver",
+            "zone": 3845,
+            "dropChance": 0.042
+        },
+        "uniqueName": "void-reaver-greaves"
+    },
+    {
+        "itemId": 29988,
+        "name": "The Nexus Key",
+        "icon": "inv_staff_43",
+        "class": "Weapon",
+        "subclass": "Staff",
+        "sellPrice": 172526,
+        "quality": "Epic",
+        "itemLevel": 141,
+        "requiredLevel": 70,
+        "slot": "Two-Hand",
+        "tooltip": [
+            {
+                "label": "The Nexus Key"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 141",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Two-Hand"
+            },
+            {
+                "label": "Staff",
+                "format": "alignRight"
+            },
+            {
+                "label": "145 - 312 Damage"
+            },
+            {
+                "label": "Speed 3.20",
+                "format": "alignRight"
+            },
+            {
+                "label": "(71.41 damage per second)"
+            },
+            {
+                "label": "+76 Stamina"
+            },
+            {
+                "label": "+52 Intellect"
+            },
+            {
+                "label": "Durability 120 / 120"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Improves spell critical strike rating by 51.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases damage and healing done by magical spells and effects by up to 236.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29988::::::::::0|h[The Nexus Key]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.115
+        },
+        "uniqueName": "the-nexus-key"
+    },
+    {
+        "itemId": 29990,
+        "name": "Crown of the Sun",
+        "icon": "inv_helmet_32",
+        "class": "Armor",
+        "subclass": "Cloth",
+        "sellPrice": 40895,
+        "quality": "Epic",
+        "itemLevel": 138,
+        "requiredLevel": 70,
+        "slot": "Head",
+        "tooltip": [
+            {
+                "label": "Crown of the Sun"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 138",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Head"
+            },
+            {
+                "label": "Cloth",
+                "format": "alignRight"
+            },
+            {
+                "label": "188 Armor"
+            },
+            {
+                "label": "+39 Stamina"
+            },
+            {
+                "label": "+38 Intellect"
+            },
+            {
+                "label": "+49 Spirit"
+            },
+            {
+                "label": "Durability 60 / 60"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases healing done by up to 108 and damage done by up to 36 for all magical spells and effects.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29990::::::::::0|h[Crown of the Sun]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.142
+        },
+        "uniqueName": "crown-of-the-sun"
+    },
+    {
+        "itemId": 29987,
+        "name": "Gauntlets of the Sun King",
+        "icon": "inv_gauntlets_17",
+        "class": "Armor",
+        "subclass": "Cloth",
+        "sellPrice": 26958,
+        "quality": "Epic",
+        "itemLevel": 138,
+        "requiredLevel": 70,
+        "slot": "Hands",
+        "tooltip": [
+            {
+                "label": "Gauntlets of the Sun King"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 138",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Hands"
+            },
+            {
+                "label": "Cloth",
+                "format": "alignRight"
+            },
+            {
+                "label": "145 Armor"
+            },
+            {
+                "label": "+28 Stamina"
+            },
+            {
+                "label": "+29 Intellect"
+            },
+            {
+                "label": "+20 Spirit"
+            },
+            {
+                "label": "Durability 35 / 35"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Improves spell critical strike rating by 28.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases damage and healing done by magical spells and effects by up to 42.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29987::::::::::0|h[Gauntlets of the Sun King]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.182
+        },
+        "uniqueName": "gauntlets-of-the-sun-king"
+    },
+    {
+        "itemId": 29986,
+        "name": "Cowl of the Grand Engineer",
+        "icon": "inv_helmet_14",
+        "class": "Armor",
+        "subclass": "Cloth",
+        "sellPrice": 37590,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Head",
+        "tooltip": [
+            {
+                "label": "Cowl of the Grand Engineer"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Head"
+            },
+            {
+                "label": "Cloth",
+                "format": "alignRight"
+            },
+            {
+                "label": "175 Armor"
+            },
+            {
+                "label": "+22 Stamina"
+            },
+            {
+                "label": "+27 Intellect"
+            },
+            {
+                "label": "Yellow Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Yellow Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Blue Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Socket Bonus: +5 Spell Damage and Healing",
+                "format": "Poor"
+            },
+            {
+                "label": "Durability 60 / 60"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Improves spell hit rating by 16.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Improves spell critical strike rating by 35.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases damage and healing done by magical spells and effects by up to 53.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Void Reaver"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29986::::::::::0|h[Cowl of the Grand Engineer]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Void Reaver",
+            "zone": 3845,
+            "dropChance": 0.034
+        },
+        "uniqueName": "cowl-of-the-grand-engineer"
+    },
+    {
+        "itemId": 29982,
+        "name": "Wand of the Forgotten Star",
+        "icon": "inv_wand_15",
+        "class": "Weapon",
+        "subclass": "Wand",
+        "sellPrice": 96539,
+        "quality": "Epic",
+        "itemLevel": 134,
+        "requiredLevel": 70,
+        "slot": "Ranged",
+        "tooltip": [
+            {
+                "label": "Wand of the Forgotten Star"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 134",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Ranged"
+            },
+            {
+                "label": "Wand",
+                "format": "alignRight"
+            },
+            {
+                "label": "186 - 346 Shadow Damage"
+            },
+            {
+                "label": "Speed 1.50",
+                "format": "alignRight"
+            },
+            {
+                "label": "(177.33 damage per second)"
+            },
+            {
+                "label": "Durability 75 / 75"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Improves spell hit rating by 11.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Improves spell critical strike rating by 14.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases damage and healing done by magical spells and effects by up to 23.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: High Astromancer Solarian"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29982::::::::::0|h[Wand of the Forgotten Star]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "High Astromancer Solarian",
+            "zone": 3845,
+            "dropChance": 0.188
+        },
+        "uniqueName": "wand-of-the-forgotten-star"
+    },
+    {
+        "itemId": 29976,
+        "name": "Worldstorm Gauntlets",
+        "icon": "inv_gauntlets_26",
+        "class": "Armor",
+        "subclass": "Mail",
+        "sellPrice": 40050,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Hands",
+        "tooltip": [
+            {
+                "label": "Worldstorm Gauntlets"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Hands"
+            },
+            {
+                "label": "Mail",
+                "format": "alignRight"
+            },
+            {
+                "label": "562 Armor"
+            },
+            {
+                "label": "+21 Stamina"
+            },
+            {
+                "label": "+22 Intellect"
+            },
+            {
+                "label": "Blue Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Yellow Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Socket Bonus: +4 Stamina",
+                "format": "Poor"
+            },
+            {
+                "label": "Durability 50 / 50"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Improves spell critical strike rating by 15.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases healing done by up to 73 and damage done by up to 25 for all magical spells and effects.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Restores 9 mana per 5 sec.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: High Astromancer Solarian"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29976::::::::::0|h[Worldstorm Gauntlets]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "High Astromancer Solarian",
+            "zone": 3845,
+            "dropChance": 0.217
+        },
+        "uniqueName": "worldstorm-gauntlets"
+    },
+    {
+        "itemId": 29984,
+        "name": "Girdle of Zaetar",
+        "icon": "inv_belt_08",
+        "class": "Armor",
+        "subclass": "Leather",
+        "sellPrice": 31089,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Waist",
+        "tooltip": [
+            {
+                "label": "Girdle of Zaetar"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Waist"
+            },
+            {
+                "label": "Leather",
+                "format": "alignRight"
+            },
+            {
+                "label": "227 Armor"
+            },
+            {
+                "label": "+22 Stamina"
+            },
+            {
+                "label": "+23 Intellect"
+            },
+            {
+                "label": "+24 Spirit"
+            },
+            {
+                "label": "Blue Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Blue Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Socket Bonus: +7 Healing +3 Spell Damage",
+                "format": "Poor"
+            },
+            {
+                "label": "Durability 40 / 40"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases healing done by up to 73 and damage done by up to 25 for all magical spells and effects.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Void Reaver"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29984::::::::::0|h[Girdle of Zaetar]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Void Reaver",
+            "zone": 3845,
+            "dropChance": 0.029
+        },
+        "uniqueName": "girdle-of-zaetar"
+    },
+    {
+        "itemId": 29991,
+        "name": "Sunhawk Leggings",
+        "icon": "inv_pants_plate_07",
+        "class": "Armor",
+        "subclass": "Mail",
+        "sellPrice": 82099,
+        "quality": "Epic",
+        "itemLevel": 138,
+        "requiredLevel": 70,
+        "slot": "Legs",
+        "tooltip": [
+            {
+                "label": "Sunhawk Leggings"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 138",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Legs"
+            },
+            {
+                "label": "Mail",
+                "format": "alignRight"
+            },
+            {
+                "label": "847 Armor"
+            },
+            {
+                "label": "+39 Stamina"
+            },
+            {
+                "label": "+31 Intellect"
+            },
+            {
+                "label": "Blue Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Blue Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Yellow Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Socket Bonus: +9 Healing and +3 Spell Damage",
+                "format": "Poor"
+            },
+            {
+                "label": "Durability 105 / 105"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases healing done by up to 108 and damage done by up to 36 for all magical spells and effects.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Restores 13 mana per 5 sec.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29991::::::::::0|h[Sunhawk Leggings]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.074
+        },
+        "uniqueName": "sunhawk-leggings"
+    },
+    {
+        "itemId": 29992,
+        "name": "Royal Cloak of the Sunstriders",
+        "icon": "inv_misc_cape_10",
+        "class": "Armor",
+        "subclass": "Cloth",
+        "sellPrice": 42305,
+        "quality": "Epic",
+        "itemLevel": 138,
+        "requiredLevel": 70,
+        "slot": "Back",
+        "tooltip": [
+            {
+                "label": "Royal Cloak of the Sunstriders"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 138",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Back"
+            },
+            {
+                "label": "116 Armor"
+            },
+            {
+                "label": "+27 Stamina"
+            },
+            {
+                "label": "+22 Intellect"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases damage and healing done by magical spells and effects by up to 44.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29992::::::::::0|h[Royal Cloak of the Sunstriders]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.095
+        },
+        "uniqueName": "royal-cloak-of-the-sunstriders"
+    },
+    {
+        "itemId": 29994,
+        "name": "Thalassian Wildercloak",
+        "icon": "inv_misc_cape_15",
+        "class": "Armor",
+        "subclass": "Cloth",
+        "sellPrice": 42609,
+        "quality": "Epic",
+        "itemLevel": 138,
+        "requiredLevel": 70,
+        "slot": "Back",
+        "tooltip": [
+            {
+                "label": "Thalassian Wildercloak"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 138",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Back"
+            },
+            {
+                "label": "116 Armor"
+            },
+            {
+                "label": "+28 Agility"
+            },
+            {
+                "label": "+28 Stamina"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases attack power by 68.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29994::::::::::0|h[Thalassian Wildercloak]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.149
+        },
+        "uniqueName": "thalassian-wildercloak"
+    },
+    {
+        "itemId": 29993,
+        "name": "Twinblade of the Phoenix",
+        "icon": "inv_sword_2h_blood_c_01",
+        "class": "Weapon",
+        "subclass": "Sword",
+        "sellPrice": 180462,
+        "quality": "Epic",
+        "itemLevel": 141,
+        "requiredLevel": 70,
+        "slot": "Two-Hand",
+        "tooltip": [
+            {
+                "label": "Twinblade of the Phoenix"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 141",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Two-Hand"
+            },
+            {
+                "label": "Sword",
+                "format": "alignRight"
+            },
+            {
+                "label": "375 - 564 Damage"
+            },
+            {
+                "label": "Speed 3.60",
+                "format": "alignRight"
+            },
+            {
+                "label": "(130.42 damage per second)"
+            },
+            {
+                "label": "+53 Stamina"
+            },
+            {
+                "label": "Red Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Yellow Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Blue Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Socket Bonus: +8 Attack Power",
+                "format": "Poor"
+            },
+            {
+                "label": "Durability 120 / 120"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Improves critical strike rating by 37.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases attack power by 110.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29993::::::::::0|h[Twinblade of the Phoenix]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.122
+        },
+        "uniqueName": "twinblade-of-the-phoenix"
+    },
+    {
+        "itemId": 29996,
+        "name": "Rod of the Sun King",
+        "icon": "inv_mace_48",
+        "class": "Weapon",
+        "subclass": "Mace",
+        "sellPrice": 145925,
+        "quality": "Epic",
+        "itemLevel": 141,
+        "requiredLevel": 70,
+        "slot": "One-Hand",
+        "tooltip": [
+            {
+                "label": "Rod of the Sun King"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 141",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Unique"
+            },
+            {
+                "label": "One-Hand"
+            },
+            {
+                "label": "Mace",
+                "format": "alignRight"
+            },
+            {
+                "label": "189 - 352 Damage"
+            },
+            {
+                "label": "Speed 2.70",
+                "format": "alignRight"
+            },
+            {
+                "label": "(100.19 damage per second)"
+            },
+            {
+                "label": "Durability 105 / 105"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Chance on hit: Chance on melee attack to gain 10 Energy or 5 Rage.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases attack power by 52.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29996::::::::::0|h[Rod of the Sun King]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.115
+        },
+        "uniqueName": "rod-of-the-sun-king"
+    },
+    {
+        "itemId": 29995,
+        "name": "Leggings of Murderous Intent",
+        "icon": "inv_pants_leather_03",
+        "class": "Armor",
+        "subclass": "Leather",
+        "sellPrice": 71271,
+        "quality": "Epic",
+        "itemLevel": 138,
+        "requiredLevel": 70,
+        "slot": "Legs",
+        "tooltip": [
+            {
+                "label": "Leggings of Murderous Intent"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 138",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Legs"
+            },
+            {
+                "label": "Leather",
+                "format": "alignRight"
+            },
+            {
+                "label": "380 Armor"
+            },
+            {
+                "label": "+45 Agility"
+            },
+            {
+                "label": "+31 Stamina"
+            },
+            {
+                "label": "Durability 90 / 90"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Improves critical strike rating by 37.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases attack power by 92.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29995::::::::::0|h[Leggings of Murderous Intent]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.081
+        },
+        "uniqueName": "leggings-of-murderous-intent"
+    },
+    {
+        "itemId": 29989,
+        "name": "Sunshower Light Cloak",
+        "icon": "inv_misc_cape_06",
+        "class": "Armor",
+        "subclass": "Cloth",
+        "sellPrice": 40745,
+        "quality": "Epic",
+        "itemLevel": 138,
+        "requiredLevel": 70,
+        "slot": "Back",
+        "tooltip": [
+            {
+                "label": "Sunshower Light Cloak"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 138",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Back"
+            },
+            {
+                "label": "116 Armor"
+            },
+            {
+                "label": "+18 Stamina"
+            },
+            {
+                "label": "+24 Intellect"
+            },
+            {
+                "label": "+20 Spirit"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases healing done by up to 77 and damage done by up to 26 for all magical spells and effects.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29989::::::::::0|h[Sunshower Light Cloak]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.101
+        },
+        "uniqueName": "sunshower-light-cloak"
+    },
+    {
+        "itemId": 29997,
+        "name": "Band of the Ranger-General",
+        "icon": "inv_jewelry_ring_55",
+        "class": "Armor",
+        "subclass": "Miscellaneous",
+        "sellPrice": 60256,
+        "quality": "Epic",
+        "itemLevel": 138,
+        "requiredLevel": 70,
+        "slot": "Finger",
+        "tooltip": [
+            {
+                "label": "Band of the Ranger-General"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 138",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Unique"
+            },
+            {
+                "label": "Finger"
+            },
+            {
+                "label": "+27 Stamina"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Improves hit rating by 18.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Improves critical strike rating by 28.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases attack power by 56.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "\"This ring was formerly held by Sylvanas Windrunner....\"",
+                "format": "Misc"
+            },
+            {
+                "label": "Sell Price:"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29997::::::::::0|h[Band of the Ranger-General]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.135
+        },
+        "uniqueName": "band-of-the-ranger-general"
+    },
+    {
+        "itemId": 29998,
+        "name": "Royal Gauntlets of Silvermoon",
+        "icon": "inv_gauntlets_29",
+        "class": "Armor",
+        "subclass": "Plate",
+        "sellPrice": 50711,
+        "quality": "Epic",
+        "itemLevel": 138,
+        "requiredLevel": 70,
+        "slot": "Hands",
+        "tooltip": [
+            {
+                "label": "Royal Gauntlets of Silvermoon"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 138",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Hands"
+            },
+            {
+                "label": "Plate",
+                "format": "alignRight"
+            },
+            {
+                "label": "1080 Armor"
+            },
+            {
+                "label": "+57 Stamina"
+            },
+            {
+                "label": "Yellow Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Blue Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Socket Bonus: +3 Dodge Rating",
+                "format": "Poor"
+            },
+            {
+                "label": "Durability 55 / 55"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases defense rating by 24.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases your dodge rating by 32.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:29998::::::::::0|h[Royal Gauntlets of Silvermoon]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.115
+        },
+        "uniqueName": "royal-gauntlets-of-silvermoon"
+    },
+    {
+        "itemId": 30238,
+        "name": "Chestguard of the Vanquished Hero",
+        "icon": "inv_chest_chain_03",
+        "class": "Miscellaneous",
+        "subclass": "Junk",
+        "sellPrice": 50000,
+        "quality": "Epic",
+        "itemLevel": 70,
+        "requiredLevel": 70,
+        "slot": "Non-equippable",
+        "tooltip": [
+            {
+                "label": "Chestguard of the Vanquished Hero"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 70",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Classes: Hunter, Mage, Warlock"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Sell Price:"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:30238::::::::::0|h[Chestguard of the Vanquished Hero]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.662
+        },
+        "uniqueName": "chestguard-of-the-vanquished-hero"
+    },
+    {
+        "itemId": 30236,
+        "name": "Chestguard of the Vanquished Champion",
+        "icon": "inv_chest_chain_03",
+        "class": "Miscellaneous",
+        "subclass": "Junk",
+        "sellPrice": 50000,
+        "quality": "Epic",
+        "itemLevel": 70,
+        "requiredLevel": 70,
+        "slot": "Non-equippable",
+        "tooltip": [
+            {
+                "label": "Chestguard of the Vanquished Champion"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 70",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Classes: Paladin, Rogue, Shaman"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Sell Price:"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:30236::::::::::0|h[Chestguard of the Vanquished Champion]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.628
+        },
+        "uniqueName": "chestguard-of-the-vanquished-champion"
+    },
+    {
+        "itemId": 30237,
+        "name": "Chestguard of the Vanquished Defender",
+        "icon": "inv_chest_chain_03",
+        "class": "Miscellaneous",
+        "subclass": "Junk",
+        "sellPrice": 50000,
+        "quality": "Epic",
+        "itemLevel": 70,
+        "requiredLevel": 70,
+        "slot": "Non-equippable",
+        "tooltip": [
+            {
+                "label": "Chestguard of the Vanquished Defender"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 70",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Classes: Warrior, Priest, Druid"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Sell Price:"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:30237::::::::::0|h[Chestguard of the Vanquished Defender]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.588
+        },
+        "uniqueName": "chestguard-of-the-vanquished-defender"
+    },
+    {
+        "itemId": 30248,
+        "name": "Pauldrons of the Vanquished Champion",
+        "icon": "inv_shoulder_22",
+        "class": "Miscellaneous",
+        "subclass": "Junk",
+        "sellPrice": 50000,
+        "quality": "Epic",
+        "itemLevel": 70,
+        "requiredLevel": 70,
+        "slot": "Non-equippable",
+        "tooltip": [
+            {
+                "label": "Pauldrons of the Vanquished Champion"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 70",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Classes: Paladin, Rogue, Shaman"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Void Reaver"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:30248::::::::::0|h[Pauldrons of the Vanquished Champion]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Void Reaver",
+            "zone": 3845,
+            "dropChance": 0.958
+        },
+        "uniqueName": "pauldrons-of-the-vanquished-champion"
+    },
+    {
+        "itemId": 30249,
+        "name": "Pauldrons of the Vanquished Defender",
+        "icon": "inv_shoulder_22",
+        "class": "Miscellaneous",
+        "subclass": "Junk",
+        "sellPrice": 50000,
+        "quality": "Epic",
+        "itemLevel": 70,
+        "requiredLevel": 70,
+        "slot": "Non-equippable",
+        "tooltip": [
+            {
+                "label": "Pauldrons of the Vanquished Defender"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 70",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Classes: Warrior, Priest, Druid"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Void Reaver"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:30249::::::::::0|h[Pauldrons of the Vanquished Defender]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Void Reaver",
+            "zone": 3845,
+            "dropChance": 0.954
+        },
+        "uniqueName": "pauldrons-of-the-vanquished-defender"
+    },
+    {
+        "itemId": 30250,
+        "name": "Pauldrons of the Vanquished Hero",
+        "icon": "inv_shoulder_22",
+        "class": "Miscellaneous",
+        "subclass": "Junk",
+        "sellPrice": 50000,
+        "quality": "Epic",
+        "itemLevel": 70,
+        "requiredLevel": 70,
+        "slot": "Non-equippable",
+        "tooltip": [
+            {
+                "label": "Pauldrons of the Vanquished Hero"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 70",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Classes: Hunter, Mage, Warlock"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Void Reaver"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:30250::::::::::0|h[Pauldrons of the Vanquished Hero]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Void Reaver",
+            "zone": 3845,
+            "dropChance": 0.208
+        },
+        "uniqueName": "pauldrons-of-the-vanquished-hero"
+    },
+    {
+        "itemId": 30447,
+        "name": "Tome of Fiery Redemption",
+        "icon": "inv_misc_book_07",
+        "class": "Armor",
+        "subclass": "Miscellaneous",
+        "sellPrice": 72039,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Trinket",
+        "tooltip": [
+            {
+                "label": "Tome of Fiery Redemption"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Unique"
+            },
+            {
+                "label": "Trinket"
+            },
+            {
+                "label": "Classes: Paladin"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Each time you cast a spell, there is chance you will gain up to 290 spell damage and healing. (Proc chance: 15%, 45s cooldown)",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Al'ar"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:30447::::::::::0|h[Tome of Fiery Redemption]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Al'ar",
+            "zone": 3845,
+            "dropChance": 0.282
+        },
+        "uniqueName": "tome-of-fiery-redemption"
+    },
+    {
+        "itemId": 30448,
+        "name": "Talon of Al'ar",
+        "icon": "spell_fire_soulburn",
+        "class": "Armor",
+        "subclass": "Miscellaneous",
+        "sellPrice": 72039,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Trinket",
+        "tooltip": [
+            {
+                "label": "Talon of Al'ar"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Unique"
+            },
+            {
+                "label": "Trinket"
+            },
+            {
+                "label": "Classes: Hunter"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Your Arcane Shot ability increases the damage dealt by all other damaging shots by 40 for 6 sec.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Al'ar"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:30448::::::::::0|h[Talon of Al'ar]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Al'ar",
+            "zone": 3845,
+            "dropChance": 0.322
+        },
+        "uniqueName": "talon-of-alar"
+    },
+    {
+        "itemId": 30446,
+        "name": "Solarian's Sapphire",
+        "icon": "inv_misc_gem_sapphire_01",
+        "class": "Armor",
+        "subclass": "Miscellaneous",
+        "sellPrice": 72039,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Trinket",
+        "tooltip": [
+            {
+                "label": "Solarian's Sapphire"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Unique"
+            },
+            {
+                "label": "Trinket"
+            },
+            {
+                "label": "+30 Stamina"
+            },
+            {
+                "label": "Classes: Warrior"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Your Battle Shout ability grants an additional 70 attack power.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: High Astromancer Solarian"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:30446::::::::::0|h[Solarian's Sapphire]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "High Astromancer Solarian",
+            "zone": 3845,
+            "dropChance": 0.306
+        },
+        "uniqueName": "solarians-sapphire"
+    },
+    {
+        "itemId": 30449,
+        "name": "Void Star Talisman",
+        "icon": "inv_misc_gem_ebondraenite_01",
+        "class": "Armor",
+        "subclass": "Miscellaneous",
+        "sellPrice": 72039,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Trinket",
+        "tooltip": [
+            {
+                "label": "Void Star Talisman"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Unique"
+            },
+            {
+                "label": "Trinket"
+            },
+            {
+                "label": "Classes: Warlock"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases your pet's resistances by 130 and increases your spell damage by up to 48.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: High Astromancer Solarian"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:30449::::::::::0|h[Void Star Talisman]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "High Astromancer Solarian",
+            "zone": 3845,
+            "dropChance": 0.328
+        },
+        "uniqueName": "void-star-talisman"
+    },
+    {
+        "itemId": 30450,
+        "name": "Warp-Spring Coil",
+        "icon": "inv_gizmo_hardenedadamantitetube",
+        "class": "Armor",
+        "subclass": "Miscellaneous",
+        "sellPrice": 72039,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Trinket",
+        "tooltip": [
+            {
+                "label": "Warp-Spring Coil"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Unique"
+            },
+            {
+                "label": "Trinket"
+            },
+            {
+                "label": "Classes: Rogue"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Improves hit rating by 21.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Your special attacks have a chance to give you 1000 armor penetration for 15 sec. (Proc chance: 25%, 30s cooldown)",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Void Reaver"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:30450::::::::::0|h[Warp-Spring Coil]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Void Reaver",
+            "zone": 3845,
+            "dropChance": 0.033
+        },
+        "uniqueName": "warp-spring-coil"
+    },
+    {
+        "itemId": 30619,
+        "name": "Fel Reaver's Piston",
+        "icon": "inv_misc_enggizmos_14",
+        "class": "Armor",
+        "subclass": "Miscellaneous",
+        "sellPrice": 91160,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Trinket",
+        "tooltip": [
+            {
+                "label": "Fel Reaver's Piston"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Unique"
+            },
+            {
+                "label": "Trinket"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Your direct healing spells have a chance to place a heal over time on your target, healing 500 over 12 sec. (Proc chance: 15%, 15s cooldown)",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Restores 16 mana per 5 sec.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Void Reaver"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:30619::::::::::0|h[Fel Reaver's Piston]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Void Reaver",
+            "zone": 3845,
+            "dropChance": 0.027
+        },
+        "uniqueName": "fel-reavers-piston"
+    },
+    {
+        "itemId": 32267,
+        "name": "Boots of the Resilient",
+        "icon": "inv_boots_plate_06",
+        "class": "Armor",
+        "subclass": "Plate",
+        "sellPrice": 67698,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Feet",
+        "tooltip": [
+            {
+                "label": "Boots of the Resilient"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Feet"
+            },
+            {
+                "label": "Plate",
+                "format": "alignRight"
+            },
+            {
+                "label": "1105 Armor"
+            },
+            {
+                "label": "+51 Stamina"
+            },
+            {
+                "label": "Red Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Yellow Socket",
+                "format": "Poor"
+            },
+            {
+                "label": "Socket Bonus: +4 Stamina",
+                "format": "Poor"
+            },
+            {
+                "label": "Durability 75 / 75"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases defense rating by 25.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases your shield block rating by 25.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: High Astromancer Solarian"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:32267::::::::::0|h[Boots of the Resilient]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "High Astromancer Solarian",
+            "zone": 3845,
+            "dropChance": 0.191
+        },
+        "uniqueName": "boots-of-the-resilient"
+    },
+    {
+        "itemId": 32405,
+        "name": "Verdant Sphere",
+        "icon": "inv_misc_gem_pearl_06",
+        "class": "Miscellaneous",
+        "subclass": "Junk",
+        "sellPrice": 0,
+        "quality": "Epic",
+        "itemLevel": 70,
+        "requiredLevel": 70,
+        "slot": "Non-equippable",
+        "tooltip": [
+            {
+                "label": "Verdant Sphere"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 70",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Unique"
+            },
+            {
+                "label": "This Item Begins a Quest"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "\"A magical sphere belonging to the lord of the blood elves.\"",
+                "format": "Misc"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:32405::::::::::0|h[Verdant Sphere]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.818
+        },
+        "uniqueName": "verdant-sphere"
+    },
+    {
+        "itemId": 32458,
+        "name": "Ashes of Al'ar",
+        "icon": "inv_misc_summerfest_brazierorange",
+        "class": "Miscellaneous",
+        "subclass": "Mount",
+        "sellPrice": 0,
+        "quality": "Epic",
+        "itemLevel": 70,
+        "requiredLevel": 70,
+        "slot": "Non-equippable",
+        "tooltip": [
+            {
+                "label": "Ashes of Al'ar"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 70",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Unique"
+            },
+            {
+                "label": "Mount"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Requires Riding (300)"
+            },
+            {
+                "label": "Use: Summons and dismisses a rideable phoenix. This is a very fast mount. This mount can only be summoned in Outland. (3 Sec Cooldown)",
+                "format": "Uncommon"
+            },
+            {
+                "label": "\"And from the ashes it was reborn...\"",
+                "format": "Misc"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:32458::::::::::0|h[Ashes of Al'ar]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.034
+        },
+        "uniqueName": "ashes-of-alar"
+    },
+    {
+        "itemId": 32515,
+        "name": "Wristguards of Determination",
+        "icon": "inv_bracer_19",
+        "class": "Armor",
+        "subclass": "Plate",
+        "sellPrice": 45804,
+        "quality": "Epic",
+        "itemLevel": 128,
+        "requiredLevel": 70,
+        "slot": "Wrist",
+        "tooltip": [
+            {
+                "label": "Wristguards of Determination"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 128",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Wrist"
+            },
+            {
+                "label": "Plate",
+                "format": "alignRight"
+            },
+            {
+                "label": "703 Armor"
+            },
+            {
+                "label": "+37 Stamina"
+            },
+            {
+                "label": "Durability 55 / 55"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Increases defense rating by 24.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases your dodge rating by 19.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases your shield block rating by 13.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Void Reaver"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:32515::::::::::0|h[Wristguards of Determination]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Void Reaver",
+            "zone": 3845,
+            "dropChance": 0.036
+        },
+        "uniqueName": "wristguards-of-determination"
+    },
+    {
+        "itemId": 32896,
+        "name": "Scroll of the Sun",
+        "icon": "inv_scroll_04",
+        "class": "Miscellaneous",
+        "subclass": "Junk",
+        "sellPrice": 0,
+        "quality": "Epic",
+        "itemLevel": 70,
+        "requiredLevel": 70,
+        "slot": "Non-equippable",
+        "tooltip": [
+            {
+                "label": "Scroll of the Sun"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 70",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Use: Creates 5 Marks of the Illidari.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "\"A scroll imbued with the magic of the Sunwell.\"",
+                "format": "Misc"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:32896::::::::::0|h[Scroll of the Sun]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Kael'thas Sunstrider",
+            "zone": 3845,
+            "dropChance": 0.034
+        },
+        "uniqueName": "scroll-of-the-sun"
+    },
+    {
+        "itemId": 32944,
+        "name": "Talon of the Phoenix",
+        "icon": "inv_weapon_hand_12",
+        "class": "Weapon",
+        "subclass": "Fist Weapon",
+        "sellPrice": 134251,
+        "quality": "Epic",
+        "itemLevel": 134,
+        "requiredLevel": 70,
+        "slot": "Main Hand",
+        "tooltip": [
+            {
+                "label": "Talon of the Phoenix"
+            },
+            {
+                "label": "Phase 2",
+                "format": "alignRight"
+            },
+            {
+                "label": "Item Level 134",
+                "format": "Misc"
+            },
+            {
+                "label": "Binds when picked up"
+            },
+            {
+                "label": "Main Hand"
+            },
+            {
+                "label": "Fist Weapon",
+                "format": "alignRight"
+            },
+            {
+                "label": "182 - 339 Damage"
+            },
+            {
+                "label": "Speed 2.70",
+                "format": "alignRight"
+            },
+            {
+                "label": "(96.48 damage per second)"
+            },
+            {
+                "label": "Durability 75 / 75"
+            },
+            {
+                "label": "Requires Level 70"
+            },
+            {
+                "label": "Equip: Improves hit rating by 15.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Improves critical strike rating by 19.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Equip: Increases attack power by 52.",
+                "format": "Uncommon"
+            },
+            {
+                "label": "Sell Price:"
+            },
+            {
+                "label": "Dropped by: Al'ar"
+            }
+        ],
+        "itemLink": "|cffa335ee|Hitem:32944::::::::::0|h[Talon of the Phoenix]|h|r",
+        "contentPhase": 2,
+        "source": {
+            "category": "Boss Drop",
+            "name": "Al'ar",
+            "zone": 3845,
+            "dropChance": 0.106
+        },
+        "uniqueName": "talon-of-the-phoenix"
+    }
+]

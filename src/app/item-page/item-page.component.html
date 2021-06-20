@@ -5,7 +5,7 @@
         <h1 class="title mb-1">
           <a
             title="Open Wowhead"
-            [href]="'https://classic.wowhead.com/item=' + item.itemId"
+            [href]="'https://tbc.wowhead.com/item=' + item.itemId"
             target="_blank"
             [appWowheadTooltip]="item"
             >{{ item.name }} <fa-icon [icon]="faExternalLinkAlt"></fa-icon
@@ -42,7 +42,11 @@
             </div>
           </nav>
 
-          <app-loot-lookup [item]="item" [noSearch]="true" [hideSource]="true"></app-loot-lookup>
+          <app-loot-lookup
+            [item]="item"
+            [noSearch]="true"
+            [hideSource]="true"
+          ></app-loot-lookup>
         </div>
       </div>
       <div class="column">

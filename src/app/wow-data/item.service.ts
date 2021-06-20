@@ -1,23 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Item, Source } from './item.interface';
-import mcData from './raw/mc-items.json';
-import onyData from './raw/ony-items.json';
-import bwlData from './raw/bwl-items.json';
-import aqData from './raw/aq-items.json';
-import naxxData from './raw/naxx-items.json';
 import { of } from 'rxjs';
 import { Zone } from './zone.interface';
+
+import btData from './raw/bt-items.json';
+import gruulData from './raw/gruul-items.json';
+import hyjalData from './raw/hyjal-items.json';
+import karaData from './raw/kara-items.json';
+import magData from './raw/mag-items.json';
+import sscData from './raw/ssc-items.json';
+import sunwellData from './raw/sunwell-items.json';
+import tkData from './raw/tk-items.json';
 import sharedLoot from './raw/shared-loot.json';
 
 @Injectable({ providedIn: 'root' })
 export class ItemService {
   private allItems = [
-    ...mcData,
-    ...onyData,
-    ...bwlData,
-    ...aqData,
-    ...naxxData,
-  ] as Item[];
+    ...btData,
+    ...gruulData,
+    ...hyjalData,
+    ...karaData,
+    ...magData,
+    ...sscData,
+    ...sunwellData,
+    ...tkData,
+  ] as unknown[] as Item[];
 
   allItems$ = of(this.allItems);
 

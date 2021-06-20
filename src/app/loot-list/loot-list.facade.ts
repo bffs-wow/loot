@@ -3,7 +3,7 @@ import { LootListService } from './loot-list.service';
 
 import { Ranking } from './models/ranking.model';
 import { parsePoints } from './models/attendance.model';
-import { Raider, findClass, Class } from './models/raider.model';
+import { Raider, Class, parseClass } from './models/raider.model';
 import {
   first,
   map,
@@ -55,33 +55,45 @@ export class LootListFacadeService {
   );
 
   attendance$: Observable<Partial<Raider>[]> = this.loadData$.pipe(
-    switchMap(() => this.lootListService.getData('Attendance', 'A1:AL80')),
+    switchMap(() => this.lootListService.getData('Attendance', 'A1:BL60')),
     map((data) => {
       const values = drop(data.values);
       const headings = data.values[0] as [
         'Raider',
+        'Class',
         'Attendance Points',
         ...Array<string>
       ];
 
-      return values.map((v) => {
-        const obj = zipObject(headings, v);
-        // Raid dates are all the rest of the values without the first two columns
-        const raidDates = drop(headings, 2);
-        const raider: Partial<Raider> = {
-          name: obj.Raider,
-          attendancePoints: parseFloat(obj['Attendance Points']),
-          attendance: raidDates
-            .map((d) => ({
-              date: new Date(d),
-              points: parsePoints(obj[d]),
-            }))
-            .sort((a, b) => {
-              return +b.date - +a.date;
-            }),
-        };
-        return raider;
-      });
+      return (
+        values
+          // Filter out empty rows
+          .filter((v) => !!v[0])
+          .map((v) => {
+            const obj = zipObject(headings, v);
+            // Raid dates are all the rest of the values without the first two columns
+            const raidDates = drop(headings, 2);
+            const raider: Partial<Raider> = {
+              name: obj.Raider,
+              class: parseClass(obj['Class']),
+              attendancePoints: parseFloat(obj['Attendance Points']),
+              attendance: raidDates
+                .map((d) => ({
+                  date: new Date(d),
+                  points: parsePoints(obj[d]),
+                }))
+                .sort((a, b) => {
+                  return +b.date - +a.date;
+                }),
+            };
+            if (raider.class == Class.Unknown) {
+              console.warn(`Unknown class for raider ${raider.name}`, raider);
+            }
+            return raider;
+          })
+          // Filter out any without a class
+          .filter((r) => r.class !== Class.Unknown)
+      );
     }),
     // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
     shareReplay(1)
@@ -144,32 +156,22 @@ export class LootListFacadeService {
     });
   };
 
-  onyLoot$ = this.loadData$.pipe(
-    switchMap(() => this.lootListService.getData('Ony', 'A1:R60')),
+  karaLoot$ = this.loadData$.pipe(
+    switchMap(() => this.lootListService.getData('Karazhan', 'A1:FE60')),
     map((data) => this.lootMapper(data)),
     // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
     shareReplay(1)
   );
-  mcLoot$ = this.loadData$.pipe(
-    switchMap(() => this.lootListService.getData('MC', 'A1:EE60')),
+
+  gruulLoot$ = this.loadData$.pipe(
+    switchMap(() => this.lootListService.getData('Gruul', 'A1:AL60')),
     map((data) => this.lootMapper(data)),
     // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
     shareReplay(1)
   );
-  bwlLoot$ = this.loadData$.pipe(
-    switchMap(() => this.lootListService.getData('BWL', 'A1:DV60')),
-    map((data) => this.lootMapper(data)),
-    // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
-    shareReplay(1)
-  );
-  aq40Loot$ = this.loadData$.pipe(
-    switchMap(() => this.lootListService.getData('AQ40', 'A1:DX60')),
-    map((data) => this.lootMapper(data)),
-    // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
-    shareReplay(1)
-  );
-  naxxLoot$ = this.loadData$.pipe(
-    switchMap(() => this.lootListService.getData('Naxx', 'A1:EG60')),
+
+  magLoot$ = this.loadData$.pipe(
+    switchMap(() => this.lootListService.getData('Magtheridon', 'A1:W60')),
     map((data) => this.lootMapper(data)),
     // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
     shareReplay(1)
@@ -181,13 +183,11 @@ export class LootListFacadeService {
   raiders$: Observable<Raider[]> = zip(
     this.attendance$,
     this.rankings$,
-    this.bwlLoot$,
-    this.mcLoot$,
-    this.onyLoot$,
-    this.aq40Loot$,
-    this.naxxLoot$
+    this.karaLoot$,
+    this.gruulLoot$,
+    this.magLoot$
   ).pipe(
-    map(([attendance, rankings, bwl, mc, ony, aq, naxx]) => {
+    map(([attendance, rankings, kara, gruul, mag]) => {
       return attendance.map((rAtt) => {
         const rRankings = rankings.filter((r) => r.raider === rAtt.name);
         if (!rRankings) {
@@ -195,45 +195,33 @@ export class LootListFacadeService {
             `SHEET ISSUE: Could not find rankings for: ${rAtt.name}`
           );
         }
-        let rBwl = bwl.find((r) => r.name === rAtt.name);
-        if (!rBwl) {
-          rBwl = { pendingLoot: [], receivedLoot: [] };
+        let rKara = kara.find((r) => r.name === rAtt.name);
+        if (!rKara) {
+          rKara = { pendingLoot: [], receivedLoot: [] };
         }
-        let rMc = mc.find((r) => r.name === rAtt.name);
-        if (!rMc) {
-          rMc = { pendingLoot: [], receivedLoot: [] };
+        let rGruul = gruul.find((r) => r.name === rAtt.name);
+        if (!rGruul) {
+          rGruul = { pendingLoot: [], receivedLoot: [] };
         }
-        let rOny = ony.find((r) => r.name === rAtt.name);
-        if (!rOny) {
-          rOny = { pendingLoot: [], receivedLoot: [] };
-        }
-        let rAq = aq.find((r) => r.name === rAtt.name);
-        if (!rAq) {
-          rAq = { pendingLoot: [], receivedLoot: [] };
-        }
-        let rNaxx = naxx.find((r) => r.name === rAtt.name);
-        if (!rNaxx) {
-          rNaxx = { pendingLoot: [], receivedLoot: [] };
+        let rMag = mag.find((r) => r.name === rAtt.name);
+        if (!rMag) {
+          rMag = { pendingLoot: [], receivedLoot: [] };
         }
         let raider: Raider = {
           name: rAtt.name,
-          class: Class.Unknown,
+          class: rAtt.class,
           attendance: rAtt.attendance,
           attendancePoints: rAtt.attendancePoints,
           rankings: [],
           pendingLoot: [
-            ...rBwl.pendingLoot,
-            ...rMc.pendingLoot,
-            ...rOny.pendingLoot,
-            ...rAq.pendingLoot,
-            ...rNaxx.pendingLoot,
+            ...rKara.pendingLoot,
+            ...rGruul.pendingLoot,
+            ...rMag.pendingLoot,
           ],
           receivedLoot: [
-            ...rBwl.receivedLoot,
-            ...rMc.receivedLoot,
-            ...rOny.receivedLoot,
-            ...rAq.receivedLoot,
-            ...rNaxx.receivedLoot,
+            ...rKara.receivedLoot,
+            ...rGruul.receivedLoot,
+            ...rMag.receivedLoot,
           ].sort((a, b) => {
             return +b.date - +a.date;
           }),
@@ -252,7 +240,6 @@ export class LootListFacadeService {
           return r;
         });
 
-        raider.class = findClass(raider);
         return raider;
       });
     }),

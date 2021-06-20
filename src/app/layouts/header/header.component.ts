@@ -12,6 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { LootListFacadeService } from 'src/app/loot-list/loot-list.facade';
 import { environment } from 'src/environments/environment';
+import { ZoneService } from 'src/app/wow-data/zone.service';
 
 @Component({
   selector: 'app-header',
@@ -32,9 +33,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isActive = false;
   constructor(
     public state: StateService,
+    public zoneService: ZoneService,
     public lootListFacade: LootListFacadeService,
     private fb: FormBuilder
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
