@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy": "ng deploy --base-href=/loot/",
+    "deploy-tbc": "ng deploy --base-href=/tbcp1/ --repo=https://github.com/synergy-wow/tbcp1.git",
     "deploy-p6": "ng deploy --base-href=/p6/ --repo=https://github.com/synergy-wow/p6.git"
   },
   "private": true,

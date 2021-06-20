@@ -22,6 +22,7 @@ import { ItemService } from '../wow-data/item.service';
 import groupBy from 'lodash-es/groupBy';
 import { CacheService } from '../cache/cache.service';
 import Swal from 'sweetalert2';
+import isUndefined from 'lodash-es/isUndefined';
 
 @Injectable({ providedIn: 'root' })
 export class LootListFacadeService {
@@ -60,8 +61,8 @@ export class LootListFacadeService {
       const values = drop(data.values);
       const headings = data.values[0] as [
         'Raider',
-        'Class',
         'Attendance Points',
+        'Class',
         ...Array<string>
       ];
 
@@ -71,13 +72,14 @@ export class LootListFacadeService {
           .filter((v) => !!v[0])
           .map((v) => {
             const obj = zipObject(headings, v);
-            // Raid dates are all the rest of the values without the first two columns
-            const raidDates = drop(headings, 2);
+            // Raid dates are all the rest of the values without the first 3 columns
+            const raidDates = drop(headings, 3);
             const raider: Partial<Raider> = {
               name: obj.Raider,
               class: parseClass(obj['Class']),
               attendancePoints: parseFloat(obj['Attendance Points']),
               attendance: raidDates
+                .filter((d) => !isUndefined(obj[d]))
                 .map((d) => ({
                   date: new Date(d),
                   points: parsePoints(obj[d]),
@@ -144,7 +146,7 @@ export class LootListFacadeService {
         name: obj.Raider,
         pendingLoot: pendingLoot.map((l) => ({
           ...l,
-          points: parseFloat(obj[l.sheetName]),
+          points: parseFloat(obj[l.sheetName]) || 0,
         })),
         receivedLoot: receivedLoot.map((l) => ({
           ...l,
