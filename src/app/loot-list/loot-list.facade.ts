@@ -114,6 +114,9 @@ export class LootListFacadeService {
         // get the actual item name
         itemName = itemName.substring(0, itemName.length - 2);
       }
+      if (itemName.includes('Nether Vortex')) {
+        itemName = 'Nether Vortex';
+      }
       let item = this.itemService.getByName(itemName) as Loot;
       if (!item) {
         console.error(`${itemName} not found!`);
@@ -158,13 +161,6 @@ export class LootListFacadeService {
     });
   };
 
-  karaLoot$ = this.loadData$.pipe(
-    switchMap(() => this.lootListService.getData('Karazhan', 'A1:FE60')),
-    map((data) => this.lootMapper(data)),
-    // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
-    shareReplay(1)
-  );
-
   gruulLoot$ = this.loadData$.pipe(
     switchMap(() => this.lootListService.getData('Gruul', 'A1:AL60')),
     map((data) => this.lootMapper(data)),
@@ -179,27 +175,38 @@ export class LootListFacadeService {
     shareReplay(1)
   );
 
+  sscLoot$ = this.loadData$.pipe(
+    switchMap(() => this.lootListService.getData('SSC', 'A1:DF60')),
+    map((data) => this.lootMapper(data)),
+    // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
+    shareReplay(1)
+  );
+
+  tkLoot$ = this.loadData$.pipe(
+    switchMap(() => this.lootListService.getData('TK', 'A1:BS60')),
+    map((data) => this.lootMapper(data)),
+    // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
+    shareReplay(1)
+  );
+
   /**
    * After we get data from every sheet, join it to populate full `Raider` objects.
    */
   raiders$: Observable<Raider[]> = zip(
     this.attendance$,
     this.rankings$,
-    this.karaLoot$,
     this.gruulLoot$,
-    this.magLoot$
+    this.magLoot$,
+    this.sscLoot$,
+    this.tkLoot$
   ).pipe(
-    map(([attendance, rankings, kara, gruul, mag]) => {
+    map(([attendance, rankings, gruul, mag, ssc, tk]) => {
       return attendance.map((rAtt) => {
         const rRankings = rankings.filter((r) => r.raider === rAtt.name);
         if (!rRankings) {
           throw new Error(
             `SHEET ISSUE: Could not find rankings for: ${rAtt.name}`
           );
-        }
-        let rKara = kara.find((r) => r.name === rAtt.name);
-        if (!rKara) {
-          rKara = { pendingLoot: [], receivedLoot: [] };
         }
         let rGruul = gruul.find((r) => r.name === rAtt.name);
         if (!rGruul) {
@@ -209,6 +216,14 @@ export class LootListFacadeService {
         if (!rMag) {
           rMag = { pendingLoot: [], receivedLoot: [] };
         }
+        let rSsc = ssc.find((r) => r.name === rAtt.name);
+        if (!rSsc) {
+          rSsc = { pendingLoot: [], receivedLoot: [] };
+        }
+        let rTk = tk.find((r) => r.name === rAtt.name);
+        if (!rTk) {
+          rTk = { pendingLoot: [], receivedLoot: [] };
+        }
         let raider: Raider = {
           name: rAtt.name,
           class: rAtt.class,
@@ -216,14 +231,16 @@ export class LootListFacadeService {
           attendancePoints: rAtt.attendancePoints,
           rankings: [],
           pendingLoot: [
-            ...rKara.pendingLoot,
             ...rGruul.pendingLoot,
             ...rMag.pendingLoot,
+            ...rSsc.pendingLoot,
+            ...rTk.pendingLoot,
           ],
           receivedLoot: [
-            ...rKara.receivedLoot,
             ...rGruul.receivedLoot,
             ...rMag.receivedLoot,
+            ...rSsc.receivedLoot,
+            ...rTk.receivedLoot,
           ].sort((a, b) => {
             return +b.date - +a.date;
           }),
