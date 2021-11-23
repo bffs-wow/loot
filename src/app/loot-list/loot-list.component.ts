@@ -3,9 +3,9 @@ import { Raider } from './models/raider.model';
 import { LootReceipt, EligibleLoot } from './models/loot.model';
 import {
   faCheck,
-  faMinus,
   faAward,
   faClock,
+  faCalendarAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import { Ranking } from './models/ranking.model';
 import { LootListFacadeService } from './loot-list.facade';
@@ -88,7 +88,7 @@ export class LootListComponent implements OnInit, OnChanges {
     } else if (place <= 3) {
       return faClock;
     } else {
-      return faMinus;
+      return faCalendarAlt;
     }
   }
 }

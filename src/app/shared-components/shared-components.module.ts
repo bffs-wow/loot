@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormatOrderPipe } from './format-order-pipe/format-order.pipe';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     LootLookupComponent,
     WowheadTooltipDirective,
     ZonePipe,
+    FormatOrderPipe,
   ],
   imports: [
     CommonModule,
@@ -29,6 +31,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     LootLookupComponent,
     WowheadTooltipDirective,
     ZonePipe,
+    FormatOrderPipe,
   ],
 })
 export class SharedComponentsModule {}
