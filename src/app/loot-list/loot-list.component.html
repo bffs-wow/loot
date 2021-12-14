@@ -51,8 +51,11 @@
           <div class="tags has-addons" *ngIf="competition[ranking.itemName]">
             <span
               class="tag is-medium"
-              [class.is-success]="competition[ranking.itemName].length === 0"
-              [class.is-primary]="competition[ranking.itemName].length <= 3"
+              [class.is-warning]="competition[ranking.itemName].length === 0"
+              [class.is-waiting]="
+                competition[ranking.itemName].length <= 3 &&
+                competition[ranking.itemName].length > 0
+              "
               ><span class="icon is-medium">
                 <fa-icon
                   [icon]="
@@ -69,7 +72,7 @@
                 *ngIf="competition[ranking.itemName].length > 0"
                 title="How many people are ahead or tied with the raider on this item."
               >
-                {{ competition[ranking.itemName].length | formatOrder }}
+                {{ competition[ranking.itemName].length + 1 | formatOrder }}
               </span></span
             >
           </div>

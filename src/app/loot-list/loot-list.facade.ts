@@ -183,7 +183,7 @@ export class LootListFacadeService {
   );
 
   tkLoot$ = this.loadData$.pipe(
-    switchMap(() => this.lootListService.getData('TK', 'A1:BS60')),
+    switchMap(() => this.lootListService.getData('TK', 'A1:BT60')),
     map((data) => this.lootMapper(data)),
     // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
     shareReplay(1)
