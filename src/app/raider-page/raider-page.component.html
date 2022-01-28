@@ -7,9 +7,8 @@
             [href]="makeLogsUrl(raider)"
             target="_blank"
             title="Open Warcraft Logs"
-            ><span>
-              {{ raider.name }} </span
-            >&nbsp;<span class="icon"> <fa-icon [icon]="faChartLine"></fa-icon> </span
+            ><span> {{ raider.name }} </span>&nbsp;<span class="icon">
+              <fa-icon [icon]="faChartLine"></fa-icon> </span
           ></a>
         </h1>
         <h2 class="subtitle">
@@ -19,11 +18,11 @@
             [src]="'./assets/images/class-icons/tiny/' + raider.class + '.gif'"
           />{{ raider.class }}
           <br />
-          <div class="has-text-centered">
+          <div class="has-text-centered" *ngIf="listProgress">
             <progress
               class="progress mb-0"
               max="100"
-              [value]="listProgress.progress"
+              [value]="listProgress.progress || 0"
             ></progress>
             <span class="has-text-centered is-size-5 is-grey-light"
               >List Progress: {{ listProgress.rankingsReceived }} /

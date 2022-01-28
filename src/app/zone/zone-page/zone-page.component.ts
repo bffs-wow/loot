@@ -1,9 +1,13 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faExclamationTriangle,
+  faExternalLinkAlt,
+} from '@fortawesome/free-solid-svg-icons';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { filter, first, map, switchMap, tap } from 'rxjs/operators';
 import { LootListFacadeService } from 'src/app/loot-list/loot-list.facade';
+import { EligibleLoot } from 'src/app/loot-list/models/loot.model';
 import { Item, Source } from 'src/app/wow-data/item.interface';
 import { ItemService } from 'src/app/wow-data/item.service';
 import { ZoneService } from 'src/app/wow-data/zone.service';
@@ -12,10 +16,11 @@ import { ZoneService } from 'src/app/wow-data/zone.service';
   selector: 'app-zone-page',
   templateUrl: './zone-page.component.html',
   styleUrls: ['./zone-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ZonePageComponent implements OnInit {
   faExternalLinkAlt = faExternalLinkAlt;
+  faExclamationTriangle = faExclamationTriangle;
   zone$ = this.route.params.pipe(
     map((p) => p['slug']),
     map((slug) => this.zoneService.getZone(slug))
@@ -82,8 +87,17 @@ export class ZonePageComponent implements OnInit {
     return this.lootListFacade.getRankedLootGroups(item.name).pipe(
       first(),
       map((groups) => (groups.length ? groups[0] : null)),
-      filter(grp => grp !== null),
-      map(grp => grp.rankings.length ? grp.rankings : null)
+      filter((grp) => grp !== null),
+      map((grp) => (grp.rankings.length ? grp.rankings : null))
     );
+  }
+
+  /**
+   * Returns true if none of the loot in the array is listed directly on someone's loot list
+   * @param items
+   * @returns
+   */
+  noneListed(items: EligibleLoot[]) {
+    return items && items.every((i) => !i.onList);
   }
 }

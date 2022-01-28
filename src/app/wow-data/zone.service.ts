@@ -11,20 +11,67 @@ import { Zone } from './zone.interface';
  */
 const _sourceOrdering: { [source: string]: number } = {
   'Zone Drop': 10,
-
+  'Rage Winterchill': 1.1,
+  Anetheron: 1.2,
+  [`Kaz'rogal`]: 1.3,
+  Azgalor: 1.3,
+  Archimonde: 1.4,
+  [`High Warlord Naj'entus`]: 2.1,
+  Supremus: 2.2,
+  'Shade of Akama': 2.3,
+  'Teron Gorefiend': 2.4,
+  'Gurtogg Bloodboil': 2.5,
+  'Reliquary of Souls': 2.6,
+  'Illidari Council': 2.7,
+  'Illidan Stormrage': 2.8,
 };
 
 @Injectable({ providedIn: 'root' })
 export class ZoneService {
   zones: Zone[] = [
     { zoneId: 3457, name: 'Karazhan', slug: 'karazhan', itemSources: [] },
-    { zoneId: 3923, name: 'Gruul\'s Lair', slug: 'gruuls-lair', itemSources: [] },
-    { zoneId: 3836, name: 'Magtheridon\'s Lair', slug: 'magtheridons-lair', itemSources: [] },
-    { zoneId: 3607, name: 'Serpentshrine Cavern', slug: 'serpentshrine-cavern', itemSources: [] },
-    { zoneId: 3845, name: 'Tempest Keep', slug: 'tempest-keep', itemSources: [] },
-    { zoneId: 3606, name: 'Hyjal Summit', slug: 'hyjal-summit', itemSources: [] },
-    { zoneId: 3959, name: 'Black Temple', slug: 'black-temple', itemSources: [] },
-    { zoneId: 4075, name: 'Sunwell Plateau', slug: 'sunwell-plateau', itemSources: [] },
+    {
+      zoneId: 3923,
+      name: "Gruul's Lair",
+      slug: 'gruuls-lair',
+      itemSources: [],
+    },
+    {
+      zoneId: 3836,
+      name: "Magtheridon's Lair",
+      slug: 'magtheridons-lair',
+      itemSources: [],
+    },
+    {
+      zoneId: 3607,
+      name: 'Serpentshrine Cavern',
+      slug: 'serpentshrine-cavern',
+      itemSources: [],
+    },
+    {
+      zoneId: 3845,
+      name: 'Tempest Keep',
+      slug: 'tempest-keep',
+      itemSources: [],
+    },
+    {
+      zoneId: 3606,
+      name: 'Hyjal Summit',
+      slug: 'hyjal-summit',
+      itemSources: [],
+    },
+    {
+      zoneId: 3959,
+      name: 'Black Temple',
+      slug: 'black-temple',
+      itemSources: [],
+    },
+    {
+      zoneId: 4075,
+      name: 'Sunwell Plateau',
+      slug: 'sunwell-plateau',
+      itemSources: [],
+    },
   ];
   constructor(private itemService: ItemService) {
     itemService.allItems$
@@ -79,8 +126,7 @@ export class ZoneService {
     let zone;
     if (!isNaN(parseInt(slugOrId))) {
       zone = this.zones.find((z) => z.zoneId === parseInt(slugOrId));
-    }
-    else if (isString(slugOrId)) {
+    } else if (isString(slugOrId)) {
       zone = this.zones.find((z) => z.slug === slugOrId);
     }
     if (!zone) {

@@ -2,7 +2,11 @@ import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { StateService } from '../../state/state.service';
 import { Observable, Subject, concat, of } from 'rxjs';
-import { EligibleLoot, Loot, LootGroup } from '../../loot-list/models/loot.model';
+import {
+  EligibleLoot,
+  Loot,
+  LootGroup,
+} from '../../loot-list/models/loot.model';
 import {
   map,
   distinctUntilChanged,
@@ -15,7 +19,10 @@ import {
 } from 'rxjs/operators';
 import { LootListFacadeService } from '../../loot-list/loot-list.facade';
 import { LootAnnounceService } from '../../loot-announce/loot-announce.service';
-import { faBullhorn } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBullhorn,
+  faExclamationTriangle,
+} from '@fortawesome/free-solid-svg-icons';
 import { ItemService } from '../../wow-data/item.service';
 
 @Component({
@@ -37,7 +44,8 @@ export class LootLookupComponent implements OnInit, OnDestroy {
   loading = false;
   input$ = new Subject<string>();
 
-  faBullhorn = faBullhorn
+  faBullhorn = faBullhorn;
+  faExclamationTriangle = faExclamationTriangle;
 
   selectedItem$: Observable<LootGroup[]>;
 
@@ -46,7 +54,7 @@ export class LootLookupComponent implements OnInit, OnDestroy {
     private itemService: ItemService,
     private lootListFacade: LootListFacadeService,
     public fb: FormBuilder,
-    public lootAnnounceService: LootAnnounceService,
+    public lootAnnounceService: LootAnnounceService
   ) {}
 
   ngOnInit(): void {
@@ -84,8 +92,6 @@ export class LootLookupComponent implements OnInit, OnDestroy {
       filter((i) => !!i),
       switchMap((item) => this.lootListFacade.getRankedLootGroups(item.name))
     );
-
-    
   }
 
   async copyToClipBoard(grp: LootGroup[]) {

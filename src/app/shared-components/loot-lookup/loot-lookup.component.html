@@ -38,6 +38,13 @@
 <article class="media" *ngFor="let group of selectedItem$ | async">
   <figure class="media-left has-text-centered" style="width: 5rem">
     <h1 class="is-1">{{ group.points }}</h1>
+    <small class="is-size-6 has-text-warning" *ngIf="group.allUnlisted">
+      <abbr
+        title="All of these raiders did not list the item, but are still eligible."
+      >
+        <fa-icon [icon]="faExclamationTriangle"></fa-icon> Unlisted
+      </abbr>
+    </small>
   </figure>
   <div class="media-content">
     <div class="content">
@@ -47,8 +54,8 @@
           [routerLink]="['/item', group.rankings[0].itemId]"
           >{{ group.rankings[0].sheetName }}</a
         >
-        <small *ngIf="group.rankings[0].sheetName !== group.rankings[0].name"
-          > - ({{ group.rankings[0].name }})
+        <small *ngIf="group.rankings[0].sheetName !== group.rankings[0].name">
+          - ({{ group.rankings[0].name }})
         </small>
         <small *ngIf="!hideSource"> - {{ group.rankings[0] | zone }}</small>
         <br /><br />
@@ -64,4 +71,8 @@
     </div>
   </div>
 </article>
-<div *ngIf="form.get('selectedItem').touched && !(selectedItem$ | async)?.length">No rankings found.</div>
+<div
+  *ngIf="form.get('selectedItem').touched && !(selectedItem$ | async)?.length"
+>
+  No rankings found.
+</div>

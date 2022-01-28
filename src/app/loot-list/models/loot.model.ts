@@ -1,6 +1,5 @@
 import { Item } from 'src/app/wow-data/item.interface';
 
-
 export interface Loot extends Item {
   raiderName?: string;
   /**
@@ -18,6 +17,12 @@ export interface LootReceipt extends Loot {
 
 export interface EligibleLoot extends Loot {
   points: number;
+  /**
+   * Raiders are eligible for loot even not on their list based on their attendance points.
+   * It is useful to know if an item falls into this condition or not. i.e. mostly for off-spec,
+   * knowing if someone actually listed an item versus just being eligible for it.
+   */
+  onList: boolean;
 }
 
 /**
@@ -26,4 +31,8 @@ export interface EligibleLoot extends Loot {
 export interface LootGroup {
   points: number;
   rankings: EligibleLoot[];
+  /**
+   * See `EligibleLoot.onList` - if all items in this group are not on anyone's list, we show a special flag indicating lower desire for this item
+   */
+  allUnlisted: boolean;
 }

@@ -9,7 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Ranking } from './models/ranking.model';
 import { LootListFacadeService } from './loot-list.facade';
-import { map, tap, first } from 'rxjs/operators';
+import { map, tap, first, startWith } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
 
 @Component({

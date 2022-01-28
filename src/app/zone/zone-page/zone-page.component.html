@@ -44,23 +44,39 @@
                   [routerLink]="['/item', item.itemId]"
                   >{{ item.name }}</a
                 >&nbsp;&nbsp;
-                <div
-                  class="tags"
+                <ng-container
                   *ngIf="
                     getNextRecipient(item) | async as recipientGrp;
                     else noRankings
                   "
                 >
-                  <span
-                    class="tag is-black"
-                    *ngFor="let recipient of recipientGrp"
+                  &nbsp;
+                  <small
+                    class="is-size-6 has-text-warning"
+                    *ngIf="noneListed(recipientGrp)"
                   >
-                    <a [routerLink]="['/raider', recipient.raiderName]">
-                      {{ recipient.raiderName }}
-                    </a>
-                    &nbsp;</span
-                  >
-                </div>
+                    <abbr
+                      title="All of these raiders did not list the item, but are still eligible."
+                    >
+                      <fa-icon [icon]="faExclamationTriangle"></fa-icon>
+                      Unlisted
+                    </abbr>
+                  </small>
+                  &nbsp;
+                  <div class="tags pt-1">
+                    <span
+                      class="tag is-black"
+                      *ngFor="let recipient of recipientGrp"
+                    >
+                      <a [routerLink]="['/raider', recipient.raiderName]">
+                        {{ recipient.raiderName }}
+                      </a>
+
+                      &nbsp;
+                    </span>
+                  </div>
+                </ng-container>
+
                 <ng-template #noRankings>
                   <small>No Rankings.</small>
                 </ng-template>

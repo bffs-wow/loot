@@ -147,9 +147,10 @@ export class LootListFacadeService {
 
       const raider: Partial<Raider> = {
         name: obj.Raider,
-        pendingLoot: pendingLoot.map((l) => ({
+        pendingLoot: pendingLoot.map<EligibleLoot>((l) => ({
           ...l,
           points: parseFloat(obj[l.sheetName]) || 0,
+          onList: false,
         })),
         receivedLoot: receivedLoot.map((l) => ({
           ...l,
@@ -163,13 +164,6 @@ export class LootListFacadeService {
 
   gruulLoot$ = this.loadData$.pipe(
     switchMap(() => this.lootListService.getData('Gruul', 'A1:AL60')),
-    map((data) => this.lootMapper(data)),
-    // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
-    shareReplay(1)
-  );
-
-  magLoot$ = this.loadData$.pipe(
-    switchMap(() => this.lootListService.getData('Magtheridon', 'A1:W60')),
     map((data) => this.lootMapper(data)),
     // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
     shareReplay(1)
@@ -189,6 +183,20 @@ export class LootListFacadeService {
     shareReplay(1)
   );
 
+  btLoot$ = this.loadData$.pipe(
+    switchMap(() => this.lootListService.getData('BT', 'A1:EZ60')),
+    map((data) => this.lootMapper(data)),
+    // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
+    shareReplay(1)
+  );
+
+  hyjalLoot$ = this.loadData$.pipe(
+    switchMap(() => this.lootListService.getData('Hyjal', 'A1:CE60')),
+    map((data) => this.lootMapper(data)),
+    // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
+    shareReplay(1)
+  );
+
   /**
    * After we get data from every sheet, join it to populate full `Raider` objects.
    */
@@ -196,11 +204,12 @@ export class LootListFacadeService {
     this.attendance$,
     this.rankings$,
     this.gruulLoot$,
-    this.magLoot$,
     this.sscLoot$,
-    this.tkLoot$
+    this.tkLoot$,
+    this.btLoot$,
+    this.hyjalLoot$
   ).pipe(
-    map(([attendance, rankings, gruul, mag, ssc, tk]) => {
+    map(([attendance, rankings, gruul, ssc, tk, bt, hyjal]) => {
       return attendance.map((rAtt) => {
         const rRankings = rankings.filter((r) => r.raider === rAtt.name);
         if (!rRankings) {
@@ -212,10 +221,6 @@ export class LootListFacadeService {
         if (!rGruul) {
           rGruul = { pendingLoot: [], receivedLoot: [] };
         }
-        let rMag = mag.find((r) => r.name === rAtt.name);
-        if (!rMag) {
-          rMag = { pendingLoot: [], receivedLoot: [] };
-        }
         let rSsc = ssc.find((r) => r.name === rAtt.name);
         if (!rSsc) {
           rSsc = { pendingLoot: [], receivedLoot: [] };
@@ -223,6 +228,14 @@ export class LootListFacadeService {
         let rTk = tk.find((r) => r.name === rAtt.name);
         if (!rTk) {
           rTk = { pendingLoot: [], receivedLoot: [] };
+        }
+        let rBt = bt.find((r) => r.name === rAtt.name);
+        if (!rBt) {
+          rBt = { pendingLoot: [], receivedLoot: [] };
+        }
+        let rHyjal = hyjal.find((r) => r.name === rAtt.name);
+        if (!rHyjal) {
+          rHyjal = { pendingLoot: [], receivedLoot: [] };
         }
         let raider: Raider = {
           name: rAtt.name,
@@ -232,15 +245,17 @@ export class LootListFacadeService {
           rankings: [],
           pendingLoot: [
             ...rGruul.pendingLoot,
-            ...rMag.pendingLoot,
             ...rSsc.pendingLoot,
             ...rTk.pendingLoot,
+            ...rBt.pendingLoot,
+            ...rHyjal.pendingLoot,
           ],
           receivedLoot: [
             ...rGruul.receivedLoot,
-            ...rMag.receivedLoot,
             ...rSsc.receivedLoot,
             ...rTk.receivedLoot,
+            ...rBt.receivedLoot,
+            ...rHyjal.receivedLoot,
           ].sort((a, b) => {
             return +b.date - +a.date;
           }),
@@ -258,6 +273,11 @@ export class LootListFacadeService {
           }
           return r;
         });
+
+        raider.pendingLoot = raider.pendingLoot.map<EligibleLoot>((l) => ({
+          ...l,
+          onList: l.points > raider.attendancePoints,
+        }));
 
         return raider;
       });
@@ -380,6 +400,7 @@ export class LootListFacadeService {
         .map((point) => ({
           points: parseFloat(point),
           rankings: grouped[point],
+          allUnlisted: grouped[point].every((l) => !l.onList),
         }))
         .filter((g) => !isNaN(g.points));
       return [...lootGroups, ...rankedGroup];
