@@ -22,8 +22,9 @@ const _sourceOrdering: { [source: string]: number } = {
   'Teron Gorefiend': 2.4,
   'Gurtogg Bloodboil': 2.5,
   'Reliquary of Souls': 2.6,
-  'Illidari Council': 2.7,
-  'Illidan Stormrage': 2.8,
+  'Mother Shahraz': 2.7,
+  'Illidari Council': 2.8,
+  'Illidan Stormrage': 2.9,
 };
 
 @Injectable({ providedIn: 'root' })
