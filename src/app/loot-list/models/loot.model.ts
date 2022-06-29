@@ -6,6 +6,10 @@ export interface Loot extends Item {
    * Unique naming convention used in the sheet to allow ranking multiple items
    */
   sheetName?: string;
+  /**
+   * Some items can be traded for other items - the other piece of loot is set here
+   */
+  tradeInItem?: Loot;
 }
 
 /**

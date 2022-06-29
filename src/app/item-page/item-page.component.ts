@@ -21,6 +21,8 @@ export class ItemPageComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject();
   item$: Observable<Loot>;
 
+  tradeInItem$: Observable<Loot>;
+
   lootGroups$: Observable<LootGroup[]>;
 
   recentRecipients$: Observable<LootReceipt[]>;
@@ -48,6 +50,19 @@ export class ItemPageComponent implements OnInit, OnDestroy {
 
     this.lootGroups$ = this.item$.pipe(
       switchMap((item) => this.lootListFacade.getRankedLootGroups(item.name))
+    );
+
+    this.tradeInItem$ = this.lootGroups$.pipe(
+      map((grps) => {
+        if (!grps.length) {
+          return null;
+        }
+        if (!grps[0].rankings.length) {
+          return null;
+        }
+        const item = grps[0].rankings[0];
+        return item.tradeInItem;
+      })
     );
 
     this.recentRecipients$ = combineLatest([

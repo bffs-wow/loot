@@ -108,14 +108,23 @@ export class LootListFacadeService {
     const headings = data.values[0] as ['Raider', ...Array<string>];
     // Items in this raid are the header values without the first 'raider' column
     const items = drop(headings).map((itemName) => {
-      let sheetName = itemName;
+      const sheetName = itemName;
       // If the name ends with a number, it is an item that allows multiple listings
-      if (/[1234]$/.test(itemName)) {
+      if (/[1234]$/.test(sheetName)) {
         // get the actual item name
         itemName = itemName.substring(0, itemName.length - 2);
       }
-      if (itemName.includes('Nether Vortex')) {
+      if (sheetName.includes('Nether Vortex')) {
         itemName = 'Nether Vortex';
+      }
+      // Special SWP 'trade-in' items
+      if (sheetName.includes('/')) {
+        const itemNames = sheetName.split('/').map((n) => n.trim());
+        if (itemNames.length != 2) {
+          console.error(`Dual-item: ${sheetName} not found or malformed!`);
+          return null;
+        }
+        itemName = itemNames[0];
       }
       let item = this.itemService.getByName(itemName) as Loot;
       if (!item) {
@@ -127,6 +136,20 @@ export class LootListFacadeService {
         ...item,
         sheetName,
       };
+      // Get related SWP item
+      if (sheetName.includes('/')) {
+        const itemNames = sheetName.split('/').map((n) => n.trim());
+        // These are always '1,2' items since both are different specs
+        const item2Name = itemNames[1].substring(0, itemNames[1].length - 2);
+        const item2 = this.itemService.getByName(item2Name) as Loot;
+        if (!item2) {
+          console.error(`Dual-item: ${item2Name} not found!`);
+          return null;
+        }
+        item.tradeInItem = {
+          ...item2,
+        };
+      }
 
       return item;
     });
@@ -162,27 +185,6 @@ export class LootListFacadeService {
     });
   };
 
-  gruulLoot$ = this.loadData$.pipe(
-    switchMap(() => this.lootListService.getData('Gruul', 'A1:AL60')),
-    map((data) => this.lootMapper(data)),
-    // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
-    shareReplay(1)
-  );
-
-  sscLoot$ = this.loadData$.pipe(
-    switchMap(() => this.lootListService.getData('SSC', 'A1:DF60')),
-    map((data) => this.lootMapper(data)),
-    // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
-    shareReplay(1)
-  );
-
-  tkLoot$ = this.loadData$.pipe(
-    switchMap(() => this.lootListService.getData('TK', 'A1:BT60')),
-    map((data) => this.lootMapper(data)),
-    // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
-    shareReplay(1)
-  );
-
   btLoot$ = this.loadData$.pipe(
     switchMap(() => this.lootListService.getData('BT', 'A1:EZ60')),
     map((data) => this.lootMapper(data)),
@@ -190,8 +192,8 @@ export class LootListFacadeService {
     shareReplay(1)
   );
 
-  hyjalLoot$ = this.loadData$.pipe(
-    switchMap(() => this.lootListService.getData('Hyjal', 'A1:CE60')),
+  swpLoot$ = this.loadData$.pipe(
+    switchMap(() => this.lootListService.getData('SWP', 'A1:GC60')),
     map((data) => this.lootMapper(data)),
     // Share replay - will still clear allow for `loadData` to trigger new calls to the sheet
     shareReplay(1)
@@ -203,13 +205,10 @@ export class LootListFacadeService {
   raiders$: Observable<Raider[]> = zip(
     this.attendance$,
     this.rankings$,
-    this.gruulLoot$,
-    this.sscLoot$,
-    this.tkLoot$,
     this.btLoot$,
-    this.hyjalLoot$
+    this.swpLoot$
   ).pipe(
-    map(([attendance, rankings, gruul, ssc, tk, bt, hyjal]) => {
+    map(([attendance, rankings, bt, swp]) => {
       return attendance.map((rAtt) => {
         const rRankings = rankings.filter((r) => r.raider === rAtt.name);
         if (!rRankings) {
@@ -217,25 +216,13 @@ export class LootListFacadeService {
             `SHEET ISSUE: Could not find rankings for: ${rAtt.name}`
           );
         }
-        let rGruul = gruul.find((r) => r.name === rAtt.name);
-        if (!rGruul) {
-          rGruul = { pendingLoot: [], receivedLoot: [] };
-        }
-        let rSsc = ssc.find((r) => r.name === rAtt.name);
-        if (!rSsc) {
-          rSsc = { pendingLoot: [], receivedLoot: [] };
-        }
-        let rTk = tk.find((r) => r.name === rAtt.name);
-        if (!rTk) {
-          rTk = { pendingLoot: [], receivedLoot: [] };
-        }
         let rBt = bt.find((r) => r.name === rAtt.name);
         if (!rBt) {
           rBt = { pendingLoot: [], receivedLoot: [] };
         }
-        let rHyjal = hyjal.find((r) => r.name === rAtt.name);
-        if (!rHyjal) {
-          rHyjal = { pendingLoot: [], receivedLoot: [] };
+        let rSwp = swp.find((r) => r.name === rAtt.name);
+        if (!rSwp) {
+          rSwp = { pendingLoot: [], receivedLoot: [] };
         }
         let raider: Raider = {
           name: rAtt.name,
@@ -243,22 +230,12 @@ export class LootListFacadeService {
           attendance: rAtt.attendance,
           attendancePoints: rAtt.attendancePoints,
           rankings: [],
-          pendingLoot: [
-            ...rGruul.pendingLoot,
-            ...rSsc.pendingLoot,
-            ...rTk.pendingLoot,
-            ...rBt.pendingLoot,
-            ...rHyjal.pendingLoot,
-          ],
-          receivedLoot: [
-            ...rGruul.receivedLoot,
-            ...rSsc.receivedLoot,
-            ...rTk.receivedLoot,
-            ...rBt.receivedLoot,
-            ...rHyjal.receivedLoot,
-          ].sort((a, b) => {
-            return +b.date - +a.date;
-          }),
+          pendingLoot: [...rBt.pendingLoot, ...rSwp.pendingLoot],
+          receivedLoot: [...rBt.receivedLoot, ...rSwp.receivedLoot].sort(
+            (a, b) => {
+              return +b.date - +a.date;
+            }
+          ),
         };
         const raiderLoot = [...raider.pendingLoot, ...raider.receivedLoot];
         // Relate ranking with their loot item objects

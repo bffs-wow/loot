@@ -10,6 +10,16 @@
             [appWowheadTooltip]="item"
             >{{ item.name }} <fa-icon [icon]="faExternalLinkAlt"></fa-icon
           ></a>
+          <ng-container *ngIf="tradeInItem$ | async as tradeinItem">
+            /
+            <a
+              title="Open Wowhead"
+              [href]="'https://tbc.wowhead.com/item=' + tradeinItem.itemId"
+              target="_blank"
+              [appWowheadTooltip]="tradeinItem"
+              >{{ tradeinItem.name }}
+              <fa-icon [icon]="faExternalLinkAlt"></fa-icon></a
+          ></ng-container>
         </h1>
         <h2 class="is-size-5">
           <a

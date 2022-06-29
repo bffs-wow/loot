@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  cache_bust: '9',
-  sheetId: '166BaWhCvQgVKDBRZcAU3Zji7LdcGVyzRZJHHfdJORkA',
+  cache_bust: '10',
+  sheetId: '17Rbw1bye___MIknxYE3Yg-G6m1BEBh0L1rLEAgTcBKo',
   apiKey: 'AIzaSyB3IfCPeyxe_qHKZYBfZvNtn2reVWDRVvU',
   logsGuildUrl:
     'https://classic.warcraftlogs.com/guild/rankings/532692/latest/',
