@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SheetInfoComponent } from './sheet-info.component';
 
@@ -6,7 +6,7 @@ describe('SheetInfoComponent', () => {
   let component: SheetInfoComponent;
   let fixture: ComponentFixture<SheetInfoComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SheetInfoComponent ]
     })
