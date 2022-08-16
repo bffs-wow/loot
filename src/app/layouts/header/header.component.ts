@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { StateService } from 'src/app/state/state.service';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 import {
@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject<boolean>();
   sheetUrl = `https://docs.google.com/spreadsheets/d/${environment.sheetId}/edit`;
   logsGuildUrl = environment.logsGuildUrl;
-  form: FormGroup;
+  form: UntypedFormGroup;
   faSync = faSync;
   faFileExcel = faFileExcel;
   faChartPie = faChartPie;
@@ -35,14 +35,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
     public state: StateService,
     public zoneService: ZoneService,
     public lootListFacade: LootListFacadeService,
-    private fb: FormBuilder
+    private fb: UntypedFormBuilder
   ) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
       selectedRaider: null,
     });
-    const raiderControl = this.form.get('selectedRaider') as FormControl;
+    const raiderControl = this.form.get('selectedRaider') as UntypedFormControl;
     this.state.selectedRaider$
       .pipe(
         takeUntil(this.destroyed$),
@@ -75,7 +75,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   clearRaider() {
-    const raiderControl = this.form.get('selectedRaider') as FormControl;
+    const raiderControl = this.form.get('selectedRaider') as UntypedFormControl;
     raiderControl.setValue(null);
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 import { StateService } from '../../state/state.service';
 import { Observable, Subject, concat, of } from 'rxjs';
 import {
@@ -38,7 +38,7 @@ export class LootLookupComponent implements OnInit, OnDestroy {
   @Input() noSearch = false;
   @Input() hideSource = false;
 
-  form: FormGroup;
+  form: UntypedFormGroup;
 
   items$: Observable<Loot[]>;
   loading = false;
@@ -53,13 +53,13 @@ export class LootLookupComponent implements OnInit, OnDestroy {
     public state: StateService,
     private itemService: ItemService,
     private lootListFacade: LootListFacadeService,
-    public fb: FormBuilder,
+    public fb: UntypedFormBuilder,
     public lootAnnounceService: LootAnnounceService
   ) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      selectedItem: new FormControl({
+      selectedItem: new UntypedFormControl({
         value: this.item,
         disabled: this.disabled,
       }),
@@ -85,7 +85,7 @@ export class LootLookupComponent implements OnInit, OnDestroy {
       )
     );
 
-    const selectedItem = this.form.get('selectedItem') as FormControl;
+    const selectedItem = this.form.get('selectedItem') as UntypedFormControl;
 
     this.selectedItem$ = selectedItem.valueChanges.pipe(
       startWith(this.item),
