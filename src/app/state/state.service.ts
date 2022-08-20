@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Raider } from '../loot-list/models/raider.model';
 import { map, distinctUntilChanged } from 'rxjs/operators';
 import { CacheService } from '../cache/cache.service';
 import pick from 'lodash-es/pick';
 import add from 'date-fns/add';
+import { Raider } from '../tmb/models/tmb.interface';
 
 export interface AppState {
-  selectedRaider: Raider;
+  selectedRaiderName: string;
   raiders: Raider[];
   autoUpdate: boolean;
 }
 const _initialState: AppState = {
-  selectedRaider: null,
+  selectedRaiderName: null,
   raiders: [],
   autoUpdate: false,
 };
@@ -27,7 +27,10 @@ export class StateService {
   }
   state$ = this.state.asObservable();
 
-  selectedRaider$ = this.state$.pipe(map((s) => s.selectedRaider));
+  selectedRaiderName$ = this.state$.pipe(map((s) => s.selectedRaiderName));
+  selectedRaider$ = this.state$.pipe(
+    map((s) => s.raiders.find((r) => r.name === s.selectedRaiderName))
+  );
   raiders$ = this.state$.pipe(map((s) => s.raiders));
   autoUpdate$ = this.state.pipe(
     map((s) => s.autoUpdate),
@@ -45,13 +48,17 @@ export class StateService {
   }
 
   cacheState() {
-    this.cache.set(`APP_STATE`, pick(this.rawState, ['selectedRaider']), add(new Date(), { days: 10 }));
+    this.cache.set(
+      `APP_STATE`,
+      pick(this.rawState, ['selectedRaiderName']),
+      add(new Date(), { days: 10 })
+    );
   }
 
   restoreCache() {
     this.cache
       .get(`APP_STATE`)
-      .then((res) => (res === null ? {} : res))
-      .then(({ selectedRaider }) => this.setState({ selectedRaider }));
+      .then((res: Partial<AppState>) => (res === null ? {} : res))
+      .then(({ selectedRaiderName }) => this.setState({ selectedRaiderName }));
   }
 }

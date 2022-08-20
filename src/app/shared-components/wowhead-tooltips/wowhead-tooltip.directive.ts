@@ -9,9 +9,7 @@ import {
   HostBinding,
 } from '@angular/core';
 import { WowheadTooltipsService } from './wowhead-tooltips.service';
-import { Loot } from '../../loot-list/models/loot.model';
-
-
+import { BaseWowItem } from 'src/app/tmb/models/item.interface';
 
 @Directive({
   selector: 'a[appWowheadTooltip]',
@@ -20,7 +18,7 @@ export class WowheadTooltipDirective implements OnChanges {
   @HostBinding('class')
   elementClass = 'wh-padding';
 
-  @Input('appWowheadTooltip') item: Loot;
+  @Input('appWowheadTooltip') item: BaseWowItem;
   constructor(
     private elRef: ElementRef,
     private renderer: Renderer2,
@@ -32,7 +30,7 @@ export class WowheadTooltipDirective implements OnChanges {
       this.renderer.setAttribute(
         this.elRef.nativeElement,
         'data-wowhead',
-        `item=${changes.item.currentValue.itemId}&domain=tbc`
+        `item=${changes.item.currentValue.item_id}&domain=tbc`
       );
 
       this.wowheadTooltipsService.refreshLinks();

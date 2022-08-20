@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ItemPageComponent } from './item-page/item-page.component';
 import { RaiderPageComponent } from './raider-page/raider-page.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
     path: 'statistics',
     loadChildren: () =>
       import('./statistics/statistics.module').then((m) => m.StatisticsModule),
+  },
+  {
+    path: 'admin',
+    component: AdminPageComponent,
   },
 ];
 

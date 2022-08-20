@@ -1,12 +1,12 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, UntypedFormControl } from '@angular/forms';
+import {
+  UntypedFormBuilder,
+  UntypedFormGroup,
+  UntypedFormControl,
+} from '@angular/forms';
 import { StateService } from '../../state/state.service';
 import { Observable, Subject, concat, of } from 'rxjs';
-import {
-  EligibleLoot,
-  Loot,
-  LootGroup,
-} from '../../loot-list/models/loot.model';
+
 import {
   map,
   distinctUntilChanged,
@@ -23,7 +23,9 @@ import {
   faBullhorn,
   faExclamationTriangle,
 } from '@fortawesome/free-solid-svg-icons';
-import { ItemService } from '../../wow-data/item.service';
+import { ItemService } from '../../tmb/item.service';
+import { LootGroup } from 'src/app/loot-list/models/loot-group.model';
+import { BaseWowItem, CsvItem } from 'src/app/tmb/models/item.interface';
 
 @Component({
   selector: 'app-loot-lookup',
@@ -33,14 +35,14 @@ import { ItemService } from '../../wow-data/item.service';
 export class LootLookupComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject<boolean>();
 
-  @Input() item: Loot = null;
+  @Input() item: CsvItem = null;
   @Input() disabled = false;
   @Input() noSearch = false;
   @Input() hideSource = false;
 
   form: UntypedFormGroup;
 
-  items$: Observable<Loot[]>;
+  items$: Observable<CsvItem[]>;
   loading = false;
   input$ = new Subject<string>();
 
@@ -75,7 +77,7 @@ export class LootLookupComponent implements OnInit, OnDestroy {
           this.itemService.allItems$.pipe(
             map((items) =>
               items.filter((i) =>
-                i.name.toLowerCase().includes(term.toLowerCase())
+                i.item_name.toLowerCase().includes(term.toLowerCase())
               )
             ),
             catchError(() => of([])), // empty list on error
@@ -90,7 +92,9 @@ export class LootLookupComponent implements OnInit, OnDestroy {
     this.selectedItem$ = selectedItem.valueChanges.pipe(
       startWith(this.item),
       filter((i) => !!i),
-      switchMap((item) => this.lootListFacade.getRankedLootGroups(item.name))
+      switchMap((item) =>
+        this.lootListFacade.getRankedLootGroups(item.name || item.item_name)
+      )
     );
   }
 
@@ -102,7 +106,7 @@ export class LootLookupComponent implements OnInit, OnDestroy {
     this.destroyed$.next();
   }
 
-  trackByFn(item: EligibleLoot) {
-    return item.name;
+  trackByFn(item: BaseWowItem) {
+    return item.item_id;
   }
 }

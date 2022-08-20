@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import Swal from 'sweetalert2';
-import { EligibleLoot, LootGroup } from '../loot-list/models/loot.model';
+import { LootGroup } from '../loot-list/models/loot-group.model';
 
 @Injectable({
   providedIn: 'root',
@@ -18,16 +18,16 @@ export class LootAnnounceService {
     if (!loot[0].rankings.length) {
       return;
     }
-    const item = loot[0].rankings[0];
-    const itemLink = `format("%s", select(2,GetItemInfo(${item.itemId}))).."`;
+    const ranking = loot[0].rankings[0];
+    const itemLink = `format("%s", select(2,GetItemInfo(${ranking.item.item_id}))).."`;
     const groups = [];
     let grpIdx = 0;
-    let curLoot = loot[grpIdx]
+    let curLoot = loot[grpIdx];
     // Build up array until we have at least 5 raiders to report
     while (this.getRankingLength(groups) < 5 && !!curLoot) {
       groups.push(curLoot);
       grpIdx++;
-      curLoot = loot[grpIdx]
+      curLoot = loot[grpIdx];
     }
 
     let top5Msg = groups.map((g) => this.makeMessage(g)).join(' | ');
@@ -40,7 +40,7 @@ export class LootAnnounceService {
     ];
     const p = await navigator.clipboard.writeText(msg.join(''));
     Swal.fire({
-      position: 'top-end',
+      position: 'top',
       toast: true,
       icon: 'success',
       title: 'Raid Warning Announcement Copied to Clipboard!',
@@ -52,11 +52,11 @@ export class LootAnnounceService {
 
   private makeMessage(group: LootGroup) {
     let msg = `${group.points} - ${group.rankings
-      .map((r) => r.raiderName)
+      .map((r) => r.raider.name)
       .join('; ')}`;
-      if(group.rankings.length > 1) {
-        msg = `TIE: ${msg}`
-      }
+    if (group.rankings.length > 1) {
+      msg = `TIE: ${msg}`;
+    }
     return `[${msg}]`;
   }
 

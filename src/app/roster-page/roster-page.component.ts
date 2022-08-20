@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { filter, map } from 'rxjs/operators';
-import { Class } from '../loot-list/models/raider.model';
+import { Class } from '../loot-list/models/class.model';
 import { StateService } from '../state/state.service';
 
 @Component({
@@ -19,6 +19,7 @@ export class RosterPageComponent implements OnInit {
     Class.Rogue,
     Class.Warlock,
     Class.Paladin,
+    Class.DeathKnight,
   ];
   constructor(private stateService: StateService) {}
 
@@ -29,7 +30,7 @@ export class RosterPageComponent implements OnInit {
       map((raiders) =>
         raiders
           .filter((r) => r.class === cls)
-          .sort((a, b) => b.attendancePoints - a.attendancePoints)
+          .sort((a, b) => b.attendance_points - a.attendance_points)
       )
     );
   }

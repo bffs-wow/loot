@@ -1,8 +1,6 @@
-import { Loot } from './loot.model';
+import { Raider, WishlistItem } from 'src/app/tmb/models/tmb.interface';
 
-export interface Ranking {
-  raider: string;
-  itemName: string;
-  ranking: number;
-  loot: Loot;
+export interface LootRanking {
+  item: WishlistItem;
+  raider: Raider;
 }

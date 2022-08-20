@@ -1,16 +1,19 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { Raider } from './models/raider.model';
-import { LootReceipt, EligibleLoot } from './models/loot.model';
 import {
   faCheck,
   faAward,
   faClock,
   faCalendarAlt,
 } from '@fortawesome/free-solid-svg-icons';
-import { Ranking } from './models/ranking.model';
 import { LootListFacadeService } from './loot-list.facade';
 import { map, tap, first, startWith } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
+import {
+  Raider,
+  ReceivedItem,
+  WishlistItem,
+} from '../tmb/models/tmb.interface';
+import { LootRanking } from './models/ranking.model';
 
 @Component({
   selector: 'app-loot-list',
@@ -20,7 +23,7 @@ import { combineLatest } from 'rxjs';
 export class LootListComponent implements OnInit, OnChanges {
   @Input() raider: Raider;
   @Input() noRouteLink = false;
-  competition: { [itemName: string]: EligibleLoot[] } = {};
+  competition: { [itemName: string]: LootRanking[] } = {};
   faCheck = faCheck;
   constructor(private lootListFacade: LootListFacadeService) {}
 
@@ -29,19 +32,20 @@ export class LootListComponent implements OnInit, OnChanges {
   ngOnChanges(changes) {
     if (changes.raider) {
       combineLatest(
-        this.raider.rankings
-          .filter((r) => !!r.loot)
-          .map((ranking) =>
-            this.getCompetition(ranking).pipe(
-              map((group) => ({ group, ranking }))
-            )
-          )
+        this.raider.wishlist.map((ranking) =>
+          this.getCompetition({
+            item: ranking,
+            raider: this.raider,
+          }).pipe(map((group) => ({ group, ranking })))
+        )
       )
         .pipe(
           first(),
           tap((groups) => {
             for (const group of groups) {
-              this.competition[group.ranking.itemName] = group.group;
+              this.competition[
+                `${group.ranking.name}-${group.ranking.pivot.order}`
+              ] = group.group;
             }
           })
         )
@@ -49,27 +53,23 @@ export class LootListComponent implements OnInit, OnChanges {
     }
   }
 
-  receivedLoot(ranking: Ranking): LootReceipt {
+  receivedLoot(ranking: WishlistItem): boolean {
     if (this.raider && ranking) {
-      return this.raider.receivedLoot.find(
-        (l) => l.sheetName === ranking.itemName
-      );
+      return !!ranking.pivot.is_received;
     }
     return null;
   }
 
-  getCompetition(ranking: Ranking) {
-    return this.lootListFacade.getRankedLootGroups(ranking.loot.name).pipe(
+  getCompetition(ranking: LootRanking) {
+    return this.lootListFacade.getRankedLootGroups(ranking.item.name).pipe(
       map((groups) =>
-        groups.filter(
-          (grp) => grp.points >= ranking.ranking + this.raider.attendancePoints
-        )
+        groups.filter((grp) => grp.points >= ranking.item.raider_points)
       ),
       map((groups) =>
         groups
           .map((grp) => {
             grp.rankings = grp.rankings.filter(
-              (r) => r.raiderName !== this.raider.name
+              (r) => r.raider.name !== this.raider.name
             );
             return grp;
           })
@@ -80,6 +80,10 @@ export class LootListComponent implements OnInit, OnChanges {
           }, [])
       )
     );
+  }
+
+  getCachedCompetition(item: WishlistItem) {
+    return this.competition[`${item.name}-${item.pivot.order}`];
   }
 
   getCompetitionIcon(place: number) {

@@ -1,18 +1,28 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { StateService } from 'src/app/state/state.service';
-import { UntypedFormBuilder, UntypedFormGroup, UntypedFormControl } from '@angular/forms';
+import {
+  UntypedFormBuilder,
+  UntypedFormGroup,
+  UntypedFormControl,
+  FormControl,
+  FormBuilder,
+} from '@angular/forms';
 import { Subject } from 'rxjs';
-import { takeUntil, tap } from 'rxjs/operators';
+import { takeUntil, tap, withLatestFrom } from 'rxjs/operators';
 import {
   faSync,
   faFileExcel,
   faChartPie,
   faChartLine,
   faUsers,
+  faObjectGroup,
+  faCog,
 } from '@fortawesome/free-solid-svg-icons';
 import { LootListFacadeService } from 'src/app/loot-list/loot-list.facade';
 import { environment } from 'src/environments/environment';
-import { ZoneService } from 'src/app/wow-data/zone.service';
+import { ZoneService } from 'src/app/zone/zone.service';
+import { Raider } from 'src/app/tmb/models/tmb.interface';
+import { TmbService } from 'src/app/tmb/tmb.service';
 
 @Component({
   selector: 'app-header',
@@ -22,31 +32,39 @@ import { ZoneService } from 'src/app/wow-data/zone.service';
 export class HeaderComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject<boolean>();
   sheetUrl = `https://docs.google.com/spreadsheets/d/${environment.sheetId}/edit`;
+  tmbUrl = environment.tmbBaseUrl;
   logsGuildUrl = environment.logsGuildUrl;
   form: UntypedFormGroup;
   faSync = faSync;
   faFileExcel = faFileExcel;
+  faGroup = faObjectGroup;
   faChartPie = faChartPie;
   faChartLine = faChartLine;
   faUsers = faUsers;
+  faCog = faCog;
   autoUpdate = false;
   isActive = false;
   constructor(
     public state: StateService,
     public zoneService: ZoneService,
     public lootListFacade: LootListFacadeService,
-    private fb: UntypedFormBuilder
-  ) { }
+    private tmbService: TmbService,
+    private fb: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
       selectedRaider: null,
     });
-    const raiderControl = this.form.get('selectedRaider') as UntypedFormControl;
-    this.state.selectedRaider$
+    const raiderControl = this.form.get(
+      'selectedRaider'
+    ) as FormControl<Raider>;
+    this.state.selectedRaiderName$
       .pipe(
         takeUntil(this.destroyed$),
-        tap((raider) => {
+        withLatestFrom(this.tmbService.raiders$),
+        tap(([raiderName, allRaiders]) => {
+          const raider = allRaiders.find((r) => r.name === raiderName);
           raiderControl.setValue(raider, { emitEvent: false, onlySelf: true });
         })
       )
@@ -56,7 +74,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .pipe(
         takeUntil(this.destroyed$),
         tap((selectedRaider) => {
-          this.state.setState({ selectedRaider });
+          this.state.setState({ selectedRaiderName: selectedRaider.name });
         })
       )
       .subscribe();
@@ -75,7 +93,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   clearRaider() {
-    const raiderControl = this.form.get('selectedRaider') as UntypedFormControl;
+    const raiderControl = this.form.get(
+      'selectedRaider'
+    ) as FormControl<Raider>;
     raiderControl.setValue(null);
   }
 }

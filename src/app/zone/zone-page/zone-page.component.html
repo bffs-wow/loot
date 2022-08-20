@@ -41,7 +41,7 @@
               <div class="content">
                 <a
                   [appWowheadTooltip]="item"
-                  [routerLink]="['/item', item.itemId]"
+                  [routerLink]="['/item', item.parent_item_id || item.item_id]"
                   >{{ item.name }}</a
                 >&nbsp;&nbsp;
                 <ng-container
@@ -89,7 +89,7 @@
       <div class="column">
         <div class="box">
           <app-loot-feed
-            [zone]="zone.zoneId"
+            [zone]="zone"
             [source]="chosenSource$ | async"
           ></app-loot-feed>
         </div>

@@ -44,9 +44,9 @@
         ><span class="icon"> <fa-icon [icon]="faChartPie"></fa-icon> </span
         ><span> Statistics </span>
       </a>
-      <a class="navbar-item" [href]="sheetUrl" target="_blank"
-        ><span class="icon"> <fa-icon [icon]="faFileExcel"></fa-icon> </span
-        ><span> Google Sheet </span></a
+      <a class="navbar-item" [href]="tmbUrl" target="_blank"
+        ><span class="icon"> <fa-icon [icon]="faGroup"></fa-icon> </span
+        ><span> ThatsMyBis </span></a
       >
       <a class="navbar-item" [href]="logsGuildUrl" target="_blank"
         ><span class="icon"> <fa-icon [icon]="faChartLine"></fa-icon> </span
@@ -104,16 +104,20 @@
           </span>
         </a>
       </div>
-      <div class="navbar-item">
-        <label class="checkbox">
-          <input
-            type="checkbox"
-            [ngModelOptions]="{ standalone: true }"
-            [(ngModel)]="autoUpdate"
-            (ngModelChange)="autoUpdateToggled()"
-          />
-          Auto Update (60 seconds)
-        </label>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          <span class="icon"> <fa-icon [icon]="faCog"></fa-icon> </span
+        ></a>
+
+        <div class="navbar-dropdown is-right">
+          <a
+            class="navbar-item"
+            [routerLink]="['/admin']"
+            [queryParams]="{ section: 'tmb-import' }"
+          >
+            Import TMB Data
+          </a>
+        </div>
       </div>
     </div>
   </div>

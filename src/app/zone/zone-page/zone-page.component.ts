@@ -7,10 +7,11 @@ import {
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { filter, first, map, switchMap, tap } from 'rxjs/operators';
 import { LootListFacadeService } from 'src/app/loot-list/loot-list.facade';
-import { EligibleLoot } from 'src/app/loot-list/models/loot.model';
-import { Item, Source } from 'src/app/wow-data/item.interface';
-import { ItemService } from 'src/app/wow-data/item.service';
-import { ZoneService } from 'src/app/wow-data/zone.service';
+import { LootGroup } from 'src/app/loot-list/models/loot-group.model';
+import { ItemService } from 'src/app/tmb/item.service';
+import { CsvItem } from 'src/app/tmb/models/item.interface';
+import { WishlistItem } from 'src/app/tmb/models/tmb.interface';
+import { ZoneService } from '../zone.service';
 
 @Component({
   selector: 'app-zone-page',
@@ -26,8 +27,8 @@ export class ZonePageComponent implements OnInit {
     map((slug) => this.zoneService.getZone(slug))
   );
   // Filter by boss/item source
-  allSource: Partial<Source> = { name: 'All', category: 'All' };
-  zoneItemSources$: Observable<Partial<Source>[]> = this.zone$.pipe(
+  allSource = 'All';
+  zoneItemSources$: Observable<string[]> = this.zone$.pipe(
     filter((zone) => !!zone),
     map((zone) => {
       if (zone.itemSources.length > 1) {
@@ -43,10 +44,7 @@ export class ZonePageComponent implements OnInit {
   ]).pipe(
     tap(([sources, params]) => {
       if (params['boss']) {
-        let sourceFromParam = sources.find((s) => s.name === params['boss']);
-        if (!sourceFromParam && params['boss'] === 'Zone Drop') {
-          sourceFromParam = sources.find((s) => s.category === 'Zone Drop');
-        }
+        let sourceFromParam = sources.find((s) => s === params['boss']);
         // If no query param is present, reset to 'All'
         if (!sourceFromParam) {
           sourceFromParam = this.allSource;
@@ -67,24 +65,24 @@ export class ZonePageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  sourceChosen(source: Partial<Source>) {
+  sourceChosen(source: Partial<string>) {
     this._chosenSource$.next(source);
 
     this.router.navigate([], {
       relativeTo: this.route,
-      queryParams: { boss: source.name || source.category },
+      queryParams: { boss: source },
       queryParamsHandling: 'merge', // remove to replace all query params by provided
     });
   }
 
-  getSourceLoot(source: Source) {
+  getSourceLoot(source: string) {
     return this.zone$.pipe(
       map((zone) => this.itemService.getBySource(zone, source))
     );
   }
 
-  getNextRecipient(item: Item) {
-    return this.lootListFacade.getRankedLootGroups(item.name).pipe(
+  getNextRecipient(item: CsvItem) {
+    return this.lootListFacade.getRankedLootGroups(item.item_name).pipe(
       first(),
       map((groups) => (groups.length ? groups[0] : null)),
       filter((grp) => grp !== null),
@@ -97,7 +95,8 @@ export class ZonePageComponent implements OnInit {
    * @param items
    * @returns
    */
-  noneListed(items: EligibleLoot[]) {
-    return items && items.every((i) => !i.onList);
+  noneListed(items: LootGroup[]) {
+    // return items && items.every((i) => !i.onList);
+    return false; // todo
   }
 }

@@ -3,10 +3,10 @@ import { LootListFacadeService } from '../loot-list/loot-list.facade';
 import { Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 import { StatisticsService } from './statistics.service';
-import { Ranking } from '../loot-list/models/ranking.model';
 import groupBy from 'lodash-es/groupBy';
-import { Loot, LootReceipt } from '../loot-list/models/loot.model';
 import take from 'lodash-es/take';
+import { ReceivedItem, WishlistItem } from '../tmb/models/tmb.interface';
+import { TmbService } from '../tmb/tmb.service';
 
 @Component({
   selector: 'app-statistics',
@@ -22,30 +22,30 @@ export class StatisticsComponent implements OnInit, OnDestroy {
   totalReceivedThisPhase = 0;
   totalProgress = null;
   totalProgressTop10 = null;
-  mostPopularItems: { ranking: Ranking; sum: number }[] = null;
-  mostCommonItems: { item: Loot; count: number }[] = null;
+  mostPopularItems: { ranking: WishlistItem; sum: number }[] = null;
+  mostCommonItems: { item: ReceivedItem; count: number }[] = null;
   constructor(
-    private lootListFacade: LootListFacadeService,
+    private tmbService: TmbService,
     private statisticsService: StatisticsService
   ) {}
 
   ngOnInit(): void {
-    this.lootListFacade.raiders$
+    this.tmbService.raiders$
       .pipe(
         takeUntil(this.destroyed$),
         tap((raiders) => {
           this.raiderCount = raiders.length;
 
           this.lootReceived = raiders.reduce((prev, cur) => {
-            return prev + cur.receivedLoot.length;
+            return prev + cur.received.length;
           }, 0);
           this.totalRanked = raiders.reduce((prev, cur) => {
-            return prev + cur.rankings.length;
+            return prev + cur.wishlist.length;
           }, 0);
 
           this.avgAttendance =
             raiders.reduce((prev, cur) => {
-              return prev + cur.attendancePoints;
+              return prev + cur.attendance_points;
             }, 0) / this.raiderCount;
 
           const allProgress = raiders.map((r) =>
@@ -86,10 +86,10 @@ export class StatisticsComponent implements OnInit, OnDestroy {
            * Most Popular
            */
           const allRankings = raiders.reduce((prev, cur) => {
-            return [...prev, ...cur.rankings];
-          }, [] as Ranking[]);
+            return [...prev, ...cur.wishlist];
+          }, [] as WishlistItem[]);
 
-          const groupedRankings = groupBy(allRankings, 'loot.itemId');
+          const groupedRankings = groupBy(allRankings, 'item_id');
           const rankingGroups = Object.keys(groupedRankings).filter(
             (g) => g != 'undefined'
           );
@@ -99,7 +99,7 @@ export class StatisticsComponent implements OnInit, OnDestroy {
               return {
                 itemId,
                 sum: group.reduce((p, c) => {
-                  return p + c.ranking;
+                  return p + c.raider_points;
                 }, 0),
               };
             })
@@ -114,9 +114,9 @@ export class StatisticsComponent implements OnInit, OnDestroy {
            * Most Common
            */
           const allReceived = raiders.reduce((prev, cur) => {
-            return [...prev, ...cur.receivedLoot];
-          }, [] as LootReceipt[]);
-          const groupedReceipts = groupBy(allReceived, 'itemId');
+            return [...prev, ...cur.received];
+          }, [] as ReceivedItem[]);
+          const groupedReceipts = groupBy(allReceived, 'item_id');
           const receiptGroups = Object.keys(groupedReceipts).filter(
             (g) => g != 'undefined'
           );
