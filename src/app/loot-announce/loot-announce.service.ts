@@ -40,7 +40,7 @@ export class LootAnnounceService {
     ];
     const p = await navigator.clipboard.writeText(msg.join(''));
     Swal.fire({
-      position: 'top',
+      position: 'top-end',
       toast: true,
       icon: 'success',
       title: 'Raid Warning Announcement Copied to Clipboard!',

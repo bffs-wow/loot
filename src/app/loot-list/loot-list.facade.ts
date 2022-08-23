@@ -44,7 +44,7 @@ export class LootListFacadeService {
       )
       .subscribe();
 
-    // If we are loading the app between 6:00 and 12:00 PM +/- 1 hr ET (Raid Time)
+    // If we are loading the app between 6:00 and 12:00  +/- 1 hr ET (Raid Time)
     const now = new Date();
     if (now.getUTCHours() > 23 || now.getUTCHours() < 5) {
       // Force a fresh data load
@@ -62,6 +62,15 @@ export class LootListFacadeService {
           (l) => l.item.name.toLowerCase() === itemName.toLowerCase()
         );
       }),
+      map((rankings) => {
+        // build iterable / sortable groups by points
+        return this.groupAndSort(rankings);
+      })
+    );
+  }
+
+  getAllRankedLootGroups(): Observable<LootGroup[]> {
+    return this.allRankedLoot$.pipe(
       map((rankings) => {
         // build iterable / sortable groups by points
         return this.groupAndSort(rankings);

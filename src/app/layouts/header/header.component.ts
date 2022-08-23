@@ -17,12 +17,14 @@ import {
   faUsers,
   faObjectGroup,
   faCog,
+  faDownload,
 } from '@fortawesome/free-solid-svg-icons';
 import { LootListFacadeService } from 'src/app/loot-list/loot-list.facade';
 import { environment } from 'src/environments/environment';
 import { ZoneService } from 'src/app/zone/zone.service';
 import { Raider } from 'src/app/tmb/models/tmb.interface';
 import { TmbService } from 'src/app/tmb/tmb.service';
+import { GargulService } from 'src/app/gargul/gargul.service';
 
 @Component({
   selector: 'app-header',
@@ -42,6 +44,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   faChartLine = faChartLine;
   faUsers = faUsers;
   faCog = faCog;
+  faDownload = faDownload;
+
   autoUpdate = false;
   isActive = false;
   constructor(
@@ -49,7 +53,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     public zoneService: ZoneService,
     public lootListFacade: LootListFacadeService,
     private tmbService: TmbService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private gargulService: GargulService
   ) {}
 
   ngOnInit(): void {
@@ -97,5 +102,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
       'selectedRaider'
     ) as FormControl<Raider>;
     raiderControl.setValue(null);
+  }
+
+  gargulExport() {
+    this.gargulService.export().subscribe();
   }
 }

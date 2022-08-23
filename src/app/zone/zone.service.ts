@@ -114,11 +114,11 @@ export class ZoneService {
     return zone;
   }
 
-  getZone(slugOrId: string | number) {
+  getZone(slugOrId: string | number): Zone {
     if (!slugOrId) {
       throw new Error(`Missing Slug or Id`);
     }
-    let zone;
+    let zone: Zone;
     if (!isNaN(parseInt(slugOrId as string))) {
       zone = this.zones.find((z) => z.zoneId === parseInt(slugOrId as string));
     } else if (isString(slugOrId)) {

@@ -21,9 +21,9 @@
           class="tag is-black is-medium"
           *ngFor="let source of zoneItemSources$ | async"
           (click)="sourceChosen(source)"
-          [class.is-primary]="chosenSource.name === source.name"
+          [class.is-primary]="chosenSource === source"
         >
-          <a>{{ source.name || source.category }}</a>
+          <a>{{ source }}</a>
         </span>
       </div>
     </div>
@@ -31,7 +31,7 @@
       <div class="column">
         <div class="box" *ngIf="chosenSource$ | async as chosenSource">
           <p class="title">
-            <strong>{{ chosenSource.name }}</strong> Loot
+            <strong>{{ chosenSource }}</strong> Loot
           </p>
           <article
             class="media"
@@ -42,7 +42,7 @@
                 <a
                   [appWowheadTooltip]="item"
                   [routerLink]="['/item', item.parent_item_id || item.item_id]"
-                  >{{ item.name }}</a
+                  >{{ item.item_name }}</a
                 >&nbsp;&nbsp;
                 <ng-container
                   *ngIf="
@@ -68,8 +68,8 @@
                       class="tag is-black"
                       *ngFor="let recipient of recipientGrp"
                     >
-                      <a [routerLink]="['/raider', recipient.raiderName]">
-                        {{ recipient.raiderName }}
+                      <a [routerLink]="['/raider', recipient.raider.name]">
+                        {{ recipient.raider.name }}
                       </a>
 
                       &nbsp;

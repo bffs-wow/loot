@@ -10,7 +10,7 @@ import { ReceivedItem, WishlistItem } from './models/tmb.interface';
 @Injectable({ providedIn: 'root' })
 export class ItemService {
   allItems$: Observable<CsvItem[]> = this.http
-    .get('assets/tbc-tmb-items.csv', { responseType: 'text' })
+    .get('assets/tmb-items.csv', { responseType: 'text' })
     .pipe(
       map((csvData) => Papa.parse(csvData, { header: true })),
       map((csvRes) => {
