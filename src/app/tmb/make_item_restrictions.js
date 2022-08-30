@@ -19,7 +19,7 @@ const Papa = require("papaparse");
           ITEM_NAME: row.name,
           allowedClasses: [],
           restrictedClasses: [],
-          allowedRankings: 1,
+          allowedRankings: 3,
         };
       }
 
