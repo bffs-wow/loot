@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { Zone } from '../zone/zone.interface';
 import Papa from 'papaparse';
 import { HttpClient } from '@angular/common/http';
-import { map, shareReplay } from 'rxjs/operators';
+import { map, shareReplay, tap } from 'rxjs/operators';
 import { ReceivedItem, WishlistItem } from './models/tmb.interface';
 
 @Injectable({ providedIn: 'root' })
@@ -13,9 +13,25 @@ export class ItemService {
     .get('assets/tmb-items.csv', { responseType: 'text' })
     .pipe(
       map((csvData) => Papa.parse(csvData, { header: true })),
-      map((csvRes) => {
-        return csvRes.data.map((i) => {
-          return { ...i, item_id: parseInt(i.item_id) };
+      tap((csvRes) => {
+        if (csvRes.errors.length) {
+          console.error(
+            `Error parsing CSV: ${csvRes.errors.join('; ')}`,
+            csvRes.errors
+          );
+        }
+      }),
+      // Only include loot from Normal and Heroic 25
+      map((csvRes) =>
+        csvRes.data.filter(
+          (i) =>
+            i.instance_name.endsWith('N25') || i.instance_name.endsWith('H25')
+        )
+      ),
+      map((data) => {
+        // Parse IDs into numbers
+        return data.map((i) => {
+          return { ...i, id: parseInt(i.id) };
         });
       }),
       shareReplay(1)
@@ -27,7 +43,7 @@ export class ItemService {
     return this.allItems$.pipe(
       map((items) => {
         const item = items.find(
-          (i) => i.item_name.toLowerCase() === name.trim().toLowerCase()
+          (i) => i.name.toLowerCase() === name.trim().toLowerCase()
         );
         if (item) {
           return item;
@@ -41,7 +57,7 @@ export class ItemService {
   getById(id: number) {
     return this.allItems$.pipe(
       map((items) => {
-        const item = items.find((i) => i.item_id === id);
+        const item = items.find((i) => i.id === id);
         if (item) {
           return item;
         }
@@ -55,11 +71,16 @@ export class ItemService {
    * Given an item from the TMB Export data, retrieve the actual *listable* item from the TMB database.
    * For example, if provided with the item that is received from a token, this will return the token.
    */
-  getTmbItem(item: WishlistItem | ReceivedItem) {
-    if (item.parent_item_id) {
-      return this.getById(item.parent_item_id);
+  getTmbItem(item: WishlistItem | ReceivedItem | CsvItem) {
+    if (item.id) {
+      return this.getById(item.id);
     }
-    return this.getById(item.item_id);
+    // Not a csv item
+    let notCsvItem = item as WishlistItem | ReceivedItem;
+    if (notCsvItem.parent_item_id) {
+      return this.getById(notCsvItem.parent_item_id);
+    }
+    return this.getById(notCsvItem.item_id);
   }
 
   getBySource(zone: Zone, source: string) {

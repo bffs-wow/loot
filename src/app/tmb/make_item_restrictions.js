@@ -15,8 +15,8 @@ const Papa = require("papaparse");
     complete: (res) => {
       const restrictionsObj = {};
       for (const row of res.data) {
-        restrictionsObj[row.item_id] = {
-          ITEM_NAME: row.item_name,
+        restrictionsObj[row.id] = {
+          ITEM_NAME: row.name,
           allowedClasses: [],
           restrictedClasses: [],
           allowedRankings: 1,

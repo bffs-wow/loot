@@ -49,14 +49,12 @@ export class ItemPageComponent implements OnInit, OnDestroy {
       this.itemService.allItems$,
     ]).pipe(
       map(([params, allitems]) =>
-        allitems.find((l) => l.item_id === parseInt(params.id))
+        allitems.find((l) => l.id === parseInt(params.id))
       )
     );
 
     this.lootGroups$ = this.item$.pipe(
-      switchMap((item) =>
-        this.lootListFacade.getRankedLootGroups(item.item_name)
-      )
+      switchMap((item) => this.lootListFacade.getRankedLootGroups(item.name))
     );
 
     this.tradeInItem$ = this.lootGroups$.pipe(
@@ -82,7 +80,7 @@ export class ItemPageComponent implements OnInit, OnDestroy {
       map(([item, raiders]) =>
         raiders.reduce((loot: LootReceipt[], raider) => {
           const raiderLoot = raider.received
-            .filter((i) => i.item_id === item.item_id)
+            .filter((i) => i.item_id === item.id)
             .map((r) => ({
               item: r,
               raider,
@@ -102,7 +100,7 @@ export class ItemPageComponent implements OnInit, OnDestroy {
   }
 
   makeTmbUrl(item: CsvItem) {
-    return `${environment.tmbBaseUrl}i/${item.item_id}`;
+    return `${environment.tmbBaseUrl}i/${item.id}`;
   }
 
   async copyToClipBoard(grp: LootGroup[]) {

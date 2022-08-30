@@ -43,7 +43,7 @@ export class LootFeedComponent implements OnInit, OnChanges {
           (loot: (LootReceipt & { itemWithSource?: CsvItem })[], raider) => {
             const raiderLoot = raider.received.map((r) => ({
               item: r,
-              itemWithSource: allItems.find((i) => i.item_id == r.item_id),
+              itemWithSource: allItems.find((i) => i.id == r.item_id),
               raider,
             }));
             return [...loot, ...raiderLoot];

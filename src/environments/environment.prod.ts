@@ -13,5 +13,5 @@ export const environment = {
   // If there are not this many Main Spec items in the list, the OS items will be "pushed down" to this point.
   wishlistOffspecCutoff: 33,
   maxAttendancePoints: 18.5,
-  tmbBaseUrl: 'https://thatsmybis.com/8173/best-friends/',
+  tmbBaseUrl: 'https://thatsmybis.com/8752/best-friends/',
 };

@@ -77,7 +77,7 @@ export class LootLookupComponent implements OnInit, OnDestroy {
           this.itemService.allItems$.pipe(
             map((items) =>
               items.filter((i) =>
-                i.item_name.toLowerCase().includes(term.toLowerCase())
+                i.name.toLowerCase().includes(term.toLowerCase())
               )
             ),
             catchError(() => of([])), // empty list on error
@@ -92,9 +92,7 @@ export class LootLookupComponent implements OnInit, OnDestroy {
     this.selectedItem$ = selectedItem.valueChanges.pipe(
       startWith(this.item),
       filter((i) => !!i),
-      switchMap((item) =>
-        this.lootListFacade.getRankedLootGroups(item.name || item.item_name)
-      )
+      switchMap((item) => this.lootListFacade.getRankedLootGroups(item.name))
     );
   }
 

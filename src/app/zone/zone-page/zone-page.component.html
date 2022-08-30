@@ -5,7 +5,7 @@
         <h1 class="title">
           <a
             title="Open Wowhead"
-            [href]="'https://tbc.wowhead.com/zone=' + zone.zoneId"
+            [href]="'https://www.wowhead.com/wotlk/zone=' + zone.zoneId"
             target="_blank"
             [appWowheadTooltip]="zone"
             >{{ zone.name }} <fa-icon [icon]="faExternalLinkAlt"></fa-icon
@@ -41,8 +41,8 @@
               <div class="content">
                 <a
                   [appWowheadTooltip]="item"
-                  [routerLink]="['/item', item.parent_item_id || item.item_id]"
-                  >{{ item.item_name }}</a
+                  [routerLink]="['/item', item.id]"
+                  >{{ item.name }}</a
                 >&nbsp;&nbsp;
                 <ng-container
                   *ngIf="

@@ -8,7 +8,7 @@ import { ZoneService } from 'src/app/zone/zone.service';
 export class ZonePipe implements PipeTransform {
   constructor(private zoneService: ZoneService) {}
   transform(value: CsvItem, ...args: any[]): any {
-    if (!value?.item_id) {
+    if (!value?.id) {
       console.warn(`Invalid ZonePipe input!`, value);
       return ``;
     }

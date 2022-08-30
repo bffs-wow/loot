@@ -3,7 +3,7 @@
     <div class="control is-expanded mr-1">
       <ng-select
         [items]="items$ | async"
-        bindLabel="item_name"
+        bindLabel="name"
         formControlName="selectedItem"
         [trackByFn]="trackByFn"
         [minTermLength]="2"
@@ -18,8 +18,10 @@
           let-index="index"
           let-search="searchTerm"
         >
-          {{ item.item_name }} -
-          <small>{{ itemService.getTmbItem(item) | async | zone }}</small>
+          {{ item.name }} -
+          <small *ngIf="item"
+            >{{ item.instance_name }} ({{ item.source_name }})</small
+          >
         </ng-template>
       </ng-select>
     </div>

@@ -140,36 +140,50 @@ export class TmbService {
         .filter((i) => i.pivot.is_offspec === 1)
         .sort((a, b) => a.pivot.order - b.pivot.order);
       if (osItems.length) {
-        const firstOsItem = osItems[0];
-        // Set a special message on the first OS item
-        firstOsItem.pivot.note = `(First OS) ${firstOsItem.pivot.note ?? ''}`;
-        // If the first OS item comes before the cutoff, move it
-        if (firstOsItem.pivot.order <= environment.wishlistOffspecCutoff) {
-          const itemsToMove = raider.wishlist.filter(
-            (i) => i.pivot.order >= firstOsItem.pivot.order
+        // Verify there aren't too many OS items
+        if (
+          osItems.length >
+          environment.wishlistLength - environment.wishlistOffspecCutoff
+        ) {
+          const osMsg = `${raider.name} - too many OS listed: (${osItems.length})`;
+          console.error(osMsg);
+          raider.public_note = `${raider.public_note || ''}\r\n${osMsg}`;
+          // This is a critical issue, so make it very visible that these items are invalid
+          raider.wishlist.forEach(
+            (i) => (i.pivot.note = 'INVALID LIST (TOO MANY OS)')
           );
-          // First OS Item order will be set to the cutoff spot (+1)
-          let curOsOrder = environment.wishlistOffspecCutoff + 1;
-          for (const osItem of itemsToMove) {
-            osItem.pivot.order = curOsOrder;
-            if (osItem.item_id !== firstOsItem.item_id) {
-              osItem.pivot.note = `(OS) ${osItem.pivot.note ?? ''}`;
-            }
-            curOsOrder++;
-          }
-          // If any items "fell off" the list (i.e. order > wishlistLength), log an error
-          const invalidOsItems = raider.wishlist.filter(
-            (i) => i.pivot.order > environment.wishlistLength
-          );
-
-          if (invalidOsItems.length) {
-            const osMsg = `${raider.name} - first OS item too early on list: (${firstOsItem.name} - ${firstOsItem.item_id})`;
-            console.error(osMsg);
-            raider.public_note = `${raider.public_note || ''}\r\n${osMsg}`;
-            // This is a critical issue, so make it very visible that these items are invalid
-            raider.wishlist.forEach(
-              (i) => (i.pivot.note = 'INVALID LIST (OS TOO EARLY)')
+        } else {
+          const firstOsItem = osItems[0];
+          // Set a special message on the first OS item
+          firstOsItem.pivot.note = `(First OS) ${firstOsItem.pivot.note ?? ''}`;
+          // If the first OS item comes before the cutoff, move it
+          if (firstOsItem.pivot.order <= environment.wishlistOffspecCutoff) {
+            const itemsToMove = raider.wishlist.filter(
+              (i) => i.pivot.order >= firstOsItem.pivot.order
             );
+            // First OS Item order will be set to the cutoff spot (+1)
+            let curOsOrder = environment.wishlistOffspecCutoff + 1;
+            for (const osItem of itemsToMove) {
+              osItem.pivot.order = curOsOrder;
+              if (osItem.item_id !== firstOsItem.item_id) {
+                osItem.pivot.note = `(OS) ${osItem.pivot.note ?? ''}`;
+              }
+              curOsOrder++;
+            }
+            // If any items "fell off" the list (i.e. order > wishlistLength), log an error
+            const invalidOsItems = raider.wishlist.filter(
+              (i) => i.pivot.order > environment.wishlistLength
+            );
+
+            if (invalidOsItems.length) {
+              const osMsg = `${raider.name} - first OS item too early on list: (${firstOsItem.name} - ${firstOsItem.item_id})`;
+              console.error(osMsg);
+              raider.public_note = `${raider.public_note || ''}\r\n${osMsg}`;
+              // This is a critical issue, so make it very visible that these items are invalid
+              raider.wishlist.forEach(
+                (i) => (i.pivot.note = 'INVALID LIST (OS TOO EARLY)')
+              );
+            }
           }
         }
       }

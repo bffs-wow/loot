@@ -30,7 +30,7 @@ export class WowheadTooltipDirective implements OnChanges {
       this.renderer.setAttribute(
         this.elRef.nativeElement,
         'data-wowhead',
-        `item=${changes.item.currentValue.item_id}&domain=tbc`
+        `item=${changes.item.currentValue.item_id}&domain=wotlk`
       );
 
       this.wowheadTooltipsService.refreshLinks();

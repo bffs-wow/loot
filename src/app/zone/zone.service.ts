@@ -12,66 +12,76 @@ import { Zone } from './zone.interface';
 const _sourceOrdering: { [source: string]: number } = {
   Trash: 10,
   Recipes: 11,
-  'Rage Winterchill': 1.1,
-  Anetheron: 1.2,
-  [`Kaz'rogal`]: 1.3,
-  Azgalor: 1.3,
-  Archimonde: 1.4,
-  [`High Warlord Naj'entus`]: 2.1,
-  Supremus: 2.2,
-  'Shade of Akama': 2.3,
-  'Teron Gorefiend': 2.4,
-  'Gurtogg Bloodboil': 2.5,
-  'Reliquary of Souls': 2.6,
-  'Mother Shahraz': 2.7,
-  'Illidari Council': 2.8,
-  'Illidan Stormrage': 2.9,
+  // TODO: add per-boss manual ordering as desired.
 };
 
 @Injectable({ providedIn: 'root' })
 export class ZoneService {
   zones: Zone[] = [
-    { zoneId: 3457, name: 'Karazhan', slug: 'karazhan', itemSources: [] },
     {
-      zoneId: 3923,
-      name: "Gruul's Lair",
-      slug: 'gruuls-lair',
+      zoneId: 4603,
+      name: 'Vault of Archavon N25',
+      slug: 'vault-of-archavon',
       itemSources: [],
     },
     {
-      zoneId: 3836,
-      name: "Magtheridon's Lair",
-      slug: 'magtheridons-lair',
+      zoneId: 3456,
+      name: 'Naxxramas N25',
+      slug: 'naxxramas',
       itemSources: [],
     },
     {
-      zoneId: 3607,
-      name: 'Serpentshrine Cavern',
-      slug: 'serpentshrine-cavern',
+      zoneId: 4500,
+      name: 'Eye of Eternity N25',
+      slug: 'eye-of-eternity',
       itemSources: [],
     },
     {
-      zoneId: 3845,
-      name: 'Tempest Keep',
-      slug: 'tempest-keep',
+      zoneId: 4493,
+      name: 'Obsidian Sanctum N25',
+      slug: 'obsidian-sanctum',
       itemSources: [],
     },
     {
-      zoneId: 3606,
-      name: 'Hyjal Summit',
-      slug: 'hyjal-summit',
+      zoneId: 4273,
+      name: 'Ulduar N25',
+      slug: 'ulduar',
       itemSources: [],
     },
     {
-      zoneId: 3959,
-      name: 'Black Temple',
-      slug: 'black-temple',
+      zoneId: 4722,
+      name: 'Trial of the Crusader N25',
+      slug: 'trial-of-the-crusader-n',
       itemSources: [],
     },
     {
-      zoneId: 4075,
-      name: 'Sunwell Plateau',
-      slug: 'sunwell-plateau',
+      zoneId: 4722,
+      name: 'Trial of the Crusader H25',
+      slug: 'trial-of-the-crusader-h',
+      itemSources: [],
+    },
+    {
+      zoneId: 4812,
+      name: 'Icecrown Citadel N25',
+      slug: 'icecrown-citadel-n',
+      itemSources: [],
+    },
+    {
+      zoneId: 4812,
+      name: 'Icecrown Citadel H25',
+      slug: 'icecrown-citadel-h',
+      itemSources: [],
+    },
+    {
+      zoneId: 4987,
+      name: 'Ruby Sanctum N25',
+      slug: 'ruby-sanctum-n',
+      itemSources: [],
+    },
+    {
+      zoneId: 4987,
+      name: 'Ruby Sanctum H25',
+      slug: 'ruby-sanctum-h',
       itemSources: [],
     },
   ];
@@ -123,6 +133,10 @@ export class ZoneService {
       zone = this.zones.find((z) => z.zoneId === parseInt(slugOrId as string));
     } else if (isString(slugOrId)) {
       zone = this.zones.find((z) => z.slug === slugOrId);
+      // Try by name
+      if (!zone) {
+        zone = this.zones.find((z) => z.name === slugOrId);
+      }
     }
 
     return zone;
