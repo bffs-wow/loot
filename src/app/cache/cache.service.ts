@@ -45,8 +45,13 @@ export class CacheService {
     return localForage.keys().then((keys) => keys.includes(this.makeKey(key)));
   }
 
-  clear() {
-    return localForage.clear();
+  async clear(exceptKeys: string[]) {
+    const keys = await localForage.keys();
+    const exceptKeysSuffixed = exceptKeys.map((k) => this.makeKey(k));
+    const keysToRemove = keys.filter((k) => !exceptKeysSuffixed.includes(k));
+    for (const key of keysToRemove) {
+      await localForage.removeItem(key);
+    }
   }
   /**
    * Suffix provided keys with cache busting setting

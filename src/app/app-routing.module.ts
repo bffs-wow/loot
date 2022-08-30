@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ItemPageComponent } from './item-page/item-page.component';
 import { RaiderPageComponent } from './raider-page/raider-page.component';
@@ -32,10 +33,14 @@ const routes: Routes = [
     loadChildren: () =>
       import('./statistics/statistics.module').then((m) => m.StatisticsModule),
   },
+  {
+    path: 'admin',
+    component: AdminPageComponent,
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

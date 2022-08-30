@@ -5,19 +5,42 @@
         <h1 class="title mb-1">
           <a
             title="Open Wowhead"
-            [href]="'https://classic.wowhead.com/item=' + item.itemId"
+            [href]="'https://www.wowhead.com/wotlk/item=' + item.id"
             target="_blank"
             [appWowheadTooltip]="item"
             >{{ item.name }} <fa-icon [icon]="faExternalLinkAlt"></fa-icon
           ></a>
+          <ng-container *ngIf="tradeInItem$ | async as tradeinItem">
+            /
+            <a
+              title="Open Wowhead"
+              [href]="'https://www.wowhead.com/wotlk/item=' + tradeinItem.id"
+              target="_blank"
+              [appWowheadTooltip]="tradeinItem"
+              >{{ tradeinItem.name }}
+              <fa-icon [icon]="faExternalLinkAlt"></fa-icon></a
+          ></ng-container>
         </h1>
         <h2 class="is-size-5">
           <a
-            [routerLink]="['/zone', item.source.zone]"
-            [queryParams]="{ boss: item.source.name || item.source.category }"
+            [routerLink]="['/zone', item.instance_name]"
+            [queryParams]="{ boss: item.source_name }"
             >{{ item | zone }}
           </a>
         </h2>
+        <div class="tabs is-toggle is-medium">
+          <ul>
+            <li>
+              <a
+                [href]="makeTmbUrl(item)"
+                target="_blank"
+                title="Open ThatsMyBis"
+                ><span> ThatsMyBis </span>&nbsp;<span class="icon">
+                  <fa-icon [icon]="faShieldAlt"></fa-icon> </span
+              ></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -42,23 +65,30 @@
             </div>
           </nav>
 
-          <app-loot-lookup [item]="item" [noSearch]="true" [hideSource]="true"></app-loot-lookup>
+          <app-loot-lookup
+            [item]="item"
+            [noSearch]="true"
+            [hideSource]="true"
+          ></app-loot-lookup>
         </div>
       </div>
       <div class="column">
         <div class="box">
           <p class="title">Recent Recipients</p>
-          <article class="media" *ngFor="let loot of recentRecipients$ | async">
+          <article
+            class="media"
+            *ngFor="let receipt of recentRecipients$ | async"
+          >
             <div class="media-content">
               <div class="content">
                 <h4 class="is-size-4">
                   <strong
-                    ><a [routerLink]="['/raider', loot.raiderName]"
-                      >{{ loot.raiderName }}
+                    ><a [routerLink]="['/raider', receipt.raider.name]"
+                      >{{ receipt.raider.name }}
                     </a></strong
                   >
                   -
-                  <small>{{ loot.date | date }}</small>
+                  <small>{{ receipt.item.pivot.received_at | date }}</small>
                 </h4>
               </div>
             </div>

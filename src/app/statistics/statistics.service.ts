@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Raider } from '../loot-list/models/raider.model';
+import { Raider } from '../tmb/models/tmb.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -8,12 +8,10 @@ export class StatisticsService {
   constructor() {}
 
   getRaiderListProgress(raider: Raider, limit: number = null) {
-    const numRanked = limit ? limit : raider.rankings.length;
-    const rankingsReceived = raider.receivedLoot.slice(0, numRanked).filter((l) =>
-      raider.rankings.some(
-        (r) => r.loot?.sheetName.toLowerCase() === l.sheetName.toLowerCase()
-      )
-    );
+    const numRanked = limit ? limit : raider.wishlist.length;
+    const rankingsReceived = raider.received
+      .slice(0, numRanked)
+      .filter((l) => raider.wishlist.some((r) => r.item_id === l.item_id));
 
     return {
       progress: (rankingsReceived.length / numRanked) * 100,

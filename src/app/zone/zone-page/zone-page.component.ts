@@ -1,28 +1,35 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faExclamationTriangle,
+  faExternalLinkAlt,
+} from '@fortawesome/free-solid-svg-icons';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { filter, first, map, switchMap, tap } from 'rxjs/operators';
 import { LootListFacadeService } from 'src/app/loot-list/loot-list.facade';
-import { Item, Source } from 'src/app/wow-data/item.interface';
-import { ItemService } from 'src/app/wow-data/item.service';
-import { ZoneService } from 'src/app/wow-data/zone.service';
+import { LootGroup } from 'src/app/loot-list/models/loot-group.model';
+import { LootRanking } from 'src/app/loot-list/models/ranking.model';
+import { ItemService } from 'src/app/tmb/item.service';
+import { CsvItem } from 'src/app/tmb/models/item.interface';
+import { WishlistItem } from 'src/app/tmb/models/tmb.interface';
+import { ZoneService } from '../zone.service';
 
 @Component({
   selector: 'app-zone-page',
   templateUrl: './zone-page.component.html',
   styleUrls: ['./zone-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ZonePageComponent implements OnInit {
   faExternalLinkAlt = faExternalLinkAlt;
+  faExclamationTriangle = faExclamationTriangle;
   zone$ = this.route.params.pipe(
     map((p) => p['slug']),
     map((slug) => this.zoneService.getZone(slug))
   );
   // Filter by boss/item source
-  allSource: Partial<Source> = { name: 'All', category: 'All' };
-  zoneItemSources$: Observable<Partial<Source>[]> = this.zone$.pipe(
+  allSource = 'All';
+  zoneItemSources$: Observable<string[]> = this.zone$.pipe(
     filter((zone) => !!zone),
     map((zone) => {
       if (zone.itemSources.length > 1) {
@@ -38,10 +45,7 @@ export class ZonePageComponent implements OnInit {
   ]).pipe(
     tap(([sources, params]) => {
       if (params['boss']) {
-        let sourceFromParam = sources.find((s) => s.name === params['boss']);
-        if (!sourceFromParam && params['boss'] === 'Zone Drop') {
-          sourceFromParam = sources.find((s) => s.category === 'Zone Drop');
-        }
+        let sourceFromParam = sources.find((s) => s === params['boss']);
         // If no query param is present, reset to 'All'
         if (!sourceFromParam) {
           sourceFromParam = this.allSource;
@@ -62,28 +66,37 @@ export class ZonePageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  sourceChosen(source: Partial<Source>) {
+  sourceChosen(source: Partial<string>) {
     this._chosenSource$.next(source);
 
     this.router.navigate([], {
       relativeTo: this.route,
-      queryParams: { boss: source.name || source.category },
+      queryParams: { boss: source },
       queryParamsHandling: 'merge', // remove to replace all query params by provided
     });
   }
 
-  getSourceLoot(source: Source) {
+  getSourceLoot(source: string) {
     return this.zone$.pipe(
-      map((zone) => this.itemService.getBySource(zone, source))
+      switchMap((zone) => this.itemService.getBySource(zone, source))
     );
   }
 
-  getNextRecipient(item: Item) {
+  getNextRecipient(item: CsvItem) {
     return this.lootListFacade.getRankedLootGroups(item.name).pipe(
       first(),
       map((groups) => (groups.length ? groups[0] : null)),
-      filter(grp => grp !== null),
-      map(grp => grp.rankings.length ? grp.rankings : null)
+      filter((grp) => grp !== null),
+      map((grp) => (grp.rankings.length ? grp.rankings : null))
     );
+  }
+
+  /**
+   * Returns true if none of the loot in the array is listed directly on someone's loot list
+   * @param items
+   * @returns
+   */
+  noneListed(items: LootRanking[]) {
+    return items && items.every((i) => i.item.pivot.note === 'Unlisted');
   }
 }

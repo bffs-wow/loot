@@ -1,0 +1,37 @@
+<div class="container box">
+  <div class="content" *ngIf="section === 'tmb-import'">
+    <h1>Manual TMB Import</h1>
+    <blockquote>
+      Note: this should not need to be done normally, only if the auto-import
+      process is not working, or there is a desire for an immediate TMB data
+      update.
+    </blockquote>
+    <ol>
+      <li>
+        Open these pages:
+        <ul>
+          <li>
+            <a
+              href="https://thatsmybis.com/8752/best-friends/export/characters-with-items/html"
+              target="_blank"
+              >https://thatsmybis.com/8752/best-friends/export/characters-with-items/html</a
+            >
+          </li>
+          <li>
+            <a [href]="tmbEditPage" target="_blank">{{ tmbEditPage }}</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        Copy ALL of the text from the ThatsMyBis page and paste it into the
+        github page 'Edit file' text box, overwriting the existing contents.
+      </li>
+      <li>Press the green 'Commit changes' button.</li>
+      <li>
+        That's it! It may take a few minutes for the change to appear on the
+        site after reloading.
+      </li>
+    </ol>
+  </div>
+</div>

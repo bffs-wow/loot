@@ -5,7 +5,7 @@
         <h1 class="title">
           <a
             title="Open Wowhead"
-            [href]="'https://classic.wowhead.com/zone=' + zone.zoneId"
+            [href]="'https://www.wowhead.com/wotlk/zone=' + zone.zoneId"
             target="_blank"
             [appWowheadTooltip]="zone"
             >{{ zone.name }} <fa-icon [icon]="faExternalLinkAlt"></fa-icon
@@ -21,9 +21,9 @@
           class="tag is-black is-medium"
           *ngFor="let source of zoneItemSources$ | async"
           (click)="sourceChosen(source)"
-          [class.is-primary]="chosenSource.name === source.name"
+          [class.is-primary]="chosenSource === source"
         >
-          <a>{{ source.name || source.category }}</a>
+          <a>{{ source }}</a>
         </span>
       </div>
     </div>
@@ -31,7 +31,7 @@
       <div class="column">
         <div class="box" *ngIf="chosenSource$ | async as chosenSource">
           <p class="title">
-            <strong>{{ chosenSource.name }}</strong> Loot
+            <strong>{{ chosenSource }}</strong> Loot
           </p>
           <article
             class="media"
@@ -41,23 +41,42 @@
               <div class="content">
                 <a
                   [appWowheadTooltip]="item"
-                  [routerLink]="['/item', item.itemId]"
+                  [routerLink]="['/item', item.id]"
                   >{{ item.name }}</a
                 >&nbsp;&nbsp;
-                <div
-                  class="tags"
-                  *ngIf="getNextRecipient(item) | async as recipientGrp; else noRankings"
+                <ng-container
+                  *ngIf="
+                    getNextRecipient(item) | async as recipientGrp;
+                    else noRankings
+                  "
                 >
-                  <span
-                    class="tag is-black"
-                    *ngFor="let recipient of recipientGrp"
+                  &nbsp;
+                  <small
+                    class="is-size-6 has-text-warning"
+                    *ngIf="noneListed(recipientGrp)"
                   >
-                    <a [routerLink]="['/raider', recipient.raiderName]">
-                      {{ recipient.raiderName }}
-                    </a>
-                    &nbsp;</span
-                  >
-                </div>
+                    <abbr
+                      title="All of these raiders did not list the item, but are still eligible."
+                    >
+                      <fa-icon [icon]="faExclamationTriangle"></fa-icon>
+                      Unlisted
+                    </abbr>
+                  </small>
+                  &nbsp;
+                  <div class="tags pt-1">
+                    <span
+                      class="tag is-black"
+                      *ngFor="let recipient of recipientGrp"
+                    >
+                      <a [routerLink]="['/raider', recipient.raider.name]">
+                        {{ recipient.raider.name }}
+                      </a>
+
+                      &nbsp;
+                    </span>
+                  </div>
+                </ng-container>
+
                 <ng-template #noRankings>
                   <small>No Rankings.</small>
                 </ng-template>
@@ -70,7 +89,7 @@
       <div class="column">
         <div class="box">
           <app-loot-feed
-            [zone]="zone.zoneId"
+            [zone]="zone"
             [source]="chosenSource$ | async"
           ></app-loot-feed>
         </div>

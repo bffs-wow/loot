@@ -6,7 +6,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutsModule } from './layouts/layouts.module';
-import { SheetInfoComponent } from './loot-list/sheet-info/sheet-info.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { LootListComponent } from './loot-list/loot-list.component';
@@ -16,16 +15,17 @@ import { RaiderPageComponent } from './raider-page/raider-page.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { RosterPageComponent } from './roster-page/roster-page.component';
 import { SharedComponentsModule } from './shared-components/shared-components.module';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SheetInfoComponent,
     DashboardComponent,
     LootListComponent,
     ItemPageComponent,
     RaiderPageComponent,
     RosterPageComponent,
+    AdminPageComponent,
   ],
   imports: [
     BrowserModule,

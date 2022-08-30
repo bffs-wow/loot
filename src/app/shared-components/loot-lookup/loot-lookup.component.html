@@ -18,7 +18,10 @@
           let-index="index"
           let-search="searchTerm"
         >
-          {{ item.name }} - <small>{{ item | zone }}</small>
+          {{ item.name }} -
+          <small *ngIf="item"
+            >{{ item.instance_name }} ({{ item.source_name }})</small
+          >
         </ng-template>
       </ng-select>
     </div>
@@ -35,33 +38,58 @@
     </div>
   </div>
 </div>
-<article class="media" *ngFor="let group of selectedItem$ | async">
-  <figure class="media-left has-text-centered" style="width: 5rem">
-    <h1 class="is-1">{{ group.points }}</h1>
-  </figure>
-  <div class="media-content">
-    <div class="content">
-      <p class="has-text-right is-size-5">
-        <a
-          [appWowheadTooltip]="group.rankings[0]"
-          [routerLink]="['/item', group.rankings[0].itemId]"
-          >{{ group.rankings[0].sheetName }}</a
+<div *ngIf="selectedItem$ | async as selectedItemGroups">
+  <article class="media" *ngFor="let group of selectedItemGroups">
+    <figure class="media-left has-text-centered" style="width: 5rem">
+      <h1 class="is-1">{{ group.points }}</h1>
+      <small class="is-size-6 has-text-warning" *ngIf="group.allUnlisted">
+        <abbr
+          title="All of these raiders did not list the item, but are still eligible."
         >
-        <small *ngIf="group.rankings[0].sheetName !== group.rankings[0].name"
-          > - ({{ group.rankings[0].name }})
-        </small>
-        <small *ngIf="!hideSource"> - {{ group.rankings[0] | zone }}</small>
-        <br /><br />
-        <span class="tags">
-          <span class="tag is-black" *ngFor="let raider of group.rankings"
-            ><a [routerLink]="['/raider', raider.raiderName]">
-              {{ raider.raiderName }}
-            </a>
-            &nbsp;</span
+          <fa-icon [icon]="faExclamationTriangle"></fa-icon> Unlisted
+        </abbr>
+      </small>
+    </figure>
+    <div class="media-content">
+      <div class="content">
+        <p class="has-text-right is-size-5">
+          <a
+            [appWowheadTooltip]="group.rankings[0].item"
+            [routerLink]="[
+              '/item',
+              group.rankings[0].item.parent_item_id ||
+                group.rankings[0].item.item_id
+            ]"
+            >{{ group.rankings[0].item.name }}</a
           >
-        </span>
-      </p>
+          <small
+            *ngIf="group.rankings[0].item.name !== group.rankings[0].item.name"
+          >
+            - ({{ group.rankings[0].item.name }})
+          </small>
+          <small *ngIf="!hideSource">
+            -
+            {{
+              itemService.getTmbItem(group.rankings[0].item) | async | zone
+            }}</small
+          >
+          <br /><br />
+          <span class="tags">
+            <span class="tag is-black" *ngFor="let ranking of group.rankings"
+              ><a [routerLink]="['/raider', ranking.raider.name]">
+                {{ ranking.raider.name }}
+              </a>
+              &nbsp;<small *ngIf="ranking.item?.pivot?.note"
+                >{{ ranking.item.pivot.note }}
+              </small></span
+            >
+          </span>
+        </p>
+      </div>
     </div>
+  </article>
+
+  <div *ngIf="form.get('selectedItem').touched && !selectedItemGroups.length">
+    No rankings found.
   </div>
-</article>
-<div *ngIf="form.get('selectedItem').touched && !(selectedItem$ | async)?.length">No rankings found.</div>
+</div>

@@ -1,20 +1,21 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Item } from '../../wow-data/item.interface';
-import { ZoneService } from '../../wow-data/zone.service';
+import { CsvItem } from 'src/app/tmb/models/item.interface';
+import { ZoneService } from 'src/app/zone/zone.service';
 
 @Pipe({
   name: 'zone',
 })
 export class ZonePipe implements PipeTransform {
   constructor(private zoneService: ZoneService) {}
-  transform(value: Item, ...args: any[]): any {
-    if (!value.itemId) {
-      throw new Error(`Invalid ZonePipe input!`);
+  transform(value: CsvItem, ...args: any[]): any {
+    if (!value?.id) {
+      console.warn(`Invalid ZonePipe input!`, value);
+      return ``;
     }
     const zone = this.zoneService.getItemZone(value);
-    if (value.source.category === 'Zone Drop') {
-      return `${zone.name} (${value.source.category})`;
+    if (zone) {
+      return `${zone.name} (${value.source_name})`;
     }
-    return `${zone.name} (${value.source.name})`;
+    return 'Unknown Source';
   }
 }

@@ -2,24 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StateService } from '../state/state.service';
 import { LootListFacadeService } from '../loot-list/loot-list.facade';
-import { Raider } from '../loot-list/models/raider.model';
 import { Observable, combineLatest } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import {
-  Attendance,
-  AttendancePoints,
-} from '../loot-list/models/attendance.model';
-import {
-  faCheck,
-  faExclamationTriangle,
-  faTimes,
-  faQuestion,
-  faChartLine,
-} from '@fortawesome/free-solid-svg-icons';
+
+import { faChartLine, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { StatisticsService } from '../statistics/statistics.service';
 import { raiderToWowNameMap } from '../data/raider-to-wow-name';
 import { environment } from 'src/environments/environment';
+import { Raider } from '../tmb/models/tmb.interface';
+import { TmbService } from '../tmb/tmb.service';
 
 @Component({
   selector: 'app-raider-page',
@@ -29,61 +21,30 @@ import { environment } from 'src/environments/environment';
 export class RaiderPageComponent implements OnInit {
   raider$: Observable<Raider>;
   faChartLine = faChartLine;
+  faShieldAlt = faShieldAlt;
 
   listProgress = undefined;
+  environment = environment;
 
   constructor(
     private route: ActivatedRoute,
     private state: StateService,
     private statisticsService: StatisticsService,
-    private lootListFacade: LootListFacadeService
+    private lootListFacade: LootListFacadeService,
+    private tmbService: TmbService
   ) {}
 
   ngOnInit(): void {
     this.raider$ = combineLatest([
       this.route.params,
-      this.lootListFacade.raiders$,
+      this.tmbService.raiders$,
     ]).pipe(
       map(([params, raiders]) => raiders.find((l) => l.name === params.name)),
       tap((raider) => {
-        this.listProgress = this.statisticsService.getRaiderListProgress(
-          raider
-        );
+        this.listProgress =
+          this.statisticsService.getRaiderListProgress(raider);
       })
     );
-  }
-
-  getIcon(points: AttendancePoints) {
-    switch (points) {
-      case AttendancePoints.Full: {
-        return faCheck;
-      }
-      case AttendancePoints.Partial: {
-        return faExclamationTriangle;
-      }
-      case AttendancePoints.None: {
-        return faTimes;
-      }
-      default: {
-        return faQuestion;
-      }
-    }
-  }
-  getTagColor(points: AttendancePoints) {
-    switch (points) {
-      case AttendancePoints.Full: {
-        return 'is-success';
-      }
-      case AttendancePoints.Partial: {
-        return 'is-warning';
-      }
-      case AttendancePoints.None: {
-        return 'is-danger';
-      }
-      default: {
-        return 'is-info';
-      }
-    }
   }
 
   makeLogsUrl(raider: Raider) {
@@ -94,5 +55,29 @@ export class RaiderPageComponent implements OnInit {
     }
 
     return `${environment.logsCharacterBaseUrl}${name}`;
+  }
+
+  makeTmbUrl(raider: Raider) {
+    return `${environment.tmbBaseUrl}u/${raider.member_id}/${raider.name}`;
+  }
+
+  getAttendanceTagClass(percentage: number) {
+    if (percentage > 0.9) {
+      return 'is-success';
+    }
+    if (percentage > 0.75) {
+      return 'is-warning';
+    }
+    return 'is-danger';
+  }
+
+  getAttendancePointsClass(points: number) {
+    if (points >= environment.maxAttendancePoints) {
+      return 'is-success';
+    }
+    if (points > environment.maxAttendancePoints * 0.75) {
+      return 'is-warning';
+    }
+    return 'is-danger';
   }
 }
