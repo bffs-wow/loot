@@ -12,7 +12,9 @@ import { sha256 } from '../util';
 import { Raider, WishlistItem } from './models/tmb.interface';
 import { ITEM_RESTRICTIONS } from './item-restrictions';
 import { Class, parseClass } from '../loot-list/models/class.model';
-import { bn } from 'date-fns/locale';
+import { weaponSlots } from './models/item.interface';
+import chunk from 'lodash-es/chunk';
+import { ItemService } from './item.service';
 
 type TmbShaCache = {
   date: string;
@@ -40,10 +42,15 @@ export class TmbService {
     ),
     tap((raiders: Raider[]) => this.checkNewData(raiders)),
     map((raiders: Raider[]) => this.processRaiders(raiders)),
+    switchMap((raiders: Raider[]) => this.checkMissingItems(raiders)),
     shareReplay(1)
   );
 
-  constructor(private http: HttpClient, private cacheService: CacheService) {}
+  constructor(
+    private http: HttpClient,
+    private cacheService: CacheService,
+    private itemService: ItemService
+  ) {}
 
   getRaiders(): Observable<Raider[]> {
     return this.raiders$;
@@ -102,15 +109,75 @@ export class TmbService {
     }
     // If a wishlist was provided, check that there aren't too many of this item on the list
     if (opts?.wishList) {
-      const items = opts.wishList.filter((i) => i.item_id == itemId);
-      if (items.length > restrictions.allowedRankings) {
-        const msg = `(${restrictions.ITEM_NAME} - ${itemId}) too many items listed: ${items.length} > ${restrictions.allowedRankings}`;
+      const wishListItems = opts.wishList.filter((i) => i.item_id == itemId);
+      if (wishListItems.length > restrictions.allowedRankings) {
+        const msg = `(${restrictions.ITEM_NAME} - ${itemId}) too many items listed: ${wishListItems.length} > ${restrictions.allowedRankings}`;
         errors.push(msg);
         !opts?.quiet && console.error(msg);
       }
     }
 
     return errors;
+  }
+
+  /**
+   * Verify the 'Weapon per X' rule on the list.
+   * @param wishList
+   */
+  validateWeaponSlots(raider: Raider) {
+    let bank = 0;
+    // Chunk the items into sizes per the rule
+    const sorted = raider.wishlist.sort(
+      (a, b) => a.pivot.order - b.pivot.order
+    );
+    const chunks = chunk(sorted, environment.itemsPerSlotRule);
+    // Iterate over each chunk (for example, set of *3* items)
+    for (const chunk of chunks) {
+      const weapons = chunk.filter((w) =>
+        weaponSlots.includes(w.inventory_type)
+      );
+      const weaponCount = weapons.length;
+      // If there are no weapons in this chunk, we get a bank slot
+      if (weaponCount == 0) {
+        bank++;
+      }
+      // If there are more than 1 weapon in this chunk, this is only allowed if there is are enough bank slots to spend
+      else if (weaponCount > 1) {
+        // deduct from the bank: (weaponCount-1) is used here because only the "extra" weapons beyond 1 are bankable
+        bank = bank - (weaponCount - 1);
+        // If we have no bank, this is a violation and the list is invalid
+        if (bank <= 0) {
+          const message = `INVALID LIST (TOO MANY WEAPONS: ${weapons
+            .map((i) => i.name)
+            .join('; ')})`;
+          raider.public_note = `${raider.public_note || ''}\r\n${message}`;
+          console.error(`${raider.name} - ${message}`);
+          weapons.forEach((w) => (w.pivot.note = message));
+          // Don't let bank fall negative
+          bank = 0;
+        }
+      }
+    }
+  }
+
+  checkMissingItems(raiders: Raider[]): Observable<Raider[]> {
+    return this.itemService.allItems$.pipe(
+      map((allitems) => {
+        return raiders.map((raider) => {
+          for (const item of raider.wishlist) {
+            // Verify that the item is found within the TMB item data (i.e. the person picked a non-raid item, or a 10-man only item)
+            const found = allitems.some((i) => i.id === item.item_id);
+            if (!found) {
+              const msg = `Item not found: (${item.name} - ${item.item_id})`;
+              console.error(msg);
+              raider.public_note = `${raider.public_note || ''}\r\n${msg}`;
+              item.pivot.note = msg;
+            }
+          }
+          return raider;
+        });
+      })
+    );
   }
 
   private processRaiders(tmbData: Raider[]) {
@@ -217,6 +284,8 @@ export class TmbService {
 
         return w;
       });
+      // validate the weapon slots rule
+      this.validateWeaponSlots(raider);
 
       /**
        * Eligible loot is loot that is wishlisted, but not yet received

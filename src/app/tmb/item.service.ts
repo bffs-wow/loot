@@ -21,7 +21,7 @@ export class ItemService {
           );
         }
       }),
-      // Only include loot from Normal and Heroic 25
+      // Only include loot from Normal and Heroic 25 - All TMB instance data for WOTLK ends with either 'N25' or 'H25'
       map((csvRes) =>
         csvRes.data.filter(
           (i) =>
