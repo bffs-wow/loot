@@ -58,7 +58,7 @@ export class RaiderPageComponent implements OnInit {
   }
 
   makeTmbUrl(raider: Raider) {
-    return `${environment.tmbBaseUrl}u/${raider.member_id}/${raider.name}`;
+    return `${environment.tmbBaseUrl}c/${raider.id}/${raider.name}`;
   }
 
   getAttendanceTagClass(percentage: number) {
