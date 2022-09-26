@@ -33,7 +33,6 @@ import { GargulService } from 'src/app/gargul/gargul.service';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject<boolean>();
-  sheetUrl = `https://docs.google.com/spreadsheets/d/${environment.sheetId}/edit`;
   tmbUrl = environment.tmbBaseUrl;
   logsGuildUrl = environment.logsGuildUrl;
   form: UntypedFormGroup;

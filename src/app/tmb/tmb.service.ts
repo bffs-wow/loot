@@ -40,6 +40,10 @@ export class TmbService {
         }),
       })
     ),
+    // Filter out alts and other characters in the system which do not belong to the main raid roster.
+    map((raiders: Raider[]) =>
+      raiders.filter((r) => r.is_alt === 0 && r.raid_group_id > 0)
+    ),
     tap((raiders: Raider[]) => this.checkNewData(raiders)),
     map((raiders: Raider[]) => this.processRaiders(raiders)),
     switchMap((raiders: Raider[]) => this.checkMissingItems(raiders)),

@@ -14,10 +14,16 @@ export class ItemService {
     .pipe(
       map((csvData) => Papa.parse(csvData, { header: true })),
       tap((csvRes) => {
-        if (csvRes.errors.length) {
+        // Ignore 'TooManyFields' errors
+        const actualErrors = csvRes.errors.filter(
+          (e) => e.code !== 'TooManyFields'
+        );
+        if (actualErrors.length) {
           console.error(
-            `Error parsing CSV: ${csvRes.errors.join('; ')}`,
-            csvRes.errors
+            `Error parsing CSV: ${actualErrors
+              .map((e) => `(${e.code}|${e.type}) - ${e.message}`)
+              .join('; ')}`,
+            actualErrors
           );
         }
       }),
