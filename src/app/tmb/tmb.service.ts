@@ -47,6 +47,7 @@ export class TmbService {
     tap((raiders: Raider[]) => this.checkNewData(raiders)),
     map((raiders: Raider[]) => this.processRaiders(raiders)),
     switchMap((raiders: Raider[]) => this.checkMissingItems(raiders)),
+    switchMap((raiders: Raider[]) => this.addUnlistedItems(raiders)),
     shareReplay(1)
   );
 
@@ -178,6 +179,56 @@ export class TmbService {
               item.pivot.note = msg;
             }
           }
+          return raider;
+        });
+      })
+    );
+  }
+
+  addUnlistedItems(raiders: Raider[]): Observable<Raider[]> {
+    // Find items which are lootable, but which no one added to their list at all.
+    return this.itemService.allItems$.pipe(
+      map((allitems) => {
+        return raiders.map((raider) => {
+          const unlistedItems = allitems
+            // Find items that this raider has not received and does not have listed
+            .filter(
+              (item) =>
+                !raider.wishlist.some(
+                  (raiderW) => raiderW.item_id == item.id
+                ) &&
+                !raider.received.some((raiderR) => raiderR.item_id == item.id)
+            )
+            // Remove class restricted items
+            .filter(
+              (item) =>
+                !this.validateItemRestrictions(
+                  item.id,
+                  parseClass(raider.class),
+                  { quiet: true }
+                ).length
+            )
+            .map((item) => {
+              // Update this item with this raider's details
+              return {
+                item_id: item.id,
+                name: item.name,
+                instance_name: item.instance_name,
+
+                ranking_points: 0,
+                // For these unlisted items, the points are equal to the raider's total attendance points
+                raider_points: raider.attendance_points,
+                pivot: {
+                  character_id: raider.id,
+                  is_received: 0,
+                  note: 'Unlisted',
+                  is_offspec: 1,
+                  order: 99,
+                },
+              } as WishlistItem;
+            });
+          raider.eligible_loot = [...raider.eligible_loot, ...unlistedItems];
+
           return raider;
         });
       })
@@ -320,7 +371,7 @@ export class TmbService {
     // after the first pass, add all unlisted loot into eligible_loot
     return processed.map((raider) => {
       // De-duplicate
-      const itemsToAdd = uniqBy(
+      const otherWishListedItems = uniqBy(
         // Clone these items to avoid mutating wishlists
         cloneDeep(
           // Flatten array of arrays
@@ -371,7 +422,7 @@ export class TmbService {
             },
           };
         });
-      raider.eligible_loot = [...raider.eligible_loot, ...itemsToAdd];
+      raider.eligible_loot = [...raider.eligible_loot, ...otherWishListedItems];
       return raider;
     });
   }

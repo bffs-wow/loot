@@ -12,7 +12,9 @@ export class ItemService {
   allItems$: Observable<CsvItem[]> = this.http
     .get('assets/tmb-items.csv', { responseType: 'text' })
     .pipe(
-      map((csvData) => Papa.parse(csvData, { header: true })),
+      map((csvData) =>
+        Papa.parse(csvData, { header: true, skipEmptyLines: 'greedy' })
+      ),
       tap((csvRes) => {
         // Ignore 'TooManyFields' errors
         const actualErrors = csvRes.errors.filter(
@@ -78,6 +80,9 @@ export class ItemService {
    * For example, if provided with the item that is received from a token, this will return the token.
    */
   getTmbItem(item: WishlistItem | ReceivedItem | CsvItem) {
+    if ((item as WishlistItem | ReceivedItem).item_id) {
+      return this.getById((item as WishlistItem | ReceivedItem).item_id);
+    }
     if (item.id) {
       return this.getById(item.id);
     }
