@@ -195,43 +195,54 @@ export class TmbService {
     return this.itemService.allItems$.pipe(
       map((allitems) => {
         return raiders.map((raider) => {
-          const unlistedItems = allitems
-            // Find items that this raider has not received and does not have listed
-            .filter(
-              (item) =>
-                !raider.wishlist.some(
-                  (raiderW) => raiderW.item_id == item.id
-                ) &&
-                !raider.received.some((raiderR) => raiderR.item_id == item.id)
-            )
-            // Remove class restricted items
-            .filter(
-              (item) =>
-                !this.validateItemRestrictions(
-                  item.id,
-                  parseClass(raider.class),
-                  { quiet: true }
-                ).length
-            )
-            .map((item) => {
-              // Update this item with this raider's details
-              return {
-                item_id: item.id,
-                name: item.name,
-                instance_name: item.instance_name,
+          const unlistedItems = uniqBy(
+            allitems
+              // Find items that this raider has not...
+              .filter(
+                (item) =>
+                  // ... wishlisted
+                  !raider.wishlist.some(
+                    (raiderW) => raiderW.item_id == item.id
+                  ) &&
+                  // ... received
+                  !raider.received.some(
+                    (raiderR) => raiderR.item_id == item.id
+                  ) &&
+                  // and is already eligible for
+                  !raider.eligible_loot.some(
+                    (raiderE) => raiderE.item_id == item.id
+                  )
+              )
+              // Remove class restricted items
+              .filter(
+                (item) =>
+                  !this.validateItemRestrictions(
+                    item.id,
+                    parseClass(raider.class),
+                    { quiet: true }
+                  ).length
+              )
+              .map((item) => {
+                // Update this item with this raider's details
+                return {
+                  item_id: item.id,
+                  name: item.name,
+                  instance_name: item.instance_name,
 
-                ranking_points: 0,
-                // For these unlisted items, the points are equal to the raider's total attendance points
-                raider_points: raider.attendance_points,
-                pivot: {
-                  character_id: raider.id,
-                  is_received: 0,
-                  note: 'Unlisted',
-                  is_offspec: 1,
-                  order: 99,
-                },
-              } as WishlistItem;
-            });
+                  ranking_points: 0,
+                  // For these unlisted items, the points are equal to the raider's total attendance points
+                  raider_points: raider.attendance_points,
+                  pivot: {
+                    character_id: raider.id,
+                    is_received: 0,
+                    note: 'Unlisted',
+                    is_offspec: 1,
+                    order: 99,
+                  },
+                } as WishlistItem;
+              }),
+            'item_id'
+          );
           raider.eligible_loot = [...raider.eligible_loot, ...unlistedItems];
 
           return raider;
