@@ -39,8 +39,9 @@ export class RaiderPageComponent implements OnInit {
     this.raider$ = combineLatest([this.route.params, this.state.raiders$]).pipe(
       map(([params, raiders]) => raiders.find((l) => l.name === params.name)),
       tap((raider) => {
-        this.listProgress =
-          this.statisticsService.getRaiderListProgress(raider);
+        this.listProgress = raider
+          ? this.statisticsService.getRaiderListProgress(raider)
+          : undefined;
       })
     );
   }
