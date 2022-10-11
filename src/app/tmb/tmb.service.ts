@@ -130,7 +130,7 @@ export class TmbService {
    * @param wishList
    */
   validateWeaponSlots(raider: Raider) {
-    let bank = 0;
+    let bank = 1;
     // Chunk the items into sizes per the rule
     const sorted = raider.wishlist.sort(
       (a, b) => a.pivot.order - b.pivot.order
