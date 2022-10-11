@@ -15,7 +15,7 @@ export const environment = {
   // If there are not this many Main Spec items in the list, the OS items will be "pushed down" to this point.
   wishlistOffspecCutoff: 33,
   // Combined with the rolling attendance period, this detemines the "leniency rule" that allows for a number of absent/tardies
-  maxAttendancePoints: 18.5,
+  forgiveness: 1.5,
   // How many slots between weapon items?
   itemsPerSlotRule: 3,
   tmbBaseUrl: 'https://thatsmybis.com/8897/best-friends-test/',

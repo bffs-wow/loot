@@ -51,7 +51,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     public state: StateService,
     public zoneService: ZoneService,
     public lootListFacade: LootListFacadeService,
-    private tmbService: TmbService,
     private fb: FormBuilder,
     private gargulService: GargulService
   ) {}
@@ -66,7 +65,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.state.selectedRaiderName$
       .pipe(
         takeUntil(this.destroyed$),
-        withLatestFrom(this.tmbService.raiders$),
+        withLatestFrom(this.state.raiders$),
         tap(([raiderName, allRaiders]) => {
           const raider = allRaiders.find((r) => r.name === raiderName);
           raiderControl.setValue(raider, { emitEvent: false, onlySelf: true });

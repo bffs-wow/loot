@@ -9,11 +9,13 @@ import { Raider } from '../tmb/models/tmb.interface';
 export interface AppState {
   selectedRaiderName: string;
   raiders: Raider[];
+  maxAttendancePoints: number;
   autoUpdate: boolean;
 }
 const _initialState: AppState = {
   selectedRaiderName: null,
   raiders: [],
+  maxAttendancePoints: 0,
   autoUpdate: false,
 };
 
@@ -32,6 +34,9 @@ export class StateService {
     map((s) => s.raiders.find((r) => r.name === s.selectedRaiderName))
   );
   raiders$ = this.state$.pipe(map((s) => s.raiders));
+
+  maxAttendancePoints$ = this.state$.pipe(map((s) => s.maxAttendancePoints));
+
   autoUpdate$ = this.state.pipe(
     map((s) => s.autoUpdate),
     distinctUntilChanged()

@@ -15,6 +15,7 @@ import { Class, parseClass } from '../loot-list/models/class.model';
 import { weaponSlots } from './models/item.interface';
 import chunk from 'lodash-es/chunk';
 import { ItemService } from './item.service';
+import { StateService } from '../state/state.service';
 
 type TmbShaCache = {
   date: string;
@@ -46,14 +47,18 @@ export class TmbService {
     ),
     tap((raiders: Raider[]) => this.checkNewData(raiders)),
     map((raiders: Raider[]) => this.processRaiders(raiders)),
+    map((raiders: Raider[]) => this.processAndSetMaxAttendance(raiders)),
     switchMap((raiders: Raider[]) => this.checkMissingItems(raiders)),
     switchMap((raiders: Raider[]) => this.addUnlistedItems(raiders)),
+    // Finally, save the raiders onto the state
+    tap((raiders) => this.state.setState({ raiders })),
     shareReplay(1)
   );
 
   constructor(
     private http: HttpClient,
     private cacheService: CacheService,
+    private state: StateService,
     private itemService: ItemService
   ) {}
 
@@ -159,7 +164,7 @@ export class TmbService {
           console.error(`${raider.name} - ${message}`);
           weapons.forEach((w) => (w.pivot.note = message));
           // Don't let bank fall negative
-          bank = 0;
+          bank = 1;
         }
       }
     }
@@ -244,15 +249,14 @@ export class TmbService {
        * attendance_percentage, my attendance_points would be 7.5.
        *
        * There is a maximum attendance points which can be different from the value provided by 100% attendance over the full period. This allows for
-       * forgiveness of a certain number of absences or tardies. For example, `maxAttendancePoints` value of 18.5 with a 10-week rolling period means
-       * that a raider can miss 1 raid and be tardy for 1 raid before they fall behind.
+       * forgiveness of a certain number of absences or tardies. For example, `environment.forgiveness` value of 1.5 with a 10-week rolling period means
+       * that a raider can miss 1 raid and be tardy for 1 raid before they fall behind, leaving the maximum attainable attendance_points to be 18.5
+       * This maximum calculation takes place in state.service.ts
        */
       raider.attendance_points =
         Math.round((raider.attendance_percentage * raider.raid_count) / 0.5) *
         0.5;
-      if (raider.attendance_points > environment.maxAttendancePoints) {
-        raider.attendance_points = environment.maxAttendancePoints;
-      }
+
       // Make sure the wishlist order was sorted
       raider.wishlist = raider.wishlist.sort(
         (a, b) => a.pivot.order - b.pivot.order
@@ -424,6 +428,30 @@ export class TmbService {
         });
       raider.eligible_loot = [...raider.eligible_loot, ...otherWishListedItems];
       return raider;
+    });
+  }
+
+  private processAndSetMaxAttendance(raiders: Raider[]): Raider[] {
+    const maxAttendeeRaider = raiders.sort(
+      (a, b) => b.attendance_points - a.attendance_points
+    )[0];
+    // Maximum attendance points are calculated by taking whichever raider has the most attendance points, and subtracting our forgiveness factor
+    let maxAttendancePoints =
+      maxAttendeeRaider.attendance_points - environment.forgiveness;
+    // If the result is less than 0, peg it to 0
+    if (maxAttendancePoints < 0) {
+      maxAttendancePoints = 0;
+    }
+    // Save this calculated state globally
+    this.state.setState({ maxAttendancePoints });
+
+    return raiders.map((r) => {
+      // If this raider has more than the max, peg them to the max
+      if (r.attendance_points > maxAttendancePoints) {
+        r.attendance_points = maxAttendancePoints;
+      }
+
+      return r;
     });
   }
 

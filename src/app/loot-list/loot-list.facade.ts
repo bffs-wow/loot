@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { map, tap, switchMap } from 'rxjs/operators';
+import { map, tap, switchMap, shareReplay } from 'rxjs/operators';
 import { Observable, timer, NEVER } from 'rxjs';
 import { StateService } from '../state/state.service';
 import { ItemService } from '../tmb/item.service';
@@ -13,7 +13,7 @@ import { LootRanking } from './models/ranking.model';
 
 @Injectable({ providedIn: 'root' })
 export class LootListFacadeService {
-  allRankedLoot$: Observable<LootRanking[]> = this.tmbService.raiders$.pipe(
+  allRankedLoot$: Observable<LootRanking[]> = this.state.raiders$.pipe(
     map((raiders) =>
       raiders.reduce((loot: LootRanking[], raider) => {
         const raiderLoot = raider.eligible_loot.map((r) => ({
@@ -22,7 +22,8 @@ export class LootListFacadeService {
         }));
         return [...loot, ...raiderLoot];
       }, [])
-    )
+    ),
+    shareReplay(1)
   );
 
   constructor(
@@ -32,9 +33,7 @@ export class LootListFacadeService {
     private cache: CacheService
   ) {
     // ensure initial load of data
-    this.tmbService.raiders$
-      .pipe(tap((raiders) => this.state.setState({ raiders })))
-      .subscribe();
+    this.tmbService.raiders$.subscribe();
 
     // Handle Auto Reload
     this.state.autoUpdate$

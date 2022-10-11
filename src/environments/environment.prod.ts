@@ -7,7 +7,7 @@ export const environment = {
     'https://classic.warcraftlogs.com/character/us/faerlina/',
   wishlistLength: 50,
   wishlistOffspecCutoff: 33,
-  maxAttendancePoints: 18.5,
+  forgiveness: 1.5,
   itemsPerSlotRule: 3,
   tmbBaseUrl: 'https://thatsmybis.com/8752/best-friends/',
 };

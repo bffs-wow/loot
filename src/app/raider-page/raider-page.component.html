@@ -86,13 +86,21 @@
           <p class="title">Attendance</p>
           <div class="field is-grouped is-grouped-multiline">
             <div class="control">
-              <div class="tags has-addons">
+              <div
+                class="tags has-addons"
+                *ngIf="maxAttendancePoints$ | async as maxAttendancePoints"
+              >
                 <span class="tag is-medium is-dark">Attendance Points</span>
                 <span
                   class="tag is-medium"
-                  [ngClass]="getAttendancePointsClass(raider.attendance_points)"
+                  [ngClass]="
+                    getAttendancePointsClass(
+                      raider.attendance_points,
+                      maxAttendancePoints.points
+                    )
+                  "
                   >{{ raider.attendance_points }}/{{
-                    environment.maxAttendancePoints
+                    maxAttendancePoints.points
                   }}</span
                 >
               </div>
