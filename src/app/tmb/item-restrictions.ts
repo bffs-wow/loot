@@ -669,7 +669,7 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   '40263': {
     ITEM_NAME: 'Fleshless Girdle',
-    allowedClasses: [],
+    allowedClasses: [Class.Paladin, Class.Warrior],
     restrictedClasses: [],
     allowedRankings: 3,
   },

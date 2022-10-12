@@ -46,8 +46,8 @@ export class TmbService {
       raiders.filter((r) => r.is_alt === 0 && r.raid_group_id > 0)
     ),
     tap((raiders: Raider[]) => this.checkNewData(raiders)),
+    map((raiders: Raider[]) => this.processAttendancePoints(raiders)),
     map((raiders: Raider[]) => this.processRaiders(raiders)),
-    map((raiders: Raider[]) => this.processAndSetMaxAttendance(raiders)),
     switchMap((raiders: Raider[]) => this.checkMissingItems(raiders)),
     switchMap((raiders: Raider[]) => this.addUnlistedItems(raiders)),
     // Finally, save the raiders onto the state
@@ -254,20 +254,6 @@ export class TmbService {
   private processRaiders(tmbData: Raider[]) {
     // Process the raw data
     const processed = tmbData.map((raider) => {
-      /**
-       * attendance_percentage is provided by TMB. This is based on the raid credit the raider has been given over the configured period from TMB settings.
-       * Each raid is worth a maximum of 1 point, which will be modified by the attendance percentage. For example, if I've attended 10 raids with 0.75%
-       * attendance_percentage, my attendance_points would be 7.5.
-       *
-       * There is a maximum attendance points which can be different from the value provided by 100% attendance over the full period. This allows for
-       * forgiveness of a certain number of absences or tardies. For example, `environment.forgiveness` value of 1.5 with a 10-week rolling period means
-       * that a raider can miss 1 raid and be tardy for 1 raid before they fall behind, leaving the maximum attainable attendance_points to be 18.5
-       * This maximum calculation takes place in state.service.ts
-       */
-      raider.attendance_points =
-        Math.round((raider.attendance_percentage * raider.raid_count) / 0.5) *
-        0.5;
-
       // Make sure the wishlist order was sorted
       raider.wishlist = raider.wishlist.sort(
         (a, b) => a.pivot.order - b.pivot.order
@@ -442,8 +428,25 @@ export class TmbService {
     });
   }
 
-  private processAndSetMaxAttendance(raiders: Raider[]): Raider[] {
-    const maxAttendeeRaider = raiders.sort(
+  private processAttendancePoints(raiders: Raider[]): Raider[] {
+    const processedRaiders = raiders.map((raider) => {
+      /**
+       * attendance_percentage is provided by TMB. This is based on the raid credit the raider has been given over the configured period from TMB settings.
+       * Each raid is worth a maximum of 1 point, which will be modified by the attendance percentage. For example, if I've attended 10 raids with 0.75%
+       * attendance_percentage, my attendance_points would be 7.5.
+       *
+       * There is a maximum attendance points which can be different from the value provided by 100% attendance over the full period. This allows for
+       * forgiveness of a certain number of absences or tardies. For example, `environment.forgiveness` value of 1.5 with a 10-week rolling period means
+       * that a raider can miss 1 raid and be tardy for 1 raid before they fall behind, leaving the maximum attainable attendance_points to be 18.5
+       * This maximum calculation takes place in state.service.ts
+       */
+      raider.attendance_points =
+        Math.round((raider.attendance_percentage * raider.raid_count) / 0.5) *
+        0.5;
+
+      return raider;
+    });
+    const maxAttendeeRaider = processedRaiders.sort(
       (a, b) => b.attendance_points - a.attendance_points
     )[0];
     // Maximum attendance points are calculated by taking whichever raider has the most attendance points, and subtracting our forgiveness factor
@@ -456,13 +459,12 @@ export class TmbService {
     // Save this calculated state globally
     this.state.setState({ maxAttendancePoints });
 
-    return raiders.map((r) => {
-      // If this raider has more than the max, peg them to the max
-      if (r.attendance_points > maxAttendancePoints) {
-        r.attendance_points = maxAttendancePoints;
+    // Finally, peg any raiders over the max, down to the max
+    return processedRaiders.map((raider) => {
+      if (raider.attendance_points > maxAttendancePoints) {
+        raider.attendance_points = maxAttendancePoints;
       }
-
-      return r;
+      return raider;
     });
   }
 
