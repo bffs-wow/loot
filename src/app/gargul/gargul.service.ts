@@ -31,7 +31,7 @@ export class GargulService {
     // Prevent adding huge amounts of data to the export
     const itemRowCounts = {};
     // Only add this many rankings to the in-game tooltip
-    const maxItemRowCount = 5;
+    const maxItemRowCount = 3;
     return this.lootListFacade.getAllRankedLootGroups().pipe(
       map((lootGroups) => {
         const exp: GargulExport = {
@@ -84,12 +84,15 @@ export class GargulService {
           // Increment the order
           prioOrders[item.item_id]++;
           // Add a line to the note
-          exp.notes[item.item_id] = `${exp.notes[item.item_id]}${chunk(
-            grp.rankings,
-            5
-          )
-            .map((ch) => ch.map((r) => r.raider.name).join(', '))
-            .join('\n')} (${grp.points} pts)\n`;
+          if (grp.rankings.length <= 5) {
+            exp.notes[item.item_id] = `${exp.notes[item.item_id]}${grp.rankings
+              .map((r) => r.raider.name)
+              .join(', ')} (${grp.points} pts)\n`;
+          } else {
+            exp.notes[item.item_id] = `${
+              exp.notes[item.item_id]
+            }<Many tied, check site!> (${grp.points} pts)\n`;
+          }
         }
         return exp;
       }),

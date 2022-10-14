@@ -19,6 +19,14 @@ export const environment = {
   // How many slots between weapon items?
   itemsPerSlotRule: 3,
   tmbBaseUrl: 'https://thatsmybis.com/8897/best-friends-test/',
+  /**
+   * IMPORTANT: The values in this array *MUST* match the values provided in the TMB JSON data, the 'instance_name' properties of items
+   */
+  currentRaids: [
+    'Naxxramas N25',
+    'Eye of Eternity N25',
+    'Obsidian Sanctum N25',
+  ],
 };
 
 /*

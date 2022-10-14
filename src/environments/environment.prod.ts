@@ -10,4 +10,9 @@ export const environment = {
   forgiveness: 1.5,
   itemsPerSlotRule: 3,
   tmbBaseUrl: 'https://thatsmybis.com/8752/best-friends/',
+  currentRaids: [
+    'Naxxramas N25',
+    'Eye of Eternity N25',
+    'Obsidian Sanctum N25',
+  ],
 };

@@ -197,6 +197,8 @@ export class TmbService {
         return raiders.map((raider) => {
           const unlistedItems = uniqBy(
             allitems
+              // Only items we currently are raiding
+              .filter((i) => environment.currentRaids.includes(i.instance_name))
               // Find items that this raider has not...
               .filter(
                 (item) =>
