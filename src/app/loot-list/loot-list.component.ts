@@ -78,6 +78,8 @@ export class LootListComponent implements OnInit, OnChanges {
           .reduce((acc, cur) => {
             return [...cur, ...acc];
           }, [])
+          // Ensure sort: highest points on top
+          .sort((a, b) => b.item.raider_points - a.item.raider_points)
       )
     );
   }
@@ -86,8 +88,24 @@ export class LootListComponent implements OnInit, OnChanges {
     return this.competition[`${item.name}-${item.pivot.order}`];
   }
 
-  getCompetitionIcon(place: number) {
-    if (place === 0) {
+  tiedForFirst(competition: LootRanking[], ranking: WishlistItem) {
+    if (competition.length) {
+      // Is the raider up next?
+      const firstPlacePoints = competition[0].item.raider_points;
+      if (ranking.raider_points === firstPlacePoints) {
+        const ties = competition.filter(
+          (c) => c.item.raider_points === ranking.raider_points
+        );
+
+        return { ties: ties.length };
+      }
+    }
+    // Not tied: no competition
+    return { ties: 0 };
+  }
+
+  getCompetitionIcon(place: number, firstPlaceTies: number) {
+    if (place === 0 || firstPlaceTies > 0) {
       return faAward;
     } else if (place <= 3) {
       return faClock;

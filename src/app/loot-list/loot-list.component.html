@@ -51,29 +51,47 @@
             class="tags has-addons"
             *ngIf="getCachedCompetition(ranking) as competition"
           >
-            <span
-              class="tag is-medium"
-              [class.is-warning]="competition.length === 0"
-              [class.is-waiting]="
-                competition.length <= 3 && competition.length > 0
-              "
-              ><span class="icon is-medium">
-                <fa-icon
-                  [icon]="getCompetitionIcon(competition.length)"
-                ></fa-icon> </span
-            ></span>
-            <span class="tag is-medium is-black"
-              ><span
-                *ngIf="competition.length === 0"
-                title="This raider will receive the next drop of this item!"
-                >Up Next!</span
-              ><span
-                *ngIf="competition.length > 0"
-                title="How many people are ahead or tied with the raider on this item."
+            <ng-container *ngIf="tiedForFirst(competition, ranking) as tieData">
+              <span
+                class="tag is-medium"
+                [class.is-warning]="
+                  competition.length === 0 || tieData.ties > 0
+                "
+                [class.is-waiting]="
+                  competition.length <= 3 &&
+                  competition.length > 0 &&
+                  tieData.ties === 0
+                "
+                ><span class="icon is-medium">
+                  <fa-icon
+                    [icon]="
+                      getCompetitionIcon(competition.length, tieData.ties)
+                    "
+                  ></fa-icon> </span
+              ></span>
+              <span class="tag is-medium is-black"
+                ><span
+                  *ngIf="competition.length === 0; else inLine"
+                  title="This raider will receive the next drop of this item!"
+                  >Up Next!</span
+                >
+                <ng-template #inLine>
+                  <span
+                    *ngIf="tieData.ties > 0; else notTied"
+                    title="This raider is tied for first on this."
+                  >
+                    Tied for First! ({{ tieData.ties }})
+                  </span>
+                  <ng-template #notTied>
+                    <span
+                      title="How many people are ahead of or tied with the raider on this item."
+                    >
+                      {{ competition.length + 1 | formatOrder }}
+                    </span>
+                  </ng-template>
+                </ng-template></span
               >
-                {{ competition.length + 1 | formatOrder }}
-              </span></span
-            >
+            </ng-container>
           </div>
         </ng-template>
       </div>

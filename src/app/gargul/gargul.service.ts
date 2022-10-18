@@ -84,11 +84,13 @@ export class GargulService {
           // Increment the order
           prioOrders[item.item_id]++;
           // Add a line to the note
+          // If there are 5 or fewer tied raiders at this point level, list them out
           if (grp.rankings.length <= 5) {
             exp.notes[item.item_id] = `${exp.notes[item.item_id]}${grp.rankings
               .map((r) => r.raider.name)
               .join(', ')} (${grp.points} pts)\n`;
           } else {
+            // Otherwise, just say too many are tied instead of adding a huge note.
             exp.notes[item.item_id] = `${
               exp.notes[item.item_id]
             }<Many tied, check site!> (${grp.points} pts)\n`;

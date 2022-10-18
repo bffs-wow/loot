@@ -102,7 +102,7 @@ export class LootListFacadeService {
       },
       []
     );
-    // Finally, sort all of the groups with the highest oints on top
+    // Finally, sort all of the groups with the highest points on top
     return rankedGroups.sort((a, b) => b.points - a.points);
   }
 
