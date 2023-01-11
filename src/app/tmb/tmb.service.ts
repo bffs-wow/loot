@@ -12,7 +12,10 @@ import { sha256 } from '../util';
 import { Raider, WishlistItem } from './models/tmb.interface';
 import { ITEM_RESTRICTIONS } from './item-restrictions';
 import { Class, parseClass } from '../loot-list/models/class.model';
-import { bn } from 'date-fns/locale';
+import { weaponSlots } from './models/item.interface';
+import chunk from 'lodash-es/chunk';
+import { ItemService } from './item.service';
+import { StateService } from '../state/state.service';
 
 type TmbShaCache = {
   date: string;
@@ -38,12 +41,26 @@ export class TmbService {
         }),
       })
     ),
+    // Filter out alts and other characters in the system which do not belong to the main raid roster.
+    map((raiders: Raider[]) =>
+      raiders.filter((r) => r.is_alt === 0 && r.raid_group_id > 0)
+    ),
     tap((raiders: Raider[]) => this.checkNewData(raiders)),
+    map((raiders: Raider[]) => this.processAttendancePoints(raiders)),
     map((raiders: Raider[]) => this.processRaiders(raiders)),
+    switchMap((raiders: Raider[]) => this.checkMissingItems(raiders)),
+    switchMap((raiders: Raider[]) => this.addUnlistedItems(raiders)),
+    // Finally, save the raiders onto the state
+    tap((raiders) => this.state.setState({ raiders })),
     shareReplay(1)
   );
 
-  constructor(private http: HttpClient, private cacheService: CacheService) {}
+  constructor(
+    private http: HttpClient,
+    private cacheService: CacheService,
+    private state: StateService,
+    private itemService: ItemService
+  ) {}
 
   getRaiders(): Observable<Raider[]> {
     return this.raiders$;
@@ -102,9 +119,9 @@ export class TmbService {
     }
     // If a wishlist was provided, check that there aren't too many of this item on the list
     if (opts?.wishList) {
-      const items = opts.wishList.filter((i) => i.item_id == itemId);
-      if (items.length > restrictions.allowedRankings) {
-        const msg = `(${restrictions.ITEM_NAME} - ${itemId}) too many items listed: ${items.length} > ${restrictions.allowedRankings}`;
+      const wishListItems = opts.wishList.filter((i) => i.item_id == itemId);
+      if (wishListItems.length > restrictions.allowedRankings) {
+        const msg = `(${restrictions.ITEM_NAME} - ${itemId}) too many items listed: ${wishListItems.length} > ${restrictions.allowedRankings}`;
         errors.push(msg);
         !opts?.quiet && console.error(msg);
       }
@@ -113,24 +130,132 @@ export class TmbService {
     return errors;
   }
 
+  /**
+   * Verify the 'Weapon per X' rule on the list.
+   * @param wishList
+   */
+  validateWeaponSlots(raider: Raider) {
+    let bank = 1;
+    // Chunk the items into sizes per the rule
+    const sorted = raider.wishlist.sort(
+      (a, b) => a.pivot.order - b.pivot.order
+    );
+    const chunks = chunk(sorted, environment.itemsPerSlotRule);
+    // Iterate over each chunk (for example, set of *3* items)
+    for (const chunk of chunks) {
+      const weapons = chunk.filter((w) =>
+        weaponSlots.includes(w.inventory_type)
+      );
+      const weaponCount = weapons.length;
+      // If there are no weapons in this chunk, we get a bank slot
+      if (weaponCount == 0) {
+        bank++;
+      }
+      // If there are more than 1 weapon in this chunk, this is only allowed if there is are enough bank slots to spend
+      else if (weaponCount > 1) {
+        // deduct from the bank: (weaponCount-1) is used here because only the "extra" weapons beyond 1 are bankable
+        bank = bank - (weaponCount - 1);
+        // If we have no bank, this is a violation and the list is invalid
+        if (bank <= 0) {
+          const message = `INVALID LIST (TOO MANY WEAPONS: ${weapons
+            .map((i) => i.name)
+            .join('; ')})`;
+          raider.public_note = `${raider.public_note || ''}\r\n${message}`;
+          console.error(`${raider.name} - ${message}`);
+          weapons.forEach((w) => (w.pivot.note = message));
+          // Don't let bank fall negative
+          bank = 1;
+        }
+      }
+    }
+  }
+
+  checkMissingItems(raiders: Raider[]): Observable<Raider[]> {
+    return this.itemService.allItems$.pipe(
+      map((allitems) => {
+        return raiders.map((raider) => {
+          for (const item of raider.wishlist) {
+            // Verify that the item is found within the TMB item data (i.e. the person picked a non-raid item, or a 10-man only item)
+            const found = allitems.some((i) => i.id === item.item_id);
+            if (!found) {
+              const msg = `Item not found: (${item.name} - ${item.item_id})`;
+              console.error(msg);
+              raider.public_note = `${raider.public_note || ''}\r\n${msg}`;
+              item.pivot.note = msg;
+            }
+          }
+          return raider;
+        });
+      })
+    );
+  }
+
+  addUnlistedItems(raiders: Raider[]): Observable<Raider[]> {
+    // Find items which are lootable, but which no one added to their list at all.
+    return this.itemService.allItems$.pipe(
+      map((allitems) => {
+        return raiders.map((raider) => {
+          const unlistedItems = uniqBy(
+            allitems
+              // Only items we currently are raiding
+              .filter((i) => environment.currentRaids.includes(i.instance_name))
+              // Find items that this raider has not...
+              .filter(
+                (item) =>
+                  // ... wishlisted
+                  !raider.wishlist.some(
+                    (raiderW) => raiderW.item_id == item.id
+                  ) &&
+                  // ... received
+                  !raider.received.some(
+                    (raiderR) => raiderR.item_id == item.id
+                  ) &&
+                  // and is already eligible for
+                  !raider.eligible_loot.some(
+                    (raiderE) => raiderE.item_id == item.id
+                  )
+              )
+              // Remove class restricted items
+              .filter(
+                (item) =>
+                  !this.validateItemRestrictions(
+                    item.id,
+                    parseClass(raider.class),
+                    { quiet: true }
+                  ).length
+              )
+              .map((item) => {
+                // Update this item with this raider's details
+                return {
+                  item_id: item.id,
+                  name: item.name,
+                  instance_name: item.instance_name,
+
+                  ranking_points: 0,
+                  // For these unlisted items, the points are equal to the raider's total attendance points
+                  raider_points: raider.attendance_points,
+                  pivot: {
+                    character_id: raider.id,
+                    is_received: 0,
+                    note: 'Unlisted',
+                    is_offspec: 1,
+                    order: 99,
+                  },
+                } as WishlistItem;
+              }),
+            'item_id'
+          );
+          raider.eligible_loot = [...raider.eligible_loot, ...unlistedItems];
+
+          return raider;
+        });
+      })
+    );
+  }
+
   private processRaiders(tmbData: Raider[]) {
     // Process the raw data
     const processed = tmbData.map((raider) => {
-      /**
-       * attendance_percentage is provided by TMB. This is based on the raid credit the raider has been given over the configured period from TMB settings.
-       * Each raid is worth a maximum of 1 point, which will be modified by the attendance percentage. For example, if I've attended 10 raids with 0.75%
-       * attendance_percentage, my attendance_points would be 7.5.
-       *
-       * There is a maximum attendance points which can be different from the value provided by 100% attendance over the full period. This allows for
-       * forgiveness of a certain number of absences or tardies. For example, `maxAttendancePoints` value of 18.5 with a 10-week rolling period means
-       * that a raider can miss 1 raid and be tardy for 1 raid before they fall behind.
-       */
-      raider.attendance_points =
-        Math.round((raider.attendance_percentage * raider.raid_count) / 0.5) *
-        0.5;
-      if (raider.attendance_points > environment.maxAttendancePoints) {
-        raider.attendance_points = environment.maxAttendancePoints;
-      }
       // Make sure the wishlist order was sorted
       raider.wishlist = raider.wishlist.sort(
         (a, b) => a.pivot.order - b.pivot.order
@@ -217,6 +342,8 @@ export class TmbService {
 
         return w;
       });
+      // validate the weapon slots rule
+      this.validateWeaponSlots(raider);
 
       /**
        * Eligible loot is loot that is wishlisted, but not yet received
@@ -247,7 +374,7 @@ export class TmbService {
     // after the first pass, add all unlisted loot into eligible_loot
     return processed.map((raider) => {
       // De-duplicate
-      const itemsToAdd = uniqBy(
+      const otherWishListedItems = uniqBy(
         // Clone these items to avoid mutating wishlists
         cloneDeep(
           // Flatten array of arrays
@@ -298,7 +425,47 @@ export class TmbService {
             },
           };
         });
-      raider.eligible_loot = [...raider.eligible_loot, ...itemsToAdd];
+      raider.eligible_loot = [...raider.eligible_loot, ...otherWishListedItems];
+      return raider;
+    });
+  }
+
+  private processAttendancePoints(raiders: Raider[]): Raider[] {
+    const processedRaiders = raiders.map((raider) => {
+      /**
+       * attendance_percentage is provided by TMB. This is based on the raid credit the raider has been given over the configured period from TMB settings.
+       * Each raid is worth a maximum of 1 point, which will be modified by the attendance percentage. For example, if I've attended 10 raids with 0.75%
+       * attendance_percentage, my attendance_points would be 7.5.
+       *
+       * There is a maximum attendance points which can be different from the value provided by 100% attendance over the full period. This allows for
+       * forgiveness of a certain number of absences or tardies. For example, `environment.forgiveness` value of 1.5 with a 10-week rolling period means
+       * that a raider can miss 1 raid and be tardy for 1 raid before they fall behind, leaving the maximum attainable attendance_points to be 18.5
+       * This maximum calculation takes place in state.service.ts
+       */
+      raider.attendance_points =
+        Math.round((raider.attendance_percentage * raider.raid_count) / 0.5) *
+        0.5;
+
+      return raider;
+    });
+    const maxAttendeeRaider = processedRaiders.sort(
+      (a, b) => b.attendance_points - a.attendance_points
+    )[0];
+    // Maximum attendance points are calculated by taking whichever raider has the most attendance points, and subtracting our forgiveness factor
+    let maxAttendancePoints =
+      maxAttendeeRaider.attendance_points - environment.forgiveness;
+    // If the result is less than 0, peg it to 0
+    if (maxAttendancePoints < 0) {
+      maxAttendancePoints = 0;
+    }
+    // Save this calculated state globally
+    this.state.setState({ maxAttendancePoints });
+
+    // Finally, peg any raiders over the max, down to the max
+    return processedRaiders.map((raider) => {
+      if (raider.attendance_points > maxAttendancePoints) {
+        raider.attendance_points = maxAttendancePoints;
+      }
       return raider;
     });
   }

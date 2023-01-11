@@ -19,7 +19,13 @@
           let-search="searchTerm"
         >
           {{ item.name }} -
-          <small *ngIf="item"
+          <small
+            *ngIf="item"
+            class="py-1"
+            [ngClass]="{
+              'has-text-weight-bold has-background-dark has-text-green':
+                item.instance_name.endsWith('H25')
+            }"
             >{{ item.instance_name }} ({{ item.source_name }})</small
           >
         </ng-template>

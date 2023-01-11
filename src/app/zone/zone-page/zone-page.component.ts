@@ -4,14 +4,13 @@ import {
   faExclamationTriangle,
   faExternalLinkAlt,
 } from '@fortawesome/free-solid-svg-icons';
+import uniqBy from 'lodash-es/uniqBy';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { filter, first, map, switchMap, tap } from 'rxjs/operators';
 import { LootListFacadeService } from 'src/app/loot-list/loot-list.facade';
-import { LootGroup } from 'src/app/loot-list/models/loot-group.model';
 import { LootRanking } from 'src/app/loot-list/models/ranking.model';
 import { ItemService } from 'src/app/tmb/item.service';
 import { CsvItem } from 'src/app/tmb/models/item.interface';
-import { WishlistItem } from 'src/app/tmb/models/tmb.interface';
 import { ZoneService } from '../zone.service';
 
 @Component({
@@ -44,14 +43,12 @@ export class ZonePageComponent implements OnInit {
     this.route.queryParams,
   ]).pipe(
     tap(([sources, params]) => {
+      // If no query param is present, reset to 'All'
+      let sourceFromParam = this.allSource;
       if (params['boss']) {
-        let sourceFromParam = sources.find((s) => s === params['boss']);
-        // If no query param is present, reset to 'All'
-        if (!sourceFromParam) {
-          sourceFromParam = this.allSource;
-        }
-        this._chosenSource$.next(sourceFromParam);
+        sourceFromParam = sources.find((s) => s === params['boss']);
       }
+      this._chosenSource$.next(sourceFromParam);
     }),
     switchMap(() => this._chosenSource$.asObservable())
   );
@@ -78,7 +75,9 @@ export class ZonePageComponent implements OnInit {
 
   getSourceLoot(source: string) {
     return this.zone$.pipe(
-      switchMap((zone) => this.itemService.getBySource(zone, source))
+      switchMap((zone) => this.itemService.getBySource(zone, source)),
+      // de-duplicate for this view
+      map((items) => uniqBy(items, 'id'))
     );
   }
 

@@ -1,4 +1,4 @@
-import { BaseWowItem } from './item.interface';
+import { BaseWowItem, InventoryType } from './item.interface';
 
 // 'pivot' values
 export interface AuditRecord extends BaseWowItem {
@@ -27,7 +27,7 @@ export interface ReceivedItem extends BaseWowItem {
   name: string;
   weight?: number;
   quality: number;
-  inventory_type: number;
+  inventory_type: InventoryType;
   added_by_username: string;
   raid_group_name: string;
   raid_name?: any;
@@ -59,7 +59,7 @@ export interface PrioItem extends BaseWowItem {
   name: string;
   weight: number;
   quality: number;
-  inventory_type: number;
+  inventory_type: InventoryType;
   added_by_username: string;
   instance_id: number;
   guild_tier: number;
@@ -74,7 +74,7 @@ export interface WishlistItem extends BaseWowItem {
   name: string;
   weight: number;
   quality: number;
-  inventory_type: number;
+  inventory_type: InventoryType;
   item_source_id?: number;
   instance_id?: number;
   instance_name: string;

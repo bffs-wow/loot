@@ -5,19 +5,25 @@
 export const environment = {
   production: false,
   cache_bust: '10',
-  sheetId: '17Rbw1bye___MIknxYE3Yg-G6m1BEBh0L1rLEAgTcBKo',
-  apiKey: 'AIzaSyB3IfCPeyxe_qHKZYBfZvNtn2reVWDRVvU',
   logsGuildUrl:
     'https://classic.warcraftlogs.com/guild/rankings/532692/latest/',
   logsCharacterBaseUrl:
     'https://classic.warcraftlogs.com/character/us/faerlina/',
-  wclApiKey: '1767459f13aa17a7d1ad89c0c8b6ad6e',
+  // This should match the wishlist length setting in TMB
   wishlistLength: 50,
   // Offspec wishlist items may not be placed in this spot or earlier on the list.
   // If there are not this many Main Spec items in the list, the OS items will be "pushed down" to this point.
   wishlistOffspecCutoff: 33,
-  maxAttendancePoints: 18.5,
-  tmbBaseUrl: 'https://thatsmybis.com/8752/best-friends/',
+  // Combined with the rolling attendance period, this detemines the "leniency rule" that allows for a number of absent/tardies
+  forgiveness: 1,
+  // How many slots between weapon items?
+  itemsPerSlotRule: 3,
+  tmbBaseUrl: 'https://thatsmybis.com/8897/best-friends-test/',
+  /**
+   * IMPORTANT: The values in this array *MUST* match the values provided in the TMB JSON data, the 'instance_name' properties of items.
+   * This is used to generate ranking data for items not on wishlists (i.e. everyone is eligible for all items, even if they don't list - but we don't want to process every item in the game, just current phase.)
+   */
+  currentRaids: ['Ulduar N25'],
 };
 
 /*

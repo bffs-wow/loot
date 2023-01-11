@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  faFirstAid,
+  faGavel,
+  faLeaf,
+  faQuestionCircle,
+  faShieldAlt,
+} from '@fortawesome/free-solid-svg-icons';
 import { filter, map } from 'rxjs/operators';
 import { Class } from '../loot-list/models/class.model';
 import { StateService } from '../state/state.service';
@@ -33,5 +40,23 @@ export class RosterPageComponent implements OnInit {
           .sort((a, b) => b.attendance_points - a.attendance_points)
       )
     );
+  }
+
+  getIcon(archetype) {
+    switch (archetype) {
+      case 'DPS': {
+        return faGavel;
+      }
+      case 'Heal': {
+        return faLeaf;
+      }
+      case 'Tank': {
+        return faShieldAlt;
+      }
+      default: {
+        console.log(`Unknown Archetype ${archetype}`);
+        return faQuestionCircle;
+      }
+    }
   }
 }

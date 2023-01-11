@@ -1,4 +1,5 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
+import range from 'lodash-es/range';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,7 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  backgrounds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  backgrounds = range(1, 15);
   constructor(private renderer: Renderer2) {}
 
   ngOnInit() {

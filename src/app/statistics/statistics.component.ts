@@ -7,6 +7,7 @@ import groupBy from 'lodash-es/groupBy';
 import take from 'lodash-es/take';
 import { ReceivedItem, WishlistItem } from '../tmb/models/tmb.interface';
 import { TmbService } from '../tmb/tmb.service';
+import { StateService } from '../state/state.service';
 
 @Component({
   selector: 'app-statistics',
@@ -25,12 +26,12 @@ export class StatisticsComponent implements OnInit, OnDestroy {
   mostPopularItems: { ranking: WishlistItem; sum: number }[] = null;
   mostCommonItems: { item: ReceivedItem; count: number }[] = null;
   constructor(
-    private tmbService: TmbService,
+    private state: StateService,
     private statisticsService: StatisticsService
   ) {}
 
   ngOnInit(): void {
-    this.tmbService.raiders$
+    this.state.raiders$
       .pipe(
         takeUntil(this.destroyed$),
         tap((raiders) => {

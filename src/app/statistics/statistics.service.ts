@@ -9,9 +9,9 @@ export class StatisticsService {
 
   getRaiderListProgress(raider: Raider, limit: number = null) {
     const numRanked = limit ? limit : raider.wishlist.length;
-    const rankingsReceived = raider.received
+    const rankingsReceived = raider.wishlist
       .slice(0, numRanked)
-      .filter((l) => raider.wishlist.some((r) => r.item_id === l.item_id));
+      .filter((w) => w.pivot.is_received !== 0);
 
     return {
       progress: (rankingsReceived.length / numRanked) * 100,

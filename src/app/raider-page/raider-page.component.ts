@@ -5,7 +5,13 @@ import { LootListFacadeService } from '../loot-list/loot-list.facade';
 import { Observable, combineLatest } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
-import { faChartLine, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faChartLine,
+  faGavel,
+  faLeaf,
+  faQuestionCircle,
+  faShieldAlt,
+} from '@fortawesome/free-solid-svg-icons';
 
 import { StatisticsService } from '../statistics/statistics.service';
 import { raiderToWowNameMap } from '../data/raider-to-wow-name';
@@ -24,25 +30,24 @@ export class RaiderPageComponent implements OnInit {
   faShieldAlt = faShieldAlt;
 
   listProgress = undefined;
-  environment = environment;
+  // Wrap in an object to use within *ngIf
+  maxAttendancePoints$ = this.state.maxAttendancePoints$.pipe(
+    map((points) => ({ points }))
+  );
 
   constructor(
     private route: ActivatedRoute,
     private state: StateService,
-    private statisticsService: StatisticsService,
-    private lootListFacade: LootListFacadeService,
-    private tmbService: TmbService
+    private statisticsService: StatisticsService
   ) {}
 
   ngOnInit(): void {
-    this.raider$ = combineLatest([
-      this.route.params,
-      this.tmbService.raiders$,
-    ]).pipe(
+    this.raider$ = combineLatest([this.route.params, this.state.raiders$]).pipe(
       map(([params, raiders]) => raiders.find((l) => l.name === params.name)),
       tap((raider) => {
-        this.listProgress =
-          this.statisticsService.getRaiderListProgress(raider);
+        this.listProgress = raider
+          ? this.statisticsService.getRaiderListProgress(raider)
+          : undefined;
       })
     );
   }
@@ -58,7 +63,7 @@ export class RaiderPageComponent implements OnInit {
   }
 
   makeTmbUrl(raider: Raider) {
-    return `${environment.tmbBaseUrl}u/${raider.member_id}/${raider.name}`;
+    return `${environment.tmbBaseUrl}c/${raider.id}/${raider.name}`;
   }
 
   getAttendanceTagClass(percentage: number) {
@@ -71,13 +76,31 @@ export class RaiderPageComponent implements OnInit {
     return 'is-danger';
   }
 
-  getAttendancePointsClass(points: number) {
-    if (points >= environment.maxAttendancePoints) {
+  getAttendancePointsClass(points: number, max: number) {
+    if (points >= max) {
       return 'is-success';
     }
-    if (points > environment.maxAttendancePoints * 0.75) {
+    if (points > max * 0.75) {
       return 'is-warning';
     }
     return 'is-danger';
+  }
+
+  getArchetypeIcon(archetype) {
+    switch (archetype) {
+      case 'DPS': {
+        return faGavel;
+      }
+      case 'Heal': {
+        return faLeaf;
+      }
+      case 'Tank': {
+        return faShieldAlt;
+      }
+      default: {
+        console.log(`Unknown Archetype ${archetype}`);
+        return faQuestionCircle;
+      }
+    }
   }
 }

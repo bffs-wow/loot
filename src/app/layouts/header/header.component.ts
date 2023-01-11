@@ -33,7 +33,6 @@ import { GargulService } from 'src/app/gargul/gargul.service';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject<boolean>();
-  sheetUrl = `https://docs.google.com/spreadsheets/d/${environment.sheetId}/edit`;
   tmbUrl = environment.tmbBaseUrl;
   logsGuildUrl = environment.logsGuildUrl;
   form: UntypedFormGroup;
@@ -52,7 +51,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     public state: StateService,
     public zoneService: ZoneService,
     public lootListFacade: LootListFacadeService,
-    private tmbService: TmbService,
     private fb: FormBuilder,
     private gargulService: GargulService
   ) {}
@@ -67,7 +65,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.state.selectedRaiderName$
       .pipe(
         takeUntil(this.destroyed$),
-        withLatestFrom(this.tmbService.raiders$),
+        withLatestFrom(this.state.raiders$),
         tap(([raiderName, allRaiders]) => {
           const raider = allRaiders.find((r) => r.name === raiderName);
           raiderControl.setValue(raider, { emitEvent: false, onlySelf: true });
@@ -79,7 +77,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .pipe(
         takeUntil(this.destroyed$),
         tap((selectedRaider) => {
-          this.state.setState({ selectedRaiderName: selectedRaider.name });
+          this.state.setState({ selectedRaiderName: selectedRaider?.name });
         })
       )
       .subscribe();

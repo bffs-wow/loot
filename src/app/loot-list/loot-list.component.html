@@ -5,7 +5,11 @@
   <ng-container *ngIf="noRouteLink"> {{ raider.name }}'s </ng-container> Loot
   List
 </p>
-<article class="media" *ngFor="let ranking of raider.wishlist">
+<article
+  class="media"
+  [ngClass]="getWeaponLootGroupClass(ranking.ranking_points)"
+  *ngFor="let ranking of raider.wishlist"
+>
   <figure class="media-left has-text-centered mx-0 my-0" style="width: 5rem">
     <h2 class="is-2 mb-0">{{ ranking.ranking_points }}</h2>
     <small class="is-size-6">
@@ -16,7 +20,7 @@
   </figure>
   <div class="media-content">
     <div class="columns is-multiline is-gapless">
-      <div class="column is-8-widescreen is-4-desktop is-12-tablet">
+      <div class="column is-7-widescreen is-4-desktop is-12-tablet">
         <p class="has-text-left">
           <strong
             ><a
@@ -42,7 +46,7 @@
                 <fa-icon [icon]="faCheck"></fa-icon> </span
             ></span>
             <span class="tag is-medium is-black is-family-monospace">{{
-              ranking.pivot.received_at | date: "shortDate"
+              ranking.pivot.received_at | date : "shortDate"
             }}</span>
           </div>
         </div>
@@ -51,29 +55,47 @@
             class="tags has-addons"
             *ngIf="getCachedCompetition(ranking) as competition"
           >
-            <span
-              class="tag is-medium"
-              [class.is-warning]="competition.length === 0"
-              [class.is-waiting]="
-                competition.length <= 3 && competition.length > 0
-              "
-              ><span class="icon is-medium">
-                <fa-icon
-                  [icon]="getCompetitionIcon(competition.length)"
-                ></fa-icon> </span
-            ></span>
-            <span class="tag is-medium is-black"
-              ><span
-                *ngIf="competition.length === 0"
-                title="This raider will receive the next drop of this item!"
-                >Up Next!</span
-              ><span
-                *ngIf="competition.length > 0"
-                title="How many people are ahead or tied with the raider on this item."
+            <ng-container *ngIf="tiedForFirst(competition, ranking) as tieData">
+              <span
+                class="tag is-medium"
+                [class.is-warning]="
+                  competition.length === 0 || tieData.ties > 0
+                "
+                [class.is-waiting]="
+                  competition.length <= 3 &&
+                  competition.length > 0 &&
+                  tieData.ties === 0
+                "
+                ><span class="icon is-medium">
+                  <fa-icon
+                    [icon]="
+                      getCompetitionIcon(competition.length, tieData.ties)
+                    "
+                  ></fa-icon> </span
+              ></span>
+              <span class="tag is-medium is-black"
+                ><span
+                  *ngIf="competition.length === 0; else inLine"
+                  title="This raider will receive the next drop of this item!"
+                  >Up Next!</span
+                >
+                <ng-template #inLine>
+                  <span
+                    *ngIf="tieData.ties > 0; else notTied"
+                    title="This raider is tied for first on this."
+                  >
+                    Tied for First! ({{ tieData.ties }})
+                  </span>
+                  <ng-template #notTied>
+                    <span
+                      title="How many people are ahead of or tied with the raider on this item."
+                    >
+                      {{ competition.length + 1 | formatOrder }}
+                    </span>
+                  </ng-template>
+                </ng-template></span
               >
-                {{ competition.length + 1 | formatOrder }}
-              </span></span
-            >
+            </ng-container>
           </div>
         </ng-template>
       </div>

@@ -12,16 +12,24 @@ export class ItemService {
   allItems$: Observable<CsvItem[]> = this.http
     .get('assets/tmb-items.csv', { responseType: 'text' })
     .pipe(
-      map((csvData) => Papa.parse(csvData, { header: true })),
+      map((csvData) =>
+        Papa.parse(csvData, { header: true, skipEmptyLines: 'greedy' })
+      ),
       tap((csvRes) => {
-        if (csvRes.errors.length) {
+        // Ignore 'TooManyFields' errors
+        const actualErrors = csvRes.errors.filter(
+          (e) => e.code !== 'TooManyFields'
+        );
+        if (actualErrors.length) {
           console.error(
-            `Error parsing CSV: ${csvRes.errors.join('; ')}`,
-            csvRes.errors
+            `Error parsing CSV: ${actualErrors
+              .map((e) => `(${e.code}|${e.type}) - ${e.message}`)
+              .join('; ')}`,
+            actualErrors
           );
         }
       }),
-      // Only include loot from Normal and Heroic 25
+      // Only include loot from Normal and Heroic 25 - All TMB instance data for WOTLK ends with either 'N25' or 'H25'
       map((csvRes) =>
         csvRes.data.filter(
           (i) =>
@@ -72,6 +80,9 @@ export class ItemService {
    * For example, if provided with the item that is received from a token, this will return the token.
    */
   getTmbItem(item: WishlistItem | ReceivedItem | CsvItem) {
+    if ((item as WishlistItem | ReceivedItem).item_id) {
+      return this.getById((item as WishlistItem | ReceivedItem).item_id);
+    }
     if (item.id) {
       return this.getById(item.id);
     }

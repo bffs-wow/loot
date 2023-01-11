@@ -21,7 +21,10 @@
               <fa-icon [icon]="faExternalLinkAlt"></fa-icon></a
           ></ng-container>
         </h1>
-        <h2 class="is-size-5">
+        <h2
+          class="is-size-5"
+          [ngClass]="{ 'has-text-green': item.instance_name.endsWith('H25') }"
+        >
           <a
             [routerLink]="['/zone', item.instance_name]"
             [queryParams]="{ boss: item.source_name }"
