@@ -10,9 +10,10 @@
             height="15"
             width="15"
             [src]="'./assets/images/class-icons/tiny/' + raider.class + '.gif'"
-          />{{ raider.class }}
+          />&nbsp;{{ raider.class }} - {{ raider.spec }} &nbsp;
+          <fa-icon [icon]="getArchetypeIcon(raider.archetype)"></fa-icon>
           <br />
-          <div class="has-text-centered" *ngIf="listProgress">
+          <div class="has-text-centered mt-2" *ngIf="listProgress">
             <progress
               class="progress mb-0"
               max="100"
@@ -66,6 +67,7 @@
                 <h4 class="is-size-4">
                   <strong
                     ><a
+                      [appWowheadTooltip]="loot"
                       [routerLink]="[
                         '/item',
                         loot.parent_item_id || loot.item_id

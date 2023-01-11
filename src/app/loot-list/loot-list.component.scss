@@ -5,3 +5,16 @@
 .tag.is-waiting {
   background-color: #3f5fffc2;
 }
+
+.media.is-odd-group {
+  background-color: #2b3131 !important;
+  box-shadow: 0px 16px 0px 0px #2b3131;
+}
+
+.media.is-even-group {
+  // Intentionally empty
+}
+.media:first-of-type {
+  margin-top: 1rem;
+  padding-top: 1rem;
+}

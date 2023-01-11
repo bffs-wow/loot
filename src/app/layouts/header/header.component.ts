@@ -77,7 +77,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .pipe(
         takeUntil(this.destroyed$),
         tap((selectedRaider) => {
-          this.state.setState({ selectedRaiderName: selectedRaider.name });
+          this.state.setState({ selectedRaiderName: selectedRaider?.name });
         })
       )
       .subscribe();

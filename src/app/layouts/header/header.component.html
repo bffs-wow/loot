@@ -35,6 +35,7 @@
             class="navbar-item"
             *ngFor="let zone of zoneService.zones"
             [routerLink]="['/zone', zone.slug]"
+            [queryParams]="{ boss: 'All' }"
           >
             {{ zone.name }}
           </a>

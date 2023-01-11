@@ -5,7 +5,11 @@
   <ng-container *ngIf="noRouteLink"> {{ raider.name }}'s </ng-container> Loot
   List
 </p>
-<article class="media" *ngFor="let ranking of raider.wishlist">
+<article
+  class="media"
+  [ngClass]="getWeaponLootGroupClass(ranking.ranking_points)"
+  *ngFor="let ranking of raider.wishlist"
+>
   <figure class="media-left has-text-centered mx-0 my-0" style="width: 5rem">
     <h2 class="is-2 mb-0">{{ ranking.ranking_points }}</h2>
     <small class="is-size-6">
@@ -42,7 +46,7 @@
                 <fa-icon [icon]="faCheck"></fa-icon> </span
             ></span>
             <span class="tag is-medium is-black is-family-monospace">{{
-              ranking.pivot.received_at | date: "shortDate"
+              ranking.pivot.received_at | date : "shortDate"
             }}</span>
           </div>
         </div>

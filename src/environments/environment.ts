@@ -15,18 +15,15 @@ export const environment = {
   // If there are not this many Main Spec items in the list, the OS items will be "pushed down" to this point.
   wishlistOffspecCutoff: 33,
   // Combined with the rolling attendance period, this detemines the "leniency rule" that allows for a number of absent/tardies
-  forgiveness: 1.5,
+  forgiveness: 1,
   // How many slots between weapon items?
   itemsPerSlotRule: 3,
   tmbBaseUrl: 'https://thatsmybis.com/8897/best-friends-test/',
   /**
-   * IMPORTANT: The values in this array *MUST* match the values provided in the TMB JSON data, the 'instance_name' properties of items
+   * IMPORTANT: The values in this array *MUST* match the values provided in the TMB JSON data, the 'instance_name' properties of items.
+   * This is used to generate ranking data for items not on wishlists (i.e. everyone is eligible for all items, even if they don't list - but we don't want to process every item in the game, just current phase.)
    */
-  currentRaids: [
-    'Naxxramas N25',
-    'Eye of Eternity N25',
-    'Obsidian Sanctum N25',
-  ],
+  currentRaids: ['Ulduar N25'],
 };
 
 /*

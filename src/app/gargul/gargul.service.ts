@@ -6,7 +6,6 @@ import { LootListFacadeService } from '../loot-list/loot-list.facade';
 import { GargulExport, WishListEntry } from './gargul-export.interface';
 import { deflate } from 'pako';
 import { bytesToBase64 } from '../util';
-import chunk from 'lodash-es/chunk';
 
 const tierMap = {
   1: 'S',
@@ -31,7 +30,7 @@ export class GargulService {
     // Prevent adding huge amounts of data to the export
     const itemRowCounts = {};
     // Only add this many rankings to the in-game tooltip
-    const maxItemRowCount = 3;
+    const maxItemRowCount = 4;
     return this.lootListFacade.getAllRankedLootGroups().pipe(
       map((lootGroups) => {
         const exp: GargulExport = {

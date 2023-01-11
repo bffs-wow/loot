@@ -26,6 +26,7 @@ import {
 import { ItemService } from '../../tmb/item.service';
 import { LootGroup } from 'src/app/loot-list/models/loot-group.model';
 import { BaseWowItem, CsvItem } from 'src/app/tmb/models/item.interface';
+import uniqBy from 'lodash-es/uniqBy';
 
 @Component({
   selector: 'app-loot-lookup',
@@ -80,6 +81,7 @@ export class LootLookupComponent implements OnInit, OnDestroy {
                 i.name.toLowerCase().includes(term.toLowerCase())
               )
             ),
+            map((results) => uniqBy(results, 'id')),
             catchError(() => of([])), // empty list on error
             tap(() => (this.loading = false))
           )

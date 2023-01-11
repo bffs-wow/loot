@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  cache_bust: '11',
+  cache_bust: '12',
   logsGuildUrl:
     'https://classic.warcraftlogs.com/guild/rankings/532692/latest/',
   logsCharacterBaseUrl:

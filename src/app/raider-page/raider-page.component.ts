@@ -5,7 +5,13 @@ import { LootListFacadeService } from '../loot-list/loot-list.facade';
 import { Observable, combineLatest } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
-import { faChartLine, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faChartLine,
+  faGavel,
+  faLeaf,
+  faQuestionCircle,
+  faShieldAlt,
+} from '@fortawesome/free-solid-svg-icons';
 
 import { StatisticsService } from '../statistics/statistics.service';
 import { raiderToWowNameMap } from '../data/raider-to-wow-name';
@@ -78,5 +84,23 @@ export class RaiderPageComponent implements OnInit {
       return 'is-warning';
     }
     return 'is-danger';
+  }
+
+  getArchetypeIcon(archetype) {
+    switch (archetype) {
+      case 'DPS': {
+        return faGavel;
+      }
+      case 'Heal': {
+        return faLeaf;
+      }
+      case 'Tank': {
+        return faShieldAlt;
+      }
+      default: {
+        console.log(`Unknown Archetype ${archetype}`);
+        return faQuestionCircle;
+      }
+    }
   }
 }

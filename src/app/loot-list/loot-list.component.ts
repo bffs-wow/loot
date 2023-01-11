@@ -14,6 +14,9 @@ import {
   WishlistItem,
 } from '../tmb/models/tmb.interface';
 import { LootRanking } from './models/ranking.model';
+import { environment } from 'src/environments/environment';
+import range from 'lodash-es/range';
+import chunk from 'lodash-es/chunk';
 
 @Component({
   selector: 'app-loot-list',
@@ -112,5 +115,14 @@ export class LootListComponent implements OnInit, OnChanges {
     } else {
       return faCalendarAlt;
     }
+  }
+
+  getWeaponLootGroupClass(place: number) {
+    const chunks = chunk(
+      range(1, environment.wishlistLength + 1).reverse(),
+      environment.itemsPerSlotRule
+    );
+    const idx = chunks.findIndex((ch) => ch.includes(place));
+    return idx % 2 ? 'is-even-group' : 'is-odd-group';
   }
 }

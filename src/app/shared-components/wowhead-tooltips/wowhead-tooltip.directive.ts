@@ -27,10 +27,12 @@ export class WowheadTooltipDirective implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.item.currentValue) {
+      const itemId =
+        changes.item.currentValue.item_id || changes.item.currentValue.id;
       this.renderer.setAttribute(
         this.elRef.nativeElement,
         'data-wowhead',
-        `item=${changes.item.currentValue.item_id}&domain=wotlk`
+        `item=${itemId}&domain=wotlk`
       );
 
       this.wowheadTooltipsService.refreshLinks();
