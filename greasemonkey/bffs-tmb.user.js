@@ -1,36 +1,36 @@
 // ==UserScript==
 // @name         TMB Best Friends
-// @namespace    http://tampermonkey.net/
+// @namespace    https://thatsmybis.com/8752/best-friends
 // @version      0.1
-// @description  try to take over the world!
 // @author       You
 // @match        https://thatsmybis.com/8752/best-friends/c/*/*/loot
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=thatsmybis.com
-// @updateURL    https://gist.github.com/seanmarthur/ddc2d6c6a954e80c724e36870fae4319/raw/bffs-tmb.js
-// @downloadURL  https://gist.github.com/seanmarthur/ddc2d6c6a954e80c724e36870fae4319/raw/bffs-tmb.js
-// @homepage     https://gist.github.com/seanmarthur/ddc2d6c6a954e80c724e36870fae4319
+// @updateURL    	https://github.com/bffs-wow/loot/raw/master/greasemonkey/bffs-tmb.user.js
+// @downloadURL  	https://github.com/bffs-wow/loot/raw/master/greasemonkey/bffs-tmb.user.js
+// @homepage     	https://github.com/bffs-wow/loot/raw/master/greasemonkey
 // @grant        none
 // ==/UserScript==
 
 (function() {
     'use strict';
 
-    // Select the node that will be observed for mutations
+    // Get the wishlist element
     const wishList = document.getElementById('wishlistItems');
-
-    setInterval(() => {
-        const items = Array.from(wishList.getElementsByClassName('input-item'));
-        items.forEach((item, idx) => {
-            const el = document.createElement('span');
-            const elId = 'bffs-wl-' + idx;
-            const existing = document.getElementById(elId)
-            if(existing) {
-                existing.remove();
-            }
-            el.setAttribute('id',elId);
-            el.innerText = idx;
-            item.prepend(el);
-        });
-    }, 5000);
-
+    if (wishList) {
+      // Every 5 seconds (to account for active list editing) - add a simple number to the corner of each item to show the wishlist position
+      setInterval(() => {
+          const items = Array.from(wishList.getElementsByClassName('input-item'));
+          items.forEach((item, idx) => {
+              const el = document.createElement('span');
+              const elId = 'bffs-wl-' + idx;
+              const existing = document.getElementById(elId)
+              if(existing) {
+                  existing.remove();
+              }
+              el.setAttribute('id',elId);
+              el.innerText = idx;
+              item.prepend(el);
+          });
+      }, 5000);
+    }
 })();
