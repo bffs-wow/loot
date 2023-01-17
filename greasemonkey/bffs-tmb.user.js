@@ -28,7 +28,7 @@
                   existing.remove();
               }
               el.setAttribute('id',elId);
-              el.innerText = idx;
+              el.innerText = idx+1;
               item.prepend(el);
           });
       }, 5000);
