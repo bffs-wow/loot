@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         TMB Best Friends
+// @description  Minor cosmetic updates to the wishlist authoring experience in TMB.
 // @namespace    https://thatsmybis.com/8752/best-friends
 // @version      0.1
 // @author       You
