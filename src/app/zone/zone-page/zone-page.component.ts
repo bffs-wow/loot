@@ -82,7 +82,7 @@ export class ZonePageComponent implements OnInit {
   }
 
   getNextRecipient(item: CsvItem) {
-    return this.lootListFacade.getRankedLootGroups(item.name).pipe(
+    return this.lootListFacade.getRankedLootGroups(item.id).pipe(
       first(),
       map((groups) => (groups.length ? groups[0] : null)),
       filter((grp) => grp !== null),

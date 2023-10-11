@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  cache_bust: '11',
+  cache_bust: '12',
   logsGuildUrl:
     'https://classic.warcraftlogs.com/guild/rankings/532692/latest/',
   logsCharacterBaseUrl:
@@ -23,7 +23,7 @@ export const environment = {
    * IMPORTANT: The values in this array *MUST* match the values provided in the TMB JSON data, the 'instance_name' properties of items.
    * This is used to generate ranking data for items not on wishlists (i.e. everyone is eligible for all items, even if they don't list - but we don't want to process every item in the game, just current phase.)
    */
-  currentRaids: ['Ulduar N25'],
+  currentRaids: ['Trial of the Crusader H25', 'Icecrown Citadel H25'],
 };
 
 /*

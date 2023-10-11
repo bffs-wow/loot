@@ -51,15 +51,13 @@ export class LootListFacadeService {
     }
   }
 
-  getRankedLootGroups(itemName: string): Observable<LootGroup[]> {
+  getRankedLootGroups(itemId: number): Observable<LootGroup[]> {
     return this.allRankedLoot$.pipe(
       map((allLoot) => {
-        if (!itemName) {
+        if (!itemId) {
           return [];
         }
-        return allLoot.filter(
-          (l) => l.item.name.toLowerCase() === itemName.toLowerCase()
-        );
+        return allLoot.filter((l) => l.item.item_id == itemId);
       }),
       map((rankings) => {
         // build iterable / sortable groups by points

@@ -54,7 +54,7 @@ export class ItemPageComponent implements OnInit, OnDestroy {
     );
 
     this.lootGroups$ = this.item$.pipe(
-      switchMap((item) => this.lootListFacade.getRankedLootGroups(item.name))
+      switchMap((item) => this.lootListFacade.getRankedLootGroups(item.id))
     );
 
     this.tradeInItem$ = this.lootGroups$.pipe(

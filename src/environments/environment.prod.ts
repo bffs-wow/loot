@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  cache_bust: '13',
+  cache_bust: '15',
   logsGuildUrl:
     'https://classic.warcraftlogs.com/guild/rankings/532692/latest/',
   logsCharacterBaseUrl:
@@ -10,5 +10,5 @@ export const environment = {
   forgiveness: 1,
   itemsPerSlotRule: 3,
   tmbBaseUrl: 'https://thatsmybis.com/8752/best-friends/',
-  currentRaids: ['Ulduar N25'],
+  currentRaids: ['Trial of the Crusader H25', 'Icecrown Citadel H25'],
 };

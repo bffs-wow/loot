@@ -94,7 +94,9 @@ export class LootLookupComponent implements OnInit, OnDestroy {
     this.selectedItem$ = selectedItem.valueChanges.pipe(
       startWith(this.item),
       filter((i) => !!i),
-      switchMap((item) => this.lootListFacade.getRankedLootGroups(item.name))
+      switchMap((item: CsvItem) =>
+        this.lootListFacade.getRankedLootGroups(item.id)
+      )
     );
   }
 

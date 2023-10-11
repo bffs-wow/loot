@@ -64,7 +64,7 @@ export class LootListComponent implements OnInit, OnChanges {
   }
 
   getCompetition(ranking: LootRanking) {
-    return this.lootListFacade.getRankedLootGroups(ranking.item.name).pipe(
+    return this.lootListFacade.getRankedLootGroups(ranking.item.item_id).pipe(
       map((groups) =>
         groups.filter((grp) => grp.points >= ranking.item.raider_points)
       ),
