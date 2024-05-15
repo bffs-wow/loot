@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  cache_bust: '12',
+  cache_bust: '15',
   logsGuildUrl:
     'https://classic.warcraftlogs.com/guild/rankings/532692/latest/',
   logsCharacterBaseUrl:
@@ -18,12 +18,12 @@ export const environment = {
   forgiveness: 1,
   // How many slots between weapon items?
   itemsPerSlotRule: 3,
-  tmbBaseUrl: 'https://thatsmybis.com/8897/best-friends-test/',
+  tmbBaseUrl: 'https://thatsmybis.com/19497/best-friends-test/',
   /**
    * IMPORTANT: The values in this array *MUST* match the values provided in the TMB JSON data, the 'instance_name' properties of items.
    * This is used to generate ranking data for items not on wishlists (i.e. everyone is eligible for all items, even if they don't list - but we don't want to process every item in the game, just current phase.)
    */
-  currentRaids: ['Trial of the Crusader H25', 'Icecrown Citadel H25'],
+  currentRaids: ['Throne of the Four Winds Heroic', 'Blackwing Descent Heroic', 'The Bastion of Twilight Heroic'],
 };
 
 /*

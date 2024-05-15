@@ -48,7 +48,7 @@ export class ZonePageComponent implements OnInit {
       if (params['boss']) {
         sourceFromParam = sources.find((s) => s === params['boss']);
       }
-      this._chosenSource$.next(sourceFromParam);
+      this._chosenSource$.next(sourceFromParam || sources[0]);
     }),
     switchMap(() => this._chosenSource$.asObservable())
   );

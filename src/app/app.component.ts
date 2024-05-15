@@ -7,8 +7,8 @@ import range from 'lodash-es/range';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  backgrounds = range(1, 16);
-  constructor(private renderer: Renderer2) {}
+  backgrounds = range(1, 18);
+  constructor(private renderer: Renderer2) { }
 
   ngOnInit() {
     const randomImage =
