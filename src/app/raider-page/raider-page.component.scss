@@ -1,0 +1,4 @@
+@use "bulma/sass/utilities/css-variables" as cv;
+.hero {
+  border-radius: cv.getVar("radius-large");
+}

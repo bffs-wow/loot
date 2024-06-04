@@ -48,7 +48,10 @@
   <article class="media" *ngFor="let group of selectedItemGroups">
     <figure class="media-left has-text-centered" style="width: 5rem">
       <h1 class="is-1">{{ group.points }}</h1>
-      <small class="is-size-6 has-text-warning" *ngIf="group.allUnlisted">
+      <small
+        class="is-size-6 has-text-warning"
+        *ngIf="noneListed(group.rankings)"
+      >
         <abbr
           title="All of these raiders did not list the item, but are still eligible."
         >

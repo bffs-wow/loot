@@ -19,8 +19,10 @@
           ]"
           >{{ receipt.item.name }}</a
         >
-        -
-        <small>{{ itemService.getTmbItem(receipt.item) | async | zone }}</small>
+
+        <small *ngIf="itemService.getTmbItem(receipt.item) | async as tmbItem">
+          - {{ tmbItem | zone }}</small
+        >
         <small *ngIf="receipt.item.pivot?.note">
           - {{ receipt.item.pivot.note }}</small
         >

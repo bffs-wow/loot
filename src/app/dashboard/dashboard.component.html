@@ -1,9 +1,9 @@
 <section class="section" *ngIf="state.raiders$ | async as raiders">
-  <div class="tile is-ancestor">
-    <div class="tile is-vertical is-8">
-      <div class="tile">
-        <div class="tile is-parent is-vertical">
-          <article class="tile is-child box is-dark">
+  <div class="columns">
+    <div class="column is-8">
+      <div class="columns">
+        <div class="column">
+          <article class="box is-dark">
             <ng-container
               *ngIf="state.selectedRaider$ | async as raider; else noRaider"
             >
@@ -14,16 +14,16 @@
             </ng-template>
           </article>
         </div>
-        <div class="tile is-parent">
-          <article class="tile is-child box is-dark">
+        <div class="column">
+          <article class="box is-dark">
             <p class="title">Loot Lookup</p>
             <app-loot-lookup></app-loot-lookup>
           </article>
         </div>
       </div>
     </div>
-    <div class="tile is-parent">
-      <article class="tile is-child box is-dark">
+    <div class="column">
+      <article class="box is-dark">
         <app-loot-feed></app-loot-feed>
       </article>
     </div>

@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ItemPageComponent } from './item-page/item-page.component';
 import { RaiderPageComponent } from './raider-page/raider-page.component';
 import { RosterPageComponent } from './roster-page/roster-page.component';
+import { ItemGroupPageComponent } from './item-group-page/item-group-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'item/:id',
     component: ItemPageComponent,
+  },
+  {
+    path: 'item-group/:itemGroupName',
+    component: ItemGroupPageComponent,
   },
   {
     path: 'raider/:name',
@@ -40,7 +45,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {})],
+  imports: [RouterModule.forRoot(routes, { bindToComponentInputs: true })],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

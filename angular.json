@@ -72,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "synergy-loot:build"
+            "buildTarget": "synergy-loot:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "synergy-loot:build:production"
+              "buildTarget": "synergy-loot:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "synergy-loot:build"
+            "buildTarget": "synergy-loot:build"
           }
         },
         "test": {

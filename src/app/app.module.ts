@@ -42,4 +42,4 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

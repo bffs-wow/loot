@@ -27,6 +27,8 @@ import { ItemService } from '../../tmb/item.service';
 import { LootGroup } from 'src/app/loot-list/models/loot-group.model';
 import { BaseWowItem, CsvItem } from 'src/app/tmb/models/item.interface';
 import uniqBy from 'lodash-es/uniqBy';
+import { LootRanking } from 'src/app/loot-list/models/ranking.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loot-lookup',
@@ -53,12 +55,13 @@ export class LootLookupComponent implements OnInit, OnDestroy {
   selectedItem$: Observable<LootGroup[]>;
 
   constructor(
+    private router: Router,
     public state: StateService,
-    private itemService: ItemService,
+    protected itemService: ItemService,
     private lootListFacade: LootListFacadeService,
     public fb: UntypedFormBuilder,
     public lootAnnounceService: LootAnnounceService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -95,8 +98,14 @@ export class LootLookupComponent implements OnInit, OnDestroy {
       startWith(this.item),
       filter((i) => !!i),
       switchMap((item: CsvItem) =>
-        this.lootListFacade.getRankedLootGroups(item.id)
-      )
+        this.lootListFacade.getRankedLootGroups(item.id).pipe(
+          tap(groups => {
+            if (groups.length === 0) {
+              this.router.navigate(['item', item.id]);
+            }
+          })
+        )
+      ),
     );
   }
 
@@ -110,5 +119,14 @@ export class LootLookupComponent implements OnInit, OnDestroy {
 
   trackByFn(item: BaseWowItem) {
     return item.item_id;
+  }
+
+  /**
+ * Returns true if none of the loot in the array is listed directly on someone's loot list
+ * @param items
+ * @returns
+ */
+  noneListed(items: LootRanking[]) {
+    return items && items.every((i) => i.item.pivot.note === 'Unlisted');
   }
 }

@@ -29,23 +29,16 @@ export class ItemService {
           );
         }
       }),
-      // Only include loot from Normal and Heroic 25 - All TMB instance data for WOTLK ends with either 'N25' or 'H25'
-      map((csvRes) =>
-        csvRes.data.filter(
-          (i) =>
-            i.instance_name.endsWith('N25') || i.instance_name.endsWith('H25')
-        )
-      ),
-      map((data) => {
+      map((csvRes) => {
         // Parse IDs into numbers
-        return data.map((i) => {
+        return csvRes.data.map((i) => {
           return { ...i, id: parseInt(i.id) };
         });
       }),
       shareReplay(1)
     );
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getByName(name: string) {
     return this.allItems$.pipe(

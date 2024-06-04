@@ -19,10211 +19,2878 @@ export type ItemRestrictions = {
 };
 
 export const ITEM_RESTRICTIONS: ItemRestrictions = {
-  '39200': {
-    ITEM_NAME: 'Grieving Spellblade',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39230': {
-    ITEM_NAME: 'Spaulders of the Monstrosity',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39701': {
-    ITEM_NAME: 'Dawnwalkers',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39702': {
-    ITEM_NAME: 'Arachnoid Gold Band',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39703': {
-    ITEM_NAME: 'Rescinding Grips',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39704': {
-    ITEM_NAME: 'Pauldrons of Unnatural Death',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39706': {
-    ITEM_NAME: 'Sabatons of Sudden Reprisal',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39712': {
-    ITEM_NAME: 'Gemmed Wand of the Nerubians',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39714': {
-    ITEM_NAME: 'Webbed Death',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39716': {
-    ITEM_NAME: 'Shield of Assimilation',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39717': {
-    ITEM_NAME: 'Inexorable Sabatons',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39718': {
-    ITEM_NAME: 'Corpse Scarab Handguards',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39719': {
-    ITEM_NAME: 'Mantle of the Locusts',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39720': {
-    ITEM_NAME: 'Leggings of Atrophy',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39721': {
-    ITEM_NAME: 'Sash of the Parlor',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39722': {
-    ITEM_NAME: 'Swarm Bindings',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39723': {
-    ITEM_NAME: 'Fire-Scorched Greathelm',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39724': {
-    ITEM_NAME: "Cult's Chestguard",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39725': {
-    ITEM_NAME: 'Epaulets of the Grieving Servant',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39726': {
-    ITEM_NAME: 'Callous-Hearted Gauntlets',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39727': {
-    ITEM_NAME: 'Dislocating Handguards',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39728': {
-    ITEM_NAME: 'Totem of Misery',
-    allowedClasses: [Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39729': {
-    ITEM_NAME: 'Bracers of the Tyrant',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39730': {
-    ITEM_NAME: "Widow's Fury",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39731': {
-    ITEM_NAME: 'Punctilious Bindings',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39732': {
-    ITEM_NAME: "Faerlina's Madness",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39733': {
-    ITEM_NAME: 'Gloves of Token Respect',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39734': {
-    ITEM_NAME: 'Atonement Greaves',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39735': {
-    ITEM_NAME: 'Belt of False Dignity',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39756': {
-    ITEM_NAME: 'Tunic of Prejudice',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39757': {
-    ITEM_NAME: 'Idol of Worship',
-    allowedClasses: [Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39758': {
-    ITEM_NAME: 'The Jawbone',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39759': {
-    ITEM_NAME: 'Ablative Chitin Girdle',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39760': {
-    ITEM_NAME: 'Helm of Diminished Pride',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39761': {
-    ITEM_NAME: 'Infectious Skitterer Leggings',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39762': {
-    ITEM_NAME: 'Torn Web Wrapping',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39763': {
-    ITEM_NAME: 'Wraith Strike',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39764': {
-    ITEM_NAME: 'Bindings of the Hapless Prey',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39765': {
-    ITEM_NAME: "Sinner's Bindings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39766': {
-    ITEM_NAME: "Matriarch's Spawn",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39767': {
-    ITEM_NAME: 'Undiminished Battleplate',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '39768': {
-    ITEM_NAME: 'Cowl of the Perished',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40060': {
-    ITEM_NAME: 'Distorted Limbs',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40061': {
-    ITEM_NAME: 'Quivering Tunic',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40062': {
-    ITEM_NAME: 'Digested Silken Robes',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40063': {
-    ITEM_NAME: 'Mantle of Shattered Kinship',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40064': {
-    ITEM_NAME: 'Thunderstorm Amulet',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40065': {
-    ITEM_NAME: "Fool's Trial",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40069': {
-    ITEM_NAME: 'Heritage',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40071': {
-    ITEM_NAME: 'Chains of Adoration',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40074': {
-    ITEM_NAME: 'Strong-Handed Ring',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40075': {
-    ITEM_NAME: 'Ruthlessness',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40080': {
-    ITEM_NAME: 'Lost Jewel',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40107': {
-    ITEM_NAME: 'Sand-Worn Band',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40108': {
-    ITEM_NAME: 'Seized Beauty',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40184': {
-    ITEM_NAME: 'Crippled Treads',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40185': {
-    ITEM_NAME: 'Shoulderguards of Opportunity',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40186': {
-    ITEM_NAME: 'Thrusting Bands',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40187': {
-    ITEM_NAME: 'Poignant Sabatons',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40188': {
-    ITEM_NAME: 'Gauntlets of the Disobedient',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40189': {
-    ITEM_NAME: 'Angry Dread',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40190': {
-    ITEM_NAME: 'Spinning Fate',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40191': {
-    ITEM_NAME: 'Libram of Radiance',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40192': {
-    ITEM_NAME: 'Accursed Spine',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40193': {
-    ITEM_NAME: 'Tunic of Masked Suffering',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40194': {
-    ITEM_NAME: 'Blanketing Robes of Snow',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40196': {
-    ITEM_NAME: 'Legguards of the Undisturbed',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40197': {
-    ITEM_NAME: 'Gloves of the Fallen Wizard',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40198': {
-    ITEM_NAME: 'Bands of Impurity',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40200': {
-    ITEM_NAME: 'Belt of Potent Chanting',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40201': {
-    ITEM_NAME: 'Leggings of Colossal Strides',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40203': {
-    ITEM_NAME: 'Breastplate of Tormented Rage',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40204': {
-    ITEM_NAME: 'Legguards of the Apostle',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40205': {
-    ITEM_NAME: 'Stalk-Skin Belt',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40206': {
-    ITEM_NAME: 'Iron-Spring Jumpers',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40207': {
-    ITEM_NAME: 'Sigil of Awareness',
-    allowedClasses: [Class.DeathKnight],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40208': {
-    ITEM_NAME: "Cryptfiend's Bite",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40209': {
-    ITEM_NAME: 'Bindings of the Decrepit',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40210': {
-    ITEM_NAME: 'Chestguard of Bitter Charms',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40233': {
-    ITEM_NAME: 'The Undeath Carrier',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40234': {
-    ITEM_NAME: "Heigan's Putrid Vestments",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40235': {
-    ITEM_NAME: 'Helm of Pilgrimage',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40236': {
-    ITEM_NAME: 'Serene Echoes',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40237': {
-    ITEM_NAME: 'Eruption-Scarred Boots',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40238': {
-    ITEM_NAME: 'Gloves of the Dancing Bear',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40239': {
-    ITEM_NAME: 'The Hand of Nerub',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40240': {
-    ITEM_NAME: 'Greaves of Turbulence',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40241': {
-    ITEM_NAME: 'Girdle of Unity',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40242': {
-    ITEM_NAME: 'Grotesque Handgrips',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40243': {
-    ITEM_NAME: 'Footwraps of Vile Deceit',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40244': {
-    ITEM_NAME: 'The Impossible Dream',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40245': {
-    ITEM_NAME: 'Fading Glow',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40246': {
-    ITEM_NAME: 'Boots of Impetuous Ideals',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40247': {
-    ITEM_NAME: 'Cowl of Innocent Delight',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40249': {
-    ITEM_NAME: 'Vest of Vitality',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40250': {
-    ITEM_NAME: 'Aged Winter Cloak',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40251': {
-    ITEM_NAME: 'Shroud of Luminosity',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40252': {
-    ITEM_NAME: 'Cloak of the Shadowed Sun',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40253': {
-    ITEM_NAME: 'Shawl of the Old Maid',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40254': {
-    ITEM_NAME: 'Cloak of Averted Crisis',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40255': {
-    ITEM_NAME: 'Dying Curse',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40256': {
-    ITEM_NAME: 'Grim Toll',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40257': {
-    ITEM_NAME: "Defender's Code",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40258': {
-    ITEM_NAME: 'Forethought Talisman',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40259': {
-    ITEM_NAME: 'Waistguard of Divine Grace',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40260': {
-    ITEM_NAME: 'Belt of the Tortured',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40261': {
-    ITEM_NAME: 'Crude Discolored Battlegrips',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40262': {
-    ITEM_NAME: 'Gloves of Calculated Risk',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40263': {
-    ITEM_NAME: 'Fleshless Girdle',
-    allowedClasses: [Class.Paladin, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40264': {
-    ITEM_NAME: 'Split Greathammer',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40265': {
-    ITEM_NAME: 'Arrowsong',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40266': {
-    ITEM_NAME: "Hero's Surrender",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40267': {
-    ITEM_NAME: 'Totem of Hex',
-    allowedClasses: [Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40268': {
-    ITEM_NAME: 'Libram of Tolerance',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40269': {
-    ITEM_NAME: 'Boots of Persuasion',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40270': {
-    ITEM_NAME: 'Boots of Septic Wounds',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40271': {
-    ITEM_NAME: 'Sash of Solitude',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40272': {
-    ITEM_NAME: 'Girdle of the Gambit',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40273': {
-    ITEM_NAME: 'Surplus Limb',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40274': {
-    ITEM_NAME: 'Bracers of Liberation',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40275': {
-    ITEM_NAME: 'Depraved Linked Belt',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40277': {
-    ITEM_NAME: 'Tunic of Indulgence',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40278': {
-    ITEM_NAME: 'Girdle of Chivalry',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40279': {
-    ITEM_NAME: 'Chestguard of the Exhausted',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40280': {
-    ITEM_NAME: 'Origin of Nightmares',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40281': {
-    ITEM_NAME: 'Twilight Mist',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40282': {
-    ITEM_NAME: 'Slime Stream Bands',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40283': {
-    ITEM_NAME: 'Fallout Impervious Tunic',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40284': {
-    ITEM_NAME: 'Plague Igniter',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40285': {
-    ITEM_NAME: 'Desecrated Past',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40286': {
-    ITEM_NAME: 'Mantle of the Corrupted',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40287': {
-    ITEM_NAME: 'Cowl of Vanity',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40288': {
-    ITEM_NAME: 'Spaulders of Incoherence',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40289': {
-    ITEM_NAME: 'Sympathetic Amice',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40294': {
-    ITEM_NAME: 'Riveted Abomination Leggings',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40296': {
-    ITEM_NAME: 'Cover of Silence',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40297': {
-    ITEM_NAME: 'Sabatons of Endurance',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40298': {
-    ITEM_NAME: 'Faceguard of the Succumbed',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40299': {
-    ITEM_NAME: 'Pauldrons of the Abandoned',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40300': {
-    ITEM_NAME: 'Spire of Sunset',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40301': {
-    ITEM_NAME: 'Cincture of Polarity',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40302': {
-    ITEM_NAME: "Benefactor's Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40303': {
-    ITEM_NAME: 'Wraps of the Persecuted',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40304': {
-    ITEM_NAME: 'Headpiece of Fungal Bloom',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40305': {
-    ITEM_NAME: 'Spaulders of Egotism',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40306': {
-    ITEM_NAME: 'Bracers of the Unholy Knight',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40315': {
-    ITEM_NAME: 'Shoulderpads of Secret Arts',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40316': {
-    ITEM_NAME: 'Gauntlets of Guiding Touch',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40317': {
-    ITEM_NAME: 'Girdle of Razuvious',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40318': {
-    ITEM_NAME: 'Legplates of Double Strikes',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40319': {
-    ITEM_NAME: 'Chestpiece of Suspicion',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40320': {
-    ITEM_NAME: 'Faithful Steel Sabatons',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40321': {
-    ITEM_NAME: 'Idol of the Shooting Star',
-    allowedClasses: [Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40322': {
-    ITEM_NAME: 'Totem of Dueling',
-    allowedClasses: [Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40323': {
-    ITEM_NAME: 'Esteemed Bindings',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40324': {
-    ITEM_NAME: 'Bands of Mutual Respect',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40325': {
-    ITEM_NAME: 'Bindings of the Expansive Mind',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40326': {
-    ITEM_NAME: 'Boots of Forlorn Wishes',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40327': {
-    ITEM_NAME: 'Girdle of Recuperation',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40328': {
-    ITEM_NAME: 'Helm of Vital Protection',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40329': {
-    ITEM_NAME: 'Hood of the Exodus',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40330': {
-    ITEM_NAME: 'Bracers of Unrelenting Attack',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40331': {
-    ITEM_NAME: 'Leggings of Failed Escape',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40332': {
-    ITEM_NAME: 'Abetment Bracers',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40333': {
-    ITEM_NAME: 'Leggings of Fleeting Moments',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40334': {
-    ITEM_NAME: 'Burdened Shoulderplates',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40335': {
-    ITEM_NAME: 'Touch of Horror',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40336': {
-    ITEM_NAME: 'Life and Death',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40337': {
-    ITEM_NAME: 'Libram of Resurgence',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40338': {
-    ITEM_NAME: 'Bindings of Yearning',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40339': {
-    ITEM_NAME: "Gothik's Cowl",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40340': {
-    ITEM_NAME: 'Helm of Unleashed Energy',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40341': {
-    ITEM_NAME: 'Shackled Cinch',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40342': {
-    ITEM_NAME: 'Idol of Awakening',
-    allowedClasses: [Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40343': {
-    ITEM_NAME: 'Armageddon',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40344': {
-    ITEM_NAME: 'Helm of the Grave',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40345': {
-    ITEM_NAME: 'Broken Promise',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40346': {
-    ITEM_NAME: 'Final Voyage',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40347': {
-    ITEM_NAME: "Zeliek's Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40348': {
-    ITEM_NAME: 'Damnation',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40349': {
-    ITEM_NAME: 'Gloves of Peaceful Death',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40350': {
-    ITEM_NAME: 'Urn of Lost Memories',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40351': {
-    ITEM_NAME: 'Mantle of the Fatigued Sage',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40352': {
-    ITEM_NAME: 'Leggings of Voracious Shadows',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40362': {
-    ITEM_NAME: 'Gloves of Fast Reactions',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40363': {
-    ITEM_NAME: 'Bone-Inlaid Legguards',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40365': {
-    ITEM_NAME: 'Breastplate of Frozen Pain',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40366': {
-    ITEM_NAME: 'Platehelm of the Great Wyrm',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40367': {
-    ITEM_NAME: 'Boots of the Great Construct',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40368': {
-    ITEM_NAME: 'Murder',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40369': {
-    ITEM_NAME: 'Icy Blast Amulet',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40370': {
-    ITEM_NAME: 'Gatekeeper',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40371': {
-    ITEM_NAME: "Bandit's Insignia",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40372': {
-    ITEM_NAME: 'Rune of Repulsion',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40373': {
-    ITEM_NAME: 'Extract of Necromantic Power',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40374': {
-    ITEM_NAME: 'Cosmic Lights',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40375': {
-    ITEM_NAME: 'Ring of Decaying Beauty',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40376': {
-    ITEM_NAME: 'Legwraps of the Defeated Dragon',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40377': {
-    ITEM_NAME: 'Noble Birthright Pauldrons',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40378': {
-    ITEM_NAME: 'Ceaseless Pity',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40379': {
-    ITEM_NAME: 'Legguards of the Boneyard',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40380': {
-    ITEM_NAME: 'Gloves of Grandeur',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40381': {
-    ITEM_NAME: 'Sympathy',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40382': {
-    ITEM_NAME: 'Soul of the Dead',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40383': {
-    ITEM_NAME: "Calamity's Grasp",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40384': {
-    ITEM_NAME: 'Betrayer of Humanity',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40385': {
-    ITEM_NAME: 'Envoy of Mortality',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40386': {
-    ITEM_NAME: 'Sinister Revenge',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40387': {
-    ITEM_NAME: 'Boundless Ambition',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40388': {
-    ITEM_NAME: "Journey's End",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40395': {
-    ITEM_NAME: 'Torch of Holy Fire',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40396': {
-    ITEM_NAME: 'The Turning Tide',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40398': {
-    ITEM_NAME: 'Leggings of Mortal Arrogance',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40399': {
-    ITEM_NAME: 'Signet of Manifested Pain',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40400': {
-    ITEM_NAME: 'Wall of Terror',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40401': {
-    ITEM_NAME: 'Voice of Reason',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40402': {
-    ITEM_NAME: 'Last Laugh',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40403': {
-    ITEM_NAME: 'Drape of the Deadly Foe',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40405': {
-    ITEM_NAME: 'Cape of the Unworthy Wizard',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40406': {
-    ITEM_NAME: 'Inevitable Defeat',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40407': {
-    ITEM_NAME: 'Silent Crusader',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40408': {
-    ITEM_NAME: 'Haunting Call',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40409': {
-    ITEM_NAME: 'Boots of the Escaped Captive',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40410': {
-    ITEM_NAME: 'Shadow of the Ghoul',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40412': {
-    ITEM_NAME: 'Ousted Bead Necklace',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40414': {
-    ITEM_NAME: 'Shoulderguards of the Undaunted',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40415': {
-    ITEM_NAME: 'Valorous Frostfire Gloves',
-    allowedClasses: [Class.Mage],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40417': {
-    ITEM_NAME: 'Valorous Frostfire Leggings',
-    allowedClasses: [Class.Mage],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40418': {
-    ITEM_NAME: 'Valorous Frostfire Robe',
-    allowedClasses: [Class.Mage],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40420': {
-    ITEM_NAME: 'Valorous Plagueheart Gloves',
-    allowedClasses: [Class.Warlock],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40422': {
-    ITEM_NAME: 'Valorous Plagueheart Leggings',
-    allowedClasses: [Class.Warlock],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40423': {
-    ITEM_NAME: 'Valorous Plagueheart Robe',
-    allowedClasses: [Class.Warlock],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40431': {
-    ITEM_NAME: 'Fury of the Five Flights',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40432': {
-    ITEM_NAME: 'Illustration of the Dragon Soul',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40433': {
-    ITEM_NAME: 'Wyrmrest Band',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40437': {
-    ITEM_NAME: 'Concealment Shoulderpads',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40438': {
-    ITEM_NAME: 'Council Chamber Epaulets',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40439': {
-    ITEM_NAME: 'Mantle of the Eternal Sentinel',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40445': {
-    ITEM_NAME: 'Valorous Gloves of Faith',
-    allowedClasses: [Class.Priest],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40446': {
-    ITEM_NAME: 'Dragon Brood Legguards',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40448': {
-    ITEM_NAME: 'Valorous Leggings of Faith',
-    allowedClasses: [Class.Priest],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40449': {
-    ITEM_NAME: 'Valorous Robe of Faith',
-    allowedClasses: [Class.Priest],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40451': {
-    ITEM_NAME: 'Hyaline Helm of the Sniper',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40453': {
-    ITEM_NAME: 'Chestplate of the Great Aspects',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40454': {
-    ITEM_NAME: 'Valorous Handwraps of Faith',
-    allowedClasses: [Class.Priest],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40455': {
-    ITEM_NAME: 'Staff of Restraint',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40457': {
-    ITEM_NAME: 'Valorous Pants of Faith',
-    allowedClasses: [Class.Priest],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40458': {
-    ITEM_NAME: 'Valorous Raiments of Faith',
-    allowedClasses: [Class.Priest],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40460': {
-    ITEM_NAME: 'Valorous Dreamwalker Handguards',
-    allowedClasses: [Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40462': {
-    ITEM_NAME: 'Valorous Dreamwalker Leggings',
-    allowedClasses: [Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40463': {
-    ITEM_NAME: 'Valorous Dreamwalker Robe',
-    allowedClasses: [Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40466': {
-    ITEM_NAME: 'Valorous Dreamwalker Gloves',
-    allowedClasses: [Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40468': {
-    ITEM_NAME: 'Valorous Dreamwalker Trousers',
-    allowedClasses: [Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40469': {
-    ITEM_NAME: 'Valorous Dreamwalker Vestments',
-    allowedClasses: [Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40471': {
-    ITEM_NAME: 'Valorous Dreamwalker Raiments',
-    allowedClasses: [Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40472': {
-    ITEM_NAME: 'Valorous Dreamwalker Handgrips',
-    allowedClasses: [Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40474': {
-    ITEM_NAME: 'Surge Needle Ring',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40493': {
-    ITEM_NAME: 'Valorous Dreamwalker Legguards',
-    allowedClasses: [Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40495': {
-    ITEM_NAME: 'Valorous Bonescythe Breastplate',
-    allowedClasses: [Class.Rogue],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40496': {
-    ITEM_NAME: 'Valorous Bonescythe Gauntlets',
-    allowedClasses: [Class.Rogue],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40500': {
-    ITEM_NAME: 'Valorous Bonescythe Legplates',
-    allowedClasses: [Class.Rogue],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40503': {
-    ITEM_NAME: 'Valorous Cryptstalker Tunic',
-    allowedClasses: [Class.Hunter],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40504': {
-    ITEM_NAME: 'Valorous Cryptstalker Handguards',
-    allowedClasses: [Class.Hunter],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40506': {
-    ITEM_NAME: 'Valorous Cryptstalker Legguards',
-    allowedClasses: [Class.Hunter],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40508': {
-    ITEM_NAME: 'Valorous Earthshatter Tunic',
-    allowedClasses: [Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40509': {
-    ITEM_NAME: 'Valorous Earthshatter Handguards',
-    allowedClasses: [Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40512': {
-    ITEM_NAME: 'Valorous Earthshatter Legguards',
-    allowedClasses: [Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40514': {
-    ITEM_NAME: 'Valorous Earthshatter Hauberk',
-    allowedClasses: [Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40515': {
-    ITEM_NAME: 'Valorous Earthshatter Gloves',
-    allowedClasses: [Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40517': {
-    ITEM_NAME: 'Valorous Earthshatter Kilt',
-    allowedClasses: [Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40520': {
-    ITEM_NAME: 'Valorous Earthshatter Grips',
-    allowedClasses: [Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40522': {
-    ITEM_NAME: 'Valorous Earthshatter War-Kilt',
-    allowedClasses: [Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40523': {
-    ITEM_NAME: 'Valorous Earthshatter Chestguard',
-    allowedClasses: [Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40525': {
-    ITEM_NAME: 'Valorous Dreadnaught Battleplate',
-    allowedClasses: [Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40526': {
-    ITEM_NAME: 'Gown of the Spell-Weaver',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40527': {
-    ITEM_NAME: 'Valorous Dreadnaught Gauntlets',
-    allowedClasses: [Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40529': {
-    ITEM_NAME: 'Valorous Dreadnaught Legplates',
-    allowedClasses: [Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40531': {
-    ITEM_NAME: 'Mark of Norgannon',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40532': {
-    ITEM_NAME: 'Living Ice Crystals',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40539': {
-    ITEM_NAME: 'Chestguard of the Recluse',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40541': {
-    ITEM_NAME: 'Frosted Adroit Handguards',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40543': {
-    ITEM_NAME: 'Blue Aspect Helm',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40544': {
-    ITEM_NAME: 'Valorous Dreadnaught Breastplate',
-    allowedClasses: [Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40545': {
-    ITEM_NAME: 'Valorous Dreadnaught Handguards',
-    allowedClasses: [Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40547': {
-    ITEM_NAME: 'Valorous Dreadnaught Legguards',
-    allowedClasses: [Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40549': {
-    ITEM_NAME: 'Boots of the Renewed Flight',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40550': {
-    ITEM_NAME: 'Valorous Scourgeborne Battleplate',
-    allowedClasses: [Class.DeathKnight],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40552': {
-    ITEM_NAME: 'Valorous Scourgeborne Gauntlets',
-    allowedClasses: [Class.DeathKnight],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40555': {
-    ITEM_NAME: 'Mantle of Dissemination',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40556': {
-    ITEM_NAME: 'Valorous Scourgeborne Legplates',
-    allowedClasses: [Class.DeathKnight],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40558': {
-    ITEM_NAME: 'Arcanic Tramplers',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40559': {
-    ITEM_NAME: 'Valorous Scourgeborne Chestguard',
-    allowedClasses: [Class.DeathKnight],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40560': {
-    ITEM_NAME: 'Leggings of the Wanton Spellcaster',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40561': {
-    ITEM_NAME: 'Leash of Heedless Magic',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40562': {
-    ITEM_NAME: 'Hood of Rationality',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40563': {
-    ITEM_NAME: 'Valorous Scourgeborne Handguards',
-    allowedClasses: [Class.DeathKnight],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40564': {
-    ITEM_NAME: 'Winter Spectacle Gloves',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40566': {
-    ITEM_NAME: 'Unravelling Strands of Sanity',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40567': {
-    ITEM_NAME: 'Valorous Scourgeborne Legguards',
-    allowedClasses: [Class.DeathKnight],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40569': {
-    ITEM_NAME: 'Valorous Redemption Tunic',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40570': {
-    ITEM_NAME: 'Valorous Redemption Gloves',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40572': {
-    ITEM_NAME: 'Valorous Redemption Greaves',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40574': {
-    ITEM_NAME: 'Valorous Redemption Chestpiece',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40575': {
-    ITEM_NAME: 'Valorous Redemption Gauntlets',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40577': {
-    ITEM_NAME: 'Valorous Redemption Legplates',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40579': {
-    ITEM_NAME: 'Valorous Redemption Breastplate',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40580': {
-    ITEM_NAME: 'Valorous Redemption Handguards',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40583': {
-    ITEM_NAME: 'Valorous Redemption Legguards',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40588': {
-    ITEM_NAME: 'Tunic of the Artifact Guardian',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40589': {
-    ITEM_NAME: 'Legplates of Sovereignty',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40590': {
-    ITEM_NAME: 'Elevated Lair Pauldrons',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40591': {
-    ITEM_NAME: 'Melancholy Sabatons',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40592': {
-    ITEM_NAME: 'Boots of Healing Energies',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40594': {
-    ITEM_NAME: 'Spaulders of Catatonia',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40602': {
-    ITEM_NAME: 'Robes of Mutation',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40625': {
-    ITEM_NAME: 'Breastplate of the Lost Conqueror',
-    allowedClasses: [Class.Paladin, Class.Priest, Class.Warlock],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40626': {
-    ITEM_NAME: 'Breastplate of the Lost Protector',
-    allowedClasses: [Class.Hunter, Class.Shaman, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40627': {
-    ITEM_NAME: 'Breastplate of the Lost Vanquisher',
-    allowedClasses: [Class.DeathKnight, Class.Druid, Class.Mage, Class.Rogue],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40628': {
-    ITEM_NAME: 'Gauntlets of the Lost Conqueror',
-    allowedClasses: [Class.Paladin, Class.Priest, Class.Warlock],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40629': {
-    ITEM_NAME: 'Gauntlets of the Lost Protector',
-    allowedClasses: [Class.Hunter, Class.Shaman, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40630': {
-    ITEM_NAME: 'Gauntlets of the Lost Vanquisher',
-    allowedClasses: [Class.DeathKnight, Class.Druid, Class.Mage, Class.Rogue],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40631': {
-    ITEM_NAME: 'Crown of the Lost Conqueror',
-    allowedClasses: [Class.Paladin, Class.Priest, Class.Warlock],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40632': {
-    ITEM_NAME: 'Crown of the Lost Protector',
-    allowedClasses: [Class.Hunter, Class.Shaman, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40633': {
-    ITEM_NAME: 'Crown of the Lost Vanquisher',
-    allowedClasses: [Class.DeathKnight, Class.Druid, Class.Mage, Class.Rogue],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40634': {
-    ITEM_NAME: 'Legplates of the Lost Conqueror',
-    allowedClasses: [Class.Paladin, Class.Priest, Class.Warlock],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40635': {
-    ITEM_NAME: 'Legplates of the Lost Protector',
-    allowedClasses: [Class.Hunter, Class.Shaman, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40636': {
-    ITEM_NAME: 'Legplates of the Lost Vanquisher',
-    allowedClasses: [Class.DeathKnight, Class.Druid, Class.Mage, Class.Rogue],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40637': {
-    ITEM_NAME: 'Mantle of the Lost Conqueror',
-    allowedClasses: [Class.Paladin, Class.Priest, Class.Warlock],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40638': {
-    ITEM_NAME: 'Mantle of the Lost Protector',
-    allowedClasses: [Class.Hunter, Class.Shaman, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40639': {
-    ITEM_NAME: 'Mantle of the Lost Vanquisher',
-    allowedClasses: [Class.DeathKnight, Class.Druid, Class.Mage, Class.Rogue],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40784': {
-    ITEM_NAME: "Deadly Gladiator's Dreadplate Chestpiece",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40785': {
-    ITEM_NAME: "Deadly Gladiator's Scaled Chestpiece",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40786': {
-    ITEM_NAME: "Deadly Gladiator's Plate Chestpiece",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40804': {
-    ITEM_NAME: "Deadly Gladiator's Plate Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40805': {
-    ITEM_NAME: "Deadly Gladiator's Scaled Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40806': {
-    ITEM_NAME: "Deadly Gladiator's Dreadplate Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40807': {
-    ITEM_NAME: "Furious Gladiator's Plate Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40808': {
-    ITEM_NAME: "Furious Gladiator's Scaled Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40809': {
-    ITEM_NAME: "Furious Gladiator's Dreadplate Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40810': {
-    ITEM_NAME: "Relentless Gladiator's Plate Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40811': {
-    ITEM_NAME: "Relentless Gladiator's Dreadplate Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40812': {
-    ITEM_NAME: "Relentless Gladiator's Scaled Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40844': {
-    ITEM_NAME: "Deadly Gladiator's Plate Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40845': {
-    ITEM_NAME: "Deadly Gladiator's Dreadplate Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40846': {
-    ITEM_NAME: "Deadly Gladiator's Scaled Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40847': {
-    ITEM_NAME: "Furious Gladiator's Plate Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40848': {
-    ITEM_NAME: "Furious Gladiator's Dreadplate Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40849': {
-    ITEM_NAME: "Furious Gladiator's Scaled Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40850': {
-    ITEM_NAME: "Relentless Gladiator's Plate Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40851': {
-    ITEM_NAME: "Relentless Gladiator's Dreadplate Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40852': {
-    ITEM_NAME: "Relentless Gladiator's Scaled Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40881': {
-    ITEM_NAME: "Furious Gladiator's Girdle of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40882': {
-    ITEM_NAME: "Furious Gladiator's Greaves of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40883': {
-    ITEM_NAME: "Relentless Gladiator's Girdle of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40884': {
-    ITEM_NAME: "Relentless Gladiator's Greaves of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40889': {
-    ITEM_NAME: "Furious Gladiator's Bracers of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40890': {
-    ITEM_NAME: "Relentless Gladiator's Bracers of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40905': {
-    ITEM_NAME: "Deadly Gladiator's Ornamented Chestguard",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40926': {
-    ITEM_NAME: "Deadly Gladiator's Ornamented Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40927': {
-    ITEM_NAME: "Furious Gladiator's Ornamented Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40928': {
-    ITEM_NAME: "Relentless Gladiator's Ornamented Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40938': {
-    ITEM_NAME: "Deadly Gladiator's Ornamented Legplates",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40939': {
-    ITEM_NAME: "Furious Gladiator's Ornamented Legplates",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40940': {
-    ITEM_NAME: "Relentless Gladiator's Ornamented Legplates",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40976': {
-    ITEM_NAME: "Furious Gladiator's Girdle of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40977': {
-    ITEM_NAME: "Furious Gladiator's Greaves of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40978': {
-    ITEM_NAME: "Relentless Gladiator's Girdle of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40979': {
-    ITEM_NAME: "Relentless Gladiator's Greaves of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40983': {
-    ITEM_NAME: "Furious Gladiator's Bracers of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40984': {
-    ITEM_NAME: "Relentless Gladiator's Bracers of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40990': {
-    ITEM_NAME: "Deadly Gladiator's Ringmail Armor",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '40991': {
-    ITEM_NAME: "Deadly Gladiator's Mail Armor",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41000': {
-    ITEM_NAME: "Deadly Gladiator's Ringmail Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41001': {
-    ITEM_NAME: "Furious Gladiator's Ringmail Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41002': {
-    ITEM_NAME: "Relentless Gladiator's Ringmail Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41006': {
-    ITEM_NAME: "Deadly Gladiator's Mail Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41007': {
-    ITEM_NAME: "Furious Gladiator's Mail Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41008': {
-    ITEM_NAME: "Relentless Gladiator's Mail Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41026': {
-    ITEM_NAME: "Deadly Gladiator's Ringmail Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41027': {
-    ITEM_NAME: "Furious Gladiator's Ringmail Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41028': {
-    ITEM_NAME: "Relentless Gladiator's Ringmail Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41032': {
-    ITEM_NAME: "Deadly Gladiator's Mail Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41033': {
-    ITEM_NAME: "Furious Gladiator's Mail Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41034': {
-    ITEM_NAME: "Relentless Gladiator's Mail Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41051': {
-    ITEM_NAME: "Furious Gladiator's Waistguard of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41052': {
-    ITEM_NAME: "Relentless Gladiator's Waistguard of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41055': {
-    ITEM_NAME: "Furious Gladiator's Sabatons of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41056': {
-    ITEM_NAME: "Relentless Gladiator's Sabatons of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41060': {
-    ITEM_NAME: "Furious Gladiator's Wristguards of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41061': {
-    ITEM_NAME: "Relentless Gladiator's Wristguards of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41065': {
-    ITEM_NAME: "Furious Gladiator's Wristguards of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41066': {
-    ITEM_NAME: "Relentless Gladiator's Wristguards of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41070': {
-    ITEM_NAME: "Furious Gladiator's Waistguard of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41071': {
-    ITEM_NAME: "Relentless Gladiator's Waistguard of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41075': {
-    ITEM_NAME: "Furious Gladiator's Sabatons of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41076': {
-    ITEM_NAME: "Relentless Gladiator's Sabatons of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41080': {
-    ITEM_NAME: "Deadly Gladiator's Linked Armor",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41086': {
-    ITEM_NAME: "Deadly Gladiator's Chain Armor",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41136': {
-    ITEM_NAME: "Deadly Gladiator's Linked Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41137': {
-    ITEM_NAME: "Furious Gladiator's Linked Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41138': {
-    ITEM_NAME: "Relentless Gladiator's Linked Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41142': {
-    ITEM_NAME: "Deadly Gladiator's Chain Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41143': {
-    ITEM_NAME: "Furious Gladiator's Chain Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41144': {
-    ITEM_NAME: "Relentless Gladiator's Chain Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41198': {
-    ITEM_NAME: "Deadly Gladiator's Linked Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41199': {
-    ITEM_NAME: "Furious Gladiator's Linked Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41200': {
-    ITEM_NAME: "Relentless Gladiator's Linked Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41204': {
-    ITEM_NAME: "Deadly Gladiator's Chain Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41205': {
-    ITEM_NAME: "Furious Gladiator's Chain Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41206': {
-    ITEM_NAME: "Relentless Gladiator's Chain Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41225': {
-    ITEM_NAME: "Furious Gladiator's Wristguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41226': {
-    ITEM_NAME: "Relentless Gladiator's Wristguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41230': {
-    ITEM_NAME: "Furious Gladiator's Sabatons of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41231': {
-    ITEM_NAME: "Relentless Gladiator's Sabatons of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41235': {
-    ITEM_NAME: "Furious Gladiator's Waistguard of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41236': {
-    ITEM_NAME: "Relentless Gladiator's Waistguard of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41286': {
-    ITEM_NAME: "Deadly Gladiator's Kodohide Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41287': {
-    ITEM_NAME: "Furious Gladiator's Kodohide Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41288': {
-    ITEM_NAME: "Relentless Gladiator's Kodohide Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41292': {
-    ITEM_NAME: "Deadly Gladiator's Wyrmhide Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41293': {
-    ITEM_NAME: "Furious Gladiator's Wyrmhide Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41294': {
-    ITEM_NAME: "Relentless Gladiator's Wyrmhide Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41297': {
-    ITEM_NAME: "Deadly Gladiator's Kodohide Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41298': {
-    ITEM_NAME: "Furious Gladiator's Kodohide Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41299': {
-    ITEM_NAME: "Relentless Gladiator's Kodohide Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41303': {
-    ITEM_NAME: "Deadly Gladiator's Wyrmhide Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41304': {
-    ITEM_NAME: "Furious Gladiator's Wyrmhide Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41305': {
-    ITEM_NAME: "Relentless Gladiator's Wyrmhide Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41309': {
-    ITEM_NAME: "Deadly Gladiator's Kodohide Robes",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41315': {
-    ITEM_NAME: "Deadly Gladiator's Wyrmhide Robes",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41617': {
-    ITEM_NAME: "Furious Gladiator's Belt of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41618': {
-    ITEM_NAME: "Relentless Gladiator's Belt of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41621': {
-    ITEM_NAME: "Furious Gladiator's Boots of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41622': {
-    ITEM_NAME: "Relentless Gladiator's Boots of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41625': {
-    ITEM_NAME: "Furious Gladiator's Armwraps of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41626': {
-    ITEM_NAME: "Relentless Gladiator's Armwraps of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41630': {
-    ITEM_NAME: "Furious Gladiator's Belt of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41631': {
-    ITEM_NAME: "Relentless Gladiator's Belt of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41635': {
-    ITEM_NAME: "Furious Gladiator's Boots of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41636': {
-    ITEM_NAME: "Relentless Gladiator's Boots of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41640': {
-    ITEM_NAME: "Furious Gladiator's Armwraps of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41641': {
-    ITEM_NAME: "Relentless Gladiator's Armwraps of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41649': {
-    ITEM_NAME: "Deadly Gladiator's Leather Tunic",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41654': {
-    ITEM_NAME: "Deadly Gladiator's Leather Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41655': {
-    ITEM_NAME: "Furious Gladiator's Leather Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41656': {
-    ITEM_NAME: "Relentless Gladiator's Leather Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41660': {
-    ITEM_NAME: "Deadly Gladiator's Dragonhide Robes",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41666': {
-    ITEM_NAME: "Deadly Gladiator's Dragonhide Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41667': {
-    ITEM_NAME: "Furious Gladiator's Dragonhide Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41668': {
-    ITEM_NAME: "Relentless Gladiator's Dragonhide Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41766': {
-    ITEM_NAME: "Deadly Gladiator's Leather Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41767': {
-    ITEM_NAME: "Furious Gladiator's Leather Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41768': {
-    ITEM_NAME: "Relentless Gladiator's Leather Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41772': {
-    ITEM_NAME: "Deadly Gladiator's Dragonhide Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41773': {
-    ITEM_NAME: "Furious Gladiator's Dragonhide Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41774': {
-    ITEM_NAME: "Relentless Gladiator's Dragonhide Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41832': {
-    ITEM_NAME: "Furious Gladiator's Belt of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41833': {
-    ITEM_NAME: "Relentless Gladiator's Belt of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41836': {
-    ITEM_NAME: "Furious Gladiator's Boots of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41837': {
-    ITEM_NAME: "Relentless Gladiator's Boots of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41840': {
-    ITEM_NAME: "Furious Gladiator's Armwraps of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41841': {
-    ITEM_NAME: "Relentless Gladiator's Armwraps of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41858': {
-    ITEM_NAME: "Deadly Gladiator's Mooncloth Robe",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41863': {
-    ITEM_NAME: "Deadly Gladiator's Mooncloth Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41864': {
-    ITEM_NAME: "Furious Gladiator's Mooncloth Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41865': {
-    ITEM_NAME: "Relentless Gladiator's Mooncloth Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41873': {
-    ITEM_NAME: "Deadly Gladiator's Mooncloth Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41874': {
-    ITEM_NAME: "Furious Gladiator's Mooncloth Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41875': {
-    ITEM_NAME: "Relentless Gladiator's Mooncloth Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41881': {
-    ITEM_NAME: "Furious Gladiator's Cord of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41882': {
-    ITEM_NAME: "Relentless Gladiator's Cord of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41885': {
-    ITEM_NAME: "Furious Gladiator's Slippers of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41886': {
-    ITEM_NAME: "Relentless Gladiator's Treads of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41893': {
-    ITEM_NAME: "Furious Gladiator's Cuffs of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41894': {
-    ITEM_NAME: "Relentless Gladiator's Cuffs of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41898': {
-    ITEM_NAME: "Furious Gladiator's Cord of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41899': {
-    ITEM_NAME: "Relentless Gladiator's Cord of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41903': {
-    ITEM_NAME: "Furious Gladiator's Slippers of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41904': {
-    ITEM_NAME: "Relentless Gladiator's Treads of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41909': {
-    ITEM_NAME: "Furious Gladiator's Cuffs of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41910': {
-    ITEM_NAME: "Relentless Gladiator's Cuffs of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41920': {
-    ITEM_NAME: "Deadly Gladiator's Satin Robe",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41926': {
-    ITEM_NAME: "Deadly Gladiator's Satin Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41927': {
-    ITEM_NAME: "Furious Gladiator's Satin Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41928': {
-    ITEM_NAME: "Relentless Gladiator's Satin Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41939': {
-    ITEM_NAME: "Deadly Gladiator's Satin Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41940': {
-    ITEM_NAME: "Furious Gladiator's Satin Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41941': {
-    ITEM_NAME: "Relentless Gladiator's Satin Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41951': {
-    ITEM_NAME: "Deadly Gladiator's Silk Raiment",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41958': {
-    ITEM_NAME: "Deadly Gladiator's Silk Trousers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41959': {
-    ITEM_NAME: "Furious Gladiator's Silk Trousers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41960': {
-    ITEM_NAME: "Relentless Gladiator's Silk Trousers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41970': {
-    ITEM_NAME: "Deadly Gladiator's Silk Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41971': {
-    ITEM_NAME: "Furious Gladiator's Silk Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41972': {
-    ITEM_NAME: "Relentless Gladiator's Silk Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '41997': {
-    ITEM_NAME: "Deadly Gladiator's Felweave Raiment",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42004': {
-    ITEM_NAME: "Deadly Gladiator's Felweave Trousers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42005': {
-    ITEM_NAME: "Furious Gladiator's Felweave Trousers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42006': {
-    ITEM_NAME: "Relentless Gladiator's Felweave Trousers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42016': {
-    ITEM_NAME: "Deadly Gladiator's Felweave Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42017': {
-    ITEM_NAME: "Furious Gladiator's Felweave Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42018': {
-    ITEM_NAME: "Relentless Gladiator's Felweave Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42034': {
-    ITEM_NAME: "Furious Gladiator's Pendant of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42035': {
-    ITEM_NAME: "Furious Gladiator's Pendant of Victory",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42036': {
-    ITEM_NAME: "Furious Gladiator's Pendant of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42037': {
-    ITEM_NAME: "Furious Gladiator's Pendant of Ascendancy",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42038': {
-    ITEM_NAME: "Furious Gladiator's Pendant of Subjugation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42039': {
-    ITEM_NAME: "Furious Gladiator's Pendant of Deliverance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42040': {
-    ITEM_NAME: "Furious Gladiator's Pendant of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42041': {
-    ITEM_NAME: "Relentless Gladiator's Pendant of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42042': {
-    ITEM_NAME: "Relentless Gladiator's Pendant of Victory",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42043': {
-    ITEM_NAME: "Relentless Gladiator's Pendant of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42044': {
-    ITEM_NAME: "Relentless Gladiator's Pendant of Ascendancy",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42045': {
-    ITEM_NAME: "Relentless Gladiator's Pendant of Subjugation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42046': {
-    ITEM_NAME: "Relentless Gladiator's Pendant of Deliverance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42047': {
-    ITEM_NAME: "Relentless Gladiator's Pendant of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42069': {
-    ITEM_NAME: "Furious Gladiator's Cloak of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42070': {
-    ITEM_NAME: "Furious Gladiator's Cloak of Subjugation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42071': {
-    ITEM_NAME: "Furious Gladiator's Cloak of Ascendancy",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42072': {
-    ITEM_NAME: "Furious Gladiator's Cloak of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42073': {
-    ITEM_NAME: "Furious Gladiator's Cloak of Deliverance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42074': {
-    ITEM_NAME: "Furious Gladiator's Cloak of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42075': {
-    ITEM_NAME: "Furious Gladiator's Cloak of Victory",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42076': {
-    ITEM_NAME: "Relentless Gladiator's Cloak of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42077': {
-    ITEM_NAME: "Relentless Gladiator's Cloak of Subjugation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42078': {
-    ITEM_NAME: "Relentless Gladiator's Cloak of Ascendancy",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42079': {
-    ITEM_NAME: "Relentless Gladiator's Cloak of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42080': {
-    ITEM_NAME: "Relentless Gladiator's Cloak of Deliverance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42081': {
-    ITEM_NAME: "Relentless Gladiator's Cloak of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42082': {
-    ITEM_NAME: "Relentless Gladiator's Cloak of Victory",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42116': {
-    ITEM_NAME: "Furious Gladiator's Band of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42117': {
-    ITEM_NAME: "Furious Gladiator's Band of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42118': {
-    ITEM_NAME: "Relentless Gladiator's Band of Ascendancy",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '42119': {
-    ITEM_NAME: "Relentless Gladiator's Band of Victory",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '43345': {
-    ITEM_NAME: 'Dragon Hide Bag',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '43346': {
-    ITEM_NAME: 'Large Satchel of Spoils',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '43347': {
-    ITEM_NAME: 'Satchel of Spoils',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '43952': {
-    ITEM_NAME: 'Reins of the Azure Drake',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '43954': {
-    ITEM_NAME: 'Reins of the Twilight Drake',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '44000': {
-    ITEM_NAME: 'Dragonstorm Breastplate',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '44002': {
-    ITEM_NAME: "The Sanctum's Flowing Vestments",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '44003': {
-    ITEM_NAME: 'Upstanding Spaulders',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '44004': {
-    ITEM_NAME: 'Bountiful Gauntlets',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '44005': {
-    ITEM_NAME: 'Pennant Cloak',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '44006': {
-    ITEM_NAME: 'Obsidian Greathelm',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '44007': {
-    ITEM_NAME: 'Headpiece of Reconciliation',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '44008': {
-    ITEM_NAME: 'Unsullied Cuffs',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '44011': {
-    ITEM_NAME: 'Leggings of the Honored',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '44569': {
-    ITEM_NAME: 'Key to the Focusing Iris',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '44577': {
-    ITEM_NAME: 'Heroic Key to the Focusing Iris',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45038': {
-    ITEM_NAME: "Fragment of Val'anyr",
-    allowedClasses: [Class.Druid, Class.Priest, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45086': {
-    ITEM_NAME: 'Rising Sun',
-    allowedClasses: [Class.Warrior, Class.Rogue],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45087': {
-    ITEM_NAME: 'Runed Orb',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45088': {
-    ITEM_NAME: 'Plans: Belt of the Titans',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45089': {
-    ITEM_NAME: "Plans: Battlelord's Plate Boots",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45090': {
-    ITEM_NAME: 'Plans: Plate Girdle of Righteousness',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45091': {
-    ITEM_NAME: 'Plans: Treads of Destiny',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45092': {
-    ITEM_NAME: 'Plans: Indestructible Plate Girdle',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45093': {
-    ITEM_NAME: 'Plans: Spiked Deathdealers',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45094': {
-    ITEM_NAME: 'Pattern: Belt of Dragons',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45095': {
-    ITEM_NAME: 'Pattern: Boots of Living Scale',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45096': {
-    ITEM_NAME: 'Pattern: Blue Belt of Chaos',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45097': {
-    ITEM_NAME: 'Pattern: Lightning Grounded Boots',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45098': {
-    ITEM_NAME: 'Pattern: Death-warmed Belt',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45099': {
-    ITEM_NAME: 'Pattern: Footpads of Silence',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45100': {
-    ITEM_NAME: 'Pattern: Belt of Arctic Life',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45101': {
-    ITEM_NAME: 'Pattern: Boots of Wintry Endurance',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45102': {
-    ITEM_NAME: 'Pattern: Sash of Ancient Power',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45103': {
-    ITEM_NAME: "Pattern: Spellslinger's Slippers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45104': {
-    ITEM_NAME: 'Pattern: Cord of the White Dawn',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45105': {
-    ITEM_NAME: "Pattern: Savior's Slippers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45106': {
-    ITEM_NAME: 'Strength of the Automaton',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45107': {
-    ITEM_NAME: 'Iron Riveted War Helm',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45108': {
-    ITEM_NAME: "Mechanist's Bindings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45109': {
-    ITEM_NAME: 'Gloves of the Fiery Behemoth',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45110': {
-    ITEM_NAME: 'Titanguard',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45111': {
-    ITEM_NAME: "Mimiron's Inferno Couplings",
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45112': {
-    ITEM_NAME: "The Leviathan's Coil",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45113': {
-    ITEM_NAME: 'Glowing Ring of Reclamation',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45114': {
-    ITEM_NAME: "Steamcaller's Totem",
-    allowedClasses: [Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45115': {
-    ITEM_NAME: 'Leviathan Fueling Manual',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45116': {
-    ITEM_NAME: "Freya's Choker of Warding",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45117': {
-    ITEM_NAME: "Constructor's Handwraps",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45118': {
-    ITEM_NAME: "Steamworker's Goggles",
-    allowedClasses: [Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45119': {
-    ITEM_NAME: 'Embrace of the Leviathan',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45132': {
-    ITEM_NAME: 'Golden Saronite Dragon',
-    allowedClasses: [
-      Class.Druid,
-      Class.Hunter,
-      Class.Rogue,
-      Class.Shaman,
-      Class.Warrior,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45133': {
-    ITEM_NAME: 'Pendant of Fiery Havoc',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45134': {
-    ITEM_NAME: 'Plated Leggings of Ruination',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45135': {
-    ITEM_NAME: 'Boots of Fiery Resolution',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45136': {
-    ITEM_NAME: 'Shoulderpads of Dormant Energies',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45137': {
-    ITEM_NAME: "Veranus' Bane",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45138': {
-    ITEM_NAME: 'Drape of the Drakerider',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45139': {
-    ITEM_NAME: "Dragonslayer's Brace",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45140': {
-    ITEM_NAME: 'Razorscale Shoulderguards',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45141': {
-    ITEM_NAME: 'Proto-hide Leggings',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45142': {
-    ITEM_NAME: 'Remorse',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45143': {
-    ITEM_NAME: 'Saronite Mesh Legguards',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45144': {
-    ITEM_NAME: 'Sigil of Deflection',
-    allowedClasses: [Class.DeathKnight],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45145': {
-    ITEM_NAME: 'Libram of the Sacred Shield',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45146': {
-    ITEM_NAME: 'Shackles of the Odalisque',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45147': {
-    ITEM_NAME: 'Guiding Star',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45148': {
-    ITEM_NAME: 'Living Flame',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45149': {
-    ITEM_NAME: 'Bracers of the Broodmother',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45150': {
-    ITEM_NAME: 'Collar of the Wyrmhunter',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45151': {
-    ITEM_NAME: 'Belt of the Fallen Wyrm',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45157': {
-    ITEM_NAME: 'Cindershard Ring',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45158': {
-    ITEM_NAME: 'Heart of Iron',
-    allowedClasses: [
-      Class.Druid,
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45161': {
-    ITEM_NAME: 'Girdle of Embers',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45162': {
-    ITEM_NAME: 'Flamestalker Boots',
-    allowedClasses: [],
-    restrictedClasses: [Class.Priest, Class.Warlock, Class.Mage],
-    allowedRankings: 3,
-  },
-  '45164': {
-    ITEM_NAME: 'Helm of the Furnace Master',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45165': {
-    ITEM_NAME: 'Worldcarver',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45166': {
-    ITEM_NAME: 'Charred Saronite Greaves',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45167': {
-    ITEM_NAME: 'Lifeforge Breastplate',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45168': {
-    ITEM_NAME: 'Pyrelight Circle',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45169': {
-    ITEM_NAME: 'Totem of the Dancing Flame',
-    allowedClasses: [Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45170': {
-    ITEM_NAME: 'Scepter of Creation',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45171': {
-    ITEM_NAME: 'Intensity',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45185': {
-    ITEM_NAME: 'Flamewrought Cinch',
-    allowedClasses: [],
-    restrictedClasses: [Class.Priest, Class.Warlock, Class.Mage],
-    allowedRankings: 3,
-  },
-  '45186': {
-    ITEM_NAME: 'Soot-Covered Mantle',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45187': {
-    ITEM_NAME: 'Wristguards of the Firetender',
-    allowedClasses: [Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45193': {
-    ITEM_NAME: 'Insurmountable Fervor',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45224': {
-    ITEM_NAME: 'Drape of the Lithe',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45225': {
-    ITEM_NAME: "Steelbreaker's Embrace",
-    allowedClasses: [Class.Warrior, Class.Paladin, Class.DeathKnight],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45226': {
-    ITEM_NAME: 'Ancient Iron Heaume',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45227': {
-    ITEM_NAME: 'Iron-studded Mantle',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45228': {
-    ITEM_NAME: 'Handguards of the Enclave',
-    allowedClasses: [Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45232': {
-    ITEM_NAME: 'Runed Ironhide Boots',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45233': {
-    ITEM_NAME: 'Stormrune Edge',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45234': {
-    ITEM_NAME: 'Rapture',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45235': {
-    ITEM_NAME: 'Radiant Seal',
-    allowedClasses: [Class.Priest, Class.Druid, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45236': {
-    ITEM_NAME: 'Unblinking Eye',
-    allowedClasses: [
-      Class.Priest,
-      Class.Mage,
-      Class.Warlock,
-      Class.Druid,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45237': {
-    ITEM_NAME: "Phaelia's Vestments of the Sprouting Seed",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45238': {
-    ITEM_NAME: 'Overload Legwraps',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45239': {
-    ITEM_NAME: "Runeshaper's Gloves",
-    allowedClasses: [Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45240': {
-    ITEM_NAME: 'Raiments of the Iron Council',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45241': {
-    ITEM_NAME: 'Belt of Colossal Rage',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45242': {
-    ITEM_NAME: 'Drape of Mortal Downfall',
-    allowedClasses: [
-      Class.Priest,
-      Class.Mage,
-      Class.Warlock,
-      Class.Druid,
-      Class.Shaman,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45243': {
-    ITEM_NAME: 'Sapphire Amulet of Renewal',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45244': {
-    ITEM_NAME: 'Greaves of Swift Vengeance',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45245': {
-    ITEM_NAME: 'Shoulderpads of the Intruder',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45246': {
-    ITEM_NAME: 'Golem-Shard Sticker',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45247': {
-    ITEM_NAME: 'Signet of the Earthshaker',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45248': {
-    ITEM_NAME: 'Clockwork Legplates',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45249': {
-    ITEM_NAME: 'Brass-lined Boots',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45250': {
-    ITEM_NAME: 'Crazed Construct Ring',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45251': {
-    ITEM_NAME: 'Shoulderplates of the Deconstructor',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45252': {
-    ITEM_NAME: "Horologist's Wristguards",
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45253': {
-    ITEM_NAME: 'Mantle of Wavering Calm',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45254': {
-    ITEM_NAME: 'Sigil of the Vengeful Heart',
-    allowedClasses: [Class.DeathKnight],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45255': {
-    ITEM_NAME: 'Thunderfall Totem',
-    allowedClasses: [Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45256': {
-    ITEM_NAME: 'Twisted Visage',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45257': {
-    ITEM_NAME: 'Quartz Crystal Wand',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45258': {
-    ITEM_NAME: 'Sandals of Rash Temperament',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45259': {
-    ITEM_NAME: 'Quartz-studded Harness',
-    allowedClasses: [Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45260': {
-    ITEM_NAME: 'Boots of Hasty Revival',
-    allowedClasses: [Class.Druid, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45261': {
-    ITEM_NAME: "Giant's Bane",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45262': {
-    ITEM_NAME: 'Necklace of Unerring Mettle',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45263': {
-    ITEM_NAME: 'Wrathstone',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45264': {
-    ITEM_NAME: "Decimator's Armguards",
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45265': {
-    ITEM_NAME: 'Shoulderpads of the Monolith',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45266': {
-    ITEM_NAME: 'Malice',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45267': {
-    ITEM_NAME: 'Saronite Plated Legguards',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45268': {
-    ITEM_NAME: 'Gloves of the Pythonic Guardian',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45269': {
-    ITEM_NAME: 'Unfaltering Armguards',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45270': {
-    ITEM_NAME: 'Idol of the Crying Wind',
-    allowedClasses: [Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45271': {
-    ITEM_NAME: 'Ironmender',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45272': {
-    ITEM_NAME: 'Robes of the Umbral Brute',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45273': {
-    ITEM_NAME: 'Handwraps of Plentiful Recovery',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45274': {
-    ITEM_NAME: 'Leggings of the Stoneweaver',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45275': {
-    ITEM_NAME: 'Bracers of Unleashed Magic',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45315': {
-    ITEM_NAME: 'Stonerender',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45319': {
-    ITEM_NAME: 'Cloak of the Makers',
-    allowedClasses: [
-      Class.Druid,
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45320': {
-    ITEM_NAME: 'Shoulderplates of the Eternal',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45325': {
-    ITEM_NAME: 'Gloves of the Stonereaper',
-    allowedClasses: [],
-    restrictedClasses: [Class.Priest, Class.Mage, Class.Warlock],
-    allowedRankings: 3,
-  },
-  '45326': {
-    ITEM_NAME: 'Platinum Band of the Aesir',
-    allowedClasses: [
-      Class.Druid,
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45327': {
-    ITEM_NAME: "Siren's Cry",
-    allowedClasses: [Class.Hunter, Class.Rogue, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45334': {
-    ITEM_NAME: 'Unbreakable Chestguard',
-    allowedClasses: [Class.Warrior, Class.Paladin, Class.DeathKnight],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45434': {
-    ITEM_NAME: 'Greaves of the Rockmender',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45435': {
-    ITEM_NAME: 'Cowl of the Absolute',
-    allowedClasses: [
-      Class.Priest,
-      Class.Mage,
-      Class.Warlock,
-      Class.Druid,
-      Class.Shaman,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45436': {
-    ITEM_NAME: 'Libram of the Resolute',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45437': {
-    ITEM_NAME: 'Runescribed Blade',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45438': {
-    ITEM_NAME: 'Ring of the Faithful Servant',
-    allowedClasses: [
-      Class.Priest,
-      Class.Mage,
-      Class.Warlock,
-      Class.Druid,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45439': {
-    ITEM_NAME: 'Unwavering Stare',
-    allowedClasses: [Class.Druid, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45440': {
-    ITEM_NAME: 'Amice of the Stoic Watch',
-    allowedClasses: [Class.Paladin, Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45441': {
-    ITEM_NAME: 'Sandals of the Ancient Keeper',
-    allowedClasses: [
-      Class.Mage,
-      Class.Warlock,
-      Class.Priest,
-      Class.Druid,
-      Class.Shaman,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45442': {
-    ITEM_NAME: 'Sorthalis, Hammer of the Watchers',
-    allowedClasses: [
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Paladin,
-      Class.Shaman,
-      Class.Rogue,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45443': {
-    ITEM_NAME: 'Charm of Meticulous Timing',
-    allowedClasses: [Class.Priest, Class.Paladin, Class.Shaman, Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45444': {
-    ITEM_NAME: 'Gloves of the Steady Hand',
-    allowedClasses: [
-      Class.Hunter,
-      Class.Shaman,
-      Class.Paladin,
-      Class.Warrior,
-      Class.DeathKnight,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45445': {
-    ITEM_NAME: 'Breastplate of the Devoted',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45446': {
-    ITEM_NAME: 'Grasps of Reason',
-    allowedClasses: [
-      Class.Priest,
-      Class.Paladin,
-      Class.Shaman,
-      Class.Druid,
-      Class.Warlock,
-      Class.Mage,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45450': {
-    ITEM_NAME: 'Northern Barrier',
-    allowedClasses: [Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45451': {
-    ITEM_NAME: 'Frozen Loop',
-    allowedClasses: [
-      Class.Mage,
-      Class.Warlock,
-      Class.Priest,
-      Class.Druid,
-      Class.Shaman,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45452': {
-    ITEM_NAME: 'Frostplate Greaves',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45453': {
-    ITEM_NAME: "Winter's Icy Embrace",
-    allowedClasses: [
-      Class.Druid,
-      Class.Rogue,
-      Class.Shaman,
-      Class.Warrior,
-      Class.DeathKnight,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45454': {
-    ITEM_NAME: 'Frost-bound Chain Bracers',
-    allowedClasses: [Class.Hunter, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45463': {
-    ITEM_NAME: 'Vulmir, the Northern Tempest',
-    allowedClasses: [
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Rogue,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45466': {
-    ITEM_NAME: 'Scale of Fates',
-    allowedClasses: [
-      Class.Priest,
-      Class.Warlock,
-      Class.Shaman,
-      Class.Mage,
-      Class.Paladin,
-      Class.Druid,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45467': {
-    ITEM_NAME: 'Belt of the Betrayed',
-    allowedClasses: [Class.Hunter, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45468': {
-    ITEM_NAME: 'Leggings of Lost Love',
-    allowedClasses: [
-      Class.Priest,
-      Class.Warlock,
-      Class.Shaman,
-      Class.Mage,
-      Class.Paladin,
-      Class.Druid,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45469': {
-    ITEM_NAME: "Sif's Promise",
-    allowedClasses: [
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Paladin,
-      Class.Druid,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45470': {
-    ITEM_NAME: "Wisdom's Hold",
-    allowedClasses: [Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45471': {
-    ITEM_NAME: "Fate's Clutch",
-    allowedClasses: [
-      Class.Druid,
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45472': {
-    ITEM_NAME: 'Warhelm of the Champion',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45473': {
-    ITEM_NAME: 'Embrace of the Gladiator',
-    allowedClasses: [
-      Class.Druid,
-      Class.Hunter,
-      Class.Rogue,
-      Class.Shaman,
-      Class.DeathKnight,
-      Class.Paladin,
-      Class.Warrior,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45474': {
-    ITEM_NAME: 'Pauldrons of the Combatant',
-    allowedClasses: [Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45479': {
-    ITEM_NAME: 'The Lifebinder',
-    allowedClasses: [
-      Class.Priest,
-      Class.Warlock,
-      Class.Shaman,
-      Class.Mage,
-      Class.Druid,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45480': {
-    ITEM_NAME: 'Nymph Heart Charm',
-    allowedClasses: [
-      Class.Druid,
-      Class.Hunter,
-      Class.Rogue,
-      Class.Shaman,
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45481': {
-    ITEM_NAME: 'Gauntlets of Ruthless Reprisal',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45482': {
-    ITEM_NAME: 'Leggings of the Lifetender',
-    allowedClasses: [Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45483': {
-    ITEM_NAME: 'Boots of the Servant',
-    allowedClasses: [Class.Druid, Class.Priest, Class.Warlock, Class.Mage],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45484': {
-    ITEM_NAME: 'Bladetwister',
-    allowedClasses: [Class.Hunter, Class.Rogue],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45485': {
-    ITEM_NAME: 'Bronze Pendant of the Vanir',
-    allowedClasses: [
-      Class.Druid,
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45486': {
-    ITEM_NAME: 'Drape of the Sullen Goddess',
-    allowedClasses: [
-      Class.Druid,
-      Class.Priest,
-      Class.Shaman,
-      Class.Paladin,
-      Class.Warlock,
-      Class.Mage,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45487': {
-    ITEM_NAME: 'Handguards of Revitalization',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45488': {
-    ITEM_NAME: 'Leggings of the Enslaved Idol',
-    allowedClasses: [
-      Class.Druid,
-      Class.Priest,
-      Class.Warlock,
-      Class.Shaman,
-      Class.Mage,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45489': {
-    ITEM_NAME: "Insanity's Grip",
-    allowedClasses: [
-      Class.Druid,
-      Class.Hunter,
-      Class.Rogue,
-      Class.Shaman,
-      Class.Warrior,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45490': {
-    ITEM_NAME: "Pandora's Plea",
-    allowedClasses: [
-      Class.Priest,
-      Class.Mage,
-      Class.Warlock,
-      Class.Druid,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45491': {
-    ITEM_NAME: 'Waistguard of the Creator',
-    allowedClasses: [Class.Druid, Class.Hunter, Class.Rogue, Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45492': {
-    ITEM_NAME: 'Malleable Steelweave Mantle',
-    allowedClasses: [Class.Druid, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45493': {
-    ITEM_NAME: "Asimov's Drape",
-    allowedClasses: [],
-    restrictedClasses: [
-      Class.Rogue,
-      Class.Warrior,
-      Class.DeathKnight,
-      Class.Hunter,
-    ],
-    allowedRankings: 3,
-  },
-  '45494': {
-    ITEM_NAME: "Delirium's Touch",
-    allowedClasses: [
-      Class.Druid,
-      Class.Hunter,
-      Class.Rogue,
-      Class.Shaman,
-      Class.Warrior,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45495': {
-    ITEM_NAME: 'Conductive Seal',
-    allowedClasses: [
-      Class.Priest,
-      Class.Mage,
-      Class.Warlock,
-      Class.Druid,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45496': {
-    ITEM_NAME: 'Titanskin Cloak',
-    allowedClasses: [
-      Class.Druid,
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45497': {
-    ITEM_NAME: 'Crown of Luminescence',
-    allowedClasses: [Class.Druid, Class.Priest, Class.Warlock, Class.Mage],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45498': {
-    ITEM_NAME: 'Lotrafen, Spear of the Damned',
-    allowedClasses: [
-      Class.Druid,
-      Class.Hunter,
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45501': {
-    ITEM_NAME: 'Boots of the Underdweller',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45502': {
-    ITEM_NAME: 'Helm of the Faceless',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45503': {
-    ITEM_NAME: 'Metallic Loop of the Sufferer',
-    allowedClasses: [
-      Class.Druid,
-      Class.Hunter,
-      Class.Rogue,
-      Class.Shaman,
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45504': {
-    ITEM_NAME: 'Darkcore Leggings',
-    allowedClasses: [Class.Hunter, Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45505': {
-    ITEM_NAME: 'Belt of Clinging Hope',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45507': {
-    ITEM_NAME: "The General's Heart",
-    allowedClasses: [
-      Class.DeathKnight,
-      Class.Druid,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45508': {
-    ITEM_NAME: 'Belt of the Darkspeaker',
-    allowedClasses: [
-      Class.Priest,
-      Class.Mage,
-      Class.Warlock,
-      Class.Druid,
-      Class.Shaman,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45509': {
-    ITEM_NAME: 'Idol of the Corruptor',
-    allowedClasses: [Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45510': {
-    ITEM_NAME: 'Libram of Discord',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45511': {
-    ITEM_NAME: 'Scepter of Lost Souls',
-    allowedClasses: [Class.Priest, Class.Warlock, Class.Mage],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45512': {
-    ITEM_NAME: 'Grips of the Unbroken',
-    allowedClasses: [
-      Class.Priest,
-      Class.Mage,
-      Class.Warlock,
-      Class.Druid,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45513': {
-    ITEM_NAME: 'Boots of the Forgotten Depths',
-    allowedClasses: [Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45514': {
-    ITEM_NAME: 'Mantle of the Unknowing',
-    allowedClasses: [Class.Druid, Class.Priest, Class.Warlock, Class.Mage],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45515': {
-    ITEM_NAME: 'Ring of the Vacant Eye',
-    allowedClasses: [
-      Class.Priest,
-      Class.Mage,
-      Class.Warlock,
-      Class.Druid,
-      Class.Shaman,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45516': {
-    ITEM_NAME: 'Voldrethar, Dark Blade of Oblivion',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45517': {
-    ITEM_NAME: 'Pendulum of Infinity',
-    allowedClasses: [
-      Class.Druid,
-      Class.Hunter,
-      Class.Rogue,
-      Class.Shaman,
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45518': {
-    ITEM_NAME: 'Flare of the Heavens',
-    allowedClasses: [
-      Class.Priest,
-      Class.Mage,
-      Class.Warlock,
-      Class.Druid,
-      Class.Shaman,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45519': {
-    ITEM_NAME: 'Vestments of the Blind Denizen',
-    allowedClasses: [Class.Druid, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45520': {
-    ITEM_NAME: 'Handwraps of the Vigilant',
-    allowedClasses: [
-      Class.Priest,
-      Class.Mage,
-      Class.Warlock,
-      Class.Druid,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45521': {
-    ITEM_NAME: 'Earthshaper',
-    allowedClasses: [
-      Class.DeathKnight,
-      Class.Druid,
-      Class.Warrior,
-      Class.Paladin,
-      Class.Shaman,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45522': {
-    ITEM_NAME: 'Blood of the Old God',
-    allowedClasses: [
-      Class.DeathKnight,
-      Class.Druid,
-      Class.Hunter,
-      Class.Warrior,
-      Class.Rogue,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45523': {
-    ITEM_NAME: "Garona's Guise",
-    allowedClasses: [
-      Class.Druid,
-      Class.Rogue,
-      Class.Hunter,
-      Class.Warrior,
-      Class.Paladin,
-      Class.Shaman,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45524': {
-    ITEM_NAME: 'Chestguard of Insidious Intent',
-    allowedClasses: [Class.Hunter, Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45525': {
-    ITEM_NAME: 'Godbane Signet',
-    allowedClasses: [
-      Class.Druid,
-      Class.Hunter,
-      Class.Rogue,
-      Class.Shaman,
-      Class.Warrior,
-      Class.DeathKnight,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45527': {
-    ITEM_NAME: 'Soulscribe',
-    allowedClasses: [
-      Class.Druid,
-      Class.Priest,
-      Class.Warlock,
-      Class.Mage,
-      Class.Shaman,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45529': {
-    ITEM_NAME: 'Shawl of Haunted Memories',
-    allowedClasses: [Class.Druid, Class.Priest, Class.Warlock, Class.Mage],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45530': {
-    ITEM_NAME: "Sanity's Bond",
-    allowedClasses: [Class.Druid, Class.Priest, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45531': {
-    ITEM_NAME: 'Chestguard of the Fallen God',
-    allowedClasses: [Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45532': {
-    ITEM_NAME: 'Cowl of Dark Whispers',
-    allowedClasses: [Class.Druid, Class.Priest, Class.Warlock, Class.Mage],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45533': {
-    ITEM_NAME: 'Dark Edge of Depravity',
-    allowedClasses: [
-      Class.Druid,
-      Class.Hunter,
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45534': {
-    ITEM_NAME: 'Seal of the Betrayed King',
-    allowedClasses: [
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Paladin,
-      Class.Druid,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45535': {
-    ITEM_NAME: 'Show of Faith',
-    allowedClasses: [
-      Class.Druid,
-      Class.Priest,
-      Class.Shaman,
-      Class.Paladin,
-      Class.Mage,
-      Class.Warlock,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45536': {
-    ITEM_NAME: 'Legguards of Cunning Deception',
-    allowedClasses: [Class.Druid, Class.Hunter, Class.Rogue, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45537': {
-    ITEM_NAME: 'Treads of the False Oracle',
-    allowedClasses: [
-      Class.Druid,
-      Class.Priest,
-      Class.Warlock,
-      Class.Shaman,
-      Class.Mage,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45538': {
-    ITEM_NAME: 'Titanstone Pendant',
-    allowedClasses: [
-      Class.DeathKnight,
-      Class.Druid,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45539': {
-    ITEM_NAME: 'Pendant of Focused Energies',
-    allowedClasses: [
-      Class.Druid,
-      Class.Priest,
-      Class.Warlock,
-      Class.Mage,
-      Class.Shaman,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45540': {
-    ITEM_NAME: "Bladebearer's Signet",
-    allowedClasses: [
-      Class.Warrior,
-      Class.DeathKnight,
-      Class.Paladin,
-      Class.Shaman,
-      Class.Rogue,
-      Class.Druid,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45541': {
-    ITEM_NAME: 'Shroud of Alteration',
-    allowedClasses: [
-      Class.Druid,
-      Class.Priest,
-      Class.Warlock,
-      Class.Shaman,
-      Class.Mage,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45542': {
-    ITEM_NAME: 'Greaves of the Stonewarder',
-    allowedClasses: [Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45543': {
-    ITEM_NAME: 'Shoulders of Misfortune',
-    allowedClasses: [
-      Class.Shaman,
-      Class.Hunter,
-      Class.Paladin,
-      Class.DeathKnight,
-      Class.Warrior,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45544': {
-    ITEM_NAME: 'Leggings of the Tortured Earth',
-    allowedClasses: [Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45547': {
-    ITEM_NAME: "Relic Hunter's Cord",
-    allowedClasses: [
-      Class.Rogue,
-      Class.Druid,
-      Class.Hunter,
-      Class.Shaman,
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45548': {
-    ITEM_NAME: 'Belt of the Sleeper',
-    allowedClasses: [Class.Druid, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45549': {
-    ITEM_NAME: 'Grips of Chaos',
-    allowedClasses: [
-      Class.Priest,
-      Class.Warlock,
-      Class.Mage,
-      Class.Druid,
-      Class.Shaman,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45570': {
-    ITEM_NAME: 'Skyforge Crossbow',
-    allowedClasses: [Class.Hunter, Class.Rogue, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45587': {
-    ITEM_NAME: 'Bulwark of Algalon',
-    allowedClasses: [Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45594': {
-    ITEM_NAME: 'Legplates of the Endless Void',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45599': {
-    ITEM_NAME: 'Sabatons of Lifeless Night',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45605': {
-    ITEM_NAME: "Daschal's Bite",
-    allowedClasses: [
-      Class.Rogue,
-      Class.Shaman,
-      Class.Hunter,
-      Class.Druid,
-      Class.Warrior,
-      Class.DeathKnight,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45607': {
-    ITEM_NAME: 'Fang of Oblivion',
-    allowedClasses: [
-      Class.Rogue,
-      Class.Druid,
-      Class.Warrior,
-      Class.Shaman,
-      Class.Hunter,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45609': {
-    ITEM_NAME: "Comet's Trail",
-    allowedClasses: [
-      Class.Rogue,
-      Class.Hunter,
-      Class.Warrior,
-      Class.DeathKnight,
-      Class.Druid,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45610': {
-    ITEM_NAME: 'Boundless Gaze',
-    allowedClasses: [
-      Class.Shaman,
-      Class.Hunter,
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45611': {
-    ITEM_NAME: 'Solar Bindings',
-    allowedClasses: [
-      Class.Rogue,
-      Class.Druid,
-      Class.Shaman,
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45612': {
-    ITEM_NAME: 'Constellus',
-    allowedClasses: [Class.Priest, Class.Druid, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45613': {
-    ITEM_NAME: 'Dreambinder',
-    allowedClasses: [Class.Druid, Class.Hunter],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45615': {
-    ITEM_NAME: 'Planewalker Treads',
-    allowedClasses: [Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45616': {
-    ITEM_NAME: 'Star-beaded Clutch',
-    allowedClasses: [Class.Druid, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45617': {
-    ITEM_NAME: 'Cosmos',
-    allowedClasses: [
-      Class.Mage,
-      Class.Priest,
-      Class.Warlock,
-      Class.Druid,
-      Class.Shaman,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45619': {
-    ITEM_NAME: "Starwatcher's Binding",
-    allowedClasses: [
-      Class.Priest,
-      Class.Warlock,
-      Class.Mage,
-      Class.Druid,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45620': {
-    ITEM_NAME: 'Starshard Edge',
-    allowedClasses: [
-      Class.Druid,
-      Class.Shaman,
-      Class.Priest,
-      Class.Warlock,
-      Class.Mage,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45638': {
-    ITEM_NAME: 'Crown of the Wayward Conqueror',
-    allowedClasses: [Class.Paladin, Class.Priest, Class.Warlock],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45639': {
-    ITEM_NAME: 'Crown of the Wayward Protector',
-    allowedClasses: [Class.Hunter, Class.Shaman, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45640': {
-    ITEM_NAME: 'Crown of the Wayward Vanquisher',
-    allowedClasses: [Class.DeathKnight, Class.Druid, Class.Mage, Class.Rogue],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45641': {
-    ITEM_NAME: 'Gauntlets of the Wayward Conqueror',
-    allowedClasses: [Class.Paladin, Class.Priest, Class.Warlock],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45642': {
-    ITEM_NAME: 'Gauntlets of the Wayward Protector',
-    allowedClasses: [Class.Hunter, Class.Shaman, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45643': {
-    ITEM_NAME: 'Gauntlets of the Wayward Vanquisher',
-    allowedClasses: [Class.DeathKnight, Class.Druid, Class.Mage, Class.Rogue],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45656': {
-    ITEM_NAME: 'Mantle of the Wayward Conqueror',
-    allowedClasses: [Class.Paladin, Class.Priest, Class.Warlock],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45657': {
-    ITEM_NAME: 'Mantle of the Wayward Protector',
-    allowedClasses: [Class.Hunter, Class.Shaman, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45658': {
-    ITEM_NAME: 'Mantle of the Wayward Vanquisher',
-    allowedClasses: [Class.DeathKnight, Class.Druid, Class.Mage, Class.Rogue],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45663': {
-    ITEM_NAME: 'Armbands of Bedlam',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45665': {
-    ITEM_NAME: 'Pharos Gloves',
-    allowedClasses: [
-      Class.Priest,
-      Class.Warlock,
-      Class.Mage,
-      Class.Druid,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45693': {
-    ITEM_NAME: "Mimiron's Head",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '45897': {
-    ITEM_NAME: 'Reforged Hammer of Ancient Kings',
-    allowedClasses: [Class.Druid, Class.Priest, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46027': {
-    ITEM_NAME: 'Formula: Enchant Weapon - Blade Ward',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46053': {
-    ITEM_NAME: 'Reply-Code Alpha',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46113': {
-    ITEM_NAME: "Conqueror's Darkruned Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46116': {
-    ITEM_NAME: "Conqueror's Darkruned Legplates",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46119': {
-    ITEM_NAME: "Conqueror's Darkruned Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46121': {
-    ITEM_NAME: "Conqueror's Darkruned Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46124': {
-    ITEM_NAME: "Conqueror's Terrorblade Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46126': {
-    ITEM_NAME: "Conqueror's Terrorblade Legplates",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46132': {
-    ITEM_NAME: "Conqueror's Kirin Tor Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46133': {
-    ITEM_NAME: "Conqueror's Kirin Tor Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46135': {
-    ITEM_NAME: "Conqueror's Deathbringer Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46139': {
-    ITEM_NAME: "Conqueror's Deathbringer Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46142': {
-    ITEM_NAME: "Conqueror's Scourgestalker Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46144': {
-    ITEM_NAME: "Conqueror's Scourgestalker Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46148': {
-    ITEM_NAME: "Conqueror's Siegebreaker Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46150': {
-    ITEM_NAME: "Conqueror's Siegebreaker Legplates",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46153': {
-    ITEM_NAME: "Conqueror's Aegis Legplates",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46155': {
-    ITEM_NAME: "Conqueror's Aegis Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46158': {
-    ITEM_NAME: "Conqueror's Nightsong Handgrips",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46160': {
-    ITEM_NAME: "Conqueror's Nightsong Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46163': {
-    ITEM_NAME: "Conqueror's Handwraps of Sanctification",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46164': {
-    ITEM_NAME: "Conqueror's Siegebreaker Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46169': {
-    ITEM_NAME: "Conqueror's Siegebreaker Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46170': {
-    ITEM_NAME: "Conqueror's Pants of Sanctification",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46174': {
-    ITEM_NAME: "Conqueror's Aegis Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46176': {
-    ITEM_NAME: "Conqueror's Aegis Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46179': {
-    ITEM_NAME: "Conqueror's Aegis Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46181': {
-    ITEM_NAME: "Conqueror's Aegis Greaves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46183': {
-    ITEM_NAME: "Conqueror's Nightsong Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46185': {
-    ITEM_NAME: "Conqueror's Nightsong Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46188': {
-    ITEM_NAME: "Conqueror's Gloves of Sanctification",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46189': {
-    ITEM_NAME: "Conqueror's Nightsong Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46192': {
-    ITEM_NAME: "Conqueror's Nightsong Trousers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46195': {
-    ITEM_NAME: "Conqueror's Leggings of Sanctification",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46199': {
-    ITEM_NAME: "Conqueror's Worldbreaker Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46200': {
-    ITEM_NAME: "Conqueror's Worldbreaker Grips",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46202': {
-    ITEM_NAME: "Conqueror's Worldbreaker Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46207': {
-    ITEM_NAME: "Conqueror's Worldbreaker Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46208': {
-    ITEM_NAME: "Conqueror's Worldbreaker War-Kilt",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46210': {
-    ITEM_NAME: "Conqueror's Worldbreaker Kilt",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46348': {
-    ITEM_NAME: 'Formula: Enchant Weapon - Blood Draining',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46373': {
-    ITEM_NAME: "Furious Gladiator's Pendant of Sundering",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46374': {
-    ITEM_NAME: "Relentless Gladiator's Pendant of Sundering",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46960': {
-    ITEM_NAME: 'Breastplate of Cruel Intent',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46961': {
-    ITEM_NAME: 'Boneshatter Armplates',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46962': {
-    ITEM_NAME: 'Chestplate of the Towering Monstrosity',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46964': {
-    ITEM_NAME: 'Crystal Plated Vanguard',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46965': {
-    ITEM_NAME: 'Breastplate of Cruel Intent',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46966': {
-    ITEM_NAME: 'Band of the Violent Temperment',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46967': {
-    ITEM_NAME: 'Boneshatter Armplates',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46968': {
-    ITEM_NAME: 'Chestplate of the Towering Monstrosity',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46970': {
-    ITEM_NAME: 'Drape of the Untamed Predator',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46971': {
-    ITEM_NAME: 'Drape of the Untamed Predator',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46972': {
-    ITEM_NAME: 'Cord of the Tenebrous Mist',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46973': {
-    ITEM_NAME: 'Cord of the Tenebrous Mist',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46974': {
-    ITEM_NAME: 'Leggings of the Broken Beast',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46976': {
-    ITEM_NAME: 'Shawl of the Refreshing Winds',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46980': {
-    ITEM_NAME: 'Blade of Tarasque',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46985': {
-    ITEM_NAME: 'Boots of the Courageous',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46988': {
-    ITEM_NAME: 'Boots of the Unrelenting Storm',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46991': {
-    ITEM_NAME: 'Belt of the Ice Burrower',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46993': {
-    ITEM_NAME: 'Flowing Vestments of Ascent',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46994': {
-    ITEM_NAME: 'Talonstrike',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46995': {
-    ITEM_NAME: 'Talonstrike',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46996': {
-    ITEM_NAME: 'Lionhead Slasher',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '46997': {
-    ITEM_NAME: 'Dawnbreaker Greaves',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47001': {
-    ITEM_NAME: 'Lionhead Slasher',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47002': {
-    ITEM_NAME: 'Bloodbath Belt',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47004': {
-    ITEM_NAME: 'Cuirass of Calamitous Fate',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47041': {
-    ITEM_NAME: 'Solace of the Defeated',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47042': {
-    ITEM_NAME: 'Pride of the Eredar',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47051': {
-    ITEM_NAME: 'Leggings of the Soothing Touch',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47052': {
-    ITEM_NAME: 'Legguards of Feverish Dedication',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47053': {
-    ITEM_NAME: 'Symbol of Transgression',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47056': {
-    ITEM_NAME: 'Bracers of Cloudy Omen',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47057': {
-    ITEM_NAME: 'Legplates of Failing Light',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47059': {
-    ITEM_NAME: 'Solace of the Defeated',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47063': {
-    ITEM_NAME: 'Pride of the Eredar',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47064': {
-    ITEM_NAME: 'Symbol of Transgression',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47067': {
-    ITEM_NAME: 'Legplates of Failing Light',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47069': {
-    ITEM_NAME: 'Justicebringer',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47070': {
-    ITEM_NAME: 'Ring of Callous Aggression',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47071': {
-    ITEM_NAME: 'Treads of the Icewalker',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47072': {
-    ITEM_NAME: 'Girdle of Bloodied Scars',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47073': {
-    ITEM_NAME: 'Bracers of the Untold Massacre',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47074': {
-    ITEM_NAME: 'Bracers of the Untold Massacre',
-    allowedClasses: [Class.Shaman, Class.Hunter, Class.Paladin, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47075': {
-    ITEM_NAME: 'Ring of Callous Aggression',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47076': {
-    ITEM_NAME: 'Girdle of Bloodied Scars',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47077': {
-    ITEM_NAME: 'Treads of the Icewalker',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47078': {
-    ITEM_NAME: 'Justicebringer',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47079': {
-    ITEM_NAME: 'Bastion of Purity',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47080': {
-    ITEM_NAME: "Satrina's Impeding Scarab",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47081': {
-    ITEM_NAME: 'Cord of Biting Cold',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47082': {
-    ITEM_NAME: 'Chestplate of the Frostborn Hero',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47083': {
-    ITEM_NAME: 'Legguards of Concealed Hatred',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47084': {
-    ITEM_NAME: 'Cord of Biting Cold',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47085': {
-    ITEM_NAME: 'Bastion of Purity',
-    allowedClasses: [Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47086': {
-    ITEM_NAME: 'Chestplate of the Frostborn Hero',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47087': {
-    ITEM_NAME: 'Legguards of Concealed Hatred',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47088': {
-    ITEM_NAME: "Satrina's Impeding Scarab",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47089': {
-    ITEM_NAME: 'Cloak of Displacement',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47090': {
-    ITEM_NAME: 'Boots of Tremoring Earth',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47092': {
-    ITEM_NAME: 'Boots of the Mourning Widow',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47093': {
-    ITEM_NAME: 'Vambraces of the Broken Bond',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47094': {
-    ITEM_NAME: 'Vestments of the Shattered Fellowship',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47095': {
-    ITEM_NAME: 'Cloak of Displacement',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47096': {
-    ITEM_NAME: 'Vestments of the Shattered Fellowship',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47097': {
-    ITEM_NAME: 'Boots of the Mourning Widow',
-    allowedClasses: [],
-    restrictedClasses: [
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Rogue,
-      Class.Hunter,
-    ],
-    allowedRankings: 3,
-  },
-  '47098': {
-    ITEM_NAME: 'Vambraces of the Broken Bond',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47099': {
-    ITEM_NAME: 'Boots of Tremoring Earth',
-    allowedClasses: [Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47138': {
-    ITEM_NAME: 'Chalice of Searing Light',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47139': {
-    ITEM_NAME: "Wail of the Val'kyr",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47140': {
-    ITEM_NAME: 'Cord of Pale Thorns',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47141': {
-    ITEM_NAME: 'Bindings of Dark Essence',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47142': {
-    ITEM_NAME: 'Breastplate of the Frozen Lake',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47143': {
-    ITEM_NAME: 'Bindings of Dark Essence',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47144': {
-    ITEM_NAME: "Wail of the Val'kyr",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47145': {
-    ITEM_NAME: 'Cord of Pale Thorns',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47146': {
-    ITEM_NAME: 'Chalice of Searing Light',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47147': {
-    ITEM_NAME: 'Breastplate of the Frozen Lake',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47148': {
-    ITEM_NAME: 'Stormpike Cleaver',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47151': {
-    ITEM_NAME: 'Bracers of Dark Determination',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47153': {
-    ITEM_NAME: 'Belt of Deathly Dominion',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47154': {
-    ITEM_NAME: 'Greaves of the 7th Legion',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47155': {
-    ITEM_NAME: 'Bracers of Dark Determination',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47157': {
-    ITEM_NAME: 'Signet of the Traitor King',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47187': {
-    ITEM_NAME: 'Leggings of the Deepening Void',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47188': {
-    ITEM_NAME: 'Reign of the Unliving',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47190': {
-    ITEM_NAME: 'Legwraps of the Awakening',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47193': {
-    ITEM_NAME: "Misery's End",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47204': {
-    ITEM_NAME: 'Chestguard of Flowing Elements',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47206': {
-    ITEM_NAME: "Misery's End",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47207': {
-    ITEM_NAME: 'Belt of the Forgotten Martyr',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47209': {
-    ITEM_NAME: 'Chestguard of Flowing Elements',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47235': {
-    ITEM_NAME: 'Gloves of the Lifeless Touch',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47236': {
-    ITEM_NAME: 'Gloves of the Lifeless Touch',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47237': {
-    ITEM_NAME: 'Band of Deplorable Violence',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47238': {
-    ITEM_NAME: "Maiden's Favor",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47239': {
-    ITEM_NAME: 'Archon Glaive',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47240': {
-    ITEM_NAME: 'Gloves of Bitter Reprisal',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47241': {
-    ITEM_NAME: 'Emblem of Triumph',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47242': {
-    ITEM_NAME: 'Trophy of the Crusade',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 15,
-  },
-  '47251': {
-    ITEM_NAME: 'Cuirass of Cruel Intent',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47252': {
-    ITEM_NAME: 'Ring of the Violent Temperament',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47253': {
-    ITEM_NAME: 'Boneshatter Vambraces',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47254': {
-    ITEM_NAME: 'Hauberk of the Towering Monstrosity',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47255': {
-    ITEM_NAME: 'Stygian Bladebreaker',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47256': {
-    ITEM_NAME: 'Drape of the Refreshing Winds',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47258': {
-    ITEM_NAME: 'Belt of the Tenebrous Mist',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47260': {
-    ITEM_NAME: 'Forlorn Barrier',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47261': {
-    ITEM_NAME: 'Barb of Tarasque',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47262': {
-    ITEM_NAME: 'Boots of the Harsh Winter',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47263': {
-    ITEM_NAME: 'Sabatons of the Courageous',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47265': {
-    ITEM_NAME: 'Binding of the Ice Burrower',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47266': {
-    ITEM_NAME: 'Blood Fury',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47267': {
-    ITEM_NAME: "Death's Head Crossbow",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47269': {
-    ITEM_NAME: 'Dawnbreaker Sabatons',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47270': {
-    ITEM_NAME: 'Vest of Calamitous Fate',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47271': {
-    ITEM_NAME: 'Solace of the Fallen',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47272': {
-    ITEM_NAME: 'Charge of the Eredar',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47273': {
-    ITEM_NAME: 'Legplates of Feverish Dedication',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47274': {
-    ITEM_NAME: 'Pants of the Soothing Touch',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47275': {
-    ITEM_NAME: 'Pride of the Demon Lord',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47276': {
-    ITEM_NAME: 'Talisman of Heedless Sins',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47277': {
-    ITEM_NAME: 'Bindings of the Autumn Willow',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47278': {
-    ITEM_NAME: 'Circle of the Darkmender',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47279': {
-    ITEM_NAME: 'Leggings of Failing Light',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47280': {
-    ITEM_NAME: 'Wristwraps of Cloudy Omen',
-    allowedClasses: [Class.Paladin, Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47281': {
-    ITEM_NAME: 'Bracers of the Silent Massacre',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47282': {
-    ITEM_NAME: 'Band of Callous Aggression',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47283': {
-    ITEM_NAME: 'Belt of Bloodied Scars',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47284': {
-    ITEM_NAME: 'Icewalker Treads',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47285': {
-    ITEM_NAME: 'Dual-blade Butcher',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47286': {
-    ITEM_NAME: 'Belt of Biting Cold',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47287': {
-    ITEM_NAME: 'Bastion of Resolve',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47288': {
-    ITEM_NAME: 'Chestplate of the Frostwolf Hero',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47289': {
-    ITEM_NAME: 'Leggings of Concealed Hatred',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47290': {
-    ITEM_NAME: "Juggernaut's Vitality",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47291': {
-    ITEM_NAME: 'Shroud of Displacement',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47292': {
-    ITEM_NAME: 'Robes of the Shattered Fellowship',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47293': {
-    ITEM_NAME: 'Sandals of the Mourning Widow',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47294': {
-    ITEM_NAME: 'Bracers of the Broken Bond',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47295': {
-    ITEM_NAME: 'Sabatons of Tremoring Earth',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47306': {
-    ITEM_NAME: 'Dark Essence Bindings',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47307': {
-    ITEM_NAME: "Cry of the Val'kyr",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47308': {
-    ITEM_NAME: 'Belt of Pale Thorns',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47309': {
-    ITEM_NAME: 'Mystifying Charm',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47310': {
-    ITEM_NAME: 'Chestplate of the Frozen Lake',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47311': {
-    ITEM_NAME: 'Waistguard of Deathly Dominion',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47312': {
-    ITEM_NAME: 'Greaves of the Saronite Citadel',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47313': {
-    ITEM_NAME: 'Armbands of Dark Determination',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47314': {
-    ITEM_NAME: 'Hellscream Slicer',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47315': {
-    ITEM_NAME: 'Band of the Traitor King',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47316': {
-    ITEM_NAME: 'Reign of the Dead',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47317': {
-    ITEM_NAME: 'Breeches of the Deepening Void',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47318': {
-    ITEM_NAME: 'Leggings of the Awakening',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47319': {
-    ITEM_NAME: 'Leggings of the Lurking Threat',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47321': {
-    ITEM_NAME: 'Boots of the Icy Floe',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47322': {
-    ITEM_NAME: "Suffering's End",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47323': {
-    ITEM_NAME: 'Girdle of the Forgotten Martyr',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47324': {
-    ITEM_NAME: 'Bindings of the Ashen Saint',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47326': {
-    ITEM_NAME: 'Handwraps of the Lifeless Touch',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47327': {
-    ITEM_NAME: 'Lurid Manifestation',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47328': {
-    ITEM_NAME: "Maiden's Adoration",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47329': {
-    ITEM_NAME: 'Hellion Glaive',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47330': {
-    ITEM_NAME: 'Gauntlets of Bitter Reprisal',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47413': {
-    ITEM_NAME: 'Ring of the Violent Temperament',
-    allowedClasses: [
-      Class.DeathKnight,
-      Class.Druid,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47415': {
-    ITEM_NAME: 'Hauberk of the Towering Monstrosity',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47416': {
-    ITEM_NAME: 'Stygian Bladebreaker',
-    allowedClasses: [Class.Rogue, Class.Hunter, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47418': {
-    ITEM_NAME: 'Cloak of the Untamed Predator',
-    allowedClasses: [
-      Class.Rogue,
-      Class.Hunter,
-      Class.Druid,
-      Class.Shaman,
-      Class.Warrior,
-      Class.DeathKnight,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47419': {
-    ITEM_NAME: 'Belt of the Tenebrous Mist',
-    allowedClasses: [
-      Class.Mage,
-      Class.Priest,
-      Class.Warlock,
-      Class.Shaman,
-      Class.Druid,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47420': {
-    ITEM_NAME: 'Legwraps of the Broken Beast',
-    allowedClasses: [
-      Class.Rogue,
-      Class.Druid,
-      Class.Shaman,
-      Class.Hunter,
-      Class.Warrior,
-      Class.DeathKnight,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47422': {
-    ITEM_NAME: 'Barb of Tarasque',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47423': {
-    ITEM_NAME: 'Boots of the Harsh Winter',
-    allowedClasses: [Class.Druid, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47425': {
-    ITEM_NAME: 'Flowing Robes of Ascent',
-    allowedClasses: [
-      Class.Mage,
-      Class.Warlock,
-      Class.Priest,
-      Class.Shaman,
-      Class.Druid,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47427': {
-    ITEM_NAME: 'Blood Fury',
-    allowedClasses: [
-      Class.Rogue,
-      Class.Warrior,
-      Class.DeathKnight,
-      Class.Hunter,
-      Class.Shaman,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47428': {
-    ITEM_NAME: "Death's Head Crossbow",
-    allowedClasses: [Class.Hunter, Class.Rogue, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47430': {
-    ITEM_NAME: 'Dawnbreaker Sabatons',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47431': {
-    ITEM_NAME: 'Vest of Calamitous Fate',
-    allowedClasses: [
-      Class.Rogue,
-      Class.Druid,
-      Class.Hunter,
-      Class.Shaman,
-      Class.DeathKnight,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47432': {
-    ITEM_NAME: 'Solace of the Fallen',
-    allowedClasses: [
-      Class.Priest,
-      Class.Druid,
-      Class.Mage,
-      Class.Warlock,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47433': {
-    ITEM_NAME: 'Charge of the Eredar',
-    allowedClasses: [
-      Class.Rogue,
-      Class.Hunter,
-      Class.Shaman,
-      Class.Druid,
-      Class.Warrior,
-      Class.Paladin,
-      Class.DeathKnight,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47434': {
-    ITEM_NAME: 'Legplates of Feverish Dedication',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47435': {
-    ITEM_NAME: 'Pants of the Soothing Touch',
-    allowedClasses: [
-      Class.Mage,
-      Class.Warlock,
-      Class.Priest,
-      Class.Druid,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47436': {
-    ITEM_NAME: 'Pride of the Demon Lord',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47437': {
-    ITEM_NAME: 'Talisman of Heedless Sins',
-    allowedClasses: [
-      Class.Mage,
-      Class.Warlock,
-      Class.Druid,
-      Class.Shaman,
-      Class.Priest,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47438': {
-    ITEM_NAME: 'Bindings of the Autumn Willow',
-    allowedClasses: [Class.Druid, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47439': {
-    ITEM_NAME: 'Circle of the Darkmender',
-    allowedClasses: [
-      Class.Priest,
-      Class.Shaman,
-      Class.Paladin,
-      Class.Druid,
-      Class.Mage,
-      Class.Warlock,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47440': {
-    ITEM_NAME: 'Leggings of Failing Light',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47442': {
-    ITEM_NAME: 'Bracers of the Silent Massacre',
-    allowedClasses: [Class.Hunter, Class.Shaman, Class.Paladin, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47443': {
-    ITEM_NAME: 'Band of Callous Aggression',
-    allowedClasses: [
-      Class.Hunter,
-      Class.Rogue,
-      Class.Druid,
-      Class.Shaman,
-      Class.Warrior,
-      Class.Paladin,
-      Class.DeathKnight,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47444': {
-    ITEM_NAME: 'Belt of Bloodied Scars',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47445': {
-    ITEM_NAME: 'Icewalker Treads',
-    allowedClasses: [
-      Class.Rogue,
-      Class.Druid,
-      Class.Hunter,
-      Class.Shaman,
-      Class.Warrior,
-      Class.Paladin,
-      Class.DeathKnight,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47446': {
-    ITEM_NAME: 'Dual-blade Butcher',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47447': {
-    ITEM_NAME: 'Belt of Biting Cold',
-    allowedClasses: [
-      Class.Warlock,
-      Class.Mage,
-      Class.Priest,
-      Class.Druid,
-      Class.Shaman,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47448': {
-    ITEM_NAME: 'Bastion of Resolve',
-    allowedClasses: [Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47449': {
-    ITEM_NAME: 'Chestplate of the Frostwolf Hero',
-    allowedClasses: [Class.DeathKnight, Class.Paladin, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47450': {
-    ITEM_NAME: 'Leggings of Concealed Hatred',
-    allowedClasses: [Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47451': {
-    ITEM_NAME: "Juggernaut's Vitality",
-    allowedClasses: [
-      Class.Paladin,
-      Class.Warrior,
-      Class.DeathKnight,
-      Class.Druid,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47452': {
-    ITEM_NAME: 'Shroud of Displacement',
-    allowedClasses: [
-      Class.Priest,
-      Class.Druid,
-      Class.Warlock,
-      Class.Shaman,
-      Class.Mage,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47453': {
-    ITEM_NAME: 'Robes of the Shattered Fellowship',
-    allowedClasses: [Class.Druid, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47454': {
-    ITEM_NAME: 'Sandals of the Mourning Widow',
-    allowedClasses: [
-      Class.Warlock,
-      Class.Mage,
-      Class.Priest,
-      Class.Druid,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47455': {
-    ITEM_NAME: 'Bracers of the Broken Bond',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47456': {
-    ITEM_NAME: 'Sabatons of Tremoring Earth',
-    allowedClasses: [Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47467': {
-    ITEM_NAME: 'Dark Essence Bindings',
-    allowedClasses: [
-      Class.Mage,
-      Class.Warlock,
-      Class.Priest,
-      Class.Druid,
-      Class.Shaman,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47468': {
-    ITEM_NAME: "Cry of the Val'kyr",
-    allowedClasses: [
-      Class.Priest,
-      Class.Mage,
-      Class.Warlock,
-      Class.Druid,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47469': {
-    ITEM_NAME: 'Belt of Pale Thorns',
-    allowedClasses: [Class.Druid, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47470': {
-    ITEM_NAME: 'Mystifying Charm',
-    allowedClasses: [Class.Priest, Class.Mage, Class.Warlock, Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47471': {
-    ITEM_NAME: 'Chestplate of the Frozen Lake',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47473': {
-    ITEM_NAME: 'Greaves of the Saronite Citadel',
-    allowedClasses: [Class.DeathKnight, Class.Warrior, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47475': {
-    ITEM_NAME: 'Hellscream Slicer',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47476': {
-    ITEM_NAME: 'Band of the Traitor King',
-    allowedClasses: [Class.DeathKnight, Class.Paladin, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47477': {
-    ITEM_NAME: 'Reign of the Dead',
-    allowedClasses: [
-      Class.Mage,
-      Class.Warlock,
-      Class.Priest,
-      Class.Shaman,
-      Class.Druid,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47479': {
-    ITEM_NAME: 'Leggings of the Awakening',
-    allowedClasses: [Class.Druid, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47480': {
-    ITEM_NAME: 'Leggings of the Lurking Threat',
-    allowedClasses: [
-      Class.Hunter,
-      Class.Shaman,
-      Class.Warrior,
-      Class.DeathKnight,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47481': {
-    ITEM_NAME: 'Might of the Nerub',
-    allowedClasses: [
-      Class.DeathKnight,
-      Class.Druid,
-      Class.Warrior,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47482': {
-    ITEM_NAME: 'Boots of the Icy Floe',
-    allowedClasses: [
-      Class.Mage,
-      Class.Warlock,
-      Class.Priest,
-      Class.Shaman,
-      Class.Druid,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47483': {
-    ITEM_NAME: "Suffering's End",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47484': {
-    ITEM_NAME: 'Girdle of the Forgotten Martyr',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47485': {
-    ITEM_NAME: 'Bindings of the Ashen Saint',
-    allowedClasses: [
-      Class.Mage,
-      Class.Warlock,
-      Class.Priest,
-      Class.Druid,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47487': {
-    ITEM_NAME: 'Handwraps of the Lifeless Touch',
-    allowedClasses: [
-      Class.Mage,
-      Class.Warlock,
-      Class.Priest,
-      Class.Druid,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47489': {
-    ITEM_NAME: 'Lurid Manifestation',
-    allowedClasses: [
-      Class.Mage,
-      Class.Warlock,
-      Class.Priest,
-      Class.Druid,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47490': {
-    ITEM_NAME: "Maiden's Adoration",
-    allowedClasses: [
-      Class.Druid,
-      Class.Mage,
-      Class.Priest,
-      Class.Warlock,
-      Class.Shaman,
-      Class.Paladin,
-    ],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47491': {
-    ITEM_NAME: 'Hellion Glaive',
-    allowedClasses: [Class.Hunter, Class.Druid, Class.Paladin, Class.Warrior],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47556': {
-    ITEM_NAME: 'Crusader Orb',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47627': {
-    ITEM_NAME: 'Plans: Sunforged Bracers',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47628': {
-    ITEM_NAME: 'Pattern: Ensorcelled Nerubian Breastplate',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47630': {
-    ITEM_NAME: "Pattern: Crusader's Dragonscale Breastplate",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47632': {
-    ITEM_NAME: 'Pattern: Lunar Eclipse Robes',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47634': {
-    ITEM_NAME: 'Pattern: Knightbane Carapace',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47635': {
-    ITEM_NAME: 'Pattern: Bracers of Swift Death',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47636': {
-    ITEM_NAME: 'Pattern: Royal Moonshroud Robe',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47637': {
-    ITEM_NAME: 'Pattern: Royal Moonshroud Bracers',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47638': {
-    ITEM_NAME: "Pattern: Merlin's Robe",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47639': {
-    ITEM_NAME: "Pattern: Bejeweled Wizard's Bracers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47640': {
-    ITEM_NAME: 'Plans: Breastplate of the White Knight',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47641': {
-    ITEM_NAME: 'Plans: Saronite Swordbreakers',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47643': {
-    ITEM_NAME: 'Plans: Sunforged Breastplate',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47644': {
-    ITEM_NAME: 'Plans: Titanium Razorplate',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47645': {
-    ITEM_NAME: 'Plans: Titanium Spikeguards',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47646': {
-    ITEM_NAME: 'Pattern: Black Chitin Bracers',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47648': {
-    ITEM_NAME: "Pattern: Crusader's Dragonscale Bracers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47651': {
-    ITEM_NAME: 'Pattern: Knightbane Carapace',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47653': {
-    ITEM_NAME: 'Pattern: Moonshadow Armguards',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47654': {
-    ITEM_NAME: "Pattern: Bejeweled Wizard's Bracers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47655': {
-    ITEM_NAME: "Pattern: Merlin's Robe",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47657': {
-    ITEM_NAME: 'Pattern: Royal Moonshroud Robe',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47753': {
-    ITEM_NAME: "Khadgar's Gauntlets of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47755': {
-    ITEM_NAME: "Khadgar's Leggings of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47770': {
-    ITEM_NAME: "Sunstrider's Leggings of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47772': {
-    ITEM_NAME: "Sunstrider's Gauntlets of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47780': {
-    ITEM_NAME: "Kel'Thuzad's Leggings of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47782': {
-    ITEM_NAME: "Kel'Thuzad's Gloves of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47803': {
-    ITEM_NAME: "Gul'dan's Gloves of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47805': {
-    ITEM_NAME: "Gul'dan's Leggings of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47983': {
-    ITEM_NAME: "Velen's Gloves of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '47985': {
-    ITEM_NAME: "Velen's Leggings of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48064': {
-    ITEM_NAME: "Zabra's Leggings of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48066': {
-    ITEM_NAME: "Zabra's Gloves of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48077': {
-    ITEM_NAME: "Velen's Handwraps of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48079': {
-    ITEM_NAME: "Velen's Pants of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48094': {
-    ITEM_NAME: "Zabra's Pants of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48096': {
-    ITEM_NAME: "Zabra's Handwraps of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48133': {
-    ITEM_NAME: "Malfurion's Handguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48135': {
-    ITEM_NAME: "Malfurion's Leggings of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48150': {
-    ITEM_NAME: "Runetotem's Leggings of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48152': {
-    ITEM_NAME: "Runetotem's Handguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48163': {
-    ITEM_NAME: "Malfurion's Gloves of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48165': {
-    ITEM_NAME: "Malfurion's Trousers of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48180': {
-    ITEM_NAME: "Runetotem's Trousers of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48182': {
-    ITEM_NAME: "Runetotem's Gloves of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48193': {
-    ITEM_NAME: "Runetotem's Handgrips of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48195': {
-    ITEM_NAME: "Runetotem's Legguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48210': {
-    ITEM_NAME: "Malfurion's Legguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48212': {
-    ITEM_NAME: "Malfurion's Handgrips of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48224': {
-    ITEM_NAME: "VanCleef's Gauntlets of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48226': {
-    ITEM_NAME: "VanCleef's Legplates of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48239': {
-    ITEM_NAME: "Garona's Legplates of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48241': {
-    ITEM_NAME: "Garona's Gauntlets of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48256': {
-    ITEM_NAME: "Windrunner's Handguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48258': {
-    ITEM_NAME: "Windrunner's Legguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48271': {
-    ITEM_NAME: "Windrunner's Legguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48273': {
-    ITEM_NAME: "Windrunner's Handguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48286': {
-    ITEM_NAME: "Nobundo's Handguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48288': {
-    ITEM_NAME: "Nobundo's Legguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48301': {
-    ITEM_NAME: "Thrall's Handguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48303': {
-    ITEM_NAME: "Thrall's Legguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48317': {
-    ITEM_NAME: "Nobundo's Gloves of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48319': {
-    ITEM_NAME: "Nobundo's Kilt of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48332': {
-    ITEM_NAME: "Thrall's Kilt of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48334': {
-    ITEM_NAME: "Thrall's Gloves of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48347': {
-    ITEM_NAME: "Nobundo's Grips of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48349': {
-    ITEM_NAME: "Nobundo's War-Kilt of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48362': {
-    ITEM_NAME: "Thrall's War-Kilt of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48364': {
-    ITEM_NAME: "Thrall's Grips of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48377': {
-    ITEM_NAME: "Wrynn's Gauntlets of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48379': {
-    ITEM_NAME: "Wrynn's Legplates of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48392': {
-    ITEM_NAME: "Hellscream's Gauntlets of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48394': {
-    ITEM_NAME: "Hellscream's Legplates of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48446': {
-    ITEM_NAME: "Wrynn's Legguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48452': {
-    ITEM_NAME: "Wrynn's Handguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48462': {
-    ITEM_NAME: "Hellscream's Handguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48464': {
-    ITEM_NAME: "Hellscream's Legguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48482': {
-    ITEM_NAME: "Thassarian's Gauntlets of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48484': {
-    ITEM_NAME: "Thassarian's Legplates of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48497': {
-    ITEM_NAME: "Koltira's Legplates of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48499': {
-    ITEM_NAME: "Koltira's Gauntlets of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48539': {
-    ITEM_NAME: "Thassarian's Handguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48541': {
-    ITEM_NAME: "Thassarian's Legguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48554': {
-    ITEM_NAME: "Koltira's Legguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48556': {
-    ITEM_NAME: "Koltira's Handguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48576': {
-    ITEM_NAME: "Turalyon's Gloves of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48578': {
-    ITEM_NAME: "Turalyon's Greaves of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48591': {
-    ITEM_NAME: "Liadrin's Greaves of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48593': {
-    ITEM_NAME: "Liadrin's Gloves of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48608': {
-    ITEM_NAME: "Turalyon's Gauntlets of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48610': {
-    ITEM_NAME: "Turalyon's Legplates of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48623': {
-    ITEM_NAME: "Liadrin's Legplates of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48625': {
-    ITEM_NAME: "Liadrin's Gauntlets of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48638': {
-    ITEM_NAME: "Turalyon's Legguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48640': {
-    ITEM_NAME: "Turalyon's Handguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48658': {
-    ITEM_NAME: "Liadrin's Handguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '48660': {
-    ITEM_NAME: "Liadrin's Legguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49426': {
-    ITEM_NAME: 'Emblem of Frost',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49908': {
-    ITEM_NAME: 'Primordial Saronite',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49919': {
-    ITEM_NAME: 'Cryptmaker',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49949': {
-    ITEM_NAME: 'Band of the Bone Colossus',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49950': {
-    ITEM_NAME: 'Frostbitten Fur Boots',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49951': {
-    ITEM_NAME: "Gendarme's Cuirass",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49952': {
-    ITEM_NAME: 'Snowserpent Mail Helm',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49960': {
-    ITEM_NAME: 'Bracers of Dark Reckoning',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49964': {
-    ITEM_NAME: 'Legguards of Lost Hope',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49967': {
-    ITEM_NAME: "Marrowgar's Frigid Eye",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49968': {
-    ITEM_NAME: 'Frozen Bonespike',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49975': {
-    ITEM_NAME: "Bone Sentinel's Amulet",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49976': {
-    ITEM_NAME: 'Bulwark of Smouldering Steel',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49977': {
-    ITEM_NAME: 'Loop of the Endless Labyrinth',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49978': {
-    ITEM_NAME: 'Crushing Coldwraith Belt',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49979': {
-    ITEM_NAME: "Handguards of Winter's Respite",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49980': {
-    ITEM_NAME: 'Rusted Bonespike Pauldrons',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49981': {
-    ITEM_NAME: "Fal'inrush, Defender of Quel'thalas",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49982': {
-    ITEM_NAME: 'Heartpierce',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49983': {
-    ITEM_NAME: 'Blood-Soaked Saronite Stompers',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49985': {
-    ITEM_NAME: 'Juggernaut Band',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49986': {
-    ITEM_NAME: 'Broken Ram Skull Helm',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49987': {
-    ITEM_NAME: "Cultist's Bloodsoaked Spaulders",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49988': {
-    ITEM_NAME: 'Leggings of Northern Lights',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49989': {
-    ITEM_NAME: "Ahn'kahar Onyx Neckguard",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49990': {
-    ITEM_NAME: 'Ring of Maddening Whispers',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49991': {
-    ITEM_NAME: 'Shoulders of Mercy Killing',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49992': {
-    ITEM_NAME: 'Nibelung',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49993': {
-    ITEM_NAME: 'Necrophotic Greaves',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49994': {
-    ITEM_NAME: "The Lady's Brittle Bracers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49995': {
-    ITEM_NAME: "Fallen Lord's Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49996': {
-    ITEM_NAME: 'Deathwhisper Raiment',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49997': {
-    ITEM_NAME: "Mithrios, Bronzebeard's Legacy",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49998': {
-    ITEM_NAME: "Shadowvault Slayer's Cloak",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '49999': {
-    ITEM_NAME: "Skeleton Lord's Circle",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50000': {
-    ITEM_NAME: "Scourge Hunter's Vambraces",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50001': {
-    ITEM_NAME: "Ikfirus's Sack of Wonder",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50002': {
-    ITEM_NAME: 'Polar Bear Claw Bracers',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50003': {
-    ITEM_NAME: "Boneguard Commander's Pauldrons",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50005': {
-    ITEM_NAME: 'Amulet of the Silent Eulogy',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50006': {
-    ITEM_NAME: "Corp'rethar Ceremonial Crown",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50008': {
-    ITEM_NAME: 'Ring of Rapid Ascent',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50009': {
-    ITEM_NAME: 'Boots of Unnatural Growth',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50010': {
-    ITEM_NAME: 'Waistband of Righteous Fury',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50011': {
-    ITEM_NAME: "Gunship Captain's Mittens",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50012': {
-    ITEM_NAME: "Havoc's Call, Blade of Lordaeron Kings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50014': {
-    ITEM_NAME: 'Greatcloak of the Turned Champion',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50015': {
-    ITEM_NAME: 'Belt of the Blood Nova',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50016': {
-    ITEM_NAME: 'Rib Spreader',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50019': {
-    ITEM_NAME: 'Winding Sheet',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50020': {
-    ITEM_NAME: "Raging Behemoth's Shoulderplates",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50021': {
-    ITEM_NAME: "Aldriana's Gloves of Secrecy",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50022': {
-    ITEM_NAME: 'Dual-Bladed Pauldrons',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50023': {
-    ITEM_NAME: 'Bile-Encrusted Medallion',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50024': {
-    ITEM_NAME: 'Blightborne Warplate',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50025': {
-    ITEM_NAME: 'Seal of Many Mouths',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50026': {
-    ITEM_NAME: 'Helm of the Elder Moon',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50027': {
-    ITEM_NAME: 'Rot-Resistant Breastplate',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50028': {
-    ITEM_NAME: 'Trauma',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50030': {
-    ITEM_NAME: "Bloodsunder's Bracers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50032': {
-    ITEM_NAME: "Death Surgeon's Sleeves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50033': {
-    ITEM_NAME: 'Corpse-Impaling Spike',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50034': {
-    ITEM_NAME: "Zod's Repeating Longbow",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50035': {
-    ITEM_NAME: 'Black Bruise',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50036': {
-    ITEM_NAME: 'Belt of Broken Bones',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50037': {
-    ITEM_NAME: 'Fleshrending Gauntlets',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50038': {
-    ITEM_NAME: 'Carapace of Forgotten Kings',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50040': {
-    ITEM_NAME: 'Distant Land',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50041': {
-    ITEM_NAME: 'Leather of Stitched Scourge Parts',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50042': {
-    ITEM_NAME: 'Gangrenous Leggings',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50056': {
-    ITEM_NAME: "Plaguebringer's Stained Pants",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50059': {
-    ITEM_NAME: 'Horrific Flesh Epaulets',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50060': {
-    ITEM_NAME: 'Faceplate of the Forgotten',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50061': {
-    ITEM_NAME: "Holiday's Grace",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50062': {
-    ITEM_NAME: "Plague Scientist's Boots",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50063': {
-    ITEM_NAME: 'Lingering Illness',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50064': {
-    ITEM_NAME: 'Unclean Surgical Gloves',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50065': {
-    ITEM_NAME: 'Icecrown Glacial Wall',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50067': {
-    ITEM_NAME: "Astrylian's Sutured Cinch",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50068': {
-    ITEM_NAME: 'Rigormortis',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50069': {
-    ITEM_NAME: "Professor's Bloodied Smock",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50070': {
-    ITEM_NAME: 'Glorenzelg, High-Blade of the Silver Hand',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50071': {
-    ITEM_NAME: 'Treads of the Wasteland',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50072': {
-    ITEM_NAME: "Landsoul's Horned Greathelm",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50073': {
-    ITEM_NAME: "Geistlord's Punishment Sack",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50074': {
-    ITEM_NAME: 'Royal Crimson Cloak',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50075': {
-    ITEM_NAME: "Taldaram's Plated Fists",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50170': {
-    ITEM_NAME: "Valanar's Other Signet Ring",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50171': {
-    ITEM_NAME: 'Shoulders of Frost-Tipped Thorns',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50172': {
-    ITEM_NAME: 'Sanguine Silk Robes',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50173': {
-    ITEM_NAME: 'Shadow Silk Spindle',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50174': {
-    ITEM_NAME: 'Incarnadine Band of Mending',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50175': {
-    ITEM_NAME: "Crypt Keeper's Bracers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50176': {
-    ITEM_NAME: "San'layn Ritualist Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50177': {
-    ITEM_NAME: 'Mail of Crimson Coins',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50178': {
-    ITEM_NAME: 'Bloodfall',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50179': {
-    ITEM_NAME: 'Last Word',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50180': {
-    ITEM_NAME: "Lana'thel's Chain of Flagellation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50181': {
-    ITEM_NAME: 'Dying Light',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50182': {
-    ITEM_NAME: "Blood Queen's Crimson Choker",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50183': {
-    ITEM_NAME: 'Lungbreaker',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50184': {
-    ITEM_NAME: "Keleseth's Seducer",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50185': {
-    ITEM_NAME: "Devium's Eternally Cold Ring",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50186': {
-    ITEM_NAME: 'Frostbrood Sapphire Ring',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50187': {
-    ITEM_NAME: 'Coldwraith Links',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50188': {
-    ITEM_NAME: "Anub'ar Stalker's Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50190': {
-    ITEM_NAME: 'Grinning Skull Greatboots',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50192': {
-    ITEM_NAME: "Scourge Reaver's Legplates",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50195': {
-    ITEM_NAME: 'Noose of Malachite',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50199': {
-    ITEM_NAME: 'Leggings of Dying Candles',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50202': {
-    ITEM_NAME: 'Snowstorm Helm',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50205': {
-    ITEM_NAME: "Frostbinder's Shredded Cape",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50226': {
-    ITEM_NAME: "Festergut's Acidic Blood",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50231': {
-    ITEM_NAME: "Rotface's Acidic Blood",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50274': {
-    ITEM_NAME: 'Shadowfrost Shard',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50333': {
-    ITEM_NAME: "Toskk's Maximized Wristguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50348': {
-    ITEM_NAME: 'Dislodged Foreign Object',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50349': {
-    ITEM_NAME: 'Corpse Tongue Coin',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50351': {
-    ITEM_NAME: 'Tiny Abomination in a Jar',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50352': {
-    ITEM_NAME: 'Corpse Tongue Coin',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50353': {
-    ITEM_NAME: 'Dislodged Foreign Object',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50354': {
-    ITEM_NAME: 'Bauble of True Blood',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50359': {
-    ITEM_NAME: "Althor's Abacus",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50360': {
-    ITEM_NAME: 'Phylactery of the Nameless Lich',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50361': {
-    ITEM_NAME: "Sindragosa's Flawless Fang",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50362': {
-    ITEM_NAME: "Deathbringer's Will",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50363': {
-    ITEM_NAME: "Deathbringer's Will",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50364': {
-    ITEM_NAME: "Sindragosa's Flawless Fang",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50365': {
-    ITEM_NAME: 'Phylactery of the Nameless Lich',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50366': {
-    ITEM_NAME: "Althor's Abacus",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50411': {
-    ITEM_NAME: 'Scourgeborne Waraxe',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50412': {
-    ITEM_NAME: 'Bloodvenom Blade',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50413': {
-    ITEM_NAME: "Nerub'ar Stalker's Cord",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50414': {
-    ITEM_NAME: 'Might of Blight',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50415': {
-    ITEM_NAME: 'Bryntroll, the Bone Arbiter',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50416': {
-    ITEM_NAME: 'Boots of the Funeral March',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50417': {
-    ITEM_NAME: 'Bracers of Eternal Dreaming',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50418': {
-    ITEM_NAME: 'Robe of the Waking Nightmare',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50421': {
-    ITEM_NAME: "Sindragosa's Cruel Claw",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50423': {
-    ITEM_NAME: 'Sundial of Eternal Dusk',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50424': {
-    ITEM_NAME: 'Memory of Malygos',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50425': {
-    ITEM_NAME: 'Oathbinder, Charge of the Ranger-General',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50426': {
-    ITEM_NAME: "Heaven's Fall, Kryss of a Thousand Lies",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50427': {
-    ITEM_NAME: "Bloodsurge, Kel'Thuzad's Blade of Agony",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50428': {
-    ITEM_NAME: 'Royal Scepter of Terenas II',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50429': {
-    ITEM_NAME: 'Archus, Greatstaff of Antonidas',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50444': {
-    ITEM_NAME: "Rowan's Rifle of Silver Bullets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50447': {
-    ITEM_NAME: "Harbinger's Bone Band",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50449': {
-    ITEM_NAME: 'Stiffened Corpse Shoulderpads',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50450': {
-    ITEM_NAME: 'Leggings of Dubious Charms',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50451': {
-    ITEM_NAME: 'Belt of the Lonely Noble',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50452': {
-    ITEM_NAME: "Wodin's Lucky Necklace",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50453': {
-    ITEM_NAME: 'Ring of Rotting Sinew',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50472': {
-    ITEM_NAME: 'Nightmare Ender',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50603': {
-    ITEM_NAME: 'Cryptmaker',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50604': {
-    ITEM_NAME: 'Band of the Bone Colossus',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50605': {
-    ITEM_NAME: 'Snowserpent Mail Helm',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50606': {
-    ITEM_NAME: "Gendarme's Cuirass",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50607': {
-    ITEM_NAME: 'Frostbitten Fur Boots',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50608': {
-    ITEM_NAME: 'Frozen Bonespike',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50609': {
-    ITEM_NAME: "Bone Sentinel's Amulet",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50610': {
-    ITEM_NAME: "Marrowgar's Frigid Eye",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50611': {
-    ITEM_NAME: 'Bracers of Dark Reckoning',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50612': {
-    ITEM_NAME: 'Legguards of Lost Hope',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50613': {
-    ITEM_NAME: 'Crushing Coldwraith Belt',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50614': {
-    ITEM_NAME: 'Loop of the Endless Labyrinth',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50615': {
-    ITEM_NAME: "Handguards of Winter's Respite",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50616': {
-    ITEM_NAME: 'Bulwark of Smouldering Steel',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50617': {
-    ITEM_NAME: 'Rusted Bonespike Pauldrons',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50618': {
-    ITEM_NAME: 'Frostbrood Sapphire Ring',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50619': {
-    ITEM_NAME: "Anub'ar Stalker's Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50620': {
-    ITEM_NAME: 'Coldwraith Links',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50621': {
-    ITEM_NAME: 'Lungbreaker',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50622': {
-    ITEM_NAME: "Devium's Eternally Cold Ring",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50623': {
-    ITEM_NAME: 'Leggings of Dying Candles',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50624': {
-    ITEM_NAME: "Scourge Reaver's Legplates",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50625': {
-    ITEM_NAME: 'Grinning Skull Greatboots',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50626': {
-    ITEM_NAME: 'Snowstorm Helm',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50627': {
-    ITEM_NAME: 'Noose of Malachite',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50628': {
-    ITEM_NAME: "Frostbinder's Shredded Cape",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50629': {
-    ITEM_NAME: 'Robe of the Waking Nightmare',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50630': {
-    ITEM_NAME: 'Bracers of Eternal Dreaming',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50631': {
-    ITEM_NAME: 'Nightmare Ender',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50632': {
-    ITEM_NAME: 'Boots of the Funeral March',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50633': {
-    ITEM_NAME: "Sindragosa's Cruel Claw",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50635': {
-    ITEM_NAME: 'Sundial of Eternal Dusk',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50636': {
-    ITEM_NAME: 'Memory of Malygos',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50638': {
-    ITEM_NAME: "Zod's Repeating Longbow",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50639': {
-    ITEM_NAME: 'Blood-Soaked Saronite Stompers',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50640': {
-    ITEM_NAME: 'Broken Ram Skull Helm',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50641': {
-    ITEM_NAME: 'Heartpierce',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50642': {
-    ITEM_NAME: 'Juggernaut Band',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50643': {
-    ITEM_NAME: 'Shoulders of Mercy Killing',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50644': {
-    ITEM_NAME: 'Ring of Maddening Whispers',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50645': {
-    ITEM_NAME: 'Leggings of Northern Lights',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50646': {
-    ITEM_NAME: "Cultist's Bloodsoaked Spaulders",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50647': {
-    ITEM_NAME: "Ahn'kahar Onyx Neckguard",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50648': {
-    ITEM_NAME: 'Nibelung',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50649': {
-    ITEM_NAME: 'Deathwhisper Raiment',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50650': {
-    ITEM_NAME: "Fallen Lord's Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50651': {
-    ITEM_NAME: "The Lady's Brittle Bracers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50652': {
-    ITEM_NAME: 'Necrophotic Greaves',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50653': {
-    ITEM_NAME: "Shadowvault Slayer's Cloak",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50654': {
-    ITEM_NAME: 'Scourgeborne Waraxe',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50655': {
-    ITEM_NAME: "Scourge Hunter's Vambraces",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50656': {
-    ITEM_NAME: "Ikfirus's Sack of Wonder",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50657': {
-    ITEM_NAME: "Skeleton Lord's Circle",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50658': {
-    ITEM_NAME: 'Amulet of the Silent Eulogy',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50659': {
-    ITEM_NAME: 'Polar Bear Claw Bracers',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50660': {
-    ITEM_NAME: "Boneguard Commander's Pauldrons",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50661': {
-    ITEM_NAME: "Corp'rethar Ceremonial Crown",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50664': {
-    ITEM_NAME: 'Ring of Rapid Ascent',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50665': {
-    ITEM_NAME: 'Boots of Unnatural Growth',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50667': {
-    ITEM_NAME: 'Waistband of Righteous Fury',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50668': {
-    ITEM_NAME: 'Greatcloak of the Turned Champion',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50670': {
-    ITEM_NAME: "Toskk's Maximized Wristguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50671': {
-    ITEM_NAME: 'Belt of the Blood Nova',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50672': {
-    ITEM_NAME: 'Bloodvenom Blade',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50673': {
-    ITEM_NAME: 'Dual-Bladed Pauldrons',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50674': {
-    ITEM_NAME: "Raging Behemoth's Shoulderplates",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50675': {
-    ITEM_NAME: "Aldriana's Gloves of Secrecy",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50676': {
-    ITEM_NAME: 'Rib Spreader',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50677': {
-    ITEM_NAME: 'Winding Sheet',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50678': {
-    ITEM_NAME: 'Seal of Many Mouths',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50679': {
-    ITEM_NAME: 'Helm of the Elder Moon',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50680': {
-    ITEM_NAME: 'Rot-Resistant Breastplate',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50681': {
-    ITEM_NAME: 'Blightborne Warplate',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50682': {
-    ITEM_NAME: 'Bile-Encrusted Medallion',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50684': {
-    ITEM_NAME: 'Corpse-Impaling Spike',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50685': {
-    ITEM_NAME: 'Trauma',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50686': {
-    ITEM_NAME: "Death Surgeon's Sleeves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50687': {
-    ITEM_NAME: "Bloodsunder's Bracers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50688': {
-    ITEM_NAME: "Nerub'ar Stalker's Cord",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50689': {
-    ITEM_NAME: 'Carapace of Forgotten Kings',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50690': {
-    ITEM_NAME: 'Fleshrending Gauntlets',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50691': {
-    ITEM_NAME: 'Belt of Broken Bones',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50692': {
-    ITEM_NAME: 'Black Bruise',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50693': {
-    ITEM_NAME: 'Might of Blight',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50694': {
-    ITEM_NAME: "Plaguebringer's Stained Pants",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50695': {
-    ITEM_NAME: 'Distant Land',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50696': {
-    ITEM_NAME: 'Leather of Stitched Scourge Parts',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50697': {
-    ITEM_NAME: 'Gangrenous Leggings',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50698': {
-    ITEM_NAME: 'Horrific Flesh Epaulets',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50699': {
-    ITEM_NAME: "Plague Scientist's Boots",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50700': {
-    ITEM_NAME: "Holiday's Grace",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50701': {
-    ITEM_NAME: 'Faceplate of the Forgotten',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50702': {
-    ITEM_NAME: 'Lingering Illness',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50703': {
-    ITEM_NAME: 'Unclean Surgical Gloves',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50704': {
-    ITEM_NAME: 'Rigormortis',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50705': {
-    ITEM_NAME: "Professor's Bloodied Smock",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50706': {
-    ITEM_NAME: 'Tiny Abomination in a Jar',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50707': {
-    ITEM_NAME: "Astrylian's Sutured Cinch",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50708': {
-    ITEM_NAME: 'Last Word',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50709': {
-    ITEM_NAME: 'Bryntroll, the Bone Arbiter',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50710': {
-    ITEM_NAME: "Keleseth's Seducer",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50711': {
-    ITEM_NAME: 'Treads of the Wasteland',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50712': {
-    ITEM_NAME: "Landsoul's Horned Greathelm",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50713': {
-    ITEM_NAME: "Geistlord's Punishment Sack",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50714': {
-    ITEM_NAME: "Valanar's Other Signet Ring",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50715': {
-    ITEM_NAME: 'Shoulders of Frost-Tipped Thorns',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50716': {
-    ITEM_NAME: "Taldaram's Plated Fists",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50717': {
-    ITEM_NAME: 'Sanguine Silk Robes',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50718': {
-    ITEM_NAME: 'Royal Crimson Cloak',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50719': {
-    ITEM_NAME: 'Shadow Silk Spindle',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50720': {
-    ITEM_NAME: 'Incarnadine Band of Mending',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50721': {
-    ITEM_NAME: "Crypt Keeper's Bracers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50722': {
-    ITEM_NAME: "San'layn Ritualist Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50723': {
-    ITEM_NAME: 'Mail of Crimson Coins',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50724': {
-    ITEM_NAME: "Blood Queen's Crimson Choker",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50725': {
-    ITEM_NAME: 'Dying Light',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50726': {
-    ITEM_NAME: 'Bauble of True Blood',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50727': {
-    ITEM_NAME: 'Bloodfall',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50728': {
-    ITEM_NAME: "Lana'thel's Chain of Flagellation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50729': {
-    ITEM_NAME: 'Icecrown Glacial Wall',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50730': {
-    ITEM_NAME: 'Glorenzelg, High-Blade of the Silver Hand',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50731': {
-    ITEM_NAME: 'Archus, Greatstaff of Antonidas',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50732': {
-    ITEM_NAME: "Bloodsurge, Kel'Thuzad's Blade of Agony",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50733': {
-    ITEM_NAME: "Fal'inrush, Defender of Quel'thalas",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50734': {
-    ITEM_NAME: 'Royal Scepter of Terenas II',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50735': {
-    ITEM_NAME: 'Oathbinder, Charge of the Ranger-General',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50736': {
-    ITEM_NAME: "Heaven's Fall, Kryss of a Thousand Lies",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50737': {
-    ITEM_NAME: "Havoc's Call, Blade of Lordaeron Kings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50738': {
-    ITEM_NAME: "Mithrios, Bronzebeard's Legacy",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '50818': {
-    ITEM_NAME: "Invincible's Reins",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51126': {
-    ITEM_NAME: 'Sanctified Scourgelord Legplates',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51128': {
-    ITEM_NAME: 'Sanctified Scourgelord Gauntlets',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51131': {
-    ITEM_NAME: 'Sanctified Scourgelord Legguards',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51132': {
-    ITEM_NAME: 'Sanctified Scourgelord Handguards',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51136': {
-    ITEM_NAME: 'Sanctified Lasherweave Legplates',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51138': {
-    ITEM_NAME: 'Sanctified Lasherweave Gauntlets',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51142': {
-    ITEM_NAME: 'Sanctified Lasherweave Legguards',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51144': {
-    ITEM_NAME: 'Sanctified Lasherweave Handgrips',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51146': {
-    ITEM_NAME: 'Sanctified Lasherweave Trousers',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51148': {
-    ITEM_NAME: 'Sanctified Lasherweave Gloves',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51152': {
-    ITEM_NAME: "Sanctified Ahn'Kahar Blood Hunter's Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51154': {
-    ITEM_NAME: "Sanctified Ahn'Kahar Blood Hunter's Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51157': {
-    ITEM_NAME: 'Sanctified Bloodmage Leggings',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51159': {
-    ITEM_NAME: 'Sanctified Bloodmage Gloves',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51161': {
-    ITEM_NAME: 'Sanctified Lightsworn Legplates',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51163': {
-    ITEM_NAME: 'Sanctified Lightsworn Gauntlets',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51168': {
-    ITEM_NAME: 'Sanctified Lightsworn Greaves',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51169': {
-    ITEM_NAME: 'Sanctified Lightsworn Gloves',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51171': {
-    ITEM_NAME: 'Sanctified Lightsworn Legguards',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51172': {
-    ITEM_NAME: 'Sanctified Lightsworn Handguards',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51177': {
-    ITEM_NAME: 'Sanctified Crimson Acolyte Leggings',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51179': {
-    ITEM_NAME: 'Sanctified Crimson Acolyte Gloves',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51181': {
-    ITEM_NAME: 'Sanctified Crimson Acolyte Pants',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51183': {
-    ITEM_NAME: 'Sanctified Crimson Acolyte Handwraps',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51186': {
-    ITEM_NAME: 'Sanctified Shadowblade Legplates',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51188': {
-    ITEM_NAME: 'Sanctified Shadowblade Gauntlets',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51191': {
-    ITEM_NAME: "Sanctified Frost Witch's Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51193': {
-    ITEM_NAME: "Sanctified Frost Witch's Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51196': {
-    ITEM_NAME: "Sanctified Frost Witch's Grips",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51198': {
-    ITEM_NAME: "Sanctified Frost Witch's War-Kilt",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51201': {
-    ITEM_NAME: "Sanctified Frost Witch's Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51203': {
-    ITEM_NAME: "Sanctified Frost Witch's Kilt",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51207': {
-    ITEM_NAME: 'Sanctified Dark Coven Leggings',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51209': {
-    ITEM_NAME: 'Sanctified Dark Coven Gloves',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51211': {
-    ITEM_NAME: "Sanctified Ymirjar Lord's Legplates",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51213': {
-    ITEM_NAME: "Sanctified Ymirjar Lord's Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51216': {
-    ITEM_NAME: "Sanctified Ymirjar Lord's Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51217': {
-    ITEM_NAME: "Sanctified Ymirjar Lord's Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51315': {
-    ITEM_NAME: 'Sealed Chest',
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51327': {
-    ITEM_NAME: "Wrathful Gladiator's Cord of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51328': {
-    ITEM_NAME: "Wrathful Gladiator's Treads of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51329': {
-    ITEM_NAME: "Wrathful Gladiator's Cuffs of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51330': {
-    ITEM_NAME: "Wrathful Gladiator's Cloak of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51331': {
-    ITEM_NAME: "Wrathful Gladiator's Pendant of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51332': {
-    ITEM_NAME: "Wrathful Gladiator's Cloak of Subjugation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51333': {
-    ITEM_NAME: "Wrathful Gladiator's Pendant of Subjugation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51334': {
-    ITEM_NAME: "Wrathful Gladiator's Cloak of Ascendancy",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51335': {
-    ITEM_NAME: "Wrathful Gladiator's Pendant of Ascendancy",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51336': {
-    ITEM_NAME: "Wrathful Gladiator's Band of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51340': {
-    ITEM_NAME: "Wrathful Gladiator's Belt of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51341': {
-    ITEM_NAME: "Wrathful Gladiator's Boots of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51342': {
-    ITEM_NAME: "Wrathful Gladiator's Armwraps of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51343': {
-    ITEM_NAME: "Wrathful Gladiator's Belt of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51344': {
-    ITEM_NAME: "Wrathful Gladiator's Boots of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51345': {
-    ITEM_NAME: "Wrathful Gladiator's Armwraps of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51346': {
-    ITEM_NAME: "Wrathful Gladiator's Cloak of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51347': {
-    ITEM_NAME: "Wrathful Gladiator's Pendant of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51348': {
-    ITEM_NAME: "Wrathful Gladiator's Cloak of Deliverance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51349': {
-    ITEM_NAME: "Wrathful Gladiator's Pendant of Deliverance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51350': {
-    ITEM_NAME: "Wrathful Gladiator's Waistguard of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51351': {
-    ITEM_NAME: "Wrathful Gladiator's Sabatons of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51352': {
-    ITEM_NAME: "Wrathful Gladiator's Wristguards of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51353': {
-    ITEM_NAME: "Wrathful Gladiator's Pendant of Sundering",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51354': {
-    ITEM_NAME: "Wrathful Gladiator's Cloak of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51355': {
-    ITEM_NAME: "Wrathful Gladiator's Pendant of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51356': {
-    ITEM_NAME: "Wrathful Gladiator's Cloak of Victory",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51357': {
-    ITEM_NAME: "Wrathful Gladiator's Pendant of Victory",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51358': {
-    ITEM_NAME: "Wrathful Gladiator's Band of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51359': {
-    ITEM_NAME: "Wrathful Gladiator's Girdle of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51360': {
-    ITEM_NAME: "Wrathful Gladiator's Greaves of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51361': {
-    ITEM_NAME: "Wrathful Gladiator's Bracers of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51362': {
-    ITEM_NAME: "Wrathful Gladiator's Girdle of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51363': {
-    ITEM_NAME: "Wrathful Gladiator's Greaves of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51364': {
-    ITEM_NAME: "Wrathful Gladiator's Bracers of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51365': {
-    ITEM_NAME: "Wrathful Gladiator's Cord of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51366': {
-    ITEM_NAME: "Wrathful Gladiator's Treads of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51367': {
-    ITEM_NAME: "Wrathful Gladiator's Cuffs of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51368': {
-    ITEM_NAME: "Wrathful Gladiator's Belt of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51369': {
-    ITEM_NAME: "Wrathful Gladiator's Boots of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51370': {
-    ITEM_NAME: "Wrathful Gladiator's Armwraps of Triumph",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51371': {
-    ITEM_NAME: "Wrathful Gladiator's Waistguard of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51372': {
-    ITEM_NAME: "Wrathful Gladiator's Sabatons of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51373': {
-    ITEM_NAME: "Wrathful Gladiator's Wristguards of Salvation",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51374': {
-    ITEM_NAME: "Wrathful Gladiator's Waistguard of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51375': {
-    ITEM_NAME: "Wrathful Gladiator's Sabatons of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51376': {
-    ITEM_NAME: "Wrathful Gladiator's Wristguards of Dominance",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51414': {
-    ITEM_NAME: "Wrathful Gladiator's Dreadplate Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51416': {
-    ITEM_NAME: "Wrathful Gladiator's Dreadplate Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51420': {
-    ITEM_NAME: "Wrathful Gladiator's Kodohide Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51422': {
-    ITEM_NAME: "Wrathful Gladiator's Kodohide Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51426': {
-    ITEM_NAME: "Wrathful Gladiator's Dragonhide Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51428': {
-    ITEM_NAME: "Wrathful Gladiator's Dragonhide Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51434': {
-    ITEM_NAME: "Wrathful Gladiator's Wyrmhide Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51436': {
-    ITEM_NAME: "Wrathful Gladiator's Wyrmhide Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51459': {
-    ITEM_NAME: "Wrathful Gladiator's Chain Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51461': {
-    ITEM_NAME: "Wrathful Gladiator's Chain Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51464': {
-    ITEM_NAME: "Wrathful Gladiator's Silk Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51466': {
-    ITEM_NAME: "Wrathful Gladiator's Silk Trousers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51469': {
-    ITEM_NAME: "Wrathful Gladiator's Ornamented Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51471': {
-    ITEM_NAME: "Wrathful Gladiator's Ornamented Legplates",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51475': {
-    ITEM_NAME: "Wrathful Gladiator's Scaled Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51477': {
-    ITEM_NAME: "Wrathful Gladiator's Scaled Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51483': {
-    ITEM_NAME: "Wrathful Gladiator's Mooncloth Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51485': {
-    ITEM_NAME: "Wrathful Gladiator's Mooncloth Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51488': {
-    ITEM_NAME: "Wrathful Gladiator's Satin Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51490': {
-    ITEM_NAME: "Wrathful Gladiator's Satin Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51493': {
-    ITEM_NAME: "Wrathful Gladiator's Leather Gloves",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51495': {
-    ITEM_NAME: "Wrathful Gladiator's Leather Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51498': {
-    ITEM_NAME: "Wrathful Gladiator's Ringmail Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51500': {
-    ITEM_NAME: "Wrathful Gladiator's Ringmail Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51504': {
-    ITEM_NAME: "Wrathful Gladiator's Linked Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51506': {
-    ITEM_NAME: "Wrathful Gladiator's Linked Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51510': {
-    ITEM_NAME: "Wrathful Gladiator's Mail Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51512': {
-    ITEM_NAME: "Wrathful Gladiator's Mail Leggings",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51537': {
-    ITEM_NAME: "Wrathful Gladiator's Felweave Handguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51539': {
-    ITEM_NAME: "Wrathful Gladiator's Felweave Trousers",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51542': {
-    ITEM_NAME: "Wrathful Gladiator's Plate Gauntlets",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '51544': {
-    ITEM_NAME: "Wrathful Gladiator's Plate Legguards",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '52025': {
-    ITEM_NAME: "Vanquisher's Mark of Sanctification",
-    allowedClasses: [Class.DeathKnight, Class.Druid, Class.Mage, Class.Rogue],
-    restrictedClasses: [],
-    allowedRankings: 15,
-  },
-  '52026': {
-    ITEM_NAME: "Protector's Mark of Sanctification",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 15,
-  },
-  '52027': {
-    ITEM_NAME: "Conqueror's Mark of Sanctification",
-    allowedClasses: [Class.Paladin, Class.Priest, Class.Warlock],
-    restrictedClasses: [],
-    allowedRankings: 15,
-  },
-  '52028': {
-    ITEM_NAME: "Vanquisher's Mark of Sanctification",
-    allowedClasses: [Class.DeathKnight, Class.Druid, Class.Mage, Class.Rogue],
-    restrictedClasses: [],
-    allowedRankings: 15,
-  },
-  '52029': {
-    ITEM_NAME: "Protector's Mark of Sanctification",
-    allowedClasses: [],
-    restrictedClasses: [],
-    allowedRankings: 15,
-  },
-  '52030': {
-    ITEM_NAME: "Conqueror's Mark of Sanctification",
-    allowedClasses: [Class.Paladin, Class.Priest, Class.Warlock],
-    restrictedClasses: [],
-    allowedRankings: 15,
-  },
-  '53125': {
-    ITEM_NAME: "Apocalypse's Advance",
-    allowedClasses: [Class.Paladin, Class.Warrior, Class.DeathKnight],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '53126': {
-    ITEM_NAME: 'Umbrage Armbands',
-    allowedClasses: [],
-    restrictedClasses: [Class.Priest, Class.Mage, Class.Warlock],
-    allowedRankings: 3,
-  },
-  '53127': {
-    ITEM_NAME: 'Returning Footfalls',
-    allowedClasses: [],
-    restrictedClasses: [Class.Priest, Class.Mage, Class.Warlock, Class.Druid, Class.Rogue],
-    allowedRankings: 3,
-  },
-  '53129': {
-    ITEM_NAME: 'Treads of Impending Resurrection',
-    allowedClasses: [Class.Paladin, Class.Warrior, Class.DeathKnight],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '53132': {
-    ITEM_NAME: 'Penumbra Pendant',
-    allowedClasses: [Class.Paladin, Class.Warrior, Class.DeathKnight, Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '53133': {
-    ITEM_NAME: 'Signet of Twilight',
-    allowedClasses: [],
-    restrictedClasses: [Class.Priest, Class.Mage, Class.Warlock],
-    allowedRankings: 3,
-  },
-  '53134': {
-    ITEM_NAME: "Phaseshifter's Bracers",
-    allowedClasses: [Class.Druid, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '53486': {
-    ITEM_NAME: 'Bracers of Fiery Night',
-    allowedClasses: [],
-    restrictedClasses: [Class.Warrior, Class.DeathKnight, Class.Hunter, Class.Rogue],
-    allowedRankings: 3,
-  },
-  '53487': {
-    ITEM_NAME: 'Foreshadow Steps',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '53488': {
-    ITEM_NAME: 'Split Shape Belt',
-    allowedClasses: [Class.Paladin, Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '53489': {
-    ITEM_NAME: 'Cloak of Burning Dusk',
-    allowedClasses: [],
-    restrictedClasses: [Class.Warrior, Class.DeathKnight, Class.Hunter, Class.Rogue],
-    allowedRankings: 3,
-  },
-  '53490': {
-    ITEM_NAME: 'Ring of Phased Regeneration',
-    allowedClasses: [],
-    restrictedClasses: [Class.Warrior, Class.DeathKnight, Class.Hunter, Class.Rogue, Class.Mage, Class.Warlock],
-    allowedRankings: 3,
-  },
-  '54569': {
-    ITEM_NAME: 'Sharpened Twilight Scale',
-    allowedClasses: [],
-    restrictedClasses: [Class.Mage, Class.Warlock, Class.Priest],
-    allowedRankings: 3,
-  },
-  '54571': {
-    ITEM_NAME: 'Petrified Twilight Scale',
-    allowedClasses: [Class.Paladin, Class.Warrior, Class.DeathKnight, Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '54572': {
-    ITEM_NAME: 'Charred Twilight Scale',
-    allowedClasses: [],
-    restrictedClasses: [Class.Warrior, Class.DeathKnight, Class.Hunter, Class.Rogue, Class.Paladin],
-    allowedRankings: 3,
-  },
-  '54573': {
-    ITEM_NAME: 'Glowing Twilight Scale',
-    allowedClasses: [Class.Paladin, Class.Shaman, Class.Priest, Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '54576': {
-    ITEM_NAME: 'Signet of Twilight',
-    allowedClasses: [],
-    restrictedClasses: [Class.Priest, Class.Mage, Class.Warlock],
-    allowedRankings: 3,
-  },
-  '54577': {
-    ITEM_NAME: 'Returning Footfalls',
-    allowedClasses: [],
-    restrictedClasses: [Class.Priest, Class.Mage, Class.Warlock, Class.Druid, Class.Rogue],
-    allowedRankings: 3,
-  },
-  '54578': {
-    ITEM_NAME: "Apocalypse's Advance",
-    allowedClasses: [Class.Paladin, Class.Warrior, Class.DeathKnight],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '54579': {
-    ITEM_NAME: 'Treads of Impending Resurrection',
-    allowedClasses: [Class.Paladin, Class.Warrior, Class.DeathKnight],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '54580': {
-    ITEM_NAME: 'Umbrage Armbands',
-    allowedClasses: [],
-    restrictedClasses: [Class.Priest, Class.Mage, Class.Warlock],
-    allowedRankings: 3,
-  },
-  '54581': {
-    ITEM_NAME: 'Penumbra Pendant',
-    allowedClasses: [Class.Paladin, Class.Warrior, Class.DeathKnight, Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '54582': {
-    ITEM_NAME: 'Bracers of Fiery Night',
-    allowedClasses: [],
-    restrictedClasses: [Class.Warrior, Class.DeathKnight, Class.Hunter, Class.Rogue],
-    allowedRankings: 3,
-  },
-  '54583': {
-    ITEM_NAME: 'Cloak of Burning Dusk',
-    allowedClasses: [],
-    restrictedClasses: [Class.Warrior, Class.DeathKnight, Class.Hunter, Class.Rogue],
-    allowedRankings: 3,
-  },
-  '54584': {
-    ITEM_NAME: "Phaseshifter's Bracers",
-    allowedClasses: [Class.Druid, Class.Shaman, Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '54585': {
-    ITEM_NAME: 'Ring of Phased Regeneration',
-    allowedClasses: [],
-    restrictedClasses: [Class.Warrior, Class.DeathKnight, Class.Hunter, Class.Rogue, Class.Mage, Class.Warlock],
-    allowedRankings: 3,
-  },
-  '54586': {
-    ITEM_NAME: 'Foreshadow Steps',
-    allowedClasses: [Class.Paladin],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '54587': {
-    ITEM_NAME: 'Split Shape Belt',
-    allowedClasses: [Class.Paladin, Class.Shaman],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '54588': {
-    ITEM_NAME: 'Charred Twilight Scale',
-    allowedClasses: [],
-    restrictedClasses: [Class.Warrior, Class.DeathKnight, Class.Hunter, Class.Rogue, Class.Paladin],
-    allowedRankings: 3,
-  },
-  '54589': {
-    ITEM_NAME: 'Glowing Twilight Scale',
-    allowedClasses: [Class.Paladin, Class.Shaman, Class.Priest, Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-  '54590': {
-    ITEM_NAME: 'Sharpened Twilight Scale',
-    allowedClasses: [],
-    restrictedClasses: [Class.Mage, Class.Warlock, Class.Priest],
-    allowedRankings: 3,
-  },
-  '54591': {
-    ITEM_NAME: 'Petrified Twilight Scale',
-    allowedClasses: [Class.Paladin, Class.Warrior, Class.DeathKnight, Class.Druid],
-    restrictedClasses: [],
-    allowedRankings: 3,
-  },
-};
+  "59461": {
+    "ITEM_NAME": "Fury of Angerforge",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "59520": {
+    "ITEM_NAME": "Unheeded Warning",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "60226": {
+    "ITEM_NAME": "Dargonax's Signet",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "60227": {
+    "ITEM_NAME": "Caelestrasz's Will",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "60228": {
+    "ITEM_NAME": "Bracers of the Mat'redor",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "60229": {
+    "ITEM_NAME": "War-Torn Crushers",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "60230": {
+    "ITEM_NAME": "Twilight Scale Leggings",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "60231": {
+    "ITEM_NAME": "Belt of the Fallen Brood",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "60232": {
+    "ITEM_NAME": "Shroud of Endless Grief",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "60233": {
+    "ITEM_NAME": "Shard of Woe",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "60234": {
+    "ITEM_NAME": "Bindings of Bleak Betrayal",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "60235": {
+    "ITEM_NAME": "Boots of Az'galada",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "60236": {
+    "ITEM_NAME": "Nightmare Rider's Boots",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "60237": {
+    "ITEM_NAME": "Crown of the Twilight Queen",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "60238": {
+    "ITEM_NAME": "Bracers of the Dark Mother",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "63041": {
+    "ITEM_NAME": "Reins of the Drake of the South Wind",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65000": {
+    "ITEM_NAME": "Crown of the Forlorn Protector",
+    "allowedClasses": [Class.Warrior, Class.Hunter, Class.Shaman],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65001": {
+    "ITEM_NAME": "Crown of the Forlorn Conqueror",
+    "allowedClasses": [Class.Warlock, Class.Paladin, Class.Priest],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65002": {
+    "ITEM_NAME": "Crown of the Forlorn Vanquisher",
+    "allowedClasses": [Class.Rogue, Class.DeathKnight, Class.Mage, Class.Druid],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65003": {
+    "ITEM_NAME": "Reclaimed Ashkandi, Greatsword of the Brotherhood",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65004": {
+    "ITEM_NAME": "Circuit Design Breastplate",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65005": {
+    "ITEM_NAME": "Claws of Agony",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65006": {
+    "ITEM_NAME": "Claws of Torment",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65007": {
+    "ITEM_NAME": "Akirus the Worm-Breaker",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65008": {
+    "ITEM_NAME": "Shadowforge's Lightbound Smock",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65009": {
+    "ITEM_NAME": "Hide of Chromaggus",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65010": {
+    "ITEM_NAME": "Ironstar's Impenetrable Cover",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65011": {
+    "ITEM_NAME": "Corehammer's Riveted Girdle",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65012": {
+    "ITEM_NAME": "Treads of Savage Beatings",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65013": {
+    "ITEM_NAME": "Maldo's Sword Cane",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65014": {
+    "ITEM_NAME": "Maimgor's Bite",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65016": {
+    "ITEM_NAME": "Theresa's Booklight",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65017": {
+    "ITEM_NAME": "Andoros, Fist of the Dragon King",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65018": {
+    "ITEM_NAME": "Shadow of Dread",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65019": {
+    "ITEM_NAME": "Shadowblaze Robes",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65020": {
+    "ITEM_NAME": "Crown of Burning Waters",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65021": {
+    "ITEM_NAME": "Manacles of the Sleeping Beast",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65022": {
+    "ITEM_NAME": "Belt of the Blackhand",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65023": {
+    "ITEM_NAME": "Akmin-Kurai, Dominion's Shield",
+    "allowedClasses": [Class.Warrior, Class.Paladin],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65024": {
+    "ITEM_NAME": "Crul'korak, the Lightning's Arc",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65025": {
+    "ITEM_NAME": "Rage of Ages",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65026": {
+    "ITEM_NAME": "Prestor's Talisman of Machination",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65027": {
+    "ITEM_NAME": "Pauldrons of the Apocalypse",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65028": {
+    "ITEM_NAME": "Chimaeron Armguards",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65029": {
+    "ITEM_NAME": "Jar of Ancient Remedies",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65030": {
+    "ITEM_NAME": "Leggings of Consuming Flames",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65031": {
+    "ITEM_NAME": "Flash Freeze Gauntlets",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65032": {
+    "ITEM_NAME": "Legwraps of the Greatest Son",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65033": {
+    "ITEM_NAME": "Treads of Flawless Creation",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65034": {
+    "ITEM_NAME": "Belt of Arcane Storms",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65035": {
+    "ITEM_NAME": "Cloak of Biting Chill",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65036": {
+    "ITEM_NAME": "Mace of Acrid Death",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65037": {
+    "ITEM_NAME": "Tunic of Failed Experiments",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65038": {
+    "ITEM_NAME": "Dragon Bone Warhelm",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65039": {
+    "ITEM_NAME": "Aberration's Leggings",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65040": {
+    "ITEM_NAME": "Belt of Absolute Zero",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65041": {
+    "ITEM_NAME": "Incineratus",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65042": {
+    "ITEM_NAME": "Breastplate of Avenging Flame",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65043": {
+    "ITEM_NAME": "Mantle of Nefarius",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65044": {
+    "ITEM_NAME": "Flame Pillar Leggings",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65045": {
+    "ITEM_NAME": "Scorched Wormling Vest",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65046": {
+    "ITEM_NAME": "Lifecycle Waistguard",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65047": {
+    "ITEM_NAME": "Lava Spine",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65048": {
+    "ITEM_NAME": "Symbiotic Worm",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65049": {
+    "ITEM_NAME": "Leggings of Lethal Force",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65050": {
+    "ITEM_NAME": "Parasitic Bands",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65051": {
+    "ITEM_NAME": "Molten Tantrum Boots",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65052": {
+    "ITEM_NAME": "Kingdom's Heart",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65053": {
+    "ITEM_NAME": "Bell of Enraging Resonance",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65054": {
+    "ITEM_NAME": "Mantle of Roaring Flames",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65055": {
+    "ITEM_NAME": "Gloves of Cacophony",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65056": {
+    "ITEM_NAME": "Bracers of the Burningeye",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65057": {
+    "ITEM_NAME": "Belt of the Nightmare",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65058": {
+    "ITEM_NAME": "Themios the Darkbringer",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65059": {
+    "ITEM_NAME": "Ironstar Amulet",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65060": {
+    "ITEM_NAME": "Sark of the Unwatched",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65061": {
+    "ITEM_NAME": "Legguards of the Unseeing",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65062": {
+    "ITEM_NAME": "Battleplate of Ancient Kings",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65063": {
+    "ITEM_NAME": "Boots of Vertigo",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65064": {
+    "ITEM_NAME": "Finkle's Mixer Upper",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65065": {
+    "ITEM_NAME": "Brackish Gloves",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65066": {
+    "ITEM_NAME": "Helm of the Blind Seer",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65067": {
+    "ITEM_NAME": "Burden of Mortality",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65068": {
+    "ITEM_NAME": "Chaos Beast Bracers",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65069": {
+    "ITEM_NAME": "Einhorn's Galoshes",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65070": {
+    "ITEM_NAME": "Bile-O-Tron Nut",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65071": {
+    "ITEM_NAME": "Plated Fists of Provocation",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65072": {
+    "ITEM_NAME": "Heart of Rage",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65073": {
+    "ITEM_NAME": "Double Attack Handguards",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65074": {
+    "ITEM_NAME": "Spaulders of the Scarred Lady",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65075": {
+    "ITEM_NAME": "Massacre Treads",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65076": {
+    "ITEM_NAME": "Security Measure Alpha",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65077": {
+    "ITEM_NAME": "Power Generator Hood",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65078": {
+    "ITEM_NAME": "Passive Resistor Spaulders",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65079": {
+    "ITEM_NAME": "X-Tron Duct Tape",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65080": {
+    "ITEM_NAME": "Life Force Chargers",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65081": {
+    "ITEM_NAME": "Organic Lifeform Inverter",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65082": {
+    "ITEM_NAME": "Lightning Conductor Band",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65083": {
+    "ITEM_NAME": "Poison Protocol Pauldrons",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65084": {
+    "ITEM_NAME": "Voltage Source Chestguard",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65085": {
+    "ITEM_NAME": "Electron Inductor Coils",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65086": {
+    "ITEM_NAME": "Jumbotron Power Belt",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65087": {
+    "ITEM_NAME": "Shoulders of the Forlorn Protector",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65088": {
+    "ITEM_NAME": "Shoulders of the Forlorn Conqueror",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65089": {
+    "ITEM_NAME": "Shoulders of the Forlorn Vanquisher",
+    "allowedClasses": [Class.Rogue, Class.DeathKnight, Class.Mage, Class.Druid],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65090": {
+    "ITEM_NAME": "Twilight's Hammer",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65091": {
+    "ITEM_NAME": "Blade of the Witching Hour",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65092": {
+    "ITEM_NAME": "Waistguard of Hatred",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65093": {
+    "ITEM_NAME": "Helm of Eldritch Authority",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65094": {
+    "ITEM_NAME": "Fang of Twilight",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65095": {
+    "ITEM_NAME": "Dragonheart Piercer",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65096": {
+    "ITEM_NAME": "Daybreaker Helm",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65097": {
+    "ITEM_NAME": "Bracers of the Dark Pool",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65098": {
+    "ITEM_NAME": "Crossfire Carbine",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65100": {
+    "ITEM_NAME": "Phase-Twister Leggings",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65101": {
+    "ITEM_NAME": "Heaving Plates of Protection",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65102": {
+    "ITEM_NAME": "Chelley's Staff of Dark Mending",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65103": {
+    "ITEM_NAME": "Soul Blade",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65105": {
+    "ITEM_NAME": "Theralion's Mirror",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65106": {
+    "ITEM_NAME": "Ring of Rivalry",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65107": {
+    "ITEM_NAME": "Necklace of Strife",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65108": {
+    "ITEM_NAME": "Drape of the Twins",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65109": {
+    "ITEM_NAME": "Vial of Stolen Memories",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65110": {
+    "ITEM_NAME": "Heart of Ignacious",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65111": {
+    "ITEM_NAME": "Scepter of Ice",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65112": {
+    "ITEM_NAME": "Valiona's Medallion",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65113": {
+    "ITEM_NAME": "Hydrolance Gloves",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65114": {
+    "ITEM_NAME": "Feludius' Mantle",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65115": {
+    "ITEM_NAME": "Glaciated Helm",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65116": {
+    "ITEM_NAME": "Treads of Liquid Ice",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65117": {
+    "ITEM_NAME": "Glittering Epidermis",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65118": {
+    "ITEM_NAME": "Crushing Weight",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65119": {
+    "ITEM_NAME": "Gravitational Pull",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65120": {
+    "ITEM_NAME": "Arion's Crown",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65121": {
+    "ITEM_NAME": "Terrastra's Legguards",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65122": {
+    "ITEM_NAME": "Dispersing Belt",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65123": {
+    "ITEM_NAME": "Signet of the Fifth Circle",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65124": {
+    "ITEM_NAME": "Fall of Mortality",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65125": {
+    "ITEM_NAME": "Kilt of the Forgotten Battle",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65126": {
+    "ITEM_NAME": "Hands of the Twilight Council",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65127": {
+    "ITEM_NAME": "Shackles of the End of Days",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65128": {
+    "ITEM_NAME": "Treads of Hideous Transformation",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65129": {
+    "ITEM_NAME": "Membrane of C'Thun",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65130": {
+    "ITEM_NAME": "Helm of Maddening Whispers",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65131": {
+    "ITEM_NAME": "Battleplate of the Apocalypse",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65132": {
+    "ITEM_NAME": "Coil of Ten-Thousand Screams",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65133": {
+    "ITEM_NAME": "Book of Binding Will",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65134": {
+    "ITEM_NAME": "Wyrmbreaker's Amulet",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65135": {
+    "ITEM_NAME": "Robes of the Burning Acolyte",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65136": {
+    "ITEM_NAME": "Helm of the Nether Scion",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65137": {
+    "ITEM_NAME": "Legguards of the Emerald Brood",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65138": {
+    "ITEM_NAME": "Bracers of the Bronze Flight",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65139": {
+    "ITEM_NAME": "Malevolence",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65140": {
+    "ITEM_NAME": "Essence of the Cyclone",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65141": {
+    "ITEM_NAME": "Proto-Handler's Gauntlets",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65142": {
+    "ITEM_NAME": "Pauldrons of the Great Ettin",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65143": {
+    "ITEM_NAME": "Bracers of Impossible Strength",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65144": {
+    "ITEM_NAME": "Storm Rider's Boots",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65145": {
+    "ITEM_NAME": "Shalug'doom, the Axe of Unmaking",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65367": {
+    "ITEM_NAME": "Mistral Circle",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 6
+  },
+  "65368": {
+    "ITEM_NAME": "Star Chaser Belt",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 6
+  },
+  "65369": {
+    "ITEM_NAME": "Sky Strider Belt",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 6
+  },
+  "65370": {
+    "ITEM_NAME": "Thunder Wall Belt",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 6
+  },
+  "65371": {
+    "ITEM_NAME": "Wind Stalker Belt",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 6
+  },
+  "65372": {
+    "ITEM_NAME": "Permafrost Signet",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 6
+  },
+  "65373": {
+    "ITEM_NAME": "Planetary Band",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 6
+  },
+  "65374": {
+    "ITEM_NAME": "Gale Rouser Belt",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65375": {
+    "ITEM_NAME": "Tempest Keeper Belt",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65376": {
+    "ITEM_NAME": "Soul Breath Belt",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65377": {
+    "ITEM_NAME": "Lightning Well Belt",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 6
+  },
+  "65378": {
+    "ITEM_NAME": "Star Chaser Legguards",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65379": {
+    "ITEM_NAME": "Sky Strider Greaves",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65380": {
+    "ITEM_NAME": "Thunder Wall Greaves",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65381": {
+    "ITEM_NAME": "Wind Stalker Leggings",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65382": {
+    "ITEM_NAME": "Cloudburst Ring",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 6
+  },
+  "65383": {
+    "ITEM_NAME": "Soul Breath Leggings",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65384": {
+    "ITEM_NAME": "Gale Rouser Leggings",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65385": {
+    "ITEM_NAME": "Tempest Keeper Leggings",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "65386": {
+    "ITEM_NAME": "Lightning Well Legguards",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "66998": {
+    "ITEM_NAME": "Essence of the Forlorn",
+    "allowedClasses": [],
+    "restrictedClasses": [Class.DeathKnight, Class.Druid, Class.Hunter, Class.Mage, Class.Paladin, Class.Priest, Class.Rogue, Class.Shaman, Class.Warlock, Class.Warrior],
+    "allowedRankings": 3
+  },
+  "67423": {
+    "ITEM_NAME": "Chest of the Forlorn Conqueror",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "67424": {
+    "ITEM_NAME": "Chest of the Forlorn Protector",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "67425": {
+    "ITEM_NAME": "Chest of the Forlorn Vanquisher",
+    "allowedClasses": [Class.Rogue, Class.DeathKnight, Class.Mage, Class.Druid],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "67426": {
+    "ITEM_NAME": "Leggings of the Forlorn Vanquisher",
+    "allowedClasses": [Class.Rogue, Class.DeathKnight, Class.Mage, Class.Druid],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "67427": {
+    "ITEM_NAME": "Leggings of the Forlorn Protector",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "67428": {
+    "ITEM_NAME": "Leggings of the Forlorn Conqueror",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "67429": {
+    "ITEM_NAME": "Gauntlets of the Forlorn Conqueror",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "67430": {
+    "ITEM_NAME": "Gauntlets of the Forlorn Protector",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "67431": {
+    "ITEM_NAME": "Gauntlets of the Forlorn Vanquisher",
+    "allowedClasses": [Class.Rogue, Class.DeathKnight, Class.Mage, Class.Druid],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "68130": {
+    "ITEM_NAME": "Stormwake, the Tempest's Reach",
+    "allowedClasses": [Class.Rogue, Class.Hunter],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "68131": {
+    "ITEM_NAME": "Stormwake, the Tempest's Reach",
+    "allowedClasses": [Class.DeathKnight, Class.Warrior],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "68132": {
+    "ITEM_NAME": "Stormwake, the Tempest's Reach",
+    "allowedClasses": [Class.Mage, Class.Paladin, Class.Warlock],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "68600": {
+    "ITEM_NAME": "Uhn'agh Fash, the Darkest Betrayal",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "68601": {
+    "ITEM_NAME": "Scaleslicer",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "68915": {
+    "ITEM_NAME": "Scales of Life",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "68972": {
+    "ITEM_NAME": "Apparatus of Khaz'goroth",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69110": {
+    "ITEM_NAME": "Variable Pulse Lightning Capacitor",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69111": {
+    "ITEM_NAME": "Jaws of Defeat",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69112": {
+    "ITEM_NAME": "The Hungerer",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69138": {
+    "ITEM_NAME": "Spidersilk Spindle",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69139": {
+    "ITEM_NAME": "Necromantic Focus",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69149": {
+    "ITEM_NAME": "Eye of Blazing Power",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69150": {
+    "ITEM_NAME": "Matrix Restabilizer",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69167": {
+    "ITEM_NAME": "Vessel of Acceleration",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69224": {
+    "ITEM_NAME": "Smoldering Egg of Millagazor",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69237": {
+    "ITEM_NAME": "Living Ember",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69815": {
+    "ITEM_NAME": "Seething Cinder",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69878": {
+    "ITEM_NAME": "Permafrost Cape",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 6
+  },
+  "69879": {
+    "ITEM_NAME": "Cloudburst Cloak",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 6
+  },
+  "69880": {
+    "ITEM_NAME": "Mistral Pendant",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 6
+  },
+  "69881": {
+    "ITEM_NAME": "Planetary Drape",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 6
+  },
+  "69882": {
+    "ITEM_NAME": "Planetary Amulet",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 6
+  },
+  "69883": {
+    "ITEM_NAME": "Permafrost Choker",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 6
+  },
+  "69884": {
+    "ITEM_NAME": "Mistral Drape",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 6
+  },
+  "69885": {
+    "ITEM_NAME": "Cloudburst Necklace",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 6
+  },
+  "69957": {
+    "ITEM_NAME": "Plans: Fists of Fury",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69958": {
+    "ITEM_NAME": "Plans: Eternal Elementium Handguards",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69959": {
+    "ITEM_NAME": "Plans: Holy Flame Gauntlets",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69960": {
+    "ITEM_NAME": "Pattern: Dragonfire Gloves",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69961": {
+    "ITEM_NAME": "Pattern: Gloves of Unforgiving Flame",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69962": {
+    "ITEM_NAME": "Pattern: Clutches of Evil",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69963": {
+    "ITEM_NAME": "Pattern: Heavenly Gloves of the Moon",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69965": {
+    "ITEM_NAME": "Pattern: Grips of Altered Reality",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69966": {
+    "ITEM_NAME": "Pattern: Don Tayo's Inferno Mittens",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69968": {
+    "ITEM_NAME": "Plans: Warboots of Mighty Lords",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69969": {
+    "ITEM_NAME": "Plans: Mirrored Boots",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69970": {
+    "ITEM_NAME": "Plans: Emberforged Elementium Boots",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69971": {
+    "ITEM_NAME": "Pattern: Earthen Scale Sabatons",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69972": {
+    "ITEM_NAME": "Pattern: Footwraps of Quenched Fire",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69973": {
+    "ITEM_NAME": "Pattern: Treads of the Craft",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69974": {
+    "ITEM_NAME": "Pattern: Ethereal Footfalls",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69975": {
+    "ITEM_NAME": "Pattern: Endless Dream Walkers",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "69976": {
+    "ITEM_NAME": "Pattern: Boots of the Black Flame",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "70723": {
+    "ITEM_NAME": "Sulfuras, The Extinguished Hand",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "70929": {
+    "ITEM_NAME": "Firebound Gorget",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71141": {
+    "ITEM_NAME": "Eternal Ember",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71359": {
+    "ITEM_NAME": "Chelley's Sterilized Scalpel",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71360": {
+    "ITEM_NAME": "Spire of Scarlet Pain",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71361": {
+    "ITEM_NAME": "Ranseur of Hatred",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71362": {
+    "ITEM_NAME": "Obsidium Cleaver",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71365": {
+    "ITEM_NAME": "Hide-Bound Chains",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71366": {
+    "ITEM_NAME": "Lava Bolt Crossbow",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71367": {
+    "ITEM_NAME": "Theck's Emberseal",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71401": {
+    "ITEM_NAME": "Widow's Kiss",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71402": {
+    "ITEM_NAME": "Cinderweb Leggings",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71403": {
+    "ITEM_NAME": "Flickering Shoulders",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71404": {
+    "ITEM_NAME": "Arachnaflame Treads",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71405": {
+    "ITEM_NAME": "Carapace of Imbibed Flame",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71406": {
+    "ITEM_NAME": "Mandible of Beth'tilac",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71407": {
+    "ITEM_NAME": "Robes of Smoldering Devastation",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71408": {
+    "ITEM_NAME": "Ward of the Red Widow",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71409": {
+    "ITEM_NAME": "Funeral Pyre",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71410": {
+    "ITEM_NAME": "Cindersilk Gloves",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71411": {
+    "ITEM_NAME": "Cowl of the Clicking Menace",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71412": {
+    "ITEM_NAME": "Thoracic Flame Kilt",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71413": {
+    "ITEM_NAME": "Spaulders of Manifold Eyes",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71414": {
+    "ITEM_NAME": "Arbalest of Erupting Fury",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71415": {
+    "ITEM_NAME": "Dreadfire Drape",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71416": {
+    "ITEM_NAME": "Hood of Rampant Disdain",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71417": {
+    "ITEM_NAME": "Flaming Core Chestguard",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71418": {
+    "ITEM_NAME": "Earthcrack Bracers",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71419": {
+    "ITEM_NAME": "Fireskin Gauntlets",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71420": {
+    "ITEM_NAME": "Cracked Obsidian Stompers",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71421": {
+    "ITEM_NAME": "Flickering Cowl",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71422": {
+    "ITEM_NAME": "Volcanospike",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71423": {
+    "ITEM_NAME": "Heartstone of Rhyolith",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71424": {
+    "ITEM_NAME": "Incendic Chestguard",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71425": {
+    "ITEM_NAME": "Lava Line Wristbands",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71426": {
+    "ITEM_NAME": "Grips of the Raging Giant",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71427": {
+    "ITEM_NAME": "Alysra's Razor",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71428": {
+    "ITEM_NAME": "Flickering Wristbands",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71429": {
+    "ITEM_NAME": "Moltenfeather Leggings",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71430": {
+    "ITEM_NAME": "Greathelm of the Voracious Maw",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71431": {
+    "ITEM_NAME": "Lavaworm Legplates",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71432": {
+    "ITEM_NAME": "Spaulders of Recurring Flame",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71433": {
+    "ITEM_NAME": "Alysrazor's Band",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71434": {
+    "ITEM_NAME": "Wings of Flame",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71435": {
+    "ITEM_NAME": "Leggings of Billowing Fire",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71436": {
+    "ITEM_NAME": "Phoenix-Down Treads",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71437": {
+    "ITEM_NAME": "Clawshaper Gauntlets",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71438": {
+    "ITEM_NAME": "Craterflame Spaulders",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71439": {
+    "ITEM_NAME": "Clutch of the Firemother",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71440": {
+    "ITEM_NAME": "Gloves of Dissolving Smoke",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71441": {
+    "ITEM_NAME": "Feeding Frenzy",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71442": {
+    "ITEM_NAME": "Scalp of the Bandit Prince",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71443": {
+    "ITEM_NAME": "Uncrushable Belt of Fury",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71444": {
+    "ITEM_NAME": "Legplates of Frenzied Devotion",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71445": {
+    "ITEM_NAME": "Skullstealer Greataxe",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71446": {
+    "ITEM_NAME": "Necklace of Fetishes",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71447": {
+    "ITEM_NAME": "Coalwalker Sandals",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71448": {
+    "ITEM_NAME": "Goblet of Anger",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71449": {
+    "ITEM_NAME": "Crystal Prison Band",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71450": {
+    "ITEM_NAME": "Flickering Shoulderpads",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71451": {
+    "ITEM_NAME": "Treads of Implicit Obedience",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71452": {
+    "ITEM_NAME": "Bracers of the Dread Hunter",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71453": {
+    "ITEM_NAME": "Legplates of Absolute Control",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71454": {
+    "ITEM_NAME": "Gatecrasher",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71455": {
+    "ITEM_NAME": "Breastplate of the Incendiary Soul",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71456": {
+    "ITEM_NAME": "Shoulderpads of the Forgotten Gate",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71457": {
+    "ITEM_NAME": "Decimation Treads",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71458": {
+    "ITEM_NAME": "Flickering Handguards",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71459": {
+    "ITEM_NAME": "Helm of Blazing Glory",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71460": {
+    "ITEM_NAME": "Shard of Torment",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71461": {
+    "ITEM_NAME": "Mantle of Closed Doors",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71462": {
+    "ITEM_NAME": "Molten Scream",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71463": {
+    "ITEM_NAME": "Glowing Wing Bracers",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71464": {
+    "ITEM_NAME": "Gatekeeper's Embrace",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71465": {
+    "ITEM_NAME": "Casque of Flame",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71466": {
+    "ITEM_NAME": "Fandral's Flamescythe",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71467": {
+    "ITEM_NAME": "Sandals of Leaping Coals",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71468": {
+    "ITEM_NAME": "Grips of Unerring Precision",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71469": {
+    "ITEM_NAME": "Breastplate of Shifting Visions",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71470": {
+    "ITEM_NAME": "Bracers of the Fiery Path",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71471": {
+    "ITEM_NAME": "Wristwraps of Arrogant Doom",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71472": {
+    "ITEM_NAME": "Flowform Choker",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71473": {
+    "ITEM_NAME": "Stinger of the Flaming Scorpion",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71474": {
+    "ITEM_NAME": "Firecat Leggings",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71475": {
+    "ITEM_NAME": "Treads of the Penitent Man",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71610": {
+    "ITEM_NAME": "Choker of the Vanquished Lord",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71611": {
+    "ITEM_NAME": "Arathar, the Eye of Flame",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71612": {
+    "ITEM_NAME": "Pauldrons of Roaring Flame",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71613": {
+    "ITEM_NAME": "Majordomo's Chain of Office",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71614": {
+    "ITEM_NAME": "Fingers of Incineration",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71615": {
+    "ITEM_NAME": "Ko'gun, Hammer of the Firelord",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71616": {
+    "ITEM_NAME": "Crown of Flame",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71617": {
+    "ITEM_NAME": "Crystallized Firestone",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71640": {
+    "ITEM_NAME": "Riplimb's Lost Collar",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71665": {
+    "ITEM_NAME": "Flametalon of Alysrazor",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71669": {
+    "ITEM_NAME": "Gauntlets of the Fiery Vanquisher",
+    "allowedClasses": [Class.Rogue, Class.DeathKnight, Class.Mage, Class.Druid],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71670": {
+    "ITEM_NAME": "Crown of the Fiery Vanquisher",
+    "allowedClasses": [Class.Rogue, Class.DeathKnight, Class.Mage, Class.Druid],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71671": {
+    "ITEM_NAME": "Leggings of the Fiery Vanquisher",
+    "allowedClasses": [Class.Rogue, Class.DeathKnight, Class.Mage, Class.Druid],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71673": {
+    "ITEM_NAME": "Shoulders of the Fiery Vanquisher",
+    "allowedClasses": [Class.Rogue, Class.DeathKnight, Class.Mage, Class.Druid],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71677": {
+    "ITEM_NAME": "Crown of the Fiery Conqueror",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71678": {
+    "ITEM_NAME": "Leggings of the Fiery Conqueror",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71680": {
+    "ITEM_NAME": "Shoulders of the Fiery Conqueror",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71683": {
+    "ITEM_NAME": "Gauntlets of the Fiery Protector",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71684": {
+    "ITEM_NAME": "Crown of the Fiery Protector",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71685": {
+    "ITEM_NAME": "Leggings of the Fiery Protector",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71774": {
+    "ITEM_NAME": "Smoldering Censer of Purity",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71777": {
+    "ITEM_NAME": "Eye of Purification",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71778": {
+    "ITEM_NAME": "Avool's Incendiary Shanker",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71781": {
+    "ITEM_NAME": "Zoid's Firelit Greatsword",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71783": {
+    "ITEM_NAME": "Shatterskull Bonecrusher",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71784": {
+    "ITEM_NAME": "Firethorn Mindslicer",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71786": {
+    "ITEM_NAME": "Entrail Disgorger",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71797": {
+    "ITEM_NAME": "Sho'ravon, Greatstaff of Annihilation",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71998": {
+    "ITEM_NAME": "Essence of Destruction",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "71999": {
+    "ITEM_NAME": "Pattern: Leggings of Nature's Champion",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "72000": {
+    "ITEM_NAME": "Pattern: World Mender's Pants",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "72001": {
+    "ITEM_NAME": "Plans: Pyrium Legplates of Purified Evil",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "72002": {
+    "ITEM_NAME": "Pattern: Lavaquake Legwraps",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "72003": {
+    "ITEM_NAME": "Pattern: Dreamwraps of the Light",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "72004": {
+    "ITEM_NAME": "Pattern: Bracers of Unconquered Power",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "72005": {
+    "ITEM_NAME": "Pattern: Deathscale Leggings",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "72006": {
+    "ITEM_NAME": "Pattern: Bladeshadow Leggings",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "72007": {
+    "ITEM_NAME": "Pattern: Rended Earth Leggings",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "72008": {
+    "ITEM_NAME": "Pattern: Bracers of Flowing Serenity",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "72009": {
+    "ITEM_NAME": "Pattern: Thundering Deathscale Wristguards",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "72010": {
+    "ITEM_NAME": "Pattern: Bladeshadow Wristguards",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "72011": {
+    "ITEM_NAME": "Pattern: Bracers of the Hunter-Killer",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "72012": {
+    "ITEM_NAME": "Plans: Unstoppable Destroyer's Legplates",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "72013": {
+    "ITEM_NAME": "Plans: Foundations of Courage",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "72014": {
+    "ITEM_NAME": "Plans: Soul Redeemer Bracers",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "72015": {
+    "ITEM_NAME": "Plans: Bracers of Destructive Strength",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "72016": {
+    "ITEM_NAME": "Plans: Titanguard Wristplates",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "77067": {
+    "ITEM_NAME": "Reins of the Blazing Drake",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "77069": {
+    "ITEM_NAME": "Life-Binder's Handmaiden",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "77192": {
+    "ITEM_NAME": "Ruinblaster Shotgun",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "77938": {
+    "ITEM_NAME": "Dragonfire Orb",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "77952": {
+    "ITEM_NAME": "Elementium Gem Cluster",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "77989": {
+    "ITEM_NAME": "Seal of the Seven Signs",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "77990": {
+    "ITEM_NAME": "Soulshifter Vortex",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "77991": {
+    "ITEM_NAME": "Insignia of the Corrupted Mind",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "77992": {
+    "ITEM_NAME": "Creche of the Final Dragon",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "77993": {
+    "ITEM_NAME": "Starcatcher Compass",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "77994": {
+    "ITEM_NAME": "Wrath of Unchaining",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "77995": {
+    "ITEM_NAME": "Will of Unbinding",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "77996": {
+    "ITEM_NAME": "Heart of Unliving",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "77997": {
+    "ITEM_NAME": "Eye of Unmaking",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "77998": {
+    "ITEM_NAME": "Resolve of Undying",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "77999": {
+    "ITEM_NAME": "Vial of Shadows",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78000": {
+    "ITEM_NAME": "Cunning of the Cruel",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78001": {
+    "ITEM_NAME": "Windward Heart",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78002": {
+    "ITEM_NAME": "Bone-Link Fetish",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78003": {
+    "ITEM_NAME": "Indomitable Pride",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78361": {
+    "ITEM_NAME": "Pillarfoot Greaves",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78362": {
+    "ITEM_NAME": "Sporebeard Gauntlets",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78363": {
+    "ITEM_NAME": "Vagaries of Time",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78364": {
+    "ITEM_NAME": "Petrified Fungal Heart",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78365": {
+    "ITEM_NAME": "Robe of Glowing Stone",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78366": {
+    "ITEM_NAME": "Mosswrought Shoulderguards",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78367": {
+    "ITEM_NAME": "Brackenshell Shoulderplates",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78368": {
+    "ITEM_NAME": "Underdweller's Spaulders",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78370": {
+    "ITEM_NAME": "Girdle of Shattered Stone",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78371": {
+    "ITEM_NAME": "Hand of Morchok",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78372": {
+    "ITEM_NAME": "Mycosynth Wristguards",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78373": {
+    "ITEM_NAME": "Rockhide Bracers",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78387": {
+    "ITEM_NAME": "Horrifying Horn Arbalest",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78388": {
+    "ITEM_NAME": "Belt of Flayed Skin",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78389": {
+    "ITEM_NAME": "Treads of Crushed Flesh",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78390": {
+    "ITEM_NAME": "Graveheart Bracers",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78391": {
+    "ITEM_NAME": "Cord of the Slain Champion",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78392": {
+    "ITEM_NAME": "Finger of Zon'ozz",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78393": {
+    "ITEM_NAME": "Grotesquely Writhing Bracers",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78401": {
+    "ITEM_NAME": "Spire of Coagulated Globules",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78402": {
+    "ITEM_NAME": "Interrogator's Bloody Footpads",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78403": {
+    "ITEM_NAME": "Experimental Specimen Slicer",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78404": {
+    "ITEM_NAME": "Scalpel of Unrelenting Agony",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78405": {
+    "ITEM_NAME": "Mindstrainer Treads",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78406": {
+    "ITEM_NAME": "Heartblood Wristplates",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78413": {
+    "ITEM_NAME": "Signet of Grasping Mouths",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78414": {
+    "ITEM_NAME": "Electrowing Dagger",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78415": {
+    "ITEM_NAME": "Treads of Dormant Dreams",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78416": {
+    "ITEM_NAME": "Runescriven Demon Collar",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78417": {
+    "ITEM_NAME": "Bracers of the Banished",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78418": {
+    "ITEM_NAME": "Lightning Rod",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78419": {
+    "ITEM_NAME": "Ring of the Riven",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78420": {
+    "ITEM_NAME": "Girdle of the Grotesque",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78429": {
+    "ITEM_NAME": "Morningstar of Heroic Will",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78430": {
+    "ITEM_NAME": "Bracers of Looming Darkness",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78431": {
+    "ITEM_NAME": "Stillheart Warboots",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78432": {
+    "ITEM_NAME": "Curled Twilight Claw",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78433": {
+    "ITEM_NAME": "Ledger of Revolting Rituals",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78434": {
+    "ITEM_NAME": "Treads of Sordid Screams",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78435": {
+    "ITEM_NAME": "Imperfect Specimens 27 and 28",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78436": {
+    "ITEM_NAME": "Dragonfracture Belt",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78445": {
+    "ITEM_NAME": "Ataraxis, Cudgel of the Warmaster",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78446": {
+    "ITEM_NAME": "Shadow Wing Armbands",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78447": {
+    "ITEM_NAME": "Belt of the Beloved Companion",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78448": {
+    "ITEM_NAME": "Blackhorn's Mighty Bulwark",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78449": {
+    "ITEM_NAME": "Janglespur Jackboots",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78450": {
+    "ITEM_NAME": "Timepiece of the Bronze Flight",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78451": {
+    "ITEM_NAME": "Visage of the Destroyer",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78452": {
+    "ITEM_NAME": "Goriona's Collar",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78461": {
+    "ITEM_NAME": "Gloves of Liquid Smoke",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78462": {
+    "ITEM_NAME": "Molten Blood Footpads",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78463": {
+    "ITEM_NAME": "Belt of Shattered Elementium",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78464": {
+    "ITEM_NAME": "Gauntlets of the Golden Thorn",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78465": {
+    "ITEM_NAME": "Backbreaker Spaulders",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78471": {
+    "ITEM_NAME": "Vishanka, Jaws of the Earth",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78472": {
+    "ITEM_NAME": "No'Kaled, the Elements of Death",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78473": {
+    "ITEM_NAME": "Kiril, Fury of Beasts",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78474": {
+    "ITEM_NAME": "Blade of the Unmaker",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78475": {
+    "ITEM_NAME": "Rathrak, the Poisonous Mind",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78476": {
+    "ITEM_NAME": "Maw of the Dragonlord",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78477": {
+    "ITEM_NAME": "Ti'tahk, the Steps of Time",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78478": {
+    "ITEM_NAME": "Gurthalak, Voice of the Deeps",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78479": {
+    "ITEM_NAME": "Souldrinker",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78489": {
+    "ITEM_NAME": "Seal of Primordial Shadow",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78490": {
+    "ITEM_NAME": "Infinite Loop",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78491": {
+    "ITEM_NAME": "Signet of Suturing",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78492": {
+    "ITEM_NAME": "Breathstealer Band",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78493": {
+    "ITEM_NAME": "Hardheart Ring",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78847": {
+    "ITEM_NAME": "Chest of the Corrupted Conqueror",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78848": {
+    "ITEM_NAME": "Chest of the Corrupted Protector",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78849": {
+    "ITEM_NAME": "Chest of the Corrupted Vanquisher",
+    "allowedClasses": [Class.Rogue, Class.DeathKnight, Class.Mage, Class.Druid],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78850": {
+    "ITEM_NAME": "Crown of the Corrupted Conqueror",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78851": {
+    "ITEM_NAME": "Crown of the Corrupted Protector",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78852": {
+    "ITEM_NAME": "Crown of the Corrupted Vanquisher",
+    "allowedClasses": [Class.Rogue, Class.DeathKnight, Class.Mage, Class.Druid],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78853": {
+    "ITEM_NAME": "Gauntlets of the Corrupted Conqueror",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78854": {
+    "ITEM_NAME": "Gauntlets of the Corrupted Protector",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78855": {
+    "ITEM_NAME": "Gauntlets of the Corrupted Vanquisher",
+    "allowedClasses": [Class.Rogue, Class.DeathKnight, Class.Mage, Class.Druid],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78856": {
+    "ITEM_NAME": "Leggings of the Corrupted Conqueror",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78857": {
+    "ITEM_NAME": "Leggings of the Corrupted Protector",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78858": {
+    "ITEM_NAME": "Leggings of the Corrupted Vanquisher",
+    "allowedClasses": [Class.Rogue, Class.DeathKnight, Class.Mage, Class.Druid],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78859": {
+    "ITEM_NAME": "Shoulders of the Corrupted Conqueror",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78860": {
+    "ITEM_NAME": "Shoulders of the Corrupted Protector",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78861": {
+    "ITEM_NAME": "Shoulders of the Corrupted Vanquisher",
+    "allowedClasses": [Class.Rogue, Class.DeathKnight, Class.Mage, Class.Druid],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78878": {
+    "ITEM_NAME": "Spine of the Thousand Cuts",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78879": {
+    "ITEM_NAME": "Sash of Relentless Truth",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78882": {
+    "ITEM_NAME": "Nightblind Cinch",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78884": {
+    "ITEM_NAME": "Girdle of Fungal Dreams",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78885": {
+    "ITEM_NAME": "Dragoncarver Belt",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78886": {
+    "ITEM_NAME": "Belt of Ghostly Graces",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78887": {
+    "ITEM_NAME": "Girdle of Soulful Mending",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78888": {
+    "ITEM_NAME": "Waistguard of Bleeding Bone",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78889": {
+    "ITEM_NAME": "Waistplate of the Desecrated Future",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "78919": {
+    "ITEM_NAME": "Experiment 12-B",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "undefined": {
+    "ITEM_NAME": "",
+    "allowedClasses": [],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  }
+}

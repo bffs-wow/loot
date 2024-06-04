@@ -60,7 +60,7 @@ export class TmbService {
     private cacheService: CacheService,
     private state: StateService,
     private itemService: ItemService
-  ) {}
+  ) { }
 
   getRaiders(): Observable<Raider[]> {
     return this.raiders$;
@@ -132,6 +132,7 @@ export class TmbService {
 
   /**
    * Verify the 'Weapon per X' rule on the list.
+   * Unused as of Cata launch 5/24/2024
    * @param wishList
    */
   validateWeaponSlots(raider: Raider) {
@@ -334,16 +335,15 @@ export class TmbService {
             `${raider.name} - restricted item: (${w.name} - ${w.item_id})`
           );
           // Stick these errors onto the raider's public note for viewing
-          raider.public_note = `${
-            raider.public_note || ''
-          }\r\n${validationResults.join('; ')}`;
+          raider.public_note = `${raider.public_note || ''
+            }\r\n${validationResults.join('; ')}`;
           w.pivot.note = validationResults.join('; ');
         }
 
         return w;
       });
       // validate the weapon slots rule
-      this.validateWeaponSlots(raider);
+      // this.validateWeaponSlots(raider);
 
       /**
        * Eligible loot is loot that is wishlisted, but not yet received

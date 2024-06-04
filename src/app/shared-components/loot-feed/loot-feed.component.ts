@@ -89,10 +89,10 @@ export class LootFeedComponent implements OnInit, OnChanges {
   constructor(
     private state: StateService,
     private zoneService: ZoneService,
-    private itemService: ItemService
-  ) {}
+    protected itemService: ItemService
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.zone || changes.source) {

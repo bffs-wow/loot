@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, Observable, combineLatest, of } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
-import { switchMap, map } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
+import { switchMap, map, tap } from 'rxjs/operators';
 import { LootListFacadeService } from '../loot-list/loot-list.facade';
 import { StateService } from '../state/state.service';
 import {
@@ -24,6 +24,9 @@ import { environment } from 'src/environments/environment';
 export class ItemPageComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject();
   item$: Observable<CsvItem>;
+  itemToGroupRedirects = {
+    66998: 't11-heroic-tokens'
+  }
 
   tradeInItem$: Observable<CsvItem>;
 
@@ -37,11 +40,12 @@ export class ItemPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private state: StateService,
     private itemService: ItemService,
     private lootListFacade: LootListFacadeService,
     public lootAnnounceService: LootAnnounceService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.item$ = combineLatest([
@@ -50,7 +54,15 @@ export class ItemPageComponent implements OnInit, OnDestroy {
     ]).pipe(
       map(([params, allitems]) =>
         allitems.find((l) => l.id === parseInt(params.id))
-      )
+      ),
+      tap(item => {
+        if (item && this.itemToGroupRedirects[item.id]) {
+          setTimeout(() => {
+            this.router.navigate(['item-group', this.itemToGroupRedirects[item.id]])
+
+          }, 1500)
+        }
+      })
     );
 
     this.lootGroups$ = this.item$.pipe(
