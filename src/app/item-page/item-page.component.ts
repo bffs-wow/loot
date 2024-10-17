@@ -15,6 +15,8 @@ import { CsvItem } from '../tmb/models/item.interface';
 import { LootGroup } from '../loot-list/models/loot-group.model';
 import { LootReceipt } from '../loot-list/models/loot-receipt.model';
 import { environment } from 'src/environments/environment';
+import { TmbService } from '../tmb/tmb.service';
+import { Class } from '../loot-list/models/class.model';
 
 @Component({
   selector: 'app-item-page',
@@ -34,6 +36,8 @@ export class ItemPageComponent implements OnInit, OnDestroy {
 
   recentRecipients$: Observable<LootReceipt[]>;
 
+  allowedClasses$: Observable<Class[]>;
+
   faExternalLinkAlt = faExternalLinkAlt;
   faBullhorn = faBullhorn;
   faShieldAlt = faShieldAlt;
@@ -44,7 +48,8 @@ export class ItemPageComponent implements OnInit, OnDestroy {
     private state: StateService,
     private itemService: ItemService,
     private lootListFacade: LootListFacadeService,
-    public lootAnnounceService: LootAnnounceService
+    public lootAnnounceService: LootAnnounceService,
+    private tmbService: TmbService
   ) { }
 
   ngOnInit(): void {
@@ -106,6 +111,11 @@ export class ItemPageComponent implements OnInit, OnDestroy {
         })
       )
     );
+
+    this.allowedClasses$ = this.item$.pipe(
+      map(i => this.tmbService.getItemRestrictions(i.id)),
+      map(r => r.allowedClasses)
+    )
   }
   ngOnDestroy() {
     this.destroyed$.next();

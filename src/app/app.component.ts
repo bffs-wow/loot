@@ -7,7 +7,7 @@ import range from 'lodash-es/range';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  backgrounds = range(1, 18);
+  backgrounds = range(1, 20);
   constructor(private renderer: Renderer2) { }
 
   ngOnInit() {

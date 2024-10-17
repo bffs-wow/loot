@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  faFirstAid,
   faGavel,
   faLeaf,
   faQuestionCircle,
   faShieldAlt,
 } from '@fortawesome/free-solid-svg-icons';
-import { filter, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Class } from '../loot-list/models/class.model';
 import { StateService } from '../state/state.service';
 
@@ -28,9 +27,9 @@ export class RosterPageComponent implements OnInit {
     Class.Paladin,
     Class.DeathKnight,
   ];
-  constructor(private stateService: StateService) {}
+  constructor(private stateService: StateService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   makeClassObs(cls: Class) {
     return this.stateService.raiders$.pipe(

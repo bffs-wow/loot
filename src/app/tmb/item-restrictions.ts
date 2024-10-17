@@ -633,13 +633,13 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "65087": {
     "ITEM_NAME": "Shoulders of the Forlorn Protector",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.Shaman, Class.Hunter],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "65088": {
     "ITEM_NAME": "Shoulders of the Forlorn Conqueror",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Priest, Class.Warlock, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -717,7 +717,7 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "65102": {
     "ITEM_NAME": "Chelley's Staff of Dark Mending",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warlock, Class.Mage, Class.Priest, Class.Shaman, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -1101,13 +1101,13 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "67423": {
     "ITEM_NAME": "Chest of the Forlorn Conqueror",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Priest, Class.Warlock, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "67424": {
     "ITEM_NAME": "Chest of the Forlorn Protector",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.Shaman, Class.Hunter],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -1125,25 +1125,25 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "67427": {
     "ITEM_NAME": "Leggings of the Forlorn Protector",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.Shaman, Class.Hunter],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "67428": {
     "ITEM_NAME": "Leggings of the Forlorn Conqueror",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Priest, Class.Warlock, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "67429": {
     "ITEM_NAME": "Gauntlets of the Forlorn Conqueror",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Priest, Class.Warlock, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "67430": {
     "ITEM_NAME": "Gauntlets of the Forlorn Protector",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.Shaman, Class.Hunter],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -1185,7 +1185,7 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "68915": {
     "ITEM_NAME": "Scales of Life",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin, Class.DeathKnight, Class.Warrior, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -1227,7 +1227,7 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "69149": {
     "ITEM_NAME": "Eye of Blazing Power",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Priest, Class.Paladin, Class.Shaman, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -1419,13 +1419,13 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "70723": {
     "ITEM_NAME": "Sulfuras, The Extinguished Hand",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "70929": {
     "ITEM_NAME": "Firebound Gorget",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -1437,535 +1437,535 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "71359": {
     "ITEM_NAME": "Chelley's Sterilized Scalpel",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warlock, Class.Mage, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71360": {
     "ITEM_NAME": "Spire of Scarlet Pain",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warlock, Class.Mage, Class.Priest, Class.Shaman, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71361": {
     "ITEM_NAME": "Ranseur of Hatred",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71362": {
     "ITEM_NAME": "Obsidium Cleaver",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71365": {
     "ITEM_NAME": "Hide-Bound Chains",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71366": {
     "ITEM_NAME": "Lava Bolt Crossbow",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Warrior, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71367": {
     "ITEM_NAME": "Theck's Emberseal",
-    "allowedClasses": [],
+    "allowedClasses": [Class.DeathKnight, Class.Warrior, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71401": {
     "ITEM_NAME": "Widow's Kiss",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Rogue, Class.Druid, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71402": {
     "ITEM_NAME": "Cinderweb Leggings",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Rogue, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71403": {
     "ITEM_NAME": "Flickering Shoulders",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71404": {
     "ITEM_NAME": "Arachnaflame Treads",
-    "allowedClasses": [],
+    "allowedClasses": [Class.DeathKnight, Class.Warrior, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71405": {
     "ITEM_NAME": "Carapace of Imbibed Flame",
-    "allowedClasses": [],
+    "allowedClasses": [Class.DeathKnight, Class.Warrior, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71406": {
     "ITEM_NAME": "Mandible of Beth'tilac",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.Paladin, Class.DeathKnight],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71407": {
     "ITEM_NAME": "Robes of Smoldering Devastation",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warlock, Class.Mage, Class.Priest],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71408": {
     "ITEM_NAME": "Ward of the Red Widow",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71409": {
     "ITEM_NAME": "Funeral Pyre",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warlock, Class.Mage, Class.Priest, Class.Shaman, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71410": {
     "ITEM_NAME": "Cindersilk Gloves",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71411": {
     "ITEM_NAME": "Cowl of the Clicking Menace",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71412": {
     "ITEM_NAME": "Thoracic Flame Kilt",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71413": {
     "ITEM_NAME": "Spaulders of Manifold Eyes",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71414": {
     "ITEM_NAME": "Arbalest of Erupting Fury",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71415": {
     "ITEM_NAME": "Dreadfire Drape",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Rogue, Class.Druid, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71416": {
     "ITEM_NAME": "Hood of Rampant Disdain",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Rogue, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71417": {
     "ITEM_NAME": "Flaming Core Chestguard",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71418": {
     "ITEM_NAME": "Earthcrack Bracers",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.Paladin, Class.DeathKnight],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71419": {
     "ITEM_NAME": "Fireskin Gauntlets",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.Paladin, Class.DeathKnight],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71420": {
     "ITEM_NAME": "Cracked Obsidian Stompers",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.Paladin, Class.DeathKnight],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71421": {
     "ITEM_NAME": "Flickering Cowl",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Priest, Class.Mage, Class.Warlock],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71422": {
     "ITEM_NAME": "Volcanospike",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71423": {
     "ITEM_NAME": "Heartstone of Rhyolith",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Paladin, Class.Shaman, Class.Priest, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71424": {
     "ITEM_NAME": "Incendic Chestguard",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71425": {
     "ITEM_NAME": "Lava Line Wristbands",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71426": {
     "ITEM_NAME": "Grips of the Raging Giant",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71427": {
     "ITEM_NAME": "Alysra's Razor",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71428": {
     "ITEM_NAME": "Flickering Wristbands",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Rogue, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71429": {
     "ITEM_NAME": "Moltenfeather Leggings",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71430": {
     "ITEM_NAME": "Greathelm of the Voracious Maw",
-    "allowedClasses": [],
+    "allowedClasses": [Class.DeathKnight, Class.Paladin, Class.Warrior],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71431": {
     "ITEM_NAME": "Lavaworm Legplates",
-    "allowedClasses": [],
+    "allowedClasses": [Class.DeathKnight, Class.Paladin, Class.Warrior],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71432": {
     "ITEM_NAME": "Spaulders of Recurring Flame",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71433": {
     "ITEM_NAME": "Alysrazor's Band",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71434": {
     "ITEM_NAME": "Wings of Flame",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Shaman, Class.Druid, Class.Priest, Class.Warlock, Class.Paladin],
     "restrictedClasses": [],
-    "allowedRankings": 3
+    "allowedRankings": 1
   },
   "71435": {
     "ITEM_NAME": "Leggings of Billowing Fire",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Priest, Class.Warlock,],
     "restrictedClasses": [],
-    "allowedRankings": 3
+    "allowedRankings": 1
   },
   "71436": {
     "ITEM_NAME": "Phoenix-Down Treads",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid],
     "restrictedClasses": [],
-    "allowedRankings": 3
+    "allowedRankings": 1
   },
   "71437": {
     "ITEM_NAME": "Clawshaper Gauntlets",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman],
     "restrictedClasses": [],
-    "allowedRankings": 3
+    "allowedRankings": 1
   },
   "71438": {
     "ITEM_NAME": "Craterflame Spaulders",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman],
     "restrictedClasses": [],
-    "allowedRankings": 3
+    "allowedRankings": 1
   },
   "71439": {
     "ITEM_NAME": "Clutch of the Firemother",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71440": {
     "ITEM_NAME": "Gloves of Dissolving Smoke",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Rogue, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71441": {
     "ITEM_NAME": "Feeding Frenzy",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71442": {
     "ITEM_NAME": "Scalp of the Bandit Prince",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71443": {
     "ITEM_NAME": "Uncrushable Belt of Fury",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71444": {
     "ITEM_NAME": "Legplates of Frenzied Devotion",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71445": {
     "ITEM_NAME": "Skullstealer Greataxe",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71446": {
     "ITEM_NAME": "Necklace of Fetishes",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71447": {
     "ITEM_NAME": "Coalwalker Sandals",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Priest, Class.Mage, Class.Warlock],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71448": {
     "ITEM_NAME": "Goblet of Anger",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Priest, Class.Mage, Class.Warlock, Class.Druid, Class.Shaman, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71449": {
     "ITEM_NAME": "Crystal Prison Band",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Priest, Class.Mage, Class.Warlock, Class.Druid, Class.Shaman, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71450": {
     "ITEM_NAME": "Flickering Shoulderpads",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71451": {
     "ITEM_NAME": "Treads of Implicit Obedience",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71452": {
     "ITEM_NAME": "Bracers of the Dread Hunter",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71453": {
     "ITEM_NAME": "Legplates of Absolute Control",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71454": {
     "ITEM_NAME": "Gatecrasher",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71455": {
     "ITEM_NAME": "Breastplate of the Incendiary Soul",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Rogue, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71456": {
     "ITEM_NAME": "Shoulderpads of the Forgotten Gate",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Rogue, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71457": {
     "ITEM_NAME": "Decimation Treads",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman, Class.Hunter],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71458": {
     "ITEM_NAME": "Flickering Handguards",
-    "allowedClasses": [],
+    "allowedClasses": [Class.DeathKnight, Class.Warrior, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71459": {
     "ITEM_NAME": "Helm of Blazing Glory",
-    "allowedClasses": [],
+    "allowedClasses": [Class.DeathKnight, Class.Warrior, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71460": {
     "ITEM_NAME": "Shard of Torment",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin, Class.Warrior],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71461": {
     "ITEM_NAME": "Mantle of Closed Doors",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71462": {
     "ITEM_NAME": "Molten Scream",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest, Class.Druid, Class.Shaman, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71463": {
     "ITEM_NAME": "Glowing Wing Bracers",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71464": {
     "ITEM_NAME": "Gatekeeper's Embrace",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71465": {
     "ITEM_NAME": "Casque of Flame",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71466": {
     "ITEM_NAME": "Fandral's Flamescythe",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid, Class.Hunter],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71467": {
     "ITEM_NAME": "Sandals of Leaping Coals",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Rogue, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71468": {
     "ITEM_NAME": "Grips of Unerring Precision",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71469": {
     "ITEM_NAME": "Breastplate of Shifting Visions",
-    "allowedClasses": [],
+    "allowedClasses": [Class.DeathKnight, Class.Warrior, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71470": {
     "ITEM_NAME": "Bracers of the Fiery Path",
-    "allowedClasses": [],
+    "allowedClasses": [Class.DeathKnight, Class.Warrior, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71471": {
     "ITEM_NAME": "Wristwraps of Arrogant Doom",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71472": {
     "ITEM_NAME": "Flowform Choker",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest, Class.Druid, Class.Shaman, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71473": {
     "ITEM_NAME": "Stinger of the Flaming Scorpion",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71474": {
     "ITEM_NAME": "Firecat Leggings",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71475": {
     "ITEM_NAME": "Treads of the Penitent Man",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71610": {
     "ITEM_NAME": "Choker of the Vanquished Lord",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Rogue, Class.Druid, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71611": {
     "ITEM_NAME": "Arathar, the Eye of Flame",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71612": {
     "ITEM_NAME": "Pauldrons of Roaring Flame",
-    "allowedClasses": [],
+    "allowedClasses": [Class.DeathKnight, Class.Warrior, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71613": {
     "ITEM_NAME": "Majordomo's Chain of Office",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71614": {
     "ITEM_NAME": "Fingers of Incineration",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71615": {
     "ITEM_NAME": "Ko'gun, Hammer of the Firelord",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Priest, Class.Paladin, Class.Druid, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71616": {
     "ITEM_NAME": "Crown of Flame",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -1973,11 +1973,11 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
     "ITEM_NAME": "Crystallized Firestone",
     "allowedClasses": [],
     "restrictedClasses": [],
-    "allowedRankings": 3
+    "allowedRankings": 12
   },
   "71640": {
     "ITEM_NAME": "Riplimb's Lost Collar",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Rogue, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -2013,85 +2013,86 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "71677": {
     "ITEM_NAME": "Crown of the Fiery Conqueror",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin, Class.Priest, Class.Warlock],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71678": {
     "ITEM_NAME": "Leggings of the Fiery Conqueror",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin, Class.Priest, Class.Warlock],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71680": {
     "ITEM_NAME": "Shoulders of the Fiery Conqueror",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin, Class.Priest, Class.Warlock],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71683": {
     "ITEM_NAME": "Gauntlets of the Fiery Protector",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.Hunter, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71684": {
     "ITEM_NAME": "Crown of the Fiery Protector",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.Hunter, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71685": {
     "ITEM_NAME": "Leggings of the Fiery Protector",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.Hunter, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71774": {
     "ITEM_NAME": "Smoldering Censer of Purity",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Priest, Class.Druid, Class.Shaman, Class.Mage, Class.Warlock],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71777": {
     "ITEM_NAME": "Eye of Purification",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71778": {
     "ITEM_NAME": "Avool's Incendiary Shanker",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71781": {
     "ITEM_NAME": "Zoid's Firelit Greatsword",
-    "allowedClasses": [],
+    "allowedClasses": [Class.DeathKnight, Class.Paladin, Class.Warrior],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71783": {
     "ITEM_NAME": "Shatterskull Bonecrusher",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71784": {
     "ITEM_NAME": "Firethorn Mindslicer",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin, Class.Mage, Class.Warlock],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "71786": {
     "ITEM_NAME": "Entrail Disgorger",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
+  // Last FL item
   "71797": {
     "ITEM_NAME": "Sho'ravon, Greatstaff of Annihilation",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warlock, Class.Mage, Class.Priest, Class.Shaman, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -2221,9 +2222,10 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
     "restrictedClasses": [],
     "allowedRankings": 3
   },
+  // First DS Item
   "77192": {
     "ITEM_NAME": "Ruinblaster Shotgun",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
