@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { map, distinctUntilChanged } from 'rxjs/operators';
 import { CacheService } from '../cache/cache.service';
-import pick from 'lodash-es/pick';
 import add from 'date-fns/add';
 import { Raider } from '../tmb/models/tmb.interface';
+import isNil from 'lodash-es/isNil';
 
 export interface AppState {
   selectedRaiderName: string;
@@ -23,6 +23,8 @@ const _initialState: AppState = {
   providedIn: 'root',
 })
 export class StateService {
+  private cachedStateKeys = ['selectedRaiderName'];
+
   private state = new BehaviorSubject(_initialState);
   get rawState() {
     return this.state.getValue();
@@ -53,17 +55,29 @@ export class StateService {
   }
 
   cacheState() {
-    this.cache.set(
-      `APP_STATE`,
-      pick(this.rawState, ['selectedRaiderName']),
-      add(new Date(), { days: 10 })
-    );
+    let objToCache: Partial<AppState> = this.cachedStateKeys.reduce((p, c) => {
+      let cacheVal: Partial<AppState> = {};
+      // Only cache non-null/unefined vals
+      if (!isNil(this.rawState[c])) {
+        cacheVal[c] = this.rawState[c];
+      }
+      return { ...p, ...cacheVal }
+    }, {});
+
+    // Only cache if we have data to cache - i.e. all of our 'cachedStateKeys' contained values
+    if (Object.keys(objToCache).length === this.cachedStateKeys.length) {
+      this.cache.set(
+        `APP_STATE`,
+        objToCache,
+        add(new Date(), { days: 10 })
+      );
+    }
   }
 
   restoreCache() {
     this.cache
       .get(`APP_STATE`)
       .then((res: Partial<AppState>) => (res === null ? {} : res))
-      .then(({ selectedRaiderName }) => this.setState({ selectedRaiderName }));
+      .then((cached) => this.setState({ ...cached }));
   }
 }

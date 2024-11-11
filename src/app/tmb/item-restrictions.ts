@@ -1419,7 +1419,7 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "70723": {
     "ITEM_NAME": "Sulfuras, The Extinguished Hand",
-    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin, Class.Druid, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -1437,7 +1437,7 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "71359": {
     "ITEM_NAME": "Chelley's Sterilized Scalpel",
-    "allowedClasses": [Class.Warlock, Class.Mage, Class.Shaman],
+    "allowedClasses": [Class.Warlock, Class.Mage, Class.Shaman, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -1563,7 +1563,7 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "71415": {
     "ITEM_NAME": "Dreadfire Drape",
-    "allowedClasses": [Class.Hunter, Class.Rogue, Class.Druid, Class.Shaman],
+    "allowedClasses": [Class.Hunter, Class.Rogue, Class.Druid, Class.Shaman, Class.Warrior, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },

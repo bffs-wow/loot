@@ -266,6 +266,8 @@ export class TmbService {
         .filter((i) => i.pivot.is_offspec === 1)
         .sort((a, b) => a.pivot.order - b.pivot.order);
       if (osItems.length) {
+        const firstOsItem = osItems[0];
+
         // Verify there aren't too many OS items
         if (
           osItems.length >
@@ -276,10 +278,9 @@ export class TmbService {
           raider.public_note = `${raider.public_note || ''}\r\n${osMsg}`;
           // This is a critical issue, so make it very visible that these items are invalid
           raider.wishlist.forEach(
-            (i) => (i.pivot.note = 'INVALID LIST (TOO MANY OS)')
+            (i) => (i.pivot.note = `INVALID LIST (TOO MANY OS) - Starting at ${firstOsItem.name}`)
           );
         } else {
-          const firstOsItem = osItems[0];
           // Set a special message on the first OS item
           firstOsItem.pivot.note = `(First OS) ${firstOsItem.pivot.note ?? ''}`;
           // If the first OS item comes before the cutoff, move it
@@ -307,7 +308,7 @@ export class TmbService {
               raider.public_note = `${raider.public_note || ''}\r\n${osMsg}`;
               // This is a critical issue, so make it very visible that these items are invalid
               raider.wishlist.forEach(
-                (i) => (i.pivot.note = 'INVALID LIST (OS TOO EARLY)')
+                (i) => (i.pivot.note = `INVALID LIST (OS TOO EARLY) ${firstOsItem.name}`)
               );
             }
           }
