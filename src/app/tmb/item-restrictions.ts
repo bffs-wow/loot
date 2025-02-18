@@ -2231,7 +2231,7 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "77938": {
     "ITEM_NAME": "Dragonfire Orb",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest, Class.Paladin, Class.Shaman, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -2243,511 +2243,524 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "77989": {
     "ITEM_NAME": "Seal of the Seven Signs",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin, Class.Shaman, Class.Priest, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "77990": {
     "ITEM_NAME": "Soulshifter Vortex",
-    "allowedClasses": [],
+    "allowedClasses": [Class.DeathKnight, Class.Druid, Class.Warrior, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "77991": {
     "ITEM_NAME": "Insignia of the Corrupted Mind",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Shaman, Class.Warlock, Class.Priest, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "77992": {
     "ITEM_NAME": "Creche of the Final Dragon",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "77993": {
     "ITEM_NAME": "Starcatcher Compass",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid, Class.Hunter, Class.Rogue, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "77994": {
     "ITEM_NAME": "Wrath of Unchaining",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid, Class.Hunter, Class.Rogue, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "77995": {
     "ITEM_NAME": "Will of Unbinding",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Shaman, Class.Warlock, Class.Priest, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "77996": {
     "ITEM_NAME": "Heart of Unliving",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin, Class.Shaman, Class.Priest, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "77997": {
     "ITEM_NAME": "Eye of Unmaking",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "77998": {
     "ITEM_NAME": "Resolve of Undying",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "77999": {
     "ITEM_NAME": "Vial of Shadows",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid, Class.Hunter, Class.Rogue, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78000": {
     "ITEM_NAME": "Cunning of the Cruel",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Shaman, Class.Warlock, Class.Priest, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78001": {
     "ITEM_NAME": "Windward Heart",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin, Class.Shaman, Class.Priest, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78002": {
     "ITEM_NAME": "Bone-Link Fetish",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78003": {
     "ITEM_NAME": "Indomitable Pride",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78361": {
     "ITEM_NAME": "Pillarfoot Greaves",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78362": {
     "ITEM_NAME": "Sporebeard Gauntlets",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78363": {
     "ITEM_NAME": "Vagaries of Time",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Priest, Class.Paladin, Class.Druid, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78364": {
     "ITEM_NAME": "Petrified Fungal Heart",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin, Class.Shaman, Class.Priest, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78365": {
     "ITEM_NAME": "Robe of Glowing Stone",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Priest, Class.Mage, Class.Warlock],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78366": {
     "ITEM_NAME": "Mosswrought Shoulderguards",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Priest, Class.Mage, Class.Warlock],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78367": {
     "ITEM_NAME": "Brackenshell Shoulderplates",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78368": {
     "ITEM_NAME": "Underdweller's Spaulders",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78370": {
     "ITEM_NAME": "Girdle of Shattered Stone",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78371": {
     "ITEM_NAME": "Hand of Morchok",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78372": {
     "ITEM_NAME": "Mycosynth Wristguards",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78373": {
     "ITEM_NAME": "Rockhide Bracers",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78387": {
     "ITEM_NAME": "Horrifying Horn Arbalest",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78388": {
     "ITEM_NAME": "Belt of Flayed Skin",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Rogue, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78389": {
     "ITEM_NAME": "Treads of Crushed Flesh",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78390": {
     "ITEM_NAME": "Graveheart Bracers",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78391": {
     "ITEM_NAME": "Cord of the Slain Champion",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78392": {
     "ITEM_NAME": "Finger of Zon'ozz",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78393": {
     "ITEM_NAME": "Grotesquely Writhing Bracers",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78401": {
     "ITEM_NAME": "Spire of Coagulated Globules",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Druid, Class.Warlock],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78402": {
     "ITEM_NAME": "Interrogator's Bloody Footpads",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78403": {
     "ITEM_NAME": "Experimental Specimen Slicer",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78404": {
     "ITEM_NAME": "Scalpel of Unrelenting Agony",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Shaman, Class.Warlock, Class.Priest, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78405": {
     "ITEM_NAME": "Mindstrainer Treads",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78406": {
     "ITEM_NAME": "Heartblood Wristplates",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78413": {
     "ITEM_NAME": "Signet of Grasping Mouths",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid, Class.Rogue, Class.Hunter, Class.Shaman, Class.DeathKnight],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78414": {
     "ITEM_NAME": "Electrowing Dagger",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78415": {
     "ITEM_NAME": "Treads of Dormant Dreams",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78416": {
     "ITEM_NAME": "Runescriven Demon Collar",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78417": {
     "ITEM_NAME": "Bracers of the Banished",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78418": {
     "ITEM_NAME": "Lightning Rod",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Shaman, Class.Warlock, Class.Priest, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78419": {
     "ITEM_NAME": "Ring of the Riven",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Shaman, Class.Warlock, Class.Priest, Class.Druid, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78420": {
     "ITEM_NAME": "Girdle of the Grotesque",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78429": {
     "ITEM_NAME": "Morningstar of Heroic Will",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78430": {
     "ITEM_NAME": "Bracers of Looming Darkness",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78431": {
     "ITEM_NAME": "Stillheart Warboots",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78432": {
     "ITEM_NAME": "Curled Twilight Claw",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin, Class.Warlock],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78433": {
     "ITEM_NAME": "Ledger of Revolting Rituals",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest, Class.Druid, Class.Shaman, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78434": {
     "ITEM_NAME": "Treads of Sordid Screams",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78435": {
     "ITEM_NAME": "Imperfect Specimens 27 and 28",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78436": {
     "ITEM_NAME": "Dragonfracture Belt",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78445": {
     "ITEM_NAME": "Ataraxis, Cudgel of the Warmaster",
-    "allowedClasses": [],
+    "allowedClasses": [Class.DeathKnight, Class.Paladin, Class.Warrior],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78446": {
     "ITEM_NAME": "Shadow Wing Armbands",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78447": {
     "ITEM_NAME": "Belt of the Beloved Companion",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78448": {
     "ITEM_NAME": "Blackhorn's Mighty Bulwark",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin, Class.Warrior],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78449": {
     "ITEM_NAME": "Janglespur Jackboots",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78450": {
     "ITEM_NAME": "Timepiece of the Bronze Flight",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin, Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78451": {
     "ITEM_NAME": "Visage of the Destroyer",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Shaman, Class.Warlock, Class.Priest, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78452": {
     "ITEM_NAME": "Goriona's Collar",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78461": {
     "ITEM_NAME": "Gloves of Liquid Smoke",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78462": {
     "ITEM_NAME": "Molten Blood Footpads",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78463": {
     "ITEM_NAME": "Belt of Shattered Elementium",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78464": {
     "ITEM_NAME": "Gauntlets of the Golden Thorn",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78465": {
     "ITEM_NAME": "Backbreaker Spaulders",
-    "allowedClasses": [],
+    "allowedClasses": [Class.DeathKnight, Class.Paladin, Class.Warrior],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78471": {
     "ITEM_NAME": "Vishanka, Jaws of the Earth",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78472": {
     "ITEM_NAME": "No'Kaled, the Elements of Death",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman, Class.Rogue],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "77949": {
+    "ITEM_NAME": "Golad, Twilight of Aspects",
+    "allowedClasses": [Class.Rogue],
+    "restrictedClasses": [],
+    "allowedRankings": 3
+  },
+  "77950": {
+    "ITEM_NAME": "Tiriosh, Nightmare of Ages",
+    "allowedClasses": [Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78473": {
     "ITEM_NAME": "Kiril, Fury of Beasts",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Hunter, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78474": {
     "ITEM_NAME": "Blade of the Unmaker",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78475": {
     "ITEM_NAME": "Rathrak, the Poisonous Mind",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Shaman, Class.Warlock, Class.Priest, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
+  // tom doing these:
   "78476": {
     "ITEM_NAME": "Maw of the Dragonlord",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman, Class.Priest, Class.Druid, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78477": {
     "ITEM_NAME": "Ti'tahk, the Steps of Time",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Shaman, Class.Warlock, Class.Priest, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78478": {
     "ITEM_NAME": "Gurthalak, Voice of the Deeps",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78479": {
     "ITEM_NAME": "Souldrinker",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78489": {
     "ITEM_NAME": "Seal of Primordial Shadow",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman, Class.Druid, Class.Rogue, Class.Hunter],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78490": {
     "ITEM_NAME": "Infinite Loop",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Shaman, Class.Warlock, Class.Priest, Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78491": {
     "ITEM_NAME": "Signet of Suturing",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman, Class.Priest, Class.Druid, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78492": {
     "ITEM_NAME": "Breathstealer Band",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid, Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78493": {
     "ITEM_NAME": "Hardheart Ring",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin, Class.Warlock],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78847": {
     "ITEM_NAME": "Chest of the Corrupted Conqueror",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warlock, Class.Priest, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78848": {
     "ITEM_NAME": "Chest of the Corrupted Protector",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman, Class.Warrior, Class.Hunter],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -2759,13 +2772,13 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "78850": {
     "ITEM_NAME": "Crown of the Corrupted Conqueror",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warlock, Class.Priest, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78851": {
     "ITEM_NAME": "Crown of the Corrupted Protector",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman, Class.Warrior, Class.Hunter],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -2777,13 +2790,13 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "78853": {
     "ITEM_NAME": "Gauntlets of the Corrupted Conqueror",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warlock, Class.Priest, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78854": {
     "ITEM_NAME": "Gauntlets of the Corrupted Protector",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman, Class.Warrior, Class.Hunter],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -2795,13 +2808,13 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "78856": {
     "ITEM_NAME": "Leggings of the Corrupted Conqueror",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warlock, Class.Priest, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78857": {
     "ITEM_NAME": "Leggings of the Corrupted Protector",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman, Class.Warrior, Class.Hunter],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -2813,13 +2826,13 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "78859": {
     "ITEM_NAME": "Shoulders of the Corrupted Conqueror",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warlock, Class.Priest, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78860": {
     "ITEM_NAME": "Shoulders of the Corrupted Protector",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman, Class.Warrior, Class.Hunter],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -2831,55 +2844,55 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "78878": {
     "ITEM_NAME": "Spine of the Thousand Cuts",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.Rogue, Class.Hunter, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78879": {
     "ITEM_NAME": "Sash of Relentless Truth",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78882": {
     "ITEM_NAME": "Nightblind Cinch",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78884": {
     "ITEM_NAME": "Girdle of Fungal Dreams",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Druid],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78885": {
     "ITEM_NAME": "Dragoncarver Belt",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman, Class.Hunter],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78886": {
     "ITEM_NAME": "Belt of Ghostly Graces",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Shaman],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78887": {
     "ITEM_NAME": "Girdle of Soulful Mending",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78888": {
     "ITEM_NAME": "Waistguard of Bleeding Bone",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
   "78889": {
     "ITEM_NAME": "Waistplate of the Desecrated Future",
-    "allowedClasses": [],
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
     "restrictedClasses": [],
     "allowedRankings": 3
   },

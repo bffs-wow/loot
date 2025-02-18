@@ -10,7 +10,6 @@
     "e2e": "ng e2e",
     "make-item-restrictions": "node ./src/app/tmb/make_item_restrictions.js",
     "deploy": "ng deploy --base-href=/loot/",
-    "deploy-firelands": "ng deploy --base-href=/firelands/ --repo=https://github.com/bffs-wow/firelands.git",
     "deploy-tmb-test": "ng deploy --base-href=/tmb-test/ --repo=https://github.com/bffs-wow/tmb-test.git"
   },
   "private": true,
