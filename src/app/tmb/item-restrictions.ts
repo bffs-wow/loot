@@ -2231,7 +2231,8 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "77938": {
     "ITEM_NAME": "Dragonfire Orb",
-    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest, Class.Paladin, Class.Shaman, Class.Druid],
+    // Rogue mastery
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest, Class.Paladin, Class.Shaman, Class.Druid, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -2249,7 +2250,7 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "77990": {
     "ITEM_NAME": "Soulshifter Vortex",
-    "allowedClasses": [Class.DeathKnight, Class.Druid, Class.Warrior, Class.Paladin],
+    "allowedClasses": [Class.DeathKnight, Class.Druid, Class.Warrior, Class.Paladin, Class.Warlock],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -2303,7 +2304,7 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "77999": {
     "ITEM_NAME": "Vial of Shadows",
-    "allowedClasses": [Class.Druid, Class.Hunter, Class.Rogue, Class.Shaman],
+    "allowedClasses": [Class.Druid, Class.Hunter, Class.Rogue, Class.Shaman, Class.DeathKnight],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -2387,7 +2388,8 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "78371": {
     "ITEM_NAME": "Hand of Morchok",
-    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin],
+    // Rogue mastery
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -2507,7 +2509,8 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "78417": {
     "ITEM_NAME": "Bracers of the Banished",
-    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest],
+    // Rogue mastery
+    "allowedClasses": [Class.Mage, Class.Warlock, Class.Priest, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -2525,7 +2528,7 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "78420": {
     "ITEM_NAME": "Girdle of the Grotesque",
-    "allowedClasses": [Class.Druid],
+    "allowedClasses": [Class.Druid, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -2549,7 +2552,8 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "78432": {
     "ITEM_NAME": "Curled Twilight Claw",
-    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin, Class.Warlock],
+    // Rogue/lock mastery
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin, Class.Warlock, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },
@@ -2748,7 +2752,8 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   },
   "78493": {
     "ITEM_NAME": "Hardheart Ring",
-    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin, Class.Warlock],
+    // Rogue/lock mastery
+    "allowedClasses": [Class.Warrior, Class.DeathKnight, Class.Paladin, Class.Warlock, Class.Rogue],
     "restrictedClasses": [],
     "allowedRankings": 3
   },

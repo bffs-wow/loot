@@ -15,6 +15,15 @@
           <code>Github</code>
         </a>
       </div>
+      <div class="level-item ml-2">
+        <p>
+          <fa-icon [icon]="faHistory" size="2x"></fa-icon>
+          <code>
+            Last Imported:
+            {{ tmbService.dateImported$ | async | date : "medium" }}
+          </code>
+        </p>
+      </div>
     </div>
     <div class="level-right">
       <div class="level-item">
