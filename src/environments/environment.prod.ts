@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  cache_bust: '17',
+  cache_bust: '18',
   logsGuildUrl:
     'https://classic.warcraftlogs.com/guild/rankings/532692/latest/',
   logsCharacterBaseUrl:
@@ -8,7 +8,7 @@ export const environment = {
   wishlistLength: 50,
   wishlistOffspecCutoff: 33,
   forgiveness: 1,
-  itemsPerSlotRule: 3,
+  itemsPerSlotRule: 1,
   tmbBaseUrl: 'https://thatsmybis.com/19497/best-friends/',
-  currentRaids: ['Throne of the Four Winds Heroic', 'Blackwing Descent Heroic', 'The Bastion of Twilight Heroic'],
+  currentRaids: ['Dragon Soul Heroic'],
 };

@@ -17,13 +17,13 @@ export const environment = {
   // Combined with the rolling attendance period, this detemines the "leniency rule" that allows for a number of absent/tardies
   forgiveness: 1,
   // How many slots between weapon items?
-  itemsPerSlotRule: 3,
+  itemsPerSlotRule: 1,
   tmbBaseUrl: 'https://thatsmybis.com/19497/best-friends-test/',
   /**
    * IMPORTANT: The values in this array *MUST* match the values provided in the TMB JSON data, the 'instance_name' properties of items.
    * This is used to generate ranking data for items not on wishlists (i.e. everyone is eligible for all items, even if they don't list - but we don't want to process every item in the game, just current phase.)
    */
-  currentRaids: ['Throne of the Four Winds Heroic', 'Blackwing Descent Heroic', 'The Bastion of Twilight Heroic'],
+  currentRaids: ['Dragon Soul Heroic'],
 };
 
 /*
