@@ -105,7 +105,10 @@
       <div class="navbar-item">
         <a class="button" (click)="reloadData()">
           <span class="icon">
-            <fa-icon [icon]="faSync" [spin]="autoUpdate"></fa-icon>
+            <fa-icon
+              [icon]="faSync"
+              [animation]="autoUpdate ? 'spin' : null"
+            ></fa-icon>
           </span>
         </a>
       </div>

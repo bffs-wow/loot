@@ -1,7 +1,7 @@
-@use "bulma/bulma.scss";
+@import "bulma/css/bulma.css";
 @import "@fontsource/inter";
 
-@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "@ng-select/ng-select/themes/default.theme.css";
 
 body {
   background-repeat: no-repeat;
