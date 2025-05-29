@@ -17,9 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": {
-              "base": "dist/synergy-loot"
-            },
+            "outputPath": "dist/synergy-loot",
             "index": "src/index.html",
             "polyfills": ["src/polyfills.ts"],
             "tsConfig": "tsconfig.app.json",
@@ -92,7 +90,10 @@
         },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
-          "options": {}
+          "options": {
+            "buildTarget": "synergy-loot:build:production",
+            "remote": "origin"
+          }
         }
       }
     }
