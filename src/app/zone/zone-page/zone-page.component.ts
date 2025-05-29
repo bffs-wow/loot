@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import {
   faExclamationTriangle,
   faExternalLinkAlt,
@@ -12,12 +12,17 @@ import { LootRanking } from 'src/app/loot-list/models/ranking.model';
 import { ItemService } from 'src/app/tmb/item.service';
 import { CsvItem } from 'src/app/tmb/models/item.interface';
 import { ZoneService } from '../zone.service';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { WowheadTooltipDirective } from '../../shared-components/wowhead-tooltips/wowhead-tooltip.directive';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { LootFeedComponent } from '../../shared-components/loot-feed/loot-feed.component';
 
 @Component({
-  selector: 'app-zone-page',
-  templateUrl: './zone-page.component.html',
-  styleUrls: ['./zone-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-zone-page',
+    templateUrl: './zone-page.component.html',
+    styleUrls: ['./zone-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [NgIf, WowheadTooltipDirective, FaIconComponent, NgFor, RouterLink, LootFeedComponent, AsyncPipe]
 })
 export class ZonePageComponent implements OnInit {
   faExternalLinkAlt = faExternalLinkAlt;

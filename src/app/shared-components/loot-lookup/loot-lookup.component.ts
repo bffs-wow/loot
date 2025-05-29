@@ -1,9 +1,5 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import {
-  UntypedFormBuilder,
-  UntypedFormGroup,
-  UntypedFormControl,
-} from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StateService } from '../../state/state.service';
 import { Observable, Subject, concat, of } from 'rxjs';
 
@@ -28,12 +24,18 @@ import { LootGroup } from 'src/app/loot-list/models/loot-group.model';
 import { BaseWowItem, CsvItem } from 'src/app/tmb/models/item.interface';
 import uniqBy from 'lodash-es/uniqBy';
 import { LootRanking } from 'src/app/loot-list/models/ranking.model';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { NgIf, NgClass, NgFor, AsyncPipe } from '@angular/common';
+import { NgSelectComponent, NgOptionTemplateDirective } from '@ng-select/ng-select';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { WowheadTooltipDirective } from '../wowhead-tooltips/wowhead-tooltip.directive';
+import { ZonePipe } from '../zone-pipe/zone.pipe';
 
 @Component({
-  selector: 'app-loot-lookup',
-  templateUrl: './loot-lookup.component.html',
-  styleUrls: ['./loot-lookup.component.scss'],
+    selector: 'app-loot-lookup',
+    templateUrl: './loot-lookup.component.html',
+    styleUrls: ['./loot-lookup.component.scss'],
+    imports: [NgIf, FormsModule, ReactiveFormsModule, NgSelectComponent, NgOptionTemplateDirective, NgClass, FaIconComponent, NgFor, WowheadTooltipDirective, RouterLink, AsyncPipe, ZonePipe]
 })
 export class LootLookupComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject<boolean>();

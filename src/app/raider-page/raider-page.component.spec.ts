@@ -8,8 +8,8 @@ describe('RaiderPageComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ RaiderPageComponent ]
-    })
+    imports: [RaiderPageComponent]
+})
     .compileComponents();
   }));
 

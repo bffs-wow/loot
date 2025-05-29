@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, OnChanges, input } from '@angular/core';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { itemGroups } from './item-groups';
 import { ItemService } from '../tmb/item.service';
@@ -7,22 +7,22 @@ import { AsyncPipe, JsonPipe } from '@angular/common';
 import { LootListFacadeService } from '../loot-list/loot-list.facade';
 import flatten from 'lodash-es/flatten';
 import { LootGroup } from '../loot-list/models/loot-group.model';
-import { SharedComponentsModule } from '../shared-components/shared-components.module';
+
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { RouterLink } from '@angular/router';
 import uniq from 'lodash-es/uniq';
+import { WowheadTooltipDirective } from '../shared-components/wowhead-tooltips/wowhead-tooltip.directive';
 
 @Component({
   selector: 'app-item-group-page',
-  standalone: true,
-  imports: [AsyncPipe, JsonPipe, SharedComponentsModule, FaIconComponent, RouterLink],
+  imports: [AsyncPipe, WowheadTooltipDirective, RouterLink],
   templateUrl: './item-group-page.component.html',
   styleUrl: './item-group-page.component.scss'
 })
 export class ItemGroupPageComponent implements OnChanges {
   faExternalLinkAlt = faExternalLinkAlt;
-  @Input() itemGroupName: string;
+  readonly itemGroupName = input<string>(undefined);
   itemGroupItemIds$ = new BehaviorSubject<number[]>([]);
   items$ = this.itemGroupItemIds$.pipe(
     switchMap(ids => combineLatest(ids.map(id => this.itemService.getById(id))))
@@ -59,7 +59,7 @@ export class ItemGroupPageComponent implements OnChanges {
   ) { }
 
   ngOnChanges(changes) {
-    this.itemGroupItemIds$.next(itemGroups[this.itemGroupName] || []);
+    this.itemGroupItemIds$.next(itemGroups[this.itemGroupName()] || []);
   }
 
   getPointGroups(points: number, groups: LootGroup[]) {

@@ -8,11 +8,15 @@ import {
 import { map } from 'rxjs/operators';
 import { Class } from '../loot-list/models/class.model';
 import { StateService } from '../state/state.service';
+import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 
 @Component({
-  selector: 'app-roster-page',
-  templateUrl: './roster-page.component.html',
-  styleUrls: ['./roster-page.component.scss'],
+    selector: 'app-roster-page',
+    templateUrl: './roster-page.component.html',
+    styleUrls: ['./roster-page.component.scss'],
+    imports: [NgFor, NgIf, RouterLink, FaIconComponent, AsyncPipe]
 })
 export class RosterPageComponent implements OnInit {
   allClasses = [

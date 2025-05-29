@@ -8,11 +8,13 @@ import take from 'lodash-es/take';
 import { ReceivedItem, WishlistItem } from '../tmb/models/tmb.interface';
 import { TmbService } from '../tmb/tmb.service';
 import { StateService } from '../state/state.service';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-statistics',
-  templateUrl: './statistics.component.html',
-  styleUrls: ['./statistics.component.scss'],
+    selector: 'app-statistics',
+    templateUrl: './statistics.component.html',
+    styleUrls: ['./statistics.component.scss'],
+    imports: [NgIf, NgFor]
 })
 export class StatisticsComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject();

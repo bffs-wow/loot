@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, Observable, combineLatest, of } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { switchMap, map, tap } from 'rxjs/operators';
 import { LootListFacadeService } from '../loot-list/loot-list.facade';
 import { StateService } from '../state/state.service';
@@ -17,11 +17,17 @@ import { LootReceipt } from '../loot-list/models/loot-receipt.model';
 import { environment } from 'src/environments/environment';
 import { TmbService } from '../tmb/tmb.service';
 import { Class } from '../loot-list/models/class.model';
+import { NgIf, NgClass, NgFor, AsyncPipe, DatePipe } from '@angular/common';
+import { WowheadTooltipDirective } from '../shared-components/wowhead-tooltips/wowhead-tooltip.directive';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { LootLookupComponent } from '../shared-components/loot-lookup/loot-lookup.component';
+import { ZonePipe } from '../shared-components/zone-pipe/zone.pipe';
 
 @Component({
-  selector: 'app-item-page',
-  templateUrl: './item-page.component.html',
-  styleUrls: ['./item-page.component.scss'],
+    selector: 'app-item-page',
+    templateUrl: './item-page.component.html',
+    styleUrls: ['./item-page.component.scss'],
+    imports: [NgIf, WowheadTooltipDirective, FaIconComponent, NgClass, RouterLink, NgFor, LootLookupComponent, AsyncPipe, DatePipe, ZonePipe]
 })
 export class ItemPageComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject();

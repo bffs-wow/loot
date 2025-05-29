@@ -17,11 +17,17 @@ import { LootRanking } from './models/ranking.model';
 import { environment } from 'src/environments/environment';
 import range from 'lodash-es/range';
 import chunk from 'lodash-es/chunk';
+import { NgIf, NgFor, NgClass, DatePipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { WowheadTooltipDirective } from '../shared-components/wowhead-tooltips/wowhead-tooltip.directive';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { FormatOrderPipe } from '../shared-components/format-order-pipe/format-order.pipe';
 
 @Component({
-  selector: 'app-loot-list',
-  templateUrl: './loot-list.component.html',
-  styleUrls: ['./loot-list.component.scss'],
+    selector: 'app-loot-list',
+    templateUrl: './loot-list.component.html',
+    styleUrls: ['./loot-list.component.scss'],
+    imports: [NgIf, RouterLink, NgFor, NgClass, WowheadTooltipDirective, FaIconComponent, DatePipe, FormatOrderPipe]
 })
 export class LootListComponent implements OnInit, OnChanges {
   @Input() raider: Raider;

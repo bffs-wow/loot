@@ -8,8 +8,8 @@ describe('RosterPageComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ RosterPageComponent ]
-    })
+    imports: [RosterPageComponent]
+})
     .compileComponents();
   }));
 

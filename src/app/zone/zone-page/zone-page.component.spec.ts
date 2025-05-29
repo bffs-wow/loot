@@ -8,8 +8,8 @@ describe('ZonePageComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ZonePageComponent ]
-    })
+    imports: [ZonePageComponent]
+})
     .compileComponents();
   }));
 

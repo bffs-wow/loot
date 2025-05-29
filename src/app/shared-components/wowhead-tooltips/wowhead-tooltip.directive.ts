@@ -10,9 +10,7 @@ import {
 } from '@angular/core';
 import { WowheadTooltipsService } from './wowhead-tooltips.service';
 
-@Directive({
-  selector: 'a[appWowheadTooltip]',
-})
+@Directive({ selector: 'a[appWowheadTooltip]' })
 export class WowheadTooltipDirective implements OnChanges {
   @HostBinding('class')
   elementClass = 'wh-padding';

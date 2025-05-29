@@ -1,10 +1,14 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import range from 'lodash-es/range';
+import { RouterOutlet } from '@angular/router';
+import { FooterComponent } from './layouts/footer/footer.component';
+import { HeaderComponent } from './layouts/header/header.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  imports: [RouterOutlet, FooterComponent, HeaderComponent]
 })
 export class AppComponent implements OnInit {
   backgrounds = range(1, 22);

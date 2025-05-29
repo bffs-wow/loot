@@ -8,8 +8,8 @@ describe('ItemPageComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ItemPageComponent ]
-    })
+    imports: [ItemPageComponent]
+})
     .compileComponents();
   }));
 

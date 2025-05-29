@@ -8,8 +8,8 @@ describe('LootFeedComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LootFeedComponent ]
-    })
+    imports: [LootFeedComponent]
+})
     .compileComponents();
   }));
 

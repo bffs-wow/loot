@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { map, distinctUntilChanged } from 'rxjs/operators';
 import { CacheService } from '../cache/cache.service';
-import add from 'date-fns/add';
 import { Raider } from '../tmb/models/tmb.interface';
 import isNil from 'lodash-es/isNil';
+import add from 'date-fns/add';
 
 export interface AppState {
   selectedRaiderName: string;

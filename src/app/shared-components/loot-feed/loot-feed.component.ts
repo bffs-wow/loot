@@ -18,12 +18,17 @@ import { LootReceipt } from 'src/app/loot-list/models/loot-receipt.model';
 import { CsvItem } from 'src/app/tmb/models/item.interface';
 import { ItemService } from 'src/app/tmb/item.service';
 import { Zone } from 'src/app/zone/zone.interface';
+import { NgFor, NgIf, AsyncPipe, DatePipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { WowheadTooltipDirective } from '../wowhead-tooltips/wowhead-tooltip.directive';
+import { ZonePipe } from '../zone-pipe/zone.pipe';
 
 @Component({
-  selector: 'app-loot-feed',
-  templateUrl: './loot-feed.component.html',
-  styleUrls: ['./loot-feed.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-loot-feed',
+    templateUrl: './loot-feed.component.html',
+    styleUrls: ['./loot-feed.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [NgFor, NgIf, RouterLink, WowheadTooltipDirective, AsyncPipe, DatePipe, ZonePipe]
 })
 export class LootFeedComponent implements OnInit, OnChanges {
   @Input() zone: Zone = null;

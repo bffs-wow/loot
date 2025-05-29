@@ -1,10 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { StateService } from 'src/app/state/state.service';
-import {
-  UntypedFormGroup,
-  FormControl,
-  FormBuilder,
-} from '@angular/forms';
+import { UntypedFormGroup, FormControl, FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil, tap, withLatestFrom } from 'rxjs/operators';
 import {
@@ -22,11 +18,16 @@ import { environment } from 'src/environments/environment';
 import { ZoneService } from 'src/app/zone/zone.service';
 import { Raider } from 'src/app/tmb/models/tmb.interface';
 import { GargulService } from 'src/app/gargul/gargul.service';
+import { RouterLink } from '@angular/router';
+import { NgClass, NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { NgSelectComponent, NgLabelTemplateDirective, NgOptionTemplateDirective } from '@ng-select/ng-select';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss'],
+    imports: [RouterLink, NgClass, FaIconComponent, NgFor, FormsModule, ReactiveFormsModule, NgIf, NgSelectComponent, NgLabelTemplateDirective, NgOptionTemplateDirective, AsyncPipe]
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject<boolean>();
