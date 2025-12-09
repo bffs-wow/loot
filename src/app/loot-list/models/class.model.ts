@@ -8,6 +8,7 @@ export enum Class {
   Druid = 'Druid',
   Hunter = 'Hunter',
   Mage = 'Mage',
+  Monk = 'Monk',
   Paladin = 'Paladin',
   DeathKnight = 'Death Knight',
 }
@@ -20,6 +21,8 @@ export function parseClass(val: string) {
       return Class.Hunter;
     case Class.Mage:
       return Class.Mage;
+    case Class.Monk:
+      return Class.Monk;
     case Class.Paladin:
       return Class.Paladin;
     case Class.Priest:

@@ -13,23 +13,24 @@ import { RouterLink } from '@angular/router';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 
 @Component({
-    selector: 'app-roster-page',
-    templateUrl: './roster-page.component.html',
-    styleUrls: ['./roster-page.component.scss'],
-    imports: [NgFor, NgIf, RouterLink, FaIconComponent, AsyncPipe]
+  selector: 'app-roster-page',
+  templateUrl: './roster-page.component.html',
+  styleUrls: ['./roster-page.component.scss'],
+  imports: [NgFor, NgIf, RouterLink, FaIconComponent, AsyncPipe]
 })
 export class RosterPageComponent implements OnInit {
   allClasses = [
-    Class.Warrior,
-    Class.Priest,
-    Class.Shaman,
+    Class.DeathKnight,
     Class.Druid,
     Class.Hunter,
     Class.Mage,
-    Class.Rogue,
-    Class.Warlock,
+    Class.Monk,
     Class.Paladin,
-    Class.DeathKnight,
+    Class.Priest,
+    Class.Rogue,
+    Class.Shaman,
+    Class.Warlock,
+    Class.Warrior,
   ];
   constructor(private stateService: StateService) { }
 

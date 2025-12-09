@@ -19,37 +19,37 @@ const _sourceOrdering: { [source: string]: number } = {
 export class ZoneService {
   zones: Zone[] = [
     {
-      zoneId: 5638,
-      name: 'Throne of the Four Winds Heroic',
-      slug: 'throne-of-the-four-winds',
+      zoneId: 6125,
+      name: 'Mogu\'shan Vaults Heroic',
+      slug: 'mogushan-vaults',
       itemSources: []
     },
     {
-      zoneId: 5094,
-      name: 'Blackwing Descent Heroic',
-      slug: 'blackwing-descent',
+      zoneId: 6297,
+      name: 'Heart of Fear Heroic',
+      slug: 'heart-of-fear',
       itemSources: []
     },
     {
-      zoneId: 5334,
-      name: 'The Bastion of Twilight Heroic',
-      slug: 'the-bastion-of-twilight',
+      zoneId: 6067,
+      name: 'Terrace of Endless Spring Heroic',
+      slug: 'terrace-of-endless-spring',
       itemSources: []
     },
     {
-      zoneId: 5723,
-      name: 'Firelands Heroic',
-      slug: 'firelands',
+      zoneId: 6622,
+      name: 'Throne of Thunder Heroic',
+      slug: 'throne-of-thunder',
       itemSources: []
     },
     {
-      zoneId: 5892,
-      name: 'Dragon Soul Heroic',
-      slug: 'dragon-soul',
+      zoneId: 6738,
+      name: 'Siege of Orgrimmar Heroic',
+      slug: 'siege-of-orgrimmar',
       itemSources: []
     },
   ];
-  constructor(private itemService: ItemService) {
+  constructor(itemService: ItemService) {
     itemService.allItems$
       .pipe(
         tap((items) => {

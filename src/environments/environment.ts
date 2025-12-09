@@ -4,26 +4,26 @@
 
 export const environment = {
   production: false,
-  cache_bust: '15',
+  cache_bust: '17',
   logsGuildUrl:
-    'https://classic.warcraftlogs.com/guild/rankings/532692/latest/',
+    'https://classic.warcraftlogs.com/guild/rankings/798734/latest/',
   logsCharacterBaseUrl:
-    'https://classic.warcraftlogs.com/character/us/faerlina/',
+    'https://classic.warcraftlogs.com/character/us/nazgrim/',
   // This should match the wishlist length setting in TMB
-  wishlistLength: 50,
+  wishlistLength: 80,
   // Offspec wishlist items may not be placed in this spot or earlier on the list.
   // If there are not this many Main Spec items in the list, the OS items will be "pushed down" to this point.
-  wishlistOffspecCutoff: 33,
+  wishlistOffspecCutoff: 48,
   // Combined with the rolling attendance period, this detemines the "leniency rule" that allows for a number of absent/tardies
   forgiveness: 1,
   // How many slots between weapon items?
   itemsPerSlotRule: 1,
-  tmbBaseUrl: 'https://thatsmybis.com/19497/best-friends-test/',
+  tmbBaseUrl: 'https://thatsmybis.com/22344/best-friends/',
   /**
    * IMPORTANT: The values in this array *MUST* match the values provided in the TMB JSON data, the 'instance_name' properties of items.
    * This is used to generate ranking data for items not on wishlists (i.e. everyone is eligible for all items, even if they don't list - but we don't want to process every item in the game, just current phase.)
    */
-  currentRaids: ['Dragon Soul Heroic'],
+  currentRaids: ['Throne of Thunder Heroic'],
 };
 
 /*

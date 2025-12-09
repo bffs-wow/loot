@@ -32,7 +32,7 @@ export class WowheadTooltipDirective implements OnChanges {
       this.renderer.setAttribute(
         this.elRef.nativeElement,
         'data-wowhead',
-        `item=${itemId}&domain=cata`
+        `item=${itemId}&domain=mop-classic`
       );
 
       this.wowheadTooltipsService.refreshLinks();
