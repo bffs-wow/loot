@@ -11,7 +11,7 @@ import { HeaderComponent } from './layouts/header/header.component';
   imports: [RouterOutlet, FooterComponent, HeaderComponent]
 })
 export class AppComponent implements OnInit {
-  backgrounds = range(1, 22);
+  backgrounds = range(1, 23);
   constructor(private renderer: Renderer2) { }
 
   ngOnInit() {

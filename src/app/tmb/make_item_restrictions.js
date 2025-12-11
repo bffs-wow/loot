@@ -17,7 +17,10 @@ const Papa = require("papaparse");
       for (const row of res.data) {
         restrictionsObj[row.id] = {
           ITEM_NAME: row.name,
-          allowedClasses: row.ALLOWED_CLASSES.split(","),
+          allowedClasses:
+            row.ALLOWED_CLASSES?.split(",")
+              .filter((i) => i?.trim() !== "")
+              .map((i) => i.trim()) || [],
           restrictedClasses: [],
           allowedRankings: 3,
         };
@@ -30,6 +33,17 @@ const Papa = require("papaparse");
           null,
           2
         )}`
+          .replaceAll('"Class.Druid"', "Class.Druid")
+          .replaceAll('"Class.Hunter"', "Class.Hunter")
+          .replaceAll('"Class.Mage"', "Class.Mage")
+          .replaceAll('"Class.Monk"', "Class.Monk")
+          .replaceAll('"Class.Paladin"', "Class.Paladin")
+          .replaceAll('"Class.Priest"', "Class.Priest")
+          .replaceAll('"Class.Rogue"', "Class.Rogue")
+          .replaceAll('"Class.Shaman"', "Class.Shaman")
+          .replaceAll('"Class.Warlock"', "Class.Warlock")
+          .replaceAll('"Class.Warrior"', "Class.Warrior")
+          .replaceAll('"Class.DeathKnight"', "Class.DeathKnight")
       );
     },
   });
