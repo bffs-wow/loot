@@ -18,6 +18,7 @@ const Papa = require("papaparse");
         restrictionsObj[row.id] = {
           ITEM_NAME: row.name,
           allowedClasses:
+            // Allow for using google sheets to specify classes, separated by commas
             row.ALLOWED_CLASSES?.split(",")
               .filter((i) => i?.trim() !== "")
               .map((i) => i.trim()) || [],
@@ -33,6 +34,7 @@ const Papa = require("papaparse");
           null,
           2
         )}`
+          // Scrub string selections to be proper enum references
           .replaceAll('"Class.Druid"', "Class.Druid")
           .replaceAll('"Class.Hunter"', "Class.Hunter")
           .replaceAll('"Class.Mage"', "Class.Mage")
