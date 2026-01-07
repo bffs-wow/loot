@@ -1382,7 +1382,7 @@ export const ITEM_RESTRICTIONS: ItemRestrictions = {
   "96410": {
     "ITEM_NAME": "Kura-Kura, Kazra'jin's Skullcleaver",
     "allowedClasses": [
-      Class.Rogue, Class.Shaman
+      Class.Rogue, Class.Shaman, Class.Monk
     ],
     "restrictedClasses": [],
     "allowedRankings": 3
