@@ -24,16 +24,18 @@ import { LootLookupComponent } from '../shared-components/loot-lookup/loot-looku
 import { ZonePipe } from '../shared-components/zone-pipe/zone.pipe';
 
 @Component({
-    selector: 'app-item-page',
-    templateUrl: './item-page.component.html',
-    styleUrls: ['./item-page.component.scss'],
-    imports: [NgIf, WowheadTooltipDirective, FaIconComponent, NgClass, RouterLink, NgFor, LootLookupComponent, AsyncPipe, DatePipe, ZonePipe]
+  selector: 'app-item-page',
+  templateUrl: './item-page.component.html',
+  styleUrls: ['./item-page.component.scss'],
+  imports: [NgIf, WowheadTooltipDirective, FaIconComponent, NgClass, RouterLink, NgFor, LootLookupComponent, AsyncPipe, DatePipe, ZonePipe]
 })
 export class ItemPageComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject();
   item$: Observable<CsvItem>;
   itemToGroupRedirects = {
-    66998: 't11-heroic-tokens'
+    105866: 't16-prot-tokens',
+    105867: 't16-conq-tokens',
+    105868: 't16-vanq-tokens',
   }
 
   tradeInItem$: Observable<CsvItem>;

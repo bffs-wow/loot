@@ -7,32 +7,31 @@ import {
   SimpleChanges,
 } from '@angular/core';
 
-import { map } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-import take from 'lodash-es/take';
-import { StateService } from 'src/app/state/state.service';
-import { ReceivedItem } from 'src/app/tmb/models/tmb.interface';
-import { ZoneService } from 'src/app/zone/zone.service';
-import { LootReceipt } from 'src/app/loot-list/models/loot-receipt.model';
-import { CsvItem } from 'src/app/tmb/models/item.interface';
-import { ItemService } from 'src/app/tmb/item.service';
-import { Zone } from 'src/app/zone/zone.interface';
-import { NgFor, NgIf, AsyncPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import take from 'lodash-es/take';
+import { LootReceipt } from 'src/app/loot-list/models/loot-receipt.model';
+import { StateService } from 'src/app/state/state.service';
+import { ItemService } from 'src/app/tmb/item.service';
+import { CsvItem } from 'src/app/tmb/models/item.interface';
+import { Zone } from 'src/app/zone/zone.interface';
+import { ZoneService } from 'src/app/zone/zone.service';
 import { WowheadTooltipDirective } from '../wowhead-tooltips/wowhead-tooltip.directive';
 import { ZonePipe } from '../zone-pipe/zone.pipe';
 
 @Component({
-    selector: 'app-loot-feed',
-    templateUrl: './loot-feed.component.html',
-    styleUrls: ['./loot-feed.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [NgFor, NgIf, RouterLink, WowheadTooltipDirective, AsyncPipe, DatePipe, ZonePipe]
+  selector: 'app-loot-feed',
+  templateUrl: './loot-feed.component.html',
+  styleUrls: ['./loot-feed.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [NgFor, NgIf, RouterLink, WowheadTooltipDirective, AsyncPipe, DatePipe, ZonePipe]
 })
 export class LootFeedComponent implements OnInit, OnChanges {
-  @Input() zone: Zone = null;
-  @Input() source: string = null;
+  @Input() zone: Zone | null = null;
+  @Input() source: string | null = null;
   private _filters = new BehaviorSubject({
     zone: this.zone,
     source: this.source,
@@ -79,10 +78,10 @@ export class LootFeedComponent implements OnInit, OnChanges {
         // If the drop was on the same date, sort by boss ordering instead
         if (+b.item.pivot.received_at === +a.item.pivot.received_at) {
           const aOrder = this.zoneService.getSourceOrdering(
-            a.itemWithSource?.source_name
+            a.itemWithSource?.source_name || ''
           );
           const bOrder = this.zoneService.getSourceOrdering(
-            b.itemWithSource?.source_name
+            b.itemWithSource?.source_name || ''
           );
           return bOrder - aOrder;
         }

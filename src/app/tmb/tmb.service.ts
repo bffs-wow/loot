@@ -111,14 +111,14 @@ export class TmbService {
       quiet?: boolean;
     }
   ) {
-    const errors = [];
+    const errors: string[] = [];
     const restrictions = this.getItemRestrictions(itemId);
     // If there are no restrictions, just return
     if (!restrictions) {
       return errors;
     }
     // If there are any entries in the allowed classes array, then only those classes may list the item
-    if (restrictions.allowedClasses.length) {
+    if (restrictions.allowedClasses?.length) {
       if (!restrictions.allowedClasses.includes(cls)) {
         const msg = `(${restrictions.ITEM_NAME} - ${itemId}) not in allowedClasses: ${cls}`;
         errors.push(msg);
@@ -126,7 +126,7 @@ export class TmbService {
       }
     }
     // If there are any entries in the restricted classes array, only those classes MAY NOT list the item
-    if (restrictions.restrictedClasses.length) {
+    if (restrictions.restrictedClasses?.length) {
       if (restrictions.restrictedClasses.includes(cls)) {
         const msg = `(${restrictions.ITEM_NAME} - ${itemId}) is in restrictedClasses: ${cls}`;
         errors.push(msg);

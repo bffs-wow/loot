@@ -1,16 +1,15 @@
-import { Component, OnChanges, input } from '@angular/core';
-import { BehaviorSubject, combineLatest } from 'rxjs';
-import { itemGroups } from './item-groups';
-import { ItemService } from '../tmb/item.service';
-import { map, switchMap } from 'rxjs/operators';
-import { AsyncPipe, JsonPipe } from '@angular/common';
-import { LootListFacadeService } from '../loot-list/loot-list.facade';
+import { AsyncPipe } from '@angular/common';
+import { Component, OnChanges, SimpleChanges, input } from '@angular/core';
 import flatten from 'lodash-es/flatten';
+import { BehaviorSubject, combineLatest } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
+import { LootListFacadeService } from '../loot-list/loot-list.facade';
 import { LootGroup } from '../loot-list/models/loot-group.model';
+import { ItemService } from '../tmb/item.service';
+import { itemGroups } from './item-groups';
 
-import { FaIconComponent } from '@fortawesome/angular-fontawesome';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { RouterLink } from '@angular/router';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import uniq from 'lodash-es/uniq';
 import { WowheadTooltipDirective } from '../shared-components/wowhead-tooltips/wowhead-tooltip.directive';
 
@@ -22,7 +21,7 @@ import { WowheadTooltipDirective } from '../shared-components/wowhead-tooltips/w
 })
 export class ItemGroupPageComponent implements OnChanges {
   faExternalLinkAlt = faExternalLinkAlt;
-  readonly itemGroupName = input<string>(undefined);
+  readonly itemGroupName = input<keyof typeof itemGroups>('');
   itemGroupItemIds$ = new BehaviorSubject<number[]>([]);
   items$ = this.itemGroupItemIds$.pipe(
     switchMap(ids => combineLatest(ids.map(id => this.itemService.getById(id))))
@@ -36,7 +35,7 @@ export class ItemGroupPageComponent implements OnChanges {
         // We are only interested in the highest ranking of each item
         const highestRankedGroups: LootGroup[] = [];
         const rankingPoints: number[] = [];
-        const found = {};
+        const found: { [key: number]: boolean } = {};
         for (let group of groups) {
           const itemId = group.rankings[0].item.item_id;
           if (!found[itemId]) {
@@ -53,12 +52,14 @@ export class ItemGroupPageComponent implements OnChanges {
     );
 
   groupTitle = {
-    't11-heroic-tokens': "T11 Heroic Tokens"
+    't16-conq-tokens': "T16 Conquest Tokens",
+    't16-vanq-tokens': "T16 Vanquisher Tokens",
+    't16-prot-tokens': "T16 Protector Tokens"
   }
   constructor(protected itemService: ItemService, private lootListFacade: LootListFacadeService,
   ) { }
 
-  ngOnChanges(changes) {
+  ngOnChanges(changes: SimpleChanges) {
     this.itemGroupItemIds$.next(itemGroups[this.itemGroupName()] || []);
   }
 

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  cache_bust: '17',
+  cache_bust: '18',
   logsGuildUrl:
     'https://classic.warcraftlogs.com/guild/rankings/798734/latest/',
   logsCharacterBaseUrl:
@@ -23,7 +23,7 @@ export const environment = {
    * IMPORTANT: The values in this array *MUST* match the values provided in the TMB JSON data, the 'instance_name' properties of items.
    * This is used to generate ranking data for items not on wishlists (i.e. everyone is eligible for all items, even if they don't list - but we don't want to process every item in the game, just current phase.)
    */
-  currentRaids: ['Throne of Thunder Heroic'],
+  currentRaids: ['Siege of Orgrimmar Heroic'],
 };
 
 /*
