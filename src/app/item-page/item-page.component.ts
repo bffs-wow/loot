@@ -36,6 +36,7 @@ export class ItemPageComponent implements OnInit, OnDestroy {
     105866: 't16-prot-tokens',
     105867: 't16-conq-tokens',
     105868: 't16-vanq-tokens',
+    105856: 'echoes-of-war',
   }
 
   tradeInItem$: Observable<CsvItem>;
