@@ -39,11 +39,11 @@ export class TmbService {
           Pragma: 'no-cache',
           Expires: '0',
         }),
-      })
+      }),
     ),
     // Filter out alts and other characters in the system which do not belong to the main raid roster.
     map((raiders: Raider[]) =>
-      raiders.filter((r) => r.is_alt === 0 && r.raid_group_id > 0)
+      raiders.filter((r) => r.is_alt === 0 && r.raid_group_id > 0),
     ),
     tap((raiders: Raider[]) => this.checkNewData(raiders)),
     map((raiders: Raider[]) => this.processAttendancePoints(raiders)),
@@ -52,14 +52,14 @@ export class TmbService {
     switchMap((raiders: Raider[]) => this.addUnlistedItems(raiders)),
     // Finally, save the raiders onto the state
     tap((raiders) => this.state.setState({ raiders })),
-    shareReplay(1)
+    shareReplay(1),
   );
 
   constructor(
     private http: HttpClient,
     private cacheService: CacheService,
     private state: StateService,
-    private itemService: ItemService
+    private itemService: ItemService,
   ) {}
 
   getRaiders(): Observable<Raider[]> {
@@ -70,9 +70,9 @@ export class TmbService {
     return this.raiders$.pipe(
       map((raiders) =>
         raiders.find(
-          (r) => r.name.toLocaleLowerCase() === name.toLocaleLowerCase()
-        )
-      )
+          (r) => r.name.toLocaleLowerCase() === name.toLocaleLowerCase(),
+        ),
+      ),
     );
   }
 
@@ -93,7 +93,7 @@ export class TmbService {
     opts?: {
       wishList?: WishlistItem[];
       quiet?: boolean;
-    }
+    },
   ) {
     const errors = [];
     const restrictions = this.getItemRestrictions(itemId);
@@ -138,13 +138,13 @@ export class TmbService {
     let bank = 1;
     // Chunk the items into sizes per the rule
     const sorted = raider.wishlist.sort(
-      (a, b) => a.pivot.order - b.pivot.order
+      (a, b) => a.pivot.order - b.pivot.order,
     );
     const chunks = chunk(sorted, environment.itemsPerSlotRule);
     // Iterate over each chunk (for example, set of *3* items)
     for (const chunk of chunks) {
       const weapons = chunk.filter((w) =>
-        weaponSlots.includes(w.inventory_type)
+        weaponSlots.includes(w.inventory_type),
       );
       const weaponCount = weapons.length;
       // If there are no weapons in this chunk, we get a bank slot
@@ -186,7 +186,7 @@ export class TmbService {
           }
           return raider;
         });
-      })
+      }),
     );
   }
 
@@ -195,6 +195,16 @@ export class TmbService {
     return this.itemService.allItems$.pipe(
       map((allitems) => {
         return raiders.map((raider) => {
+          const wishlistIds = new Set(
+            raider.wishlist.map((w) => String(w.item_id)),
+          );
+          const receivedIds = new Set(
+            raider.received.map((r) => String(r.item_id)),
+          );
+          const eligibleIds = new Set(
+            raider.eligible_loot.map((e) => String(e.item_id)),
+          );
+
           const unlistedItems = uniqBy(
             allitems
               // Only items we currently are raiding
@@ -203,17 +213,11 @@ export class TmbService {
               .filter(
                 (item) =>
                   // ... wishlisted
-                  !raider.wishlist.some(
-                    (raiderW) => raiderW.item_id == item.id
-                  ) &&
+                  !wishlistIds.has(String(item.id)) &&
                   // ... received
-                  !raider.received.some(
-                    (raiderR) => raiderR.item_id == item.id
-                  ) &&
+                  !receivedIds.has(String(item.id)) &&
                   // and is already eligible for
-                  !raider.eligible_loot.some(
-                    (raiderE) => raiderE.item_id == item.id
-                  )
+                  !eligibleIds.has(String(item.id)),
               )
               // Remove class restricted items
               .filter(
@@ -221,8 +225,8 @@ export class TmbService {
                   !this.validateItemRestrictions(
                     item.id,
                     parseClass(raider.class),
-                    { quiet: true }
-                  ).length
+                    { quiet: true },
+                  ).length,
               )
               .map((item) => {
                 // Update this item with this raider's details
@@ -243,13 +247,13 @@ export class TmbService {
                   },
                 } as WishlistItem;
               }),
-            'item_id'
+            'item_id',
           );
           raider.eligible_loot = [...raider.eligible_loot, ...unlistedItems];
 
           return raider;
         });
-      })
+      }),
     );
   }
 
@@ -258,7 +262,7 @@ export class TmbService {
     const processed = tmbData.map((raider) => {
       // Make sure the wishlist order was sorted
       raider.wishlist = raider.wishlist.sort(
-        (a, b) => a.pivot.order - b.pivot.order
+        (a, b) => a.pivot.order - b.pivot.order,
       );
       // Validate and re-position OS items if needed
       const osItems = raider.wishlist
@@ -275,7 +279,7 @@ export class TmbService {
           raider.public_note = `${raider.public_note || ''}\r\n${osMsg}`;
           // This is a critical issue, so make it very visible that these items are invalid
           raider.wishlist.forEach(
-            (i) => (i.pivot.note = 'INVALID LIST (TOO MANY OS)')
+            (i) => (i.pivot.note = 'INVALID LIST (TOO MANY OS)'),
           );
         } else {
           const firstOsItem = osItems[0];
@@ -284,7 +288,7 @@ export class TmbService {
           // If the first OS item comes before the cutoff, move it
           if (firstOsItem.pivot.order <= environment.wishlistOffspecCutoff) {
             const itemsToMove = raider.wishlist.filter(
-              (i) => i.pivot.order >= firstOsItem.pivot.order
+              (i) => i.pivot.order >= firstOsItem.pivot.order,
             );
             // First OS Item order will be set to the cutoff spot (+1)
             let curOsOrder = environment.wishlistOffspecCutoff + 1;
@@ -297,7 +301,7 @@ export class TmbService {
             }
             // If any items "fell off" the list (i.e. order > wishlistLength), log an error
             const invalidOsItems = raider.wishlist.filter(
-              (i) => i.pivot.order > environment.wishlistLength
+              (i) => i.pivot.order > environment.wishlistLength,
             );
 
             if (invalidOsItems.length) {
@@ -306,7 +310,7 @@ export class TmbService {
               raider.public_note = `${raider.public_note || ''}\r\n${osMsg}`;
               // This is a critical issue, so make it very visible that these items are invalid
               raider.wishlist.forEach(
-                (i) => (i.pivot.note = 'INVALID LIST (OS TOO EARLY)')
+                (i) => (i.pivot.note = 'INVALID LIST (OS TOO EARLY)'),
               );
             }
           }
@@ -319,7 +323,7 @@ export class TmbService {
          * For example, at wishlist position 1, if there are a max of 50 items on the list, we take the absolute value of 1 - (50 + 1) to give a score of 50 for the top ranking.
          */
         w.ranking_points = Math.abs(
-          w.pivot.order - (environment.wishlistLength + 1)
+          w.pivot.order - (environment.wishlistLength + 1),
         );
         w.raider_points = raider.attendance_points + w.ranking_points;
 
@@ -327,11 +331,11 @@ export class TmbService {
         const validationResults = this.validateItemRestrictions(
           w.item_id,
           parseClass(raider.class),
-          { wishList: raider.wishlist }
+          { wishList: raider.wishlist },
         );
         if (validationResults.length) {
           console.error(
-            `${raider.name} - restricted item: (${w.name} - ${w.item_id})`
+            `${raider.name} - restricted item: (${w.name} - ${w.item_id})`,
           );
           // Stick these errors onto the raider's public note for viewing
           raider.public_note = `${
@@ -349,7 +353,7 @@ export class TmbService {
        * Eligible loot is loot that is wishlisted, but not yet received
        */
       raider.eligible_loot = raider.wishlist.filter(
-        (w) => !w.pivot?.is_received
+        (w) => !w.pivot?.is_received,
       );
 
       /**
@@ -373,6 +377,13 @@ export class TmbService {
 
     // after the first pass, add all unlisted loot into eligible_loot
     return processed.map((raider) => {
+      const wishlistIds = new Set(
+        raider.wishlist.map((w) => String(w.item_id)),
+      );
+      const receivedIds = new Set(
+        raider.received.map((r) => String(r.item_id)),
+      );
+
       // De-duplicate
       const otherWishListedItems = uniqBy(
         // Clone these items to avoid mutating wishlists
@@ -386,18 +397,14 @@ export class TmbService {
               .map((r) =>
                 r.wishlist.filter(
                   (w) =>
-                    !raider.wishlist.some(
-                      (raiderW) => raiderW.item_id == w.item_id
-                    ) &&
-                    !raider.received.some(
-                      (raiderR) => raiderR.item_id == w.item_id
-                    )
-                )
-              )
-          )
+                    !wishlistIds.has(String(w.item_id)) &&
+                    !receivedIds.has(String(w.item_id)),
+                ),
+              ),
+          ),
         ),
         // uniqBy item_id
-        'item_id'
+        'item_id',
       )
         // Remove class restricted items
         .filter(
@@ -405,8 +412,8 @@ export class TmbService {
             !this.validateItemRestrictions(
               item.item_id,
               parseClass(raider.class),
-              { quiet: true }
-            ).length
+              { quiet: true },
+            ).length,
         )
         .map((item) => {
           // Update this item with this raider's details
@@ -449,7 +456,7 @@ export class TmbService {
       return raider;
     });
     const maxAttendeeRaider = processedRaiders.sort(
-      (a, b) => b.attendance_points - a.attendance_points
+      (a, b) => b.attendance_points - a.attendance_points,
     )[0];
     // Maximum attendance points are calculated by taking whichever raider has the most attendance points, and subtracting our forgiveness factor
     let maxAttendancePoints =
@@ -484,7 +491,7 @@ export class TmbService {
     // Warn of stale data.
     if (cachedSha && newSha === cachedSha.sha) {
       var daysCached = Math.floor(
-        (+today - +new Date(cachedSha.date)) / (1000 * 60 * 60 * 24)
+        (+today - +new Date(cachedSha.date)) / (1000 * 60 * 60 * 24),
       );
       if (
         // If the cache is ever 5+ days old, warn always
