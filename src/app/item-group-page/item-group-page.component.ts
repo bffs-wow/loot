@@ -35,17 +35,11 @@ export class ItemGroupPageComponent implements OnChanges {
       map(arrays => flatten(arrays)),
       map(groupRankings => this.lootListFacade.groupAndSort(groupRankings)),
       map(groups => {
-        // We are only interested in the highest ranking of each item
         const highestRankedGroups: LootGroup[] = [];
         const rankingPoints: number[] = [];
-        const found: { [key: number]: boolean } = {};
         for (let group of groups) {
-          const itemId = group.rankings[0].item.item_id;
-          if (!found[itemId]) {
-            found[itemId] = true;
-            highestRankedGroups.push(group);
-            rankingPoints.push(group.points);
-          }
+          highestRankedGroups.push(group);
+          rankingPoints.push(group.points);
         }
         return {
           points: uniq(rankingPoints),
