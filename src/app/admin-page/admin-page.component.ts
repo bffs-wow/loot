@@ -1,10 +1,13 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
-  selector: 'app-admin-page',
-  templateUrl: './admin-page.component.html',
-  styleUrls: ['./admin-page.component.scss'],
+    selector: 'app-admin-page',
+    templateUrl: './admin-page.component.html',
+    styleUrls: ['./admin-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    imports: []
 })
 export class AdminPageComponent implements OnInit, OnChanges {
   section: string = '';

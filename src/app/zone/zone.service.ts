@@ -19,73 +19,37 @@ const _sourceOrdering: { [source: string]: number } = {
 export class ZoneService {
   zones: Zone[] = [
     {
-      zoneId: 4603,
-      name: 'Vault of Archavon N25',
-      slug: 'vault-of-archavon',
-      itemSources: [],
+      zoneId: 6125,
+      name: 'Mogu\'shan Vaults Heroic',
+      slug: 'mogushan-vaults',
+      itemSources: []
     },
     {
-      zoneId: 3456,
-      name: 'Naxxramas N25',
-      slug: 'naxxramas',
-      itemSources: [],
+      zoneId: 6297,
+      name: 'Heart of Fear Heroic',
+      slug: 'heart-of-fear',
+      itemSources: []
     },
     {
-      zoneId: 4500,
-      name: 'Eye of Eternity N25',
-      slug: 'eye-of-eternity',
-      itemSources: [],
+      zoneId: 6067,
+      name: 'Terrace of Endless Spring Heroic',
+      slug: 'terrace-of-endless-spring',
+      itemSources: []
     },
     {
-      zoneId: 4493,
-      name: 'Obsidian Sanctum N25',
-      slug: 'obsidian-sanctum',
-      itemSources: [],
+      zoneId: 6622,
+      name: 'Throne of Thunder Heroic',
+      slug: 'throne-of-thunder',
+      itemSources: []
     },
     {
-      zoneId: 4273,
-      name: 'Ulduar N25',
-      slug: 'ulduar',
-      itemSources: [],
-    },
-    {
-      zoneId: 4722,
-      name: 'Trial of the Crusader N25',
-      slug: 'trial-of-the-crusader-n',
-      itemSources: [],
-    },
-    {
-      zoneId: 4722,
-      name: 'Trial of the Crusader H25',
-      slug: 'trial-of-the-crusader-h',
-      itemSources: [],
-    },
-    {
-      zoneId: 4812,
-      name: 'Icecrown Citadel N25',
-      slug: 'icecrown-citadel-n',
-      itemSources: [],
-    },
-    {
-      zoneId: 4812,
-      name: 'Icecrown Citadel H25',
-      slug: 'icecrown-citadel-h',
-      itemSources: [],
-    },
-    {
-      zoneId: 4987,
-      name: 'Ruby Sanctum N25',
-      slug: 'ruby-sanctum-n',
-      itemSources: [],
-    },
-    {
-      zoneId: 4987,
-      name: 'Ruby Sanctum H25',
-      slug: 'ruby-sanctum-h',
-      itemSources: [],
+      zoneId: 6738,
+      name: 'Siege of Orgrimmar Heroic',
+      slug: 'siege-of-orgrimmar',
+      itemSources: []
     },
   ];
-  constructor(private itemService: ItemService) {
+  constructor(itemService: ItemService) {
     itemService.allItems$
       .pipe(
         tap((items) => {

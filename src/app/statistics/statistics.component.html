@@ -29,54 +29,66 @@
   </div>
   <div class="column is-12">
     <div class="box has-background-dark">
-      <div class="has-text-centered" *ngIf="totalProgress">
-        <progress
-          class="progress is-info mb-0"
-          max="100"
-          [value]="totalProgress.progress"
-        ></progress>
-        <span class="has-text-centered is-size-5 is-grey-light"
-          >Total Loot Progress (This Phase):
-          {{ totalProgress.rankingsReceived }} /
-          {{ totalProgress.rankings }}</span
-        >
+      @if (totalProgress) {
+        <div class="has-text-centered">
+          <progress
+            class="progress is-info mb-0"
+            max="100"
+            [value]="totalProgress.progress"
+          ></progress>
+          <span class="has-text-centered is-size-5 is-grey-light"
+            >Total Loot Progress (This Phase):
+            {{ totalProgress.rankingsReceived }} /
+            {{ totalProgress.rankings }}</span
+            >
+          </div>
+        }
+        @if (totalProgressTop10) {
+          <div class="has-text-centered">
+            <progress
+              class="progress is-success mb-0"
+              max="100"
+              [value]="totalProgressTop10.progress"
+            ></progress>
+            <span class="has-text-centered is-size-5 is-grey-light"
+              >Top 10 Rankings Progress (This Phase):
+              {{ totalProgressTop10.rankingsReceived }} /
+              {{ totalProgressTop10.rankings }}</span
+              >
+            </div>
+          }
+        </div>
       </div>
-      <div class="has-text-centered" *ngIf="totalProgressTop10">
-        <progress
-          class="progress is-success mb-0"
-          max="100"
-          [value]="totalProgressTop10.progress"
-        ></progress>
-        <span class="has-text-centered is-size-5 is-grey-light"
-          >Top 10 Rankings Progress (This Phase):
-          {{ totalProgressTop10.rankingsReceived }} /
-          {{ totalProgressTop10.rankings }}</span
-        >
+      <div class="column is-12">
+        <nav class="level is-mobile">
+          @if (mostPopularItems) {
+            <div class="level-item box">
+              <div>
+                <p class="heading">Most Popular Items</p>
+                <ol>
+                  @for (item of mostPopularItems; track item) {
+                    <li>
+                      {{ item.ranking.name }} ({{ item.sum }} points)
+                    </li>
+                  }
+                </ol>
+              </div>
+            </div>
+          }
+          @if (mostCommonItems) {
+            <div class="level-item box">
+              <div>
+                <p class="heading">Most Commonly Looted Items</p>
+                <ol>
+                  @for (item of mostCommonItems; track item) {
+                    <li>
+                      {{ item.item.name }} ({{ item.count }})
+                    </li>
+                  }
+                </ol>
+              </div>
+            </div>
+          }
+        </nav>
       </div>
     </div>
-  </div>
-  <div class="column is-12">
-    <nav class="level is-mobile">
-      <div class="level-item box" *ngIf="mostPopularItems">
-        <div>
-          <p class="heading">Most Popular Items</p>
-          <ol>
-            <li *ngFor="let item of mostPopularItems">
-              {{ item.ranking.name }} ({{ item.sum }} points)
-            </li>
-          </ol>
-        </div>
-      </div>
-      <div class="level-item box" *ngIf="mostCommonItems">
-        <div>
-          <p class="heading">Most Commonly Looted Items</p>
-          <ol>
-            <li *ngFor="let item of mostCommonItems">
-              {{ item.item.name }} ({{ item.count }})
-            </li>
-          </ol>
-        </div>
-      </div>
-    </nav>
-  </div>
-</div>

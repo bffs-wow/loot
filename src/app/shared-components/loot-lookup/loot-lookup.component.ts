@@ -1,9 +1,5 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import {
-  UntypedFormBuilder,
-  UntypedFormGroup,
-  UntypedFormControl,
-} from '@angular/forms';
+import { Component, OnInit, OnDestroy, Input, ChangeDetectionStrategy } from '@angular/core';
+import { UntypedFormBuilder, UntypedFormGroup, UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StateService } from '../../state/state.service';
 import { Observable, Subject, concat, of } from 'rxjs';
 
@@ -27,11 +23,20 @@ import { ItemService } from '../../tmb/item.service';
 import { LootGroup } from 'src/app/loot-list/models/loot-group.model';
 import { BaseWowItem, CsvItem } from 'src/app/tmb/models/item.interface';
 import uniqBy from 'lodash-es/uniqBy';
+import { LootRanking } from 'src/app/loot-list/models/ranking.model';
+import { Router, RouterLink } from '@angular/router';
+import { NgClass, AsyncPipe } from '@angular/common';
+import { NgSelectComponent, NgOptionTemplateDirective } from '@ng-select/ng-select';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { WowheadTooltipDirective } from '../wowhead-tooltips/wowhead-tooltip.directive';
+import { ZonePipe } from '../zone-pipe/zone.pipe';
 
 @Component({
-  selector: 'app-loot-lookup',
-  templateUrl: './loot-lookup.component.html',
-  styleUrls: ['./loot-lookup.component.scss'],
+    selector: 'app-loot-lookup',
+    templateUrl: './loot-lookup.component.html',
+    styleUrls: ['./loot-lookup.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    imports: [FormsModule, ReactiveFormsModule, NgSelectComponent, NgOptionTemplateDirective, NgClass, FaIconComponent, WowheadTooltipDirective, RouterLink, AsyncPipe, ZonePipe]
 })
 export class LootLookupComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject<boolean>();
@@ -53,12 +58,13 @@ export class LootLookupComponent implements OnInit, OnDestroy {
   selectedItem$: Observable<LootGroup[]>;
 
   constructor(
+    private router: Router,
     public state: StateService,
-    private itemService: ItemService,
+    protected itemService: ItemService,
     private lootListFacade: LootListFacadeService,
     public fb: UntypedFormBuilder,
     public lootAnnounceService: LootAnnounceService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -94,7 +100,15 @@ export class LootLookupComponent implements OnInit, OnDestroy {
     this.selectedItem$ = selectedItem.valueChanges.pipe(
       startWith(this.item),
       filter((i) => !!i),
-      switchMap((item) => this.lootListFacade.getRankedLootGroups(item.name))
+      switchMap((item: CsvItem) =>
+        this.lootListFacade.getRankedLootGroups(item.id).pipe(
+          tap(groups => {
+            if (groups.length === 0) {
+              this.router.navigate(['item', item.id]);
+            }
+          })
+        )
+      ),
     );
   }
 
@@ -103,10 +117,19 @@ export class LootLookupComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.destroyed$.next();
+    this.destroyed$.next(undefined);
   }
 
   trackByFn(item: BaseWowItem) {
     return item.item_id;
+  }
+
+  /**
+ * Returns true if none of the loot in the array is listed directly on someone's loot list
+ * @param items
+ * @returns
+ */
+  noneListed(items: LootRanking[]) {
+    return items && items.every((i) => i.item.pivot.note === 'Unlisted');
   }
 }

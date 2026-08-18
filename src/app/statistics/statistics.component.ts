@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { LootListFacadeService } from '../loot-list/loot-list.facade';
 import { Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
@@ -9,10 +9,13 @@ import { ReceivedItem, WishlistItem } from '../tmb/models/tmb.interface';
 import { TmbService } from '../tmb/tmb.service';
 import { StateService } from '../state/state.service';
 
+
 @Component({
   selector: 'app-statistics',
   templateUrl: './statistics.component.html',
   styleUrls: ['./statistics.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
+  imports: []
 })
 export class StatisticsComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject();
@@ -21,14 +24,22 @@ export class StatisticsComponent implements OnInit, OnDestroy {
   totalRanked = 0;
   avgAttendance = 0;
   totalReceivedThisPhase = 0;
-  totalProgress = null;
-  totalProgressTop10 = null;
-  mostPopularItems: { ranking: WishlistItem; sum: number }[] = null;
-  mostCommonItems: { item: ReceivedItem; count: number }[] = null;
+  totalProgress: {
+    rankingsReceived: number;
+    rankings: number;
+    progress: number;
+  } = { rankingsReceived: 0, rankings: 0, progress: 0 };
+  totalProgressTop10: {
+    rankingsReceived: number;
+    rankings: number;
+    progress: number;
+  } = { rankingsReceived: 0, rankings: 0, progress: 0 };
+  mostPopularItems: { ranking: WishlistItem; sum: number }[] = [];
+  mostCommonItems: { item: ReceivedItem; count: number }[] = [];
   constructor(
     private state: StateService,
     private statisticsService: StatisticsService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.state.raiders$
@@ -140,6 +151,6 @@ export class StatisticsComponent implements OnInit, OnDestroy {
       .subscribe();
   }
   ngOnDestroy() {
-    this.destroyed$.next();
+    this.destroyed$.next(undefined);
   }
 }

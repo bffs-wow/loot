@@ -22,6 +22,6 @@ export class WowheadTooltipsService {
   }
 
   refreshLinks() {
-    this._refreshDebouncer.next();
+    this._refreshDebouncer.next(undefined);
   }
 }

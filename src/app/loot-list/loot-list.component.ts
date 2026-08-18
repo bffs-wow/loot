@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, ChangeDetectionStrategy } from '@angular/core';
 import {
   faCheck,
   faAward,
@@ -17,11 +17,18 @@ import { LootRanking } from './models/ranking.model';
 import { environment } from 'src/environments/environment';
 import range from 'lodash-es/range';
 import chunk from 'lodash-es/chunk';
+import { NgClass, DatePipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { WowheadTooltipDirective } from '../shared-components/wowhead-tooltips/wowhead-tooltip.directive';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { FormatOrderPipe } from '../shared-components/format-order-pipe/format-order.pipe';
 
 @Component({
-  selector: 'app-loot-list',
-  templateUrl: './loot-list.component.html',
-  styleUrls: ['./loot-list.component.scss'],
+    selector: 'app-loot-list',
+    templateUrl: './loot-list.component.html',
+    styleUrls: ['./loot-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    imports: [RouterLink, NgClass, WowheadTooltipDirective, FaIconComponent, DatePipe, FormatOrderPipe]
 })
 export class LootListComponent implements OnInit, OnChanges {
   @Input() raider: Raider;
@@ -64,7 +71,7 @@ export class LootListComponent implements OnInit, OnChanges {
   }
 
   getCompetition(ranking: LootRanking) {
-    return this.lootListFacade.getRankedLootGroups(ranking.item.name).pipe(
+    return this.lootListFacade.getRankedLootGroups(ranking.item.item_id).pipe(
       map((groups) =>
         groups.filter((grp) => grp.points >= ranking.item.raider_points)
       ),

@@ -1,106 +1,123 @@
-<div *ngIf="item$ | async as item; else notFound">
-  <section class="hero is-small is-black">
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title mb-1">
-          <a
-            title="Open Wowhead"
-            [href]="'https://www.wowhead.com/wotlk/item=' + item.id"
+@if (item$ | async; as item) {
+  <div>
+    <section class="hero is-small is-black">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title mb-1">
+            <a
+              title="Open Wowhead"
+            [href]="'https://www.wowhead.com/mop-classic/item=' + item.id"
             target="_blank"
             [appWowheadTooltip]="item"
             >{{ item.name }} <fa-icon [icon]="faExternalLinkAlt"></fa-icon
           ></a>
-          <ng-container *ngIf="tradeInItem$ | async as tradeinItem">
+          @if (tradeInItem$ | async; as tradeinItem) {
+
             /
             <a
               title="Open Wowhead"
-              [href]="'https://www.wowhead.com/wotlk/item=' + tradeinItem.id"
+              [href]="
+                'https://www.wowhead.com/mop-classic/item=' + tradeinItem.id
+              "
               target="_blank"
               [appWowheadTooltip]="tradeinItem"
               >{{ tradeinItem.name }}
               <fa-icon [icon]="faExternalLinkAlt"></fa-icon></a
-          ></ng-container>
+          >
+}
         </h1>
         <h2
           class="is-size-5"
           [ngClass]="{ 'has-text-green': item.instance_name.endsWith('H25') }"
-        >
-          <a
-            [routerLink]="['/zone', item.instance_name]"
-            [queryParams]="{ boss: item.source_name }"
-            >{{ item | zone }}
-          </a>
-        </h2>
-        <div class="tabs is-toggle is-medium">
-          <ul>
-            <li>
-              <a
-                [href]="makeTmbUrl(item)"
-                target="_blank"
-                title="Open ThatsMyBis"
-                ><span> ThatsMyBis </span>&nbsp;<span class="icon">
-                  <fa-icon [icon]="faShieldAlt"></fa-icon> </span
-              ></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="columns">
-      <div class="column">
-        <div class="box">
-          <nav class="level">
-            <div class="level-left"><p class="title">Current Rankings</p></div>
-            <div class="level-right">
-              <div
-                class="control announce-btn"
-                *ngIf="lootGroups$ | async as grp"
-                title="Copy Raid Warning Announcement"
               >
-                <a class="button" (click)="copyToClipBoard(grp)">
-                  <span class="icon">
-                    <fa-icon [icon]="faBullhorn"></fa-icon>
-                  </span>
-                </a>
-              </div>
+              <a
+                [routerLink]="['/zone', item.instance_name]"
+                [queryParams]="{ boss: item.source_name }"
+                >{{ item | zone }}
+              </a>
+            </h2>
+            <div class="tabs is-toggle is-medium">
+              <ul>
+                <li>
+                  <a
+                    [href]="makeTmbUrl(item)"
+                    target="_blank"
+                    title="Open ThatsMyBis"
+                    ><span> ThatsMyBis </span>&nbsp;<span class="icon">
+                    <fa-icon [icon]="faShieldAlt"></fa-icon> </span
+                  ></a>
+                </li>
+              </ul>
             </div>
-          </nav>
-
-          <app-loot-lookup
-            [item]="item"
-            [noSearch]="true"
-            [hideSource]="true"
-          ></app-loot-lookup>
+            @if (allowedClasses$ | async; as allowedClasses) {
+              @if (allowedClasses.length) {
+                <span class="tags">
+                  @for (cls of allowedClasses; track cls) {
+                    <span class="tag">{{
+                      cls
+                    }}</span>
+                  }
+                </span>
+              }
+            }
+          </div>
         </div>
-      </div>
-      <div class="column">
-        <div class="box">
-          <p class="title">Recent Recipients</p>
-          <article
-            class="media"
-            *ngFor="let receipt of recentRecipients$ | async"
-          >
-            <div class="media-content">
-              <div class="content">
-                <h4 class="is-size-4">
-                  <strong
-                    ><a [routerLink]="['/raider', receipt.raider.name]"
-                      >{{ receipt.raider.name }}
-                    </a></strong
+      </section>
+      <section class="section">
+        <div class="columns">
+          <div class="column">
+            <div class="box">
+              <nav class="level">
+                <div class="level-left"><p class="title">Current Rankings</p></div>
+                <div class="level-right">
+                  @if (lootGroups$ | async; as grp) {
+                    <div
+                      class="control announce-btn"
+                      title="Copy Raid Warning Announcement"
+                      >
+                      <a class="button" (click)="copyToClipBoard(grp)">
+                        <span class="icon">
+                          <fa-icon [icon]="faBullhorn"></fa-icon>
+                        </span>
+                      </a>
+                    </div>
+                  }
+                </div>
+              </nav>
+              <app-loot-lookup
+                [item]="item"
+                [noSearch]="true"
+                [hideSource]="true"
+              ></app-loot-lookup>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box">
+              <p class="title">Recent Recipients</p>
+              @for (receipt of recentRecipients$ | async; track receipt) {
+                <article
+                  class="media"
                   >
-                  -
-                  <small>{{ receipt.item.pivot.received_at | date }}</small>
-                </h4>
-              </div>
+                  <div class="media-content">
+                    <div class="content">
+                      <h4 class="is-size-4">
+                        <strong
+                          ><a [routerLink]="['/raider', receipt.raider.name]"
+                          >{{ receipt.raider.name }}
+                        </a></strong
+                        >
+                        -
+                        <small>{{ receipt.item.pivot.received_at | date }}</small>
+                      </h4>
+                    </div>
+                  </div>
+                </article>
+              }
             </div>
-          </article>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
-  </section>
-</div>
-<ng-template #notFound>
-  <h1 class="title">Item not found</h1>
-</ng-template>
+  } @else {
+    <h1 class="title">Item not found</h1>
+  }
