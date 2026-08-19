@@ -19,7 +19,7 @@ import { WowheadTooltipDirective } from '../shared-components/wowhead-tooltips/w
   selector: 'app-item-group-page',
   imports: [AsyncPipe, WowheadTooltipDirective, RouterLink, DatePipe],
   templateUrl: './item-group-page.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './item-group-page.component.scss'
 })
 export class ItemGroupPageComponent implements OnChanges {

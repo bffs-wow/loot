@@ -27,7 +27,7 @@ import { WowheadTooltipDirective } from '../shared-components/wowhead-tooltips/w
     selector: 'app-raider-page',
     templateUrl: './raider-page.component.html',
     styleUrls: ['./raider-page.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.Default,
     imports: [FaIconComponent, LootListComponent, WowheadTooltipDirective, RouterLink, NgClass, AsyncPipe, PercentPipe, DatePipe]
 })
 export class RaiderPageComponent implements OnInit {

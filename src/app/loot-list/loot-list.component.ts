@@ -27,7 +27,7 @@ import { FormatOrderPipe } from '../shared-components/format-order-pipe/format-o
     selector: 'app-loot-list',
     templateUrl: './loot-list.component.html',
     styleUrls: ['./loot-list.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.Default,
     imports: [RouterLink, NgClass, WowheadTooltipDirective, FaIconComponent, DatePipe, FormatOrderPipe]
 })
 export class LootListComponent implements OnInit, OnChanges {

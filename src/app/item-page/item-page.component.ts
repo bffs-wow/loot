@@ -27,7 +27,7 @@ import { ZonePipe } from '../shared-components/zone-pipe/zone.pipe';
   selector: 'app-item-page',
   templateUrl: './item-page.component.html',
   styleUrls: ['./item-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.Default,
   imports: [WowheadTooltipDirective, FaIconComponent, NgClass, RouterLink, LootLookupComponent, AsyncPipe, DatePipe, ZonePipe]
 })
 export class ItemPageComponent implements OnInit, OnDestroy {

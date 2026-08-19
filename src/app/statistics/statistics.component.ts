@@ -14,7 +14,7 @@ import { StateService } from '../state/state.service';
   selector: 'app-statistics',
   templateUrl: './statistics.component.html',
   styleUrls: ['./statistics.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.Default,
   imports: []
 })
 export class StatisticsComponent implements OnInit, OnDestroy {

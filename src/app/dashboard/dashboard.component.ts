@@ -10,7 +10,7 @@ import { LootFeedComponent } from '../shared-components/loot-feed/loot-feed.comp
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
     styleUrls: ['./dashboard.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.Default,
     imports: [LootListComponent, LootLookupComponent, LootFeedComponent, AsyncPipe]
 })
 export class DashboardComponent implements OnInit {

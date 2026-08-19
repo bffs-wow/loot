@@ -9,7 +9,7 @@ import { AsyncPipe, DatePipe } from '@angular/common';
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.Default,
   imports: [FaIconComponent, AsyncPipe, DatePipe]
 })
 export class FooterComponent implements OnInit {

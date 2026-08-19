@@ -27,7 +27,7 @@ import { NgSelectComponent, NgLabelTemplateDirective, NgOptionTemplateDirective 
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.Default,
     imports: [RouterLink, NgClass, FaIconComponent, FormsModule, ReactiveFormsModule, NgSelectComponent, NgLabelTemplateDirective, NgOptionTemplateDirective, AsyncPipe]
 })
 export class HeaderComponent implements OnInit, OnDestroy {

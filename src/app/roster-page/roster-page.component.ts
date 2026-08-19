@@ -16,7 +16,7 @@ import { FaIconComponent } from '@fortawesome/angular-fontawesome';
   selector: 'app-roster-page',
   templateUrl: './roster-page.component.html',
   styleUrls: ['./roster-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.Default,
   imports: [RouterLink, FaIconComponent, AsyncPipe]
 })
 export class RosterPageComponent implements OnInit {

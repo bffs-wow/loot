@@ -35,7 +35,7 @@ import { ZonePipe } from '../zone-pipe/zone.pipe';
     selector: 'app-loot-lookup',
     templateUrl: './loot-lookup.component.html',
     styleUrls: ['./loot-lookup.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.Default,
     imports: [FormsModule, ReactiveFormsModule, NgSelectComponent, NgOptionTemplateDirective, NgClass, FaIconComponent, WowheadTooltipDirective, RouterLink, AsyncPipe, ZonePipe]
 })
 export class LootLookupComponent implements OnInit, OnDestroy {

@@ -8,7 +8,7 @@ import { HeaderComponent } from './layouts/header/header.component';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.Default,
   imports: [RouterOutlet, FooterComponent, HeaderComponent]
 })
 export class AppComponent implements OnInit {

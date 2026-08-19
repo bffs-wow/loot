@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
     selector: 'app-admin-page',
     templateUrl: './admin-page.component.html',
     styleUrls: ['./admin-page.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.Default,
     imports: []
 })
 export class AdminPageComponent implements OnInit, OnChanges {
