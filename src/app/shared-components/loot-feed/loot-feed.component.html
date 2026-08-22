@@ -1,30 +1,39 @@
 <p class="title">Recent Loot</p>
-<article class="media" *ngFor="let receipt of recentLoot$ | async">
-  <div class="media-content" *ngIf="receipt.item">
-    <div class="content">
-      <p class="has-text-right is-size-5">
-        <strong
-          ><a [routerLink]="['/raider', receipt.raider.name]"
-            >{{ receipt.raider.name }}
-          </a></strong
-        >
-        -
-        <small>{{ receipt.item.pivot.received_at | date }}</small>
-        <br />
-        <a
-          [appWowheadTooltip]="receipt.item"
+@for (receipt of recentLoot$ | async; track receipt) {
+  <article class="media">
+    @if (receipt.item) {
+      <div class="media-content">
+        <div class="content">
+          <p class="has-text-right is-size-5">
+            <strong
+              ><a [routerLink]="['/raider', receipt.raider.name]"
+              >{{ receipt.raider.name }}
+            </a></strong
+            >
+            -
+            <small>{{ receipt.item.pivot.received_at | date }}</small>
+            <br />
+            <a
+              [appWowheadTooltip]="receipt.item"
           [routerLink]="[
             '/item',
             receipt.item.parent_item_id || receipt.item.item_id
           ]"
-          >{{ receipt.item.name }}</a
-        >
-        -
-        <small>{{ itemService.getTmbItem(receipt.item) | async | zone }}</small>
-        <small *ngIf="receipt.item.pivot?.note">
-          - {{ receipt.item.pivot.note }}</small
-        >
-      </p>
-    </div>
-  </div>
-</article>
+              >{{ receipt.item.name }}</a
+              >
+              @if (itemService.getTmbItem(receipt.item) | async; as tmbItem) {
+                <small>
+                  - {{ tmbItem | zone }}</small
+                  >
+                }
+                @if (receipt.item.pivot?.note) {
+                  <small>
+                    - {{ receipt.item.pivot.note }}</small
+                    >
+                  }
+                </p>
+              </div>
+            </div>
+          }
+        </article>
+      }

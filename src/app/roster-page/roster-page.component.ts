@@ -1,36 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {
-  faFirstAid,
   faGavel,
   faLeaf,
   faQuestionCircle,
   faShieldAlt,
 } from '@fortawesome/free-solid-svg-icons';
-import { filter, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Class } from '../loot-list/models/class.model';
 import { StateService } from '../state/state.service';
+import { AsyncPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-roster-page',
   templateUrl: './roster-page.component.html',
   styleUrls: ['./roster-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Default,
+  imports: [RouterLink, FaIconComponent, AsyncPipe]
 })
 export class RosterPageComponent implements OnInit {
   allClasses = [
-    Class.Warrior,
-    Class.Priest,
-    Class.Shaman,
+    Class.DeathKnight,
     Class.Druid,
     Class.Hunter,
     Class.Mage,
-    Class.Rogue,
-    Class.Warlock,
+    Class.Monk,
     Class.Paladin,
-    Class.DeathKnight,
+    Class.Priest,
+    Class.Rogue,
+    Class.Shaman,
+    Class.Warlock,
+    Class.Warrior,
   ];
-  constructor(private stateService: StateService) {}
+  constructor(private stateService: StateService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   makeClassObs(cls: Class) {
     return this.stateService.raiders$.pipe(

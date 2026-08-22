@@ -1,147 +1,153 @@
-<div *ngIf="raider$ | async as raider">
-  <section class="hero is-small is-black">
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title">
-          {{ raider.name }}
-        </h1>
-        <h2 class="subtitle">
-          <img
-            height="15"
-            width="15"
-            [src]="'./assets/images/class-icons/tiny/' + raider.class + '.gif'"
-          />&nbsp;{{ raider.class }} - {{ raider.spec }} &nbsp;
-          <fa-icon [icon]="getArchetypeIcon(raider.archetype)"></fa-icon>
-          <br />
-          <div class="has-text-centered mt-2" *ngIf="listProgress">
-            <progress
-              class="progress mb-0"
-              max="100"
-              [value]="listProgress.progress || 0"
-            ></progress>
-            <span class="has-text-centered is-size-5 is-grey-light"
-              >List Progress: {{ listProgress.rankingsReceived }} /
-              {{ listProgress.rankings }}</span
-            >
+@if (raider$ | async; as raider) {
+  <div>
+    <section class="hero is-small is-black">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            {{ raider.name }}
+          </h1>
+          <h2 class="subtitle">
+            <img
+              height="15"
+              width="15"
+              [src]="'./assets/images/class-icons/tiny/' + raider.class + '.gif'"
+              />&nbsp;{{ raider.class }} - {{ raider.spec }} &nbsp;
+              <fa-icon [icon]="getArchetypeIcon(raider.archetype)"></fa-icon>
+              <br />
+              @if (listProgress) {
+                <div class="has-text-centered mt-2">
+                  <progress
+                    class="progress mb-0"
+                    max="100"
+                    [value]="listProgress.progress || 0"
+                  ></progress>
+                  <span class="has-text-centered is-size-5 is-grey-light"
+                    >List Progress: {{ listProgress.rankingsReceived }} /
+                    {{ listProgress.rankings }}</span
+                    >
+                </div>
+              }
+            </h2>
+            <div class="tabs is-toggle is-medium">
+              <ul>
+                <li>
+                  <a
+                    [href]="makeTmbUrl(raider)"
+                    target="_blank"
+                    title="Open ThatsMyBis"
+                    ><span> ThatsMyBis </span>&nbsp;<span class="icon">
+                    <fa-icon [icon]="faShieldAlt"></fa-icon> </span
+                  ></a>
+                </li>
+                <li class="">
+                  <a
+                    [href]="makeLogsUrl(raider)"
+                    target="_blank"
+                    title="Open Warcraft Logs"
+                    ><span> Warcraft Logs </span>&nbsp;<span class="icon">
+                    <fa-icon [icon]="faChartLine"></fa-icon> </span
+                  ></a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </h2>
-        <div class="tabs is-toggle is-medium">
-          <ul>
-            <li>
-              <a
-                [href]="makeTmbUrl(raider)"
-                target="_blank"
-                title="Open ThatsMyBis"
-                ><span> ThatsMyBis </span>&nbsp;<span class="icon">
-                  <fa-icon [icon]="faShieldAlt"></fa-icon> </span
-              ></a>
-            </li>
-            <li class="">
-              <a
-                [href]="makeLogsUrl(raider)"
-                target="_blank"
-                title="Open Warcraft Logs"
-                ><span> Warcraft Logs </span>&nbsp;<span class="icon">
-                  <fa-icon [icon]="faChartLine"></fa-icon> </span
-              ></a>
-            </li>
-          </ul>
         </div>
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="columns">
-      <div class="column is-5">
-        <div class="box">
-          <app-loot-list [raider]="raider" [noRouteLink]="true"></app-loot-list>
-        </div>
-      </div>
-      <div class="column is-4">
-        <div class="box">
-          <p class="title">Loot History</p>
-
-          <article class="media" *ngFor="let loot of raider.received">
-            <div class="media-content">
-              <div class="content">
-                <h4 class="is-size-4">
-                  <strong
-                    ><a
-                      [appWowheadTooltip]="loot"
+      </section>
+      <section class="section">
+        <div class="columns">
+          <div class="column is-5">
+            <div class="box">
+              <app-loot-list [raider]="raider" [noRouteLink]="true"></app-loot-list>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="box">
+              <p class="title">Loot History</p>
+              @for (loot of raider.received; track loot) {
+                <article class="media">
+                  <div class="media-content">
+                    <div class="content">
+                      <h4 class="is-size-4">
+                        <strong
+                          ><a
+                          [appWowheadTooltip]="loot"
                       [routerLink]="[
                         '/item',
                         loot.parent_item_id || loot.item_id
                       ]"
-                      >{{ loot.name }}
-                    </a></strong
-                  >
-                  -
-                  <small>{{ loot.pivot.received_at | date }}</small>
-                </h4>
-              </div>
+                          >{{ loot.name }}
+                        </a></strong
+                        >
+                        -
+                        <small>{{ loot.pivot.received_at | date }}</small>
+                      </h4>
+                    </div>
+                  </div>
+                </article>
+              }
             </div>
-          </article>
-        </div>
-      </div>
-      <div class="column is-3">
-        <div class="box">
-          <p class="title">Attendance</p>
-          <div class="field is-grouped is-grouped-multiline">
-            <div class="control">
-              <div
-                class="tags has-addons"
-                *ngIf="maxAttendancePoints$ | async as maxAttendancePoints"
-              >
-                <span class="tag is-medium is-dark">Attendance Points</span>
-                <span
-                  class="tag is-medium"
+          </div>
+          <div class="column is-3">
+            <div class="box">
+              <p class="title">Attendance</p>
+              <div class="field is-grouped is-grouped-multiline">
+                <div class="control">
+                  @if (maxAttendancePoints$ | async; as maxAttendancePoints) {
+                    <div
+                      class="tags has-addons"
+                      >
+                      <span class="tag is-medium is-dark">Attendance Points</span>
+                      <span
+                        class="tag is-medium"
                   [ngClass]="
                     getAttendancePointsClass(
                       raider.attendance_points,
                       maxAttendancePoints.points
                     )
                   "
-                  >{{ raider.attendance_points }}/{{
-                    maxAttendancePoints.points
-                  }}</span
-                >
-              </div>
-            </div>
-
-            <div class="control">
-              <div class="tags has-addons">
-                <span class="tag is-medium is-dark"
-                  >Attendance Percententage</span
-                >
-                <span
-                  class="tag is-medium"
+                        >{{ raider.attendance_points }}/{{
+                        maxAttendancePoints.points
+                        }}</span
+                        >
+                      </div>
+                    }
+                  </div>
+                  <div class="control">
+                    <div class="tags has-addons">
+                      <span class="tag is-medium is-dark"
+                        >Attendance Percententage</span
+                        >
+                        <span
+                          class="tag is-medium"
                   [ngClass]="
                     getAttendanceTagClass(raider.attendance_percentage)
                   "
-                  >{{ raider.attendance_percentage | percent }}</span
-                >
+                          >{{ raider.attendance_percentage | percent }}</span
+                          >
+                        </div>
+                      </div>
+                      <div class="control">
+                        <div class="tags has-addons">
+                          <span class="tag is-medium is-dark">Raids Attended</span>
+                          <span class="tag is-medium is-info">{{
+                            raider.raid_count
+                          }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  @if (raider.public_note) {
+                    <div class="box mt-3">
+                      <p class="title">Public Note</p>
+                      <div class="content">
+                        <blockquote style="white-space: pre-wrap">
+                          {{ raider.public_note }}
+                        </blockquote>
+                      </div>
+                    </div>
+                  }
+                </div>
               </div>
-            </div>
-
-            <div class="control">
-              <div class="tags has-addons">
-                <span class="tag is-medium is-dark">Raids Attended</span>
-                <span class="tag is-medium is-info">{{
-                  raider.raid_count
-                }}</span>
-              </div>
-            </div>
+            </section>
           </div>
-        </div>
-        <div class="box mt-3" *ngIf="raider.public_note">
-          <p class="title">Public Note</p>
-          <div class="content">
-            <blockquote style="white-space: pre-wrap">
-              {{ raider.public_note }}
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
+        }

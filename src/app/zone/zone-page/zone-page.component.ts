@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import {
   faExclamationTriangle,
   faExternalLinkAlt,
@@ -12,12 +12,17 @@ import { LootRanking } from 'src/app/loot-list/models/ranking.model';
 import { ItemService } from 'src/app/tmb/item.service';
 import { CsvItem } from 'src/app/tmb/models/item.interface';
 import { ZoneService } from '../zone.service';
+import { AsyncPipe } from '@angular/common';
+import { WowheadTooltipDirective } from '../../shared-components/wowhead-tooltips/wowhead-tooltip.directive';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { LootFeedComponent } from '../../shared-components/loot-feed/loot-feed.component';
 
 @Component({
-  selector: 'app-zone-page',
-  templateUrl: './zone-page.component.html',
-  styleUrls: ['./zone-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-zone-page',
+    templateUrl: './zone-page.component.html',
+    styleUrls: ['./zone-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [WowheadTooltipDirective, FaIconComponent, RouterLink, LootFeedComponent, AsyncPipe]
 })
 export class ZonePageComponent implements OnInit {
   faExternalLinkAlt = faExternalLinkAlt;
@@ -48,7 +53,7 @@ export class ZonePageComponent implements OnInit {
       if (params['boss']) {
         sourceFromParam = sources.find((s) => s === params['boss']);
       }
-      this._chosenSource$.next(sourceFromParam);
+      this._chosenSource$.next(sourceFromParam || sources[0]);
     }),
     switchMap(() => this._chosenSource$.asObservable())
   );
@@ -82,7 +87,7 @@ export class ZonePageComponent implements OnInit {
   }
 
   getNextRecipient(item: CsvItem) {
-    return this.lootListFacade.getRankedLootGroups(item.name).pipe(
+    return this.lootListFacade.getRankedLootGroups(item.id).pipe(
       first(),
       map((groups) => (groups.length ? groups[0] : null)),
       filter((grp) => grp !== null),

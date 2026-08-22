@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { StateService } from '../state/state.service';
 import { LootListFacadeService } from '../loot-list/loot-list.facade';
 import { Observable, combineLatest } from 'rxjs';
@@ -18,11 +18,17 @@ import { raiderToWowNameMap } from '../data/raider-to-wow-name';
 import { environment } from 'src/environments/environment';
 import { Raider } from '../tmb/models/tmb.interface';
 import { TmbService } from '../tmb/tmb.service';
+import { NgClass, AsyncPipe, PercentPipe, DatePipe } from '@angular/common';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { LootListComponent } from '../loot-list/loot-list.component';
+import { WowheadTooltipDirective } from '../shared-components/wowhead-tooltips/wowhead-tooltip.directive';
 
 @Component({
-  selector: 'app-raider-page',
-  templateUrl: './raider-page.component.html',
-  styleUrls: ['./raider-page.component.scss'],
+    selector: 'app-raider-page',
+    templateUrl: './raider-page.component.html',
+    styleUrls: ['./raider-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Default,
+    imports: [FaIconComponent, LootListComponent, WowheadTooltipDirective, RouterLink, NgClass, AsyncPipe, PercentPipe, DatePipe]
 })
 export class RaiderPageComponent implements OnInit {
   raider$: Observable<Raider>;

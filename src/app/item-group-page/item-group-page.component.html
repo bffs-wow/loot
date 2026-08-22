@@ -1,0 +1,121 @@
+<section class="hero is-small is-black">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title mb-1">
+        {{ groupTitle[itemGroupName()] || "UNKNOWN GROUP" }}
+      </h1>
+      <div class="tags">
+        @for (item of items$ | async; track item.id) {
+          <span class="tag">
+            <a [appWowheadTooltip]="item" [routerLink]="['/item', item.id]">
+              {{ item.name }}
+            </a>
+          </span>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section pt-5 px-0">
+  <div class="columns">
+    <div class="column is-8">
+      <div class="box">
+        <div class="columns is-multiline">
+          @if (groupRankings$ | async; as groupRankings) {
+            <div class="column is-12">
+              @for (points of groupRankings.points; track points) {
+                <article class="media">
+                  <figure
+                    class="media-left has-text-centered"
+                    style="width: 5rem"
+                  >
+                    <h1 class="is-1">{{ points }}</h1>
+                  </figure>
+                  <div class="media-content">
+                    <div class="content">
+                      @for (
+                        group of getPointGroups(
+                          points,
+                          groupRankings.highestRankedGroups
+                        );
+                        track group.rankings[0].item.item_id
+                      ) {
+                        <p class="is-size-5">
+                          <a
+                            [appWowheadTooltip]="group.rankings[0].item"
+                            [routerLink]="[
+                              '/item',
+                              group.rankings[0].item.parent_item_id ||
+                                group.rankings[0].item.item_id,
+                            ]"
+                          >
+                            {{ group.rankings[0].item.name }}
+                          </a>
+                          <br />
+                          <span class="tags">
+                            @for (
+                              ranking of group.rankings;
+                              track ranking.raider.id
+                            ) {
+                              <span class="tag is-black">
+                                <a
+                                  [routerLink]="[
+                                    '/raider',
+                                    ranking.raider.name,
+                                  ]"
+                                >
+                                  {{ ranking.raider.name }}
+                                </a>
+                                &nbsp;<small
+                                  >{{ ranking.item.pivot.note }}
+                                </small>
+                              </span>
+                            }
+                          </span>
+                        </p>
+                      }
+                    </div>
+                  </div>
+                </article>
+              }
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+    <div class="column is-4">
+      <div class="box">
+        <p class="title">Recent Recipients</p>
+        @for (receipt of recentRecipients$ | async; track receipt.item.id) {
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <h4 class="is-size-4">
+                  <strong
+                    ><a [routerLink]="['/raider', receipt.raider.name]"
+                      >{{ receipt.raider.name }}
+                    </a></strong
+                  >
+                  <br />
+                  <a
+                    [appWowheadTooltip]="receipt.item"
+                    [routerLink]="[
+                      '/item',
+                      receipt.item.parent_item_id || receipt.item.item_id,
+                    ]"
+                    >{{ receipt.item.name }}</a
+                  >
+
+                  @if (receipt.item.pivot?.note) {
+                    <small> - {{ receipt.item.pivot.note }}</small>
+                  }
+                  <small> - {{ receipt.item.pivot.received_at | date }}</small>
+                </h4>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>

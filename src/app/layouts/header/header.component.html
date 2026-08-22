@@ -1,4 +1,4 @@
-<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+<nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" [routerLink]="['/home']"> Best Friends Loot </a>
 
@@ -10,7 +10,7 @@
       aria-label="menu"
       aria-expanded="false"
       data-target="navbarBasicExample"
-    >
+      >
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -21,109 +21,116 @@
     id="navbarBasicExample"
     class="navbar-menu"
     [ngClass]="isActive ? 'is-active' : ''"
-  >
+    >
     <div class="navbar-start">
       <a [routerLink]="['/roster']" class="navbar-item"
         ><span class="icon"> <fa-icon [icon]="faUsers"></fa-icon> </span
         ><span> Roster </span></a
-      >
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link"> Raids </a>
-
-        <div class="navbar-dropdown">
-          <a
-            class="navbar-item"
-            *ngFor="let zone of zoneService.zones"
-            [routerLink]="['/zone', zone.slug]"
-            [queryParams]="{ boss: 'All' }"
-          >
-            {{ zone.name }}
-          </a>
-        </div>
-      </div>
-      <a class="navbar-item" [routerLink]="['/statistics']"
-        ><span class="icon"> <fa-icon [icon]="faChartPie"></fa-icon> </span
-        ><span> Statistics </span>
-      </a>
-      <a class="navbar-item" [href]="tmbUrl" target="_blank"
-        ><span class="icon"> <fa-icon [icon]="faGroup"></fa-icon> </span
-        ><span> ThatsMyBis </span></a
-      >
-      <a class="navbar-item" [href]="logsGuildUrl" target="_blank"
-        ><span class="icon"> <fa-icon [icon]="faChartLine"></fa-icon> </span
-        ><span> Logs </span></a
-      >
-      <a class="navbar-item" (click)="gargulExport()" target="_blank"
-        ><span class="icon"> <fa-icon [icon]="faDownload"></fa-icon> </span
-        ><span> Gargul Export </span></a
-      >
-    </div>
-
-    <div class="navbar-end" [formGroup]="form">
-      <div class="navbar-item is-expanded">
-        <ng-select
-          formControlName="selectedRaider"
-          *ngIf="!(this.state.selectedRaider$ | async)"
-          [items]="state.raiders$ | async"
-          bindLabel="name"
-          placeholder="Select your character"
-          style="min-width: 14rem"
         >
-          <ng-template ng-label-tmp let-item="item">
-            <img
-              height="15"
-              width="15"
-              [src]="'./assets/images/class-icons/tiny/' + item.class + '.gif'"
-            />
-            {{ item.name }}
-          </ng-template>
-          <ng-template
-            ng-option-tmp
-            let-item="item"
-            let-index="index"
-            let-search="searchTerm"
-          >
-            <img
-              height="15"
-              width="15"
-              [src]="'./assets/images/class-icons/tiny/' + item.class + '.gif'"
-            />
-            {{ item.name }}
-          </ng-template>
-        </ng-select>
-        <div *ngIf="this.state.selectedRaider$ | async as raider">
-          <div class="tags has-addons">
-            <span class="tag is-primary"
-              >Welcome,&nbsp;
-              <a [routerLink]="['/raider', raider.name]"> {{ raider.name }} </a
-              >!</span
-            >
-            <a class="tag is-black is-delete" (click)="clearRaider()"></a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link"> Raids </a>
+
+          <div class="navbar-dropdown">
+            @for (zone of zoneService.zones; track zone) {
+              <a
+                class="navbar-item"
+                [routerLink]="['/zone', zone.slug]"
+                [queryParams]="{ boss: 'All' }"
+                >
+                {{ zone.name }}
+              </a>
+            }
           </div>
         </div>
-      </div>
-      <div class="navbar-item">
-        <a class="button" (click)="reloadData()">
-          <span class="icon">
-            <fa-icon [icon]="faSync" [spin]="autoUpdate"></fa-icon>
-          </span>
+        <a class="navbar-item" [routerLink]="['/statistics']"
+          ><span class="icon"> <fa-icon [icon]="faChartPie"></fa-icon> </span
+          ><span> Statistics </span>
         </a>
-      </div>
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          <span class="icon"> <fa-icon [icon]="faCog"></fa-icon> </span
-        ></a>
-
-        <div class="navbar-dropdown is-right">
-          <a
-            class="navbar-item"
-            [routerLink]="['/admin']"
-            [queryParams]="{ section: 'tmb-import' }"
+        <a class="navbar-item" [href]="tmbUrl" target="_blank"
+          ><span class="icon"> <fa-icon [icon]="faGroup"></fa-icon> </span
+          ><span> ThatsMyBis </span></a
           >
-            Import TMB Data
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
+          <a class="navbar-item" [href]="logsGuildUrl" target="_blank"
+            ><span class="icon"> <fa-icon [icon]="faChartLine"></fa-icon> </span
+            ><span> Logs </span></a
+            >
+            <a class="navbar-item" (click)="gargulExport()" target="_blank"
+              ><span class="icon"> <fa-icon [icon]="faDownload"></fa-icon> </span
+              ><span> Gargul Export </span></a
+              >
+            </div>
+
+            <div class="navbar-end" [formGroup]="form">
+              <div class="navbar-item is-expanded">
+                @if (!(this.state.selectedRaider$ | async)) {
+                  <ng-select
+                    formControlName="selectedRaider"
+                    [items]="state.raiders$ | async"
+                    bindLabel="name"
+                    placeholder="Select your character"
+                    style="min-width: 14rem"
+                    >
+                    <ng-template ng-label-tmp let-item="item">
+                      <img
+                        height="15"
+                        width="15"
+                        [src]="'./assets/images/class-icons/tiny/' + item.class + '.gif'"
+                        />
+                      {{ item.name }}
+                    </ng-template>
+                    <ng-template
+                      ng-option-tmp
+                      let-item="item"
+                      let-index="index"
+                      let-search="searchTerm"
+                      >
+                      <img
+                        height="15"
+                        width="15"
+                        [src]="'./assets/images/class-icons/tiny/' + item.class + '.gif'"
+                        />
+                      {{ item.name }}
+                    </ng-template>
+                  </ng-select>
+                }
+                @if (this.state.selectedRaider$ | async; as raider) {
+                  <div>
+                    <div class="tags has-addons">
+                      <span class="tag is-primary"
+                        >Welcome,&nbsp;
+                        <a [routerLink]="['/raider', raider.name]"> {{ raider.name }} </a
+                          >!</span
+                          >
+                          <a class="tag is-black is-delete" (click)="clearRaider()"></a>
+                        </div>
+                      </div>
+                    }
+                  </div>
+                  <div class="navbar-item">
+                    <a class="button" (click)="reloadData()">
+                      <span class="icon">
+                        <fa-icon
+                          [icon]="faSync"
+                          [animation]="autoUpdate ? 'spin' : null"
+                        ></fa-icon>
+                      </span>
+                    </a>
+                  </div>
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                      <span class="icon"> <fa-icon [icon]="faCog"></fa-icon> </span
+                    ></a>
+
+                    <div class="navbar-dropdown is-right">
+                      <a
+                        class="navbar-item"
+                        [routerLink]="['/admin']"
+                        [queryParams]="{ section: 'tmb-import' }"
+                        >
+                        Import TMB Data
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>

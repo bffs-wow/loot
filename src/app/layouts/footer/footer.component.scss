@@ -1,0 +1,4 @@
+@use "bulma/sass/utilities/css-variables" as cv;
+code {
+  color: cv.getVar("bulma-body-color");
+}
