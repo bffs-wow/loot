@@ -1,101 +1,121 @@
-<div class="form mb-2" [formGroup]="form" *ngIf="!noSearch">
-  <div class="field has-addons">
-    <div class="control is-expanded mr-1">
-      <ng-select
-        [items]="items$ | async"
-        bindLabel="name"
-        formControlName="selectedItem"
-        [trackByFn]="trackByFn"
-        [minTermLength]="2"
-        [loading]="loading"
-        placeholder="Lookup Rankings for an Item"
-        typeToSearchText="Find Loot Rankings"
-        [typeahead]="input$"
-      >
-        <ng-template
-          ng-option-tmp
-          let-item="item"
-          let-index="index"
-          let-search="searchTerm"
-        >
-          {{ item.name }} -
-          <small
-            *ngIf="item"
-            class="py-1"
+@if (!noSearch) {
+  <div class="form mb-2" [formGroup]="form">
+    <div class="field has-addons">
+      <div class="control is-expanded mr-1">
+        <ng-select
+          [items]="items$ | async"
+          bindLabel="name"
+          formControlName="selectedItem"
+          [trackByFn]="trackByFn"
+          [minTermLength]="2"
+          [loading]="loading"
+          placeholder="Lookup Rankings for an Item"
+          typeToSearchText="Find Loot Rankings"
+          [typeahead]="input$"
+          >
+          <ng-template
+            ng-option-tmp
+            let-item="item"
+            let-index="index"
+            let-search="searchTerm"
+            >
+            {{ item.name }} -
+            @if (item) {
+              <small
+                class="py-1"
             [ngClass]="{
               'has-text-weight-bold has-background-dark has-text-green':
                 item.instance_name.endsWith('H25')
             }"
-            >{{ item.instance_name }} ({{ item.source_name }})</small
-          >
-        </ng-template>
-      </ng-select>
+                >{{ item.instance_name }} ({{ item.source_name }})</small
+                >
+              }
+            </ng-template>
+          </ng-select>
+        </div>
+        @if (selectedItem$ | async; as grp) {
+          <div
+            class="control announce-btn"
+            title="Copy Raid Warning Announcement"
+            >
+            <a class="button" (click)="copyToClipBoard(grp)">
+              <span class="icon">
+                <fa-icon [icon]="faBullhorn"></fa-icon>
+              </span>
+            </a>
+          </div>
+        }
+      </div>
     </div>
-    <div
-      class="control announce-btn"
-      *ngIf="selectedItem$ | async as grp"
-      title="Copy Raid Warning Announcement"
-    >
-      <a class="button" (click)="copyToClipBoard(grp)">
-        <span class="icon">
-          <fa-icon [icon]="faBullhorn"></fa-icon>
-        </span>
-      </a>
-    </div>
-  </div>
-</div>
-<div *ngIf="selectedItem$ | async as selectedItemGroups">
-  <article class="media" *ngFor="let group of selectedItemGroups">
-    <figure class="media-left has-text-centered" style="width: 5rem">
-      <h1 class="is-1">{{ group.points }}</h1>
-      <small class="is-size-6 has-text-warning" *ngIf="group.allUnlisted">
-        <abbr
-          title="All of these raiders did not list the item, but are still eligible."
-        >
-          <fa-icon [icon]="faExclamationTriangle"></fa-icon> Unlisted
-        </abbr>
-      </small>
-    </figure>
-    <div class="media-content">
-      <div class="content">
-        <p class="has-text-right is-size-5">
-          <a
-            [appWowheadTooltip]="group.rankings[0].item"
+  }
+  @if (selectedItem$ | async; as selectedItemGroups) {
+    <div>
+      @for (group of selectedItemGroups; track group) {
+        <article class="media">
+          <figure class="media-left has-text-centered" style="width: 5rem">
+            <h1 class="is-1">{{ group.points }}</h1>
+            @if (noneListed(group.rankings)) {
+              <small
+                class="is-size-6 has-text-warning"
+                >
+                <abbr
+                  title="All of these raiders did not list the item, but are still eligible."
+                  >
+                  <fa-icon [icon]="faExclamationTriangle"></fa-icon> Unlisted
+                </abbr>
+              </small>
+            }
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p class="has-text-right is-size-5">
+                <a
+                  [appWowheadTooltip]="group.rankings[0].item"
             [routerLink]="[
               '/item',
               group.rankings[0].item.parent_item_id ||
                 group.rankings[0].item.item_id
             ]"
-            >{{ group.rankings[0].item.name }}</a
-          >
-          <small
-            *ngIf="group.rankings[0].item.name !== group.rankings[0].item.name"
-          >
-            - ({{ group.rankings[0].item.name }})
-          </small>
-          <small *ngIf="!hideSource">
-            -
-            {{
-              itemService.getTmbItem(group.rankings[0].item) | async | zone
-            }}</small
-          >
-          <br /><br />
-          <span class="tags">
-            <span class="tag is-black" *ngFor="let ranking of group.rankings"
-              ><a [routerLink]="['/raider', ranking.raider.name]">
-                {{ ranking.raider.name }}
-              </a>
-              &nbsp;<small *ngIf="ranking.item?.pivot?.note"
-                >{{ ranking.item.pivot.note }}
-              </small></span
-            >
-          </span>
-        </p>
-      </div>
-    </div>
-  </article>
-
-  <div *ngIf="form.get('selectedItem').touched && !selectedItemGroups.length">
-    No rankings found.
-  </div>
-</div>
+                  >{{ group.rankings[0].item.name }}</a
+                  >
+                  @if (group.rankings[0].item.name !== group.rankings[0].item.name) {
+                    <small
+                      >
+                      - ({{ group.rankings[0].item.name }})
+                    </small>
+                  }
+                  @if (!hideSource) {
+                    <small>
+                      -
+                      {{
+                      itemService.getTmbItem(group.rankings[0].item) | async | zone
+                      }}</small
+                      >
+                    }
+                    <br /><br />
+                    <span class="tags">
+                      @for (ranking of group.rankings; track ranking) {
+                        <span class="tag is-black"
+                          ><a [routerLink]="['/raider', ranking.raider.name]">
+                          {{ ranking.raider.name }}
+                        </a>
+                        &nbsp;@if (ranking.item?.pivot?.note) {
+                        <small
+                          >{{ ranking.item.pivot.note }}
+                        </small>
+                        }</span
+                        >
+                      }
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </article>
+          }
+          @if (form.get('selectedItem').touched && !selectedItemGroups.length) {
+            <div>
+              No rankings found.
+            </div>
+          }
+        </div>
+      }

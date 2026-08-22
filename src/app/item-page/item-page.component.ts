@@ -1,7 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { Subject, Observable, combineLatest, of } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
-import { switchMap, map } from 'rxjs/operators';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { switchMap, map, tap } from 'rxjs/operators';
 import { LootListFacadeService } from '../loot-list/loot-list.facade';
 import { StateService } from '../state/state.service';
 import {
@@ -15,15 +15,30 @@ import { CsvItem } from '../tmb/models/item.interface';
 import { LootGroup } from '../loot-list/models/loot-group.model';
 import { LootReceipt } from '../loot-list/models/loot-receipt.model';
 import { environment } from 'src/environments/environment';
+import { TmbService } from '../tmb/tmb.service';
+import { Class } from '../loot-list/models/class.model';
+import { NgClass, AsyncPipe, DatePipe } from '@angular/common';
+import { WowheadTooltipDirective } from '../shared-components/wowhead-tooltips/wowhead-tooltip.directive';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { LootLookupComponent } from '../shared-components/loot-lookup/loot-lookup.component';
+import { ZonePipe } from '../shared-components/zone-pipe/zone.pipe';
 
 @Component({
   selector: 'app-item-page',
   templateUrl: './item-page.component.html',
   styleUrls: ['./item-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Default,
+  imports: [WowheadTooltipDirective, FaIconComponent, NgClass, RouterLink, LootLookupComponent, AsyncPipe, DatePipe, ZonePipe]
 })
 export class ItemPageComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject();
   item$: Observable<CsvItem>;
+  itemToGroupRedirects = {
+    105866: 't16-prot-tokens',
+    105867: 't16-conq-tokens',
+    105868: 't16-vanq-tokens',
+    105856: 'echoes-of-war',
+  }
 
   tradeInItem$: Observable<CsvItem>;
 
@@ -31,17 +46,21 @@ export class ItemPageComponent implements OnInit, OnDestroy {
 
   recentRecipients$: Observable<LootReceipt[]>;
 
+  allowedClasses$: Observable<Class[]>;
+
   faExternalLinkAlt = faExternalLinkAlt;
   faBullhorn = faBullhorn;
   faShieldAlt = faShieldAlt;
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private state: StateService,
     private itemService: ItemService,
     private lootListFacade: LootListFacadeService,
-    public lootAnnounceService: LootAnnounceService
-  ) {}
+    public lootAnnounceService: LootAnnounceService,
+    private tmbService: TmbService
+  ) { }
 
   ngOnInit(): void {
     this.item$ = combineLatest([
@@ -50,11 +69,19 @@ export class ItemPageComponent implements OnInit, OnDestroy {
     ]).pipe(
       map(([params, allitems]) =>
         allitems.find((l) => l.id === parseInt(params.id))
-      )
+      ),
+      tap(item => {
+        if (item && this.itemToGroupRedirects[item.id]) {
+          setTimeout(() => {
+            this.router.navigate(['item-group', this.itemToGroupRedirects[item.id]])
+
+          }, 1500)
+        }
+      })
     );
 
     this.lootGroups$ = this.item$.pipe(
-      switchMap((item) => this.lootListFacade.getRankedLootGroups(item.name))
+      switchMap((item) => this.lootListFacade.getRankedLootGroups(item.id))
     );
 
     this.tradeInItem$ = this.lootGroups$.pipe(
@@ -94,9 +121,14 @@ export class ItemPageComponent implements OnInit, OnDestroy {
         })
       )
     );
+
+    this.allowedClasses$ = this.item$.pipe(
+      map(i => this.tmbService.getItemRestrictions(i.id)),
+      map(r => r.allowedClasses)
+    )
   }
   ngOnDestroy() {
-    this.destroyed$.next();
+    this.destroyed$.next(undefined);
   }
 
   makeTmbUrl(item: CsvItem) {

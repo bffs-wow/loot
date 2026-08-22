@@ -1,18 +1,14 @@
 export const environment = {
   production: true,
-  cache_bust: '12',
+  cache_bust: '21',
   logsGuildUrl:
-    'https://classic.warcraftlogs.com/guild/rankings/532692/latest/',
+    'https://classic.warcraftlogs.com/guild/rankings/798734/latest/',
   logsCharacterBaseUrl:
-    'https://classic.warcraftlogs.com/character/us/faerlina/',
-  wishlistLength: 50,
-  wishlistOffspecCutoff: 33,
-  forgiveness: 1.5,
-  itemsPerSlotRule: 3,
-  tmbBaseUrl: 'https://thatsmybis.com/8752/best-friends/',
-  currentRaids: [
-    'Naxxramas N25',
-    'Eye of Eternity N25',
-    'Obsidian Sanctum N25',
-  ],
+    'https://classic.warcraftlogs.com/character/us/nazgrim/',
+  wishlistLength: 80,
+  wishlistOffspecCutoff: 48,
+  forgiveness: 1,
+  itemsPerSlotRule: 1,
+  tmbBaseUrl: 'https://thatsmybis.com/22344/best-friends/',
+  currentRaids: ['Throne of Thunder Heroic'],
 };

@@ -1,11 +1,12 @@
-<div *ngIf="zone$ | async as zone; else notFound">
-  <section class="hero is-small is-black">
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title">
-          <a
-            title="Open Wowhead"
-            [href]="'https://www.wowhead.com/wotlk/zone=' + zone.zoneId"
+@if (zone$ | async; as zone) {
+  <div>
+    <section class="hero is-small is-black">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            <a
+              title="Open Wowhead"
+            [href]="'https://www.wowhead.com/mop-classic/zone=' + zone.zoneId"
             target="_blank"
             [appWowheadTooltip]="zone"
             >{{ zone.name }} <fa-icon [icon]="faExternalLinkAlt"></fa-icon
@@ -15,88 +16,92 @@
     </div>
   </section>
   <section class="section">
-    <div class="box" *ngIf="(zoneItemSources$ | async).length > 1">
-      <div class="tags" *ngIf="chosenSource$ | async as chosenSource">
-        <span
+    @if ((zoneItemSources$ | async).length > 1) {
+<div class="box">
+      @if (chosenSource$ | async; as chosenSource) {
+<div class="tags">
+        @for (source of zoneItemSources$ | async; track source) {
+<span
           class="tag is-black is-medium"
-          *ngFor="let source of zoneItemSources$ | async"
+
           (click)="sourceChosen(source)"
           [class.is-primary]="chosenSource === source"
         >
           <a>{{ source }}</a>
         </span>
+}
       </div>
+}
     </div>
+}
     <div class="columns">
       <div class="column">
-        <div class="box" *ngIf="chosenSource$ | async as chosenSource">
+        @if (chosenSource$ | async; as chosenSource) {
+<div class="box">
           <p class="title">
             <strong>{{ chosenSource }}</strong> Loot
           </p>
-          <article
+          @for (item of getSourceLoot(chosenSource) | async; track item) {
+<article
             class="media"
-            *ngFor="let item of getSourceLoot(chosenSource) | async"
+
           >
             <div class="media-content">
               <div class="content">
                 <a
                   [appWowheadTooltip]="item"
                   [routerLink]="['/item', item.id]"
-                  >{{ item.name }}</a
-                >&nbsp;&nbsp;
-                <ng-container
-                  *ngIf="
-                    getNextRecipient(item) | async as recipientGrp;
-                    else noRankings
-                  "
-                >
-                  &nbsp;
-                  <small
-                    class="is-size-6 has-text-warning"
-                    *ngIf="noneListed(recipientGrp)"
-                  >
-                    <abbr
-                      title="All of these raiders did not list the item, but are still eligible."
-                    >
-                      <fa-icon [icon]="faExclamationTriangle"></fa-icon>
-                      Unlisted
-                    </abbr>
-                  </small>
-                  &nbsp;
-                  <div class="tags pt-1">
-                    <span
-                      class="tag is-black"
-                      *ngFor="let recipient of recipientGrp"
-                    >
-                      <a [routerLink]="['/raider', recipient.raider.name]">
-                        {{ recipient.raider.name }}
-                      </a>
-
-                      &nbsp;
-                    </span>
-                  </div>
-                </ng-container>
-
-                <ng-template #noRankings>
-                  <small>No Rankings.</small>
-                </ng-template>
+                        >{{ item.name }}</a
+                        >&nbsp;&nbsp;
+                        @if (
+                          getNextRecipient(item) | async; as recipientGrp) {
+                          &nbsp;
+                          @if (noneListed(recipientGrp)) {
+                            <small
+                              class="is-size-6 has-text-warning"
+                              >
+                              <abbr
+                                title="All of these raiders did not list the item, but are still eligible."
+                                >
+                                <fa-icon [icon]="faExclamationTriangle"></fa-icon>
+                                Unlisted
+                              </abbr>
+                            </small>
+                          }
+                          &nbsp;
+                          <div class="tags pt-1">
+                            @for (recipient of recipientGrp; track recipient) {
+                              <span
+                                class="tag is-black"
+                                >
+                                <a [routerLink]="['/raider', recipient.raider.name]">
+                                  {{ recipient.raider.name }}
+                                </a>
+                                &nbsp;
+                              </span>
+                            }
+                          </div>
+                        } @else {
+                          <small>No Rankings.</small>
+                        }
+                      </div>
+                    </div>
+                  </article>
+                }
               </div>
+            }
+          </div>
+          <div class="column">
+            <div class="box">
+              <app-loot-feed
+                [zone]="zone"
+                [source]="chosenSource$ | async"
+              ></app-loot-feed>
             </div>
-          </article>
+          </div>
         </div>
-      </div>
-
-      <div class="column">
-        <div class="box">
-          <app-loot-feed
-            [zone]="zone"
-            [source]="chosenSource$ | async"
-          ></app-loot-feed>
-        </div>
-      </div>
+      </section>
     </div>
-  </section>
-</div>
-<ng-template #notFound>
-  <h1 class="title">Zone not found</h1>
-</ng-template>
+  } @else {
+    <h1 class="title">Zone not found</h1>
+  }

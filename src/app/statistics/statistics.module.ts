@@ -6,10 +6,10 @@ import { StatisticsComponent } from './statistics.component';
 
 
 @NgModule({
-  declarations: [StatisticsComponent],
-  imports: [
-    CommonModule,
-    StatisticsRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        StatisticsRoutingModule,
+        StatisticsComponent
+    ]
 })
 export class StatisticsModule { }

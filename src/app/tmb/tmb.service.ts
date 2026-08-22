@@ -42,8 +42,8 @@ export class TmbService {
       })
     ),
     // Filter out alts and other characters in the system which do not belong to the main raid roster.
-    map((raiders: Raider[]) =>
-      raiders.filter((r) => r.is_alt === 0 && r.raid_group_id > 0)
+    map((tmbData: { data: Raider[], imported: string }) =>
+      tmbData.data.filter((r) => r.is_alt === 0 && r.raid_group_id > 0)
     ),
     tap((raiders: Raider[]) => this.checkNewData(raiders)),
     map((raiders: Raider[]) => this.processAttendancePoints(raiders)),
@@ -54,13 +54,29 @@ export class TmbService {
     tap((raiders) => this.state.setState({ raiders })),
     shareReplay(1)
   );
+  dateImported$: Observable<Date> = this.refresh$.pipe(
+    switchMap(() =>
+      this.http.get('assets/tmb-data.json', {
+        headers: new HttpHeaders({
+          'Cache-Control':
+            'no-cache, no-store, must-revalidate, post-check=0, pre-check=0',
+          Pragma: 'no-cache',
+          Expires: '0',
+        }),
+      })
+    ),
+    // Filter out alts and other characters in the system which do not belong to the main raid roster.
+    map((tmbData: { data: Raider[], imported: string }) =>
+      new Date(Date.parse(tmbData.imported))
+    ),
+  );
 
   constructor(
     private http: HttpClient,
     private cacheService: CacheService,
     private state: StateService,
     private itemService: ItemService
-  ) {}
+  ) { }
 
   getRaiders(): Observable<Raider[]> {
     return this.raiders$;
@@ -95,14 +111,14 @@ export class TmbService {
       quiet?: boolean;
     }
   ) {
-    const errors = [];
+    const errors: string[] = [];
     const restrictions = this.getItemRestrictions(itemId);
     // If there are no restrictions, just return
     if (!restrictions) {
       return errors;
     }
     // If there are any entries in the allowed classes array, then only those classes may list the item
-    if (restrictions.allowedClasses.length) {
+    if (restrictions.allowedClasses?.length) {
       if (!restrictions.allowedClasses.includes(cls)) {
         const msg = `(${restrictions.ITEM_NAME} - ${itemId}) not in allowedClasses: ${cls}`;
         errors.push(msg);
@@ -110,7 +126,7 @@ export class TmbService {
       }
     }
     // If there are any entries in the restricted classes array, only those classes MAY NOT list the item
-    if (restrictions.restrictedClasses.length) {
+    if (restrictions.restrictedClasses?.length) {
       if (restrictions.restrictedClasses.includes(cls)) {
         const msg = `(${restrictions.ITEM_NAME} - ${itemId}) is in restrictedClasses: ${cls}`;
         errors.push(msg);
@@ -132,6 +148,7 @@ export class TmbService {
 
   /**
    * Verify the 'Weapon per X' rule on the list.
+   * Unused as of Cata launch 5/24/2024
    * @param wishList
    */
   validateWeaponSlots(raider: Raider) {
@@ -265,6 +282,8 @@ export class TmbService {
         .filter((i) => i.pivot.is_offspec === 1)
         .sort((a, b) => a.pivot.order - b.pivot.order);
       if (osItems.length) {
+        const firstOsItem = osItems[0];
+
         // Verify there aren't too many OS items
         if (
           osItems.length >
@@ -275,10 +294,9 @@ export class TmbService {
           raider.public_note = `${raider.public_note || ''}\r\n${osMsg}`;
           // This is a critical issue, so make it very visible that these items are invalid
           raider.wishlist.forEach(
-            (i) => (i.pivot.note = 'INVALID LIST (TOO MANY OS)')
+            (i) => (i.pivot.note = `INVALID LIST (TOO MANY OS) - Starting at ${firstOsItem.name}`)
           );
         } else {
-          const firstOsItem = osItems[0];
           // Set a special message on the first OS item
           firstOsItem.pivot.note = `(First OS) ${firstOsItem.pivot.note ?? ''}`;
           // If the first OS item comes before the cutoff, move it
@@ -306,7 +324,7 @@ export class TmbService {
               raider.public_note = `${raider.public_note || ''}\r\n${osMsg}`;
               // This is a critical issue, so make it very visible that these items are invalid
               raider.wishlist.forEach(
-                (i) => (i.pivot.note = 'INVALID LIST (OS TOO EARLY)')
+                (i) => (i.pivot.note = `INVALID LIST (OS TOO EARLY) ${firstOsItem.name}`)
               );
             }
           }
@@ -334,16 +352,15 @@ export class TmbService {
             `${raider.name} - restricted item: (${w.name} - ${w.item_id})`
           );
           // Stick these errors onto the raider's public note for viewing
-          raider.public_note = `${
-            raider.public_note || ''
-          }\r\n${validationResults.join('; ')}`;
+          raider.public_note = `${raider.public_note || ''
+            }\r\n${validationResults.join('; ')}`;
           w.pivot.note = validationResults.join('; ');
         }
 
         return w;
       });
       // validate the weapon slots rule
-      this.validateWeaponSlots(raider);
+      // this.validateWeaponSlots(raider);
 
       /**
        * Eligible loot is loot that is wishlisted, but not yet received
