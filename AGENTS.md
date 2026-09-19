@@ -2,7 +2,7 @@
 
 ## Project
 
-Angular application for WoW guild loot tracking and distribution (`synergy-loot`), deployed to GitHub Pages.
+Angular application for WoW guild loot tracking and distribution (`loot`), deployed to GitHub Pages.
 
 ## Quick commands
 

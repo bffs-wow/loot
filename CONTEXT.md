@@ -1,4 +1,4 @@
-# Synergy Loot Context
+# Best Friends Loot Context
 
 Domain glossary for the guild's objective, drama-free EPGP (Effort Points / Gear Points) loot distribution system.
 

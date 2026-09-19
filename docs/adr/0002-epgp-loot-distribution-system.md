@@ -34,11 +34,11 @@ We adopt the EPGP distribution model governed by Priority Rating ($\text{PR} = \
 
 5. **TMB Ingest & Addon Export Pipeline**:
    - **Source of Truth**: That's My BiS (`assets/tmb-data.json`) supplies attendance counts, benched counts, and the `received` loot log with inventory slots.
-   - **Calculation Engine**: `synergy-loot` computes each raider's decayed EP, decayed GP, and current PR.
+   - **Calculation Engine**: `loot` computes each raider's decayed EP, decayed GP, and current PR.
    - **Core Loot Manager (CLM)**: The web app generates a structured JSON standings payload imported in-game via `/clm import` or `/clm importgeneric`.
    - **Gargul Tooltip Sync**: The web app exports a compressed payload for `/gl tmb` so that in-game tooltips display each raider's live PR standing.
 
 ## Consequences
-- No manual in-game bookkeeping: all point math, slot coefficients, and decay schedules are handled automatically by `synergy-loot` from the TMB export.
+- No manual in-game bookkeeping: all point math, slot coefficients, and decay schedules are handled automatically by `loot` from the TMB export.
 - Standby raiders confirmed online at raid start receive full 100 EP credit alongside active raiders.
 - In-game loot distribution is instantaneous, fully automated, and 100% transparent.
