@@ -1,8 +1,8 @@
-# SynergyLoot
+# Best Friends Loot
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
 
-The app is published to Github Pages, here: https://synergy-wow.github.io/loot/home
+The app is published to Github Pages, here: https://bffs-wow.github.io/loot/home
 
 ## Development server
 
