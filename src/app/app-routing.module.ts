@@ -6,6 +6,7 @@ import { ItemPageComponent } from './item-page/item-page.component';
 import { RaiderPageComponent } from './raider-page/raider-page.component';
 import { RosterPageComponent } from './roster-page/roster-page.component';
 import { ItemGroupPageComponent } from './item-group-page/item-group-page.component';
+import { SimReportComponent } from './sim/sim-report.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -37,6 +38,10 @@ const routes: Routes = [
     path: 'statistics',
     loadChildren: () =>
       import('./statistics/statistics.module').then((m) => m.StatisticsModule),
+  },
+  {
+    path: 'simulation',
+    component: SimReportComponent,
   },
   {
     path: 'admin',
