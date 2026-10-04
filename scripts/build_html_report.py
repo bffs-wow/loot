@@ -12,6 +12,87 @@ def build_html():
     with open('scripts/simulation_data.json') as f:
         sim_data = json.load(f)
 
+    # ---- Hoarder-evidence computations (single source: simulation_data.json) ----
+    def persona(key, name):
+        return sim_data[key]['personas'][name]
+
+    def cohort_avg(key):
+        ps = list(sim_data[key]['personas'].values())
+        return sum(p['s_tier_pct'] for p in ps) / len(ps)
+
+    def cohort_gp(key):
+        ps = list(sim_data[key]['personas'].values())
+        return sum(p['final_gp_avg'] for p in ps) / len(ps)
+
+    def hoarder_stats(key):
+        l = persona(key, 'Lurkin')['s_tier_pct']
+        c = cohort_avg(key)
+        lg = persona(key, 'Lurkin')['final_gp_avg']
+        cg = cohort_gp(key)
+        return l, c, l - c, l / c, lg, cg
+
+    RULES = {
+        'epgp_15_std': 'Minors cost GP (400 each), weekly 15% decay.',
+        'epgp_15_free_minor': 'Minors free, weekly 15% decay.',
+        'epgp_horizon_6wk_free_minor': 'Minors free, GP expires after a 12-raid rolling horizon.',
+        'epgp_base_gp_300': 'Minors free, GP floor raised to 300.',
+        'epgp_armor_ms_100': 'Armor (hat/chest/legs) priced as a major (400 GP); all majors desirable.',
+        'epgp_armor_ms_50': 'Armor priced as a major; ~50% of majors unwanted at MS price; 25% OS fallback.',
+        'hybrid_horizon_boost120': 'Majors (S-tier, tokens) decided by horizon EPGP; minors free by boosted roll.',
+        'additive_120': 'Pure roll +100, attendance boost up to +120, burn on major win. No PR exists.',
+        'additive_60': 'Pure roll +100, attendance boost up to +60. No PR exists.',
+    }
+    MECHANISMS = {
+        'epgp_15_std': 'Refusing armor keeps GP low → PR = EP/GP stays maximal → wins contested S-tiers by PR.',
+        'epgp_15_free_minor': 'Refusing armor saves nothing: free items never touch GP. The GP lever is dead.',
+        'epgp_horizon_6wk_free_minor': 'Same free-minor effect under rolling-window GP expiry.',
+        'epgp_base_gp_300': 'The GP floor compresses PR spread; the refusal advantage shrinks.',
+        'epgp_armor_ms_100': 'Everyone who wants armor pays the same 400 GP. No refusal advantage.',
+        'epgp_armor_ms_50': 'Hoarding inverts: hoarder barred from MS junk claims, wins OS junk at 25% price on highest PR, pays GP.',
+        'hybrid_horizon_boost120': 'No priced minor exists to refuse; minors are decided by attendance roll, not GP.',
+        'additive_120': 'No PR exists; Lurkin\'s edge is attendance: he raids every week, so his roll density is always maximal.',
+        'additive_60': 'No PR exists; same attendance effect, smaller boost ceiling.',
+    }
+
+    sc_desc = {}
+    for key in RULES:
+        l, c, e, r, lg, cg = hoarder_stats(key)
+        sc_desc[key] = (
+            f"Rule: {RULES[key]} Measured (300 seasons): Lurkin (hoarder) wins {l}% of S-tier drops "
+            f"vs cohort avg {c:.1f}% ({r:.1f}x, {e:+.1f}pp); final GP Lurkin {lg:.0f} vs cohort {cg:.0f}. "
+            f"{MECHANISMS[key]}"
+        )
+
+    hoarder_order = [
+        'epgp_15_std', 'epgp_15_free_minor', 'epgp_horizon_6wk_free_minor',
+        'epgp_base_gp_300', 'epgp_armor_ms_100', 'epgp_armor_ms_50',
+        'hybrid_horizon_boost120', 'additive_120', 'additive_60',
+    ]
+    rows = []
+    for key in hoarder_order:
+        l, c, e, r, lg, cg = hoarder_stats(key)
+        name = sim_data[key]['config']['name']
+        mech = MECHANISMS[key]
+        e_color = '#ef4444' if e > 20 else ('#10b981' if e < 0 else '#f59e0b')
+        rows.append(
+            f"<tr><td style=\"padding:6px 8px;\">{name}</td>"
+            f"<td style=\"padding:6px 8px;\">{l}%</td>"
+            f"<td style=\"padding:6px 8px;\">{c:.1f}%</td>"
+            f"<td style=\"padding:6px 8px;\">{r:.1f}x</td>"
+            f"<td style=\"padding:6px 8px;color:{e_color};\">{e:+.1f}pp</td>"
+            f"<td style=\"padding:6px 8px;\">{lg:.0f} / {cg:.0f}</td>"
+            f"<td style=\"padding:6px 8px;color:var(--text-muted);font-size:12.5px;\">{mech}</td></tr>"
+        )
+    hoarder_rows = '\n        '.join(rows)
+
+    l_std, c_std, e_std, r_std, lg_std, cg_std = hoarder_stats('epgp_15_std')
+    l_fm, c_fm, e_fm, r_fm, _, _ = hoarder_stats('epgp_15_free_minor')
+    g_fm = persona('epgp_15_free_minor', 'Goatlord')['s_tier_pct']
+    l_hy, _, e_hy, _, _, _ = hoarder_stats('hybrid_horizon_boost120')
+    l_50, c_50, e_50, r_50, _, _ = hoarder_stats('epgp_armor_ms_50')
+    b_50 = persona('epgp_armor_ms_50', 'Bexy')['s_tier_pct']
+    l_add, c_add, e_add, _, _, _ = hoarder_stats('additive_120')
+
     class_colors = {
         'Warrior': '#C79C6E',
         'Paladin': '#F58CBA',
@@ -284,6 +365,10 @@ def build_html():
   .takeaway-card.red {{ border-left-color: var(--accent-red); }}
   .takeaway-card h4 {{ font-size: 16px; margin-bottom: 8px; color: #fff; }}
   .takeaway-card p {{ font-size: 13.5px; color: var(--text-muted); line-height: 1.5; }}
+  .hoarder-table {{ width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 14px; }}
+  .hoarder-table th {{ text-align: left; color: var(--text-muted); border-bottom: 1px solid var(--border); padding: 6px 8px; }}
+  .hoarder-table td {{ color: var(--text-main); border-bottom: 1px solid var(--border); vertical-align: top; }}
+  .hoarder-table tr:last-child td {{ border-bottom: none; }}
 
   footer {{
     text-align: center;
@@ -338,15 +423,15 @@ def build_html():
   <!-- Scenario Selector -->
   <div class="tabs-wrapper">
     <div class="tabs" id="scenario-tabs">
-      <button class="tab-btn active" onclick="switchScenario('epgp_15_free_minor')">⭐ EPGP (Free Minor Items - Optimal)</button>
-      <button class="tab-btn" onclick="switchScenario('epgp_horizon_6wk_free_minor')">⭐ EPGP 6-Wk Horizon (Free Minor)</button>
-      <button class="tab-btn" onclick="switchScenario('hybrid_horizon_boost120')">⭐⭐ HYBRID: Horizon EPGP + Boosted Rolls</button>
-      <button class="tab-btn" onclick="switchScenario('epgp_15_std')">Standard EPGP (Minor Costs GP - Hoarder Haven)</button>
-      <button class="tab-btn" onclick="switchScenario('epgp_armor_ms_100')">EPGP: All Majors Priced</button>
-      <button class="tab-btn" onclick="switchScenario('epgp_armor_ms_50')">EPGP: 50% Items Undesirable</button>
-      <button class="tab-btn" onclick="switchScenario('additive_120')">Additive Boost (+120 Max, ADR 0001)</button>
+      <button class="tab-btn active" onclick="switchScenario('epgp_15_free_minor')">EPGP — Free Minor Items</button>
+      <button class="tab-btn" onclick="switchScenario('epgp_horizon_6wk_free_minor')">EPGP — 6-Wk Horizon, Free Minors</button>
+      <button class="tab-btn" onclick="switchScenario('hybrid_horizon_boost120')">Hybrid — Horizon EPGP + Boosted Rolls</button>
+      <button class="tab-btn" onclick="switchScenario('epgp_15_std')">Standard EPGP — Minors Cost GP</button>
+      <button class="tab-btn" onclick="switchScenario('epgp_armor_ms_100')">EPGP — Armor at MS Price</button>
+      <button class="tab-btn" onclick="switchScenario('epgp_armor_ms_50')">EPGP — 50% Majors Undesirable</button>
+      <button class="tab-btn" onclick="switchScenario('additive_120')">Additive Boost (+120 Max)</button>
       <button class="tab-btn" onclick="switchScenario('additive_60')">Additive Boost (+60 Max)</button>
-      <button class="tab-btn" onclick="switchScenario('epgp_base_gp_300')">EPGP (Base GP 300 Floor)</button>
+      <button class="tab-btn" onclick="switchScenario('epgp_base_gp_300')">EPGP — Base GP 300</button>
     </div>
   </div>
 
@@ -392,26 +477,37 @@ def build_html():
     </table>
   </div>
 
-  <!-- Core Behavioral Insights Across the Real World Scenarios -->
-  <h3 style="font-size: 18px; margin-bottom: 16px; color: #cbd5e1;">The Hard Truths of Loot Distribution</h3>
+  <!-- Hoarder evidence: measured from simulation_data.json -->
+  <h3 style="font-size: 18px; margin-bottom: 16px; color: #cbd5e1;">Hoarder Benefit — Measured per System (300 seasons each)</h3>
   <div class="takeaway-grid">
     <div class="takeaway-card red">
-      <h4>1. The Hoarder Monopolization Trap (Standard EPGP)</h4>
-      <p>Under Standard EPGP (where minor items cost GP), <strong>Lurkin (Hoarder) has a 97.0% chance</strong> of winning an S-Tier item, while <strong>Goatlord (Balanced Veteran) has only a 17.7% chance</strong>! By refusing minor armor, the hoarder keeps GP at 100 and snipes every weapon and trinket that drops, while teammates who take armor are penalized.</p>
+      <h4>1. Standard EPGP — the refusal lever is the whole game</h4>
+      <p>Minors cost GP (400 each). Lurkin wins <strong>{r_std:.1f}x</strong> the cohort-average S-tier rate (<strong>{l_std}%</strong> vs {c_std:.1f}%, edge {e_std:+.1f}pp). He refuses armor, keeps GP at the floor, and wins contested majors by priority. Final GP: Lurkin {lg_std:.0f} vs cohort {cg_std:.0f} — GP gap is the cause, not a side effect.</p>
     </div>
     <div class="takeaway-card green">
-      <h4>2. Zero-GP Minor Items Save Veteran Fairness</h4>
-      <p>When <strong>Minor items cost 0 GP (Free)</strong>, Goatlord's chance of winning an S-Tier item jumps from <strong>17.7% to 29.0%</strong>, and Lurkin's drops from <strong>97% to 22.3%</strong>! Because minor items are free, hoarders take them too, preventing anyone from artificially holding an infinite GP advantage.</p>
-    </div>
-    <div class="takeaway-card gold">
-      <h4>3. The Casual Scarcity Wall (Additive Boost)</h4>
-      <p>In Additive Boost (+120), a 70% casual like <strong>Seph has a 2.7% chance</strong> of ever winning an S-Tier item and a <strong>0.0% chance of completing a 4-piece tier set</strong>! The 40-point roll deficit (+80 vs +120) across 15 competitors forms an almost impenetrable mathematical barrier.</p>
+      <h4>2. Free minors — the lever disappears</h4>
+      <p>Minors at 0 GP: everyone's GP path through armor is identical, so refusal saves nothing. Lurkin <strong>{l_fm}%</strong> vs Goatlord {g_fm}% (cohort {c_fm:.1f}%, edge {e_fm:+.1f}pp). The refusal advantage disappears.</p>
     </div>
     <div class="takeaway-card">
-      <h4>4. Standby Roster Guarantees Tier Sets</h4>
-      <p><strong>Nadzia</strong> (Priest, heavy bench) achieves identical tier token acquisition (3.2 tokens, 56% 4-piece completion) to active raiders, verifying that 100% standby credit online at raid start completely protects benched players on competitive tokens.</p>
+      <h4>3. Additive boost — no PR exists, so no hoard</h4>
+      <p>Roll systems have no Priority Rating — outcome is decided by /roll + attendance boost, so nothing to refuse and nothing to hoard. Lurkin <strong>{l_add}%</strong> vs cohort {c_add:.1f}% ({e_add:+.1f}pp). No GP lever, no edge.</p>
+    </div>
+    <div class="takeaway-card gold">
+      <h4>4. Armor at MS price — the trap inverts</h4>
+      <p>With only ~50% of majors desirable, Lurkin lands <em>below</em> cohort: <strong>{l_50}%</strong> vs {c_50:.1f}% ({e_50:+.1f}pp). He is barred at MS from junk, then wins OS junk at 25% price on highest PR — paying GP for items his refusal was meant to avoid. Meanwhile Bexy (greedy) claims junk at MS and still wins {b_50}% of S-tier drops in this sample — priced systems punish refusal and reward indiscriminate claiming alike.</p>
     </div>
   </div>
+
+  <h3 style="font-size: 17px; margin: 24px 0 12px; color: #cbd5e1;">Hoarder outcomes by config (S-tier win %, vs cohort, final GP)</h3>
+  <table class="hoarder-table">
+    <thead>
+      <tr><th>System</th><th>Lurkin S%</th><th>Cohort avg</th><th>Lurkin/cohort</th><th>Edge (pp)</th><th>Final GP Lurkin / cohort</th><th>Why (mechanism)</th></tr>
+    </thead>
+    <tbody>
+      {hoarder_rows}
+    </tbody>
+  </table>
+  <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Data source: scripts/simulation_data.json; 300 simulated seasons per config, 32 raids each. "Cohort" = all 20 persona archetypes weighted equally.</p>
 
   <footer>
     <p>Synergy Loot System Scarcity Simulation & Wayfinder Planning • September 2026</p>
@@ -423,17 +519,7 @@ def build_html():
   const CLASS_COLORS = {json.dumps(class_colors)};
   const KEY_PERSONAS = {json.dumps(key_personas)};
 
-  const SCENARIO_DESCRIPTIONS = {{
-    'epgp_15_free_minor': 'The recommended EPGP model: Minor items cost 0 GP (Free). Hoarders take minor armor too, equalizing GP across veterans. Goatlord has a 29.0% chance at an S-tier item, Lurkin has 22.3%, and veterans finish ~2.9 tier tokens.',
-    'epgp_horizon_6wk_free_minor': 'The Rolling Horizon model: all records older than 6 weeks fall off. Delivers identical scarcity fairness to 15% decay with zero weekly Tuesday database scripts.',
-    'hybrid_horizon_boost120': '<strong>⭐ THE RECOMMENDED HYBRID:</strong> Major chase items (weapons, trinkets, tier tokens) are governed by Rolling Horizon EPGP — highest PR wins, pays GP. Minor & off-spec items (rings, necks, cloaks, sidegrades) are 0 GP and use the additive attendance-boosted roll from ADR 0001 — veterans get a 2–3× roll advantage. Lurkin (Hoarder) gets ~22% S-tier chance (same as pure EPGP) but CANNOT game minor items: they're free, so everyone takes them. Goatlord finishes ~3.5 tier tokens. Casuals still get meaningful roll bonuses on minor gear.',
-    'epgp_15_std': 'Standard textbook EPGP: Minor items cost GP. <strong>Lurkin (Hoarder) wins an S-tier item 97.0% of the time</strong>, while Goatlord drops to 17.7% because taking armor ruins your Priority Rating for weapons.',
-    'additive_120': 'Additive Attendance Boost (ADR 0001): Base /roll 100 + up to 120 boost. Boost Burn zeros boost on winning a Major item. Veterans have a ~25-28% chance at S-tier items and 56% complete 4-piece tier sets. Casuals are locked out (2.7% S-tier chance).',
-    'additive_60': 'Moderate Additive Boost (+60 Max): Softens the veteran roll gap. Casuals gain improved chances on tier tokens and S-tier drops.',
-    'epgp_base_gp_300': 'EPGP with a 300 Base GP Floor. Restricts late recruits from sniping S-tier weapons on week one ahead of established veterans.',
-    'epgp_armor_ms_100': 'Simulated rule extension: Hat/Chest/Legs armor is priced exactly like a Major item (400 GP = 2/3 of an S-tier win). When every item is desirable this is the fair textbook case: ~6.65 majors per raid distribute at full price, zero waste, zero OS fallback. Compare with the 50% tab.',
-    'epgp_armor_ms_50': '<strong>The stress test:</strong> Only ~50% of major drops are wanted at MS price. Rational raiders (Goatlord, Lurkin, Nadzia) pass on junk majors; Greedy veterans and late recruits claim them anyway at full GP, and the rest falls to a 25% OS tier. Result: <strong>~1.8 majors per raid land at OS price</strong>, Rot stays 0.00/raid — progression gear is NOT wasted as long as a 25% OS tier exists. The PR tax is real: Bexy (greedy) soaks junk weapons and wins <strong>78.7%</strong> of all S-tier drops while paying full GP for junk; rational vets stay PR-clean and bank for the good items (Goatlord 19.3%, Lurkin 16.0%).',
-  }};
+  const SCENARIO_DESCRIPTIONS = {json.dumps(sc_desc)};
 
   let currentScenario = 'epgp_15_free_minor';
 

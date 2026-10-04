@@ -345,7 +345,8 @@ def run_suite():
         print(f"  Simulating {conf['name']}...")
         player_stats = defaultdict(lambda: {
             's_tier': [], 'tier_tokens': [], 'role_epics': [], 'niche': [], 'os_taken': [],
-            'has_s_tier': [], 'completed_4p': [], 'first_s_tier_wk': [], 'first_item_wk': []
+            'has_s_tier': [], 'completed_4p': [], 'first_s_tier_wk': [], 'first_item_wk': [],
+            'final_gp': []
         })
         total_counts = {'ms': [], 'os': [], 'rot': []}
         for _ in range(NUM_SIMULATIONS):
@@ -353,6 +354,7 @@ def run_suite():
             for c in ('ms', 'os', 'rot'):
                 total_counts[c].append(counts[c])
             for p in players:
+                player_stats[p.name]['final_gp'].append(p.gp)
                 player_stats[p.name]['s_tier'].append(p.s_tier_won)
                 player_stats[p.name]['tier_tokens'].append(p.tier_tokens_won)
                 player_stats[p.name]['role_epics'].append(p.role_epics_won)
@@ -398,6 +400,7 @@ def run_suite():
                 'niche_avg': round(niche_avg, 2),
                 'os_taken_avg': round(sum(st['os_taken']) / NUM_SIMULATIONS, 2),
                 'total_avg': round(total_avg, 2),
+                'final_gp_avg': round(sum(st['final_gp']) / NUM_SIMULATIONS, 0),
                 'first_s_tier_wk': round(f_s_tier, 1),
                 'first_item_wk': round(f_item, 1),
             }
