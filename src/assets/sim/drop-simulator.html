@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drop Simulator — EPGP+Boost Hybrid</title>
+<style>
+  :root { --bg:#0f172a; --bg2:#1e293b; --bg3:#334155; --txt:#e2e8f0; --mut:#94a3b8;
+          --acc:#f59e0b; --acc2:#60a5fa; --grn:#10b981; --red:#ef4444; --border:#3f4a5f; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:'Inter',system-ui,sans-serif; background:var(--bg); color:var(--txt); padding:20px; }
+  h1 { font-size:20px; margin:0 0 4px; } h1 small { color:var(--mut); font-weight:400; font-size:13px; }
+  .modebar { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:14px 0; }
+  .mode { padding:7px 14px; border-radius:8px; border:1px solid var(--border); background:var(--bg2);
+          color:var(--txt); cursor:pointer; font-size:13px; }
+  .mode.active { border-color:var(--acc); color:var(--acc); }
+  .btn { padding:7px 14px; border-radius:8px; border:1px solid var(--border); background:var(--bg2);
+         color:var(--txt); cursor:pointer; font-size:13px; }
+  .btn:hover { border-color:var(--acc2); }
+  .btn.primary { background:var(--acc); border-color:var(--acc); color:#0f172a; font-weight:600; }
+  .btn.primary:hover { filter:brightness(1.1); }
+  .raidbar { display:flex; gap:8px; align-items:center; margin-bottom:14px; flex-wrap:wrap; }
+  .raidbox { background:var(--bg2); border:1px solid var(--border); border-radius:8px; padding:6px 12px; font-size:13px; }
+  #banner { margin-bottom:14px; display:none; }
+  #banner.show { display:block; background:var(--bg2); border:1px solid var(--acc); border-radius:10px; padding:14px 16px; }
+  #banner h2 { margin:0 0 8px; font-size:16px; color:var(--acc); }
+  #banner table { width:100%; border-collapse:collapse; font-size:13px; }
+  #banner td, #banner th { padding:5px 8px; border-bottom:1px solid var(--border); text-align:left; }
+  table#roster { width:100%; border-collapse:collapse; font-size:13px; background:var(--bg2);
+                 border:1px solid var(--border); border-radius:10px; overflow:hidden; }
+  #roster th, #roster td { padding:7px 9px; text-align:left; border-bottom:1px solid var(--border); }
+  #roster th { color:var(--mut); font-weight:600; font-size:11.5px; text-transform:uppercase; letter-spacing:.03em; }
+  #roster tr:last-child td { border-bottom:none; }
+  .num { font-variant-numeric:tabular-nums; }
+  .cap { color:var(--mut); }
+  .absent { opacity:.45; }
+  .warn { color:var(--red); }
+  .win { color:var(--grn); font-weight:700; }
+  .log { margin-top:16px; background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding:12px 16px; font-size:12.5px; }
+  .log h3 { margin:0 0 8px; font-size:13px; color:var(--mut); text-transform:uppercase; letter-spacing:.04em; }
+  #log-ul { list-style:none; margin:0; padding:0; max-height:220px; overflow-y:auto; }
+  #log-ul li { padding:4px 0; border-bottom:1px dashed var(--border); }
+</style>
+</head>
+<body>
+<h1>🎲 Drop Simulator <small>— live distribution under the proposed loot systems (mirrors sim engine rules)</small></h1>
+
+<div class="modebar">
+  <span style="font-size:12.5px;color:var(--mut);">Loot system:</span>
+  <button class="mode active" data-mode="hybrid">Hybrid</button>
+  <button class="mode" data-mode="epgp">EPGP only</button>
+  <button class="mode" data-mode="additive">Additive boost</button>
+</div>
+
+<div class="raidbar">
+  <button class="btn primary" id="next-raid">▶ Next Raid (+100 EP to attenders)</button>
+  <span class="raidbox">Week <b id="week">1</b> · Raid <b id="raid">0</b>/32</span>
+  <span class="raidbox">Present: <b id="attbox">—</b></span>
+  <button class="btn" id="reset">Reset</button>
+</div>
+
+<div id="banner">
+  <h2 id="banner-title"></h2>
+  <div id="banner-body"></div>
+</div>
+
+<table id="roster">
+  <thead>
+    <tr>
+      <th>Raider</th><th>Class</th><th>Archetype</th><th>State</th>
+      <th>EP</th><th>GP</th><th>PR</th><th>Boost</th>
+      <th>S-Tier</th><th>Tokens</th><th>Epics</th><th>Niche</th>
+    </tr>
+  </thead>
+  <tbody id="tbody"></tbody>
+</table>
+
+<div class="log">
+  <h3>Trigger a drop</h3>
+  <div class="raidbar">
+    <button class="btn primary" data-drop="s">💥 S-Tier Weapon/Trinket</button>
+    <button class="btn primary" data-drop="token">🧩 Tier Token</button>
+    <button class="btn" data-drop="armor">🛡 Armor Epic (hat/chest/legs)</button>
+    <button class="btn" data-drop="niche">⚙ Niche / Sidegrade</button>
+  </div>
+  <h3 style="margin-top:10px;">Event log</h3>
+  <ul id="log-ul"></ul>
+</div>
+
+<script>
+// Mirrors scripts/run_full_knobs_simulation.py: ScarcityPlayer, resolve_epgp_major,
+// hybrid config (mode=hybrid, horizon=12, boost_max=120, minor_free=true).
+const PERSONAS = [
+  {name:'Goatlord', cls:'Warrior', arch:'Rational Veteran', join:1, att:1.0},
+  {name:'Applepi', cls:'Paladin', arch:'Rational Veteran', join:1, att:1.0},
+  {name:'Airah', cls:'Mage', arch:'Rational Veteran', join:1, att:1.0},
+  {name:'Crànker', cls:'Shaman', arch:'Rational Veteran', join:1, att:1.0},
+  {name:'Clueles', cls:'Priest', arch:'Rational Veteran', join:1, att:1.0},
+  {name:'Money', cls:'Paladin', arch:'Rational Veteran', join:1, att:1.0},
+  {name:'Miyokan', cls:'Warlock', arch:'Rational Veteran', join:1, att:1.0},
+  {name:'Kabata', cls:'Druid', arch:'Rational Veteran', join:1, att:1.0},
+  {name:'Lurkin', cls:'Rogue', arch:'Hoarder', join:1, att:1.0},
+  {name:'Helpmeplease', cls:'Mage', arch:'Hoarder', join:1, att:1.0},
+  {name:'Bexy', cls:'Rogue', arch:'Greedy Veteran', join:1, att:1.0},
+  {name:'Matzy', cls:'Mage', arch:'Greedy Veteran', join:1, att:1.0},
+  {name:'Nadzia', cls:'Priest', arch:'Standby Veteran', join:1, att:1.0},
+  {name:'Bobby', cls:'Hunter', arch:'Standby Veteran', join:1, att:1.0},
+  {name:'Seph', cls:'Paladin', arch:'Casual Raider', join:1, att:0.7},
+  {name:'Marenjok', cls:'Priest', arch:'Casual Raider', join:1, att:0.7},
+  {name:'Shiftyz', cls:'Druid', arch:'Casual Raider', join:1, att:0.7},
+  {name:'Emofive', cls:'Death Knight', arch:'Casual Raider', join:1, att:0.7},
+  {name:'Newrecruit', cls:'Death Knight', arch:'Late Recruit', join:5, att:1.0},
+  {name:'Freshblood', cls:'Monk', arch:'Late Recruit', join:5, att:1.0},
+];
+const WEEKS=16, RAIDS_PER_WEEK=2, HORIZON=12, BOOST_MAX=120, BASE_GP=100.0;
+
+let mode='hybrid';
+let week=1, raid=0, roster;
+
+function init(){
+  week=1; raid=0;
+  roster=PERSONAS.map(cfg=>({ ...cfg, present:false, ep:0, epEvents:[], gp:BASE_GP, gpEvents:[],
+    boost:0, burned:false, hist:[], s:0, tokens:0, epics:0, niche:0 }));
+  logEl.innerHTML=''; banner.classList.remove('show'); render();
+  attbox.textContent='—';
+}
+
+const isTrial = p => p.arch==='Late Recruit' && (week < p.join+2);
+const eligible = p => week>=p.join && !isTrial(p);
+const pr = p => p.ep / p.gp;
+const prStr = p => pr(p).toFixed(2);
+
+// Hybrid: horizon 12 raids. EPGP: 15% weekly decay. Additive: none.
+function recompute(){
+  if(mode==='hybrid'){
+    const cut=raid-HORIZON;
+    for(const p of roster){
+      p.ep=p.epEvents.filter(e=>e.r>cut).reduce((a,e)=>a+e.v,0);
+      p.gp=BASE_GP+p.gpEvents.filter(e=>e.r>cut).reduce((a,e)=>a+e.v,0);
+    }
+  } else if(mode==='epgp'){
+    for(const p of roster){
+      p.ep=p.epEvents.reduce((a,e)=>a+e.v,0)*Math.pow(0.85,raid);
+      p.gp=Math.max(BASE_GP, p.gpEvents.reduce((a,e)=>a+e.v,0)*Math.pow(0.85,raid));
+    }
+  }
+  // additive: ep/gp unused
+}
+
+function rollOf(p){ return Math.floor(Math.random()*100)+(p.burned?0:p.boost)+1; }
+
+function nextRaid(){
+  if(raid>=WEEKS*RAIDS_PER_WEEK){ log(`Season complete — press Reset.`); return; }
+  raid++; week=Math.min(WEEKS, Math.floor((raid-1)/RAIDS_PER_WEEK)+1);
+  let present=0;
+  for(const p of roster){
+    p.present = eligible(p) && Math.random()<p.att;
+    if(p.present){ present++; p.epEvents.push({r:raid,v:100}); }
+    p.burned=false;
+    p.hist.push(p.present?1:0); if(p.hist.length>12) p.hist.shift();
+    p.boost=Math.round(p.hist.reduce((a,b)=>a+b,0)*(BOOST_MAX/12));
+  }
+  recompute(); render(); attbox.textContent=present+'/20';
+  log(`▶ Raid ${raid} (Week ${week}) — ${present} present, each gains +100 EP`);
+}
+
+function biddersFor(cap, extraFilter){
+  const minorFree = mode==='additive' || mode==='hybrid';
+  return roster.filter(p=>{
+    if(!p.present) return false;
+    if(cap && p[cap]>=capMax[cap]) return false;
+    if(p.arch==='Hoarder' && !minorFree && cap!=='s') return false; // hoarder skips minors when they cost GP
+    return !extraFilter || extraFilter(p);
+  });
+}
+const capMax={s:2,tokens:4,epics:8,niche:4};
+const CAPS={s:'s',token:'tokens',armor:'epics',niche:'niche'};
+const PRICE={s:1200,token:600,armor:400,niche:250};
+const LABEL={s:'S-TIER WEAPON/TRINKET',token:'TIER TOKEN',armor:'ARMOR EPIC (hat/chest/legs)',niche:'NICHE / SIDEGRADE'};
+
+function simulateDrop(kind){
+  if(raid===0){ log('⚠ Advance to Raid 1 first (nobody is present yet).'); return; }
+  const capKey=CAPS[kind];
+  const eligibleList=biddersFor(capKey);
+  if(!eligibleList.length){ log(`💀 ${LABEL[kind]} — nobody eligible. Rot.`); showBanner(`💀 ${LABEL[kind]} rots — nobody eligible (all capped/absent).`,''); return; }
+  const major = kind==='s' || kind==='token' || (kind==='armor' && mode!=='hybrid');
+  const useRoll = mode==='additive' || (mode==='hybrid' && !major);
+
+  if(useRoll){
+    const scored=eligibleList.map(p=>({p, roll: rollOf(p)}));
+    scored.sort((a,b)=>b.roll-a.roll);
+    const w=scored[0].p; w[capKey]++;
+    if(major) w.burned=true;
+    render();
+    log(`🎲 ${LABEL[kind]} → ${w.name} rolled ${scored[0].roll}${w.burned?' (boost burned)':''}`);
+    showBanner(`🎲 ${LABEL[kind]} — attendance-boosted roll`,
+      scoreTable(scored.slice(0,5), 'roll', 'winner'));
+  } else {
+    const ranked=eligibleList.slice().sort((a,b)=>pr(b)-pr(a));
+    const w=ranked[0];
+    const gpBefore=w.gp;
+    w[capKey]++;
+    w.gpEvents.push({r:raid,v:PRICE[kind]});
+    recompute(); render();
+    const saved = (mode==='hybrid' && kind==='armor') ? ' (hybrid: armor is free-roll minor)' : '';
+    log(`💰 ${LABEL[kind]} → ${w.name} (PR ${prStr(w)}) pays ${PRICE[kind]} GP${saved}`);
+    showBanner(`💰 ${LABEL[kind]} — EPGP, highest Priority Rating wins`,
+      scoreTable(ranked.slice(0,6), 'pr', 'winner'));
+  }
+}
+
+function scoreTable(rows, metric, _unused){
+  let h='<table><tr><th>#</th><th>Raider</th><th>Archetype</th><th>EP</th><th>GP</th><th>PR</th><th>Boost</th><th>'+(metric==='roll'?'Roll':'PR')+'</th></tr>';
+  rows.forEach((r,i)=>{
+    const p=r.p||r;
+    h+=`<tr${i===0?' class="win"':''}><td>${i===0?'🏆':''}</td><td>${p.name} <span style="color:var(--mut)">(${p.cls})</span></td><td>${p.arch}</td><td>${Math.round(p.ep)}</td><td>${Math.round(p.gp)}</td><td>${prStr(p)}</td><td>${p.boost}</td><td>${metric==='roll'?r.roll:prStr(p)}</td></tr>`;
+  });
+  return h+'</table>';
+}
+
+function render(){
+  document.getElementById('week').textContent=week;
+  document.getElementById('raid').textContent=raid;
+  const tb=document.getElementById('tbody');
+  tb.innerHTML=roster.map(p=>{
+    const state = !eligible(p) ? (week<p.join?'<span class="cap">not joined</span>':'<span class="warn">trial (rot only)</span>')
+                 : p.present ? '<span style="color:var(--grn)">present</span>' : '<span class="cap">absent</span>';
+    return `<tr class="${p.present?'':'absent'}"><td><b>${p.name}</b></td><td>${p.cls}</td><td>${p.arch}</td><td>${state}</td>`+
+      `<td class="num">${Math.round(p.ep)}</td><td class="num">${Math.round(p.gp)}</td>`+
+      `<td class="num">${mode==='additive'?'—':prStr(p)}</td><td class="num">${p.boost}</td>`+
+      `<td class="num">${p.s}<span class="cap">/2</span></td><td class="num">${p.tokens}<span class="cap">/4</span></td>`+
+      `<td class="num">${p.epics}<span class="cap">/8</span></td><td class="num">${p.niche}<span class="cap">/4</span></td></tr>`;
+  }).join('');
+}
+
+const banner=document.getElementById('banner');
+function showBanner(title, html){ document.getElementById('banner-title').innerHTML=title;
+  document.getElementById('banner-body').innerHTML=html; banner.classList.add('show'); }
+const logEl=document.getElementById('log-ul');
+const attbox=document.getElementById('attbox');
+function log(msg){ const li=document.createElement('li'); li.innerHTML=msg; logEl.prepend(li); }
+
+document.getElementById('next-raid').addEventListener('click', nextRaid);
+document.getElementById('reset').addEventListener('click', init);
+document.querySelectorAll('.mode').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.mode').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active'); mode=b.dataset.mode; recompute(); render();
+  log(`⚙ Loot system switched to <b>${b.textContent}</b>`);
+}));
+document.querySelectorAll('[data-drop]').forEach(b=>b.addEventListener('click',()=>simulateDrop(b.dataset.drop)));
+init();
+</script>
+</body>
+</html>
